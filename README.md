@@ -21,12 +21,12 @@
     </thead>
     <tbody>
         <tr>
-            <th bgColor="#f1f1f1">[박한솔](https://github.com/incolore9)</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/incolore9" target="_blank">박한솔</a></th>
             <td>메인 페이지 - 앨범 리스트</td>
             <td>메인 페이지 - 멤버 프로필 카드 리스트 호버 액션 및 랜덤 각도</td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">[김혜빈](https://github.com/hyebinkimsdf)</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/hyebinkimsdf" target="_blank">김혜빈</a></th>
             <td>
                 멤버 페이지 - 포토카드<br>
                 앨범 페이지 - 플레이리스트
@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">[나슬기](https://github.com/naseulgee)</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/naseulgee" target="_blank">나슬기</a></th>
             <td>멤버 페이지 - 응원 메세지</td>
             <td>
                 메인 페이지 - 영상 반응형<br>
@@ -45,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">[반재영](https://github.com/baaanjy)</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/baaanjy" target="_blank">반재영</a></th>
             <td>메인 페이지 - 멤버 리스트</td>
             <td>
                 멤버 페이지 - 응원 메세지 작성 및 불러오기<br>
@@ -53,7 +53,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">[이현호](https://github.com/hyeoholee)</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/hyeoholee" target="_blank">이현호</a></th>
             <td>메인 페이지 - 영상</td>
             <td>
                 메인 페이지 - 앨범 아이콘 클릭 시 팝업<br>
@@ -74,9 +74,9 @@
 ## 📺 미리보기
 <table width="100%">
     <tr bgColor="#d3d3d3">
-        <th width="33.33%">메인 페이지</th>
-        <th width="33.33%">멤버 페이지</th>
-        <th width="33.33%">앨범 페이지</th>
+        <th width="20%">메인 페이지</th>
+        <th width="40%">멤버 페이지</th>
+        <th width="40%">앨범 페이지</th>
     </tr>
     <tr>
         <td><img alt="메인 이미지" src=""/></td>
