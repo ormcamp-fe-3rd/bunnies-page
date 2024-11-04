@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.photo-grid {
+  position: relative; /* 포지셔닝의 기준이 될 요소로 설정 */
+  width: 1240px;
+  height: 840px; /* 화면 전체 높이 */
+  background-color: aliceblue;
+}
+
+.photo-grid img {
+  position: absolute; /* 절대 위치로 설정 */
+  width: 300px; /* 각 이미지의 너비 */
+  height: auto;
+  object-fit: cover; /* 이미지가 영역에 맞도록 */
+}
+
+.photo-grid img:nth-child(1) {
+  top: 10%; /* 상단에서 10% 위치 */
+  left: 10%; /* 좌측에서 10% 위치 */
+}
+.photo-grid img:nth-child(2) {
+  top: 5%; /* 상단에서 20% 위치 */
+  left: 30%; /* 좌측에서 30% 위치 */
+}
+.photo-grid img:nth-child(3) {
+  top: 5%; /* 상단에서 30% 위치 */
+  left: 70%; /* 좌측에서 50% 위치 */
+}
+.photo-grid img:nth-child(4) {
+  top: 40%; /* 상단에서 40% 위치 */
+  left: 60%; /* 좌측에서 70% 위치 */
+}
+.photo-grid img:nth-child(5) {
+  top: 40%; /* 상단에서 50% 위치 */
+  left: 5%; /* 좌측에서 10% 위치 */
+}
+.photo-grid img:nth-child(6) {
+  top: 50%; /* 상단에서 60% 위치 */
+  left: 20%; /* 좌측에서 30% 위치 */
+}
+.photo-grid img:nth-child(7) {
+  top: 20%; /* 상단에서 70% 위치 */
+  left: 40%; /* 좌측에서 50% 위치 */
+}
