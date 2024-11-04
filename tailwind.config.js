@@ -9,7 +9,12 @@ module.exports = {
     extend: {
       // 추가 변수 설정
       // colors: {},
-    }
+    },
+    fontFamily: {
+      cafe: ["'Cafe24Nyangi-W-v1.0'"],
+      'cafe-fill': ["'Cafe24Nyangi-B-v1.0'"],
+      lotte: ["'LOTTERIACHAB'"],
+    },
   },
   plugins: []
 }
