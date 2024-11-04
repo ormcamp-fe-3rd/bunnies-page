@@ -21,12 +21,12 @@
     </thead>
     <tbody>
         <tr>
-            <th bgColor="#f1f1f1">박한솔</th>
+            <th bgColor="#f1f1f1">[박한솔](https://github.com/incolore9)</th>
             <td>메인 페이지 - 앨범 리스트</td>
             <td>메인 페이지 - 멤버 프로필 카드 리스트 호버 액션 및 랜덤 각도</td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">김혜빈</th>
+            <th bgColor="#f1f1f1">[김혜빈](https://github.com/hyebinkimsdf)</th>
             <td>
                 멤버 페이지 - 포토카드<br>
                 앨범 페이지 - 플레이리스트
@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">나슬기</th>
+            <th bgColor="#f1f1f1">[나슬기](https://github.com/naseulgee)</th>
             <td>멤버 페이지 - 응원 메세지</td>
             <td>
                 메인 페이지 - 영상 반응형<br>
@@ -45,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">반재영</th>
+            <th bgColor="#f1f1f1">[반재영](https://github.com/baaanjy)</th>
             <td>메인 페이지 - 멤버 리스트</td>
             <td>
                 멤버 페이지 - 응원 메세지 작성 및 불러오기<br>
@@ -53,7 +53,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">이현호</th>
+            <th bgColor="#f1f1f1">[이현호](https://github.com/hyeoholee)</th>
             <td>메인 페이지 - 영상</td>
             <td>
                 메인 페이지 - 앨범 아이콘 클릭 시 팝업<br>
