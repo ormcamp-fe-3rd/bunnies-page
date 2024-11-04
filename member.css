@@ -5,13 +5,12 @@
 .photo-grid {
   position: relative; /* 포지셔닝의 기준이 될 요소로 설정 */
   width: 1240px;
-  height: 840px; /* 화면 전체 높이 */
-  background-color: aliceblue;
+  height: 640px; /* 화면 전체 높이 */
 }
 
 .photo-grid img {
   position: absolute; /* 절대 위치로 설정 */
-  width: 300px; /* 각 이미지의 너비 */
+  width: 20%; /* 각 이미지의 너비 */
   height: auto;
   object-fit: cover; /* 이미지가 영역에 맞도록 */
 }
@@ -37,10 +36,14 @@
   left: 5%; /* 좌측에서 10% 위치 */
 }
 .photo-grid img:nth-child(6) {
-  top: 50%; /* 상단에서 60% 위치 */
+  top: 45%; /* 상단에서 60% 위치 */
   left: 20%; /* 좌측에서 30% 위치 */
 }
 .photo-grid img:nth-child(7) {
   top: 20%; /* 상단에서 70% 위치 */
   left: 40%; /* 좌측에서 50% 위치 */
+}
+
+.Team-photo-minji-01:hover .Team-photo-minji1 {
+  filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
 }
