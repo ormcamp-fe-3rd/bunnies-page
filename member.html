@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunnies Page</title>
+    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
+  </head>
+  <body class="bg-zinc-950 text-white">
+    <section class="message-wrap w-full py-10 text-center">
+      <ul class="relative w-full">
+        <!-- TODO: 이후 JS 작업해주실 때
+          1. 리스트 반복 생성(내용은 더미데이터 + 로컬스토리지 고려해주셔야 합니다)
+          2. 리스트별 랜덤 설정 내용: 배경 색상, 투명도, 위치
+        -->
+        <li class="inline-block rounded-full bg-red-500 bg-opacity-95 px-3 py-2">Lorem ipsum dolor sit amet.</li>
+        <li class="inline-block rounded-full bg-lime-500 bg-opacity-75 px-3 py-2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, mollitia.
+        </li>
+        <li class="inline-block rounded-full bg-teal-500 bg-opacity-65 px-3 py-2">
+          Lorem ipsum dolor, sit amet consectetur adipisicing.
+        </li>
+        <li class="inline-block rounded-full bg-amber-500 bg-opacity-55 px-3 py-2">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, eius!
+        </li>
+        <li class="inline-block rounded-full bg-rose-500 bg-opacity-50 px-3 py-2">Lorem ipsum dolor sit amet.</li>
+        <li class="inline-block rounded-full bg-yellow-500 bg-opacity-70 px-3 py-2">Lorem.</li>
+        <li class="inline-block rounded-full bg-purple-500 bg-opacity-55 px-3 py-2">Lorem, ipsum dolor.</li>
+        <li class="inline-block rounded-full bg-green-500 bg-opacity-65 px-3 py-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </li>
+      </ul>
+      <p>
+        부담 없이 사소한 응원의 메세지들을 보내보세요!
+        <br />
+        필터링이 되어 배경으로 나오게 됩니다.
+      </p>
+      <input
+        id="message"
+        name="message"
+        class="mx-auto my-10 block w-1/2 rounded-2xl px-3 py-2"
+        placeholder="멤버들에게 응원의 한마디 메세지를 보내보세요!"
+        maxlength="100" />
+    </section>
+  </body>
+</html>
