@@ -24,6 +24,6 @@
 @layer base {
     /* 텍스트 */
     body {
-        font-family: 'Cafe24Nyangi-W-v1.0', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        font-family: 'Nanum Square Round', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
 }
