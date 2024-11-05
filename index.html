@@ -7,13 +7,30 @@
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
   </head>
   <body class="bg-zinc-950 text-white">
-    <!-- 앨범 섹션 -->
-    <div class="relative z-0 h-[500px] w-full bg-gray-900">
-      <div class="absolute bottom-24 left-1/2 h-2/3 w-2/3 -translate-x-2/4 bg-white"></div>
-      <img
-        class="absolute bottom-0 left-1/2 z-20 w-[70%] -translate-x-2/4"
-        src="./assets/images/mac.png"
-        alt="컴퓨터 이미지" />
+    <div class="h-[200px]"></div>
+    <div class="z-0 flex h-[900px] w-full items-center justify-center overflow-hidden bg-yellow-300 pb-0 pt-6">
+      <div class="relative flex">
+        <img class="z-50 max-h-[900px] w-full object-contain" src="./assets/images/mac.png" alt="컴퓨터 이미지" />
+        <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto rounded-[20px] bg-white">
+          <div
+            class="z-50 flex h-full w-full flex-col flex-wrap gap-y-5 bg-red-100 pb-[5%] pl-[5%] pr-[5%] pt-[5%] align-middle">
+            <button id="1stEP" class="z-50 h-[20%] w-[8%]">
+              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+              <p class="text- w-full text-center text-black">New Jeans</p>
+            </button>
+            <button id="2ndEP" class="z-50 h-[20%] w-[8%]">
+              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+              <p class="text- w-full text-center text-black">New Jeans</p>
+            </button>
+            <button id="3rdEP" class="z-50 h-[20%] w-[8%]">
+              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+              <p class="text- w-full text-center text-black">New Jeans</p>
+            </button>
+          </div>
+          <!-- <img class="z-20 w-full" src="./assets/images/newjeans-pc-bg.png" alt="" /> -->
+        </div>
+      </div>
     </div>
+    <div class="h-[200px]"></div>
   </body>
 </html>
