@@ -1341,6 +1341,30 @@ body {
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/images\/album\/sea-bg\.jpeg\'\)\] {
+  background-image: url('/assets/images/album/sea-bg.jpeg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/room-bg\.jpeg\'\)\] {
+  background-image: url('/assets/images/album/room-bg.jpeg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/room-bg\.jpg\'\)\] {
+  background-image: url('/assets/images/album/room-bg.jpg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/see-bg\.jpg\'\)\] {
+  background-image: url('/assets/images/album/see-bg.jpg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/see-bg\.jpeg\'\)\] {
+  background-image: url('/assets/images/album/see-bg.jpeg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/gradiant\.jpg\'\)\] {
+  background-image: url('/assets/images/album/gradiant.jpg');
+}
+
 .from-\[\#ebebeb\] {
   --tw-gradient-from: #ebebeb var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(235 235 235 / 0) var(--tw-gradient-to-position);
@@ -1391,9 +1415,22 @@ body {
   --tw-gradient-to: #F1C40F var(--tw-gradient-to-position);
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-\[6\%\] {
