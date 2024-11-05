@@ -560,6 +560,57 @@ body {
   font-family: 'Pretendard-Regular', Pretendard, Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
+.relative {
+  position: relative;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[837px\] {
+  height: 837px;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-\[1240px\] {
+  width: 1240px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-zinc-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 9 11 / var(--tw-bg-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 @font-face {
   font-family: 'Pretendard-Regular';
 
