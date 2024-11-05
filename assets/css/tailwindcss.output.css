@@ -560,6 +560,10 @@ body {
   font-family: 'Pretendard-Regular', Pretendard, Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -568,8 +572,16 @@ body {
   position: relative;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .m-5 {
@@ -612,16 +624,33 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-rotate-6 {
+  --tw-rotate: -6deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .gap-6 {
   gap: 1.5rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
+.gap-10 {
+  gap: 2.5rem;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .bg-zinc-950 {
@@ -638,12 +667,8 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.outline-8 {
-  outline-width: 8px;
-}
-
-.outline-yellow-400 {
-  outline-color: #facc15;
+.opacity-0 {
+  opacity: 0;
 }
 
 @font-face {
@@ -656,10 +681,18 @@ body {
   font-style: normal;
 }
 
-.hover\:border:hover {
-  border-width: 1px;
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 
-.hover\:outline:hover {
-  outline-style: solid;
+.peer:hover ~ .peer-hover\:visible {
+  visibility: visible;
+}
+
+.peer:hover ~ .peer-hover\:z-10 {
+  z-index: 10;
+}
+
+.peer:hover ~ .peer-hover\:opacity-100 {
+  opacity: 1;
 }
