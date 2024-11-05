@@ -19,7 +19,36 @@
         </div>
         <div class="absolute z-30 p-[6%]">
           <!-- 컴퓨터 화면 내 컨텐츠 -->
-          <!-- <div class="absolute z-50 h-full w-full bg-white"></div> -->
+          <!-- TODO: span으로 감싼 창이 닫혔다 열렸다 해야합니다! hidden 상태에서 block전환이 되어야합니다.. -->
+          <span id="first-album-window" class="absolute bottom-[-141%] left-[5%] right-[5%] top-[21%] z-50 hidden">
+            <!-- 전체창 -->
+            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-white shadow-lg">
+              <!-- 상단 컨트롤바 css-->
+              <div
+                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                <div class="absolute left-2 top-[4px] leading-none">
+                  <!-- TODO:colose-btn을 누르면 상단의 first-album-window가 none으로 전환되어야합니다. -->
+                  <span id="close-btn">
+                    <div
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
+                    </div>
+                    <!-- 중간 버튼 형태 구현 -->
+                    <div
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
+                    </div>
+                    <!-- 우측 버튼 형태 구현 -->
+                    <div
+                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                    </div>
+                  </span>
+                </div>
+                <!-- 모달창 타이틀 -->
+                <span>Window Title</span>
+              </div>
+              <!-- 모달 내 컨텐츠 -->
+            </div>
+          </span>
           <!-- 앨범 아이콘 -->
           <button id="firstEP" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img class="h-auto w-full" src="./assets/images/album/album_img/1stEP.jpg" alt="" />
@@ -49,10 +78,16 @@
       // TODO: 버튼을 클릭하면, 모달 팝업의 display 생태가 display로 변하면서 보이게 전환됩니다.
       // TODO: X버튼을 클릭하면 모달 팝업의 display none으로 바뀌면서 모달이 닫히게 됩니다.
       // TODO: 모달 팝업의 외부 영역을 클릭해도 모달 창이 닫히면 편의성 면에서 좋을 것 같습니다.
-      // 아래는 테스트용 코드입니다 혹시 넘겨 받았을 때 남아있다면 아래 내용은 전부 삭제해주세요.
+      // 아래는 테스트용으로 러프하게 짰으니 참고해주세요!! 지워도 상관 없습니다!
       document.querySelector('#firstEP').addEventListener('click', function () {
-        alert('1번째 버튼입니다.')
+        document.querySelector('#first-album-window').classList.remove('hidden')
+        document.querySelector('#first-album-window').classList.add('block')
       })
+      document.querySelector('#close-btn').addEventListener('click', function () {
+        document.querySelector('#first-album-window').classList.remove('block')
+        document.querySelector('#first-album-window').classList.add('hidden')
+      })
+
       document.querySelector('#secondEP').addEventListener('click', function () {
         alert('2번째 버튼입니다.')
       })
