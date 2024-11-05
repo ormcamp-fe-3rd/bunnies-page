@@ -10,7 +10,7 @@ module.exports = {
   // 공백
   useTabs: false, // 탭 사용 여부
   tabWidth: 2, // 탭 너비
-  htmlWhitespaceSensitivity: 'strict', // 공백 민감도 (css | strict | ignore)
+  htmlWhitespaceSensitivity: 'ignore', // 공백 민감도 (css | strict | ignore)
   // 특수기호
   singleQuote: true, // 작은 따옴표 사용 여부
   semi: false, // 세미콜론 여부

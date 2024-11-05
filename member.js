@@ -1,5 +1,0 @@
-const member_page_01 = document.querySelectorAll('member-swiper01')
-const member_page_02 = document.querySelectorAll('.member-swiper02')
-const member_page_03 = document.querySelectorAll('.member-swiper03')
-const member_page_04 = document.querySelectorAll('.member-swiper04')
-const member_page_05 = document.querySelectorAll('.member-swiper05')
