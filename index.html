@@ -7,30 +7,41 @@
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
   </head>
   <body class="bg-zinc-950 text-white">
-    <div class="h-[200px]"></div>
+    <!-- 앨범 섹션 영역 지정 -->
     <div class="z-0 flex h-[900px] w-full items-center justify-center overflow-hidden bg-yellow-300 pb-0 pt-6">
-      <div class="relative flex">
-        <img class="z-50 max-h-[900px] w-full object-contain" src="./assets/images/mac.png" alt="컴퓨터 이미지" />
-        <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto rounded-[20px] bg-white">
-          <div
-            class="z-50 flex h-full w-full flex-col flex-wrap gap-y-5 bg-red-100 pb-[5%] pl-[5%] pr-[5%] pt-[5%] align-middle">
-            <button id="1stEP" class="z-50 h-[20%] w-[8%]">
-              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
-              <p class="text- w-full text-center text-black">New Jeans</p>
-            </button>
-            <button id="2ndEP" class="z-50 h-[20%] w-[8%]">
-              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
-              <p class="text- w-full text-center text-black">New Jeans</p>
-            </button>
-            <button id="3rdEP" class="z-50 h-[20%] w-[8%]">
-              <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
-              <p class="text- w-full text-center text-black">New Jeans</p>
-            </button>
-          </div>
-          <!-- <img class="z-20 w-full" src="./assets/images/newjeans-pc-bg.png" alt="" /> -->
+      <div class="relative z-50 flex">
+        <!-- 컴퓨터 배경화면 영역 -->
+        <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white"></div>
+        <!-- 컴퓨터 목업 -->
+        <img class="z-30 max-h-[900px] w-full object-contain" src="./assets/images/mac.png" alt="컴퓨터 이미지" />
+        <div class="absolute z-50 p-[6%]">
+          <!-- 컴퓨터 화면 내 아이콘 -->
+          <button id="firstEP" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">New Jeans</p>
+          </button>
+          <button id="secondEP" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">New Jeans</p>
+          </button>
+          <button id="thirdEP" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img class="h-auto w-full" src="./assets/images/1stEP.jpg" alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">New Jeans</p>
+          </button>
         </div>
       </div>
     </div>
-    <div class="h-[200px]"></div>
+    <script>
+      // 테스트용 코드입니다 혹시 넘겨 받았을 때 남아있다면 아래 내용은 전부 삭제해주세요.
+      document.querySelector('#firstEP').addEventListener('click', function () {
+        alert('1번째 버튼입니다.')
+      })
+      document.querySelector('#secondEP').addEventListener('click', function () {
+        alert('2번째 버튼입니다.')
+      })
+      document.querySelector('#thirdEP').addEventListener('click', function () {
+        alert('3번째 버튼입니다.')
+      })
+    </script>
   </body>
 </html>
