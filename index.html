@@ -3,60 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>헤더고정</title>
-    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
-    <link rel="stylesheet" href="album.css" />
+    <title>홈+헤더고정+유튭위치고정</title>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      .HomeMenuText-stroke {
+      .home-menu-text-stroke {
         color: transparent;
         -webkit-text-stroke: 1px white;
         transition: none;
       }
-      .HomeMenuText-stroke:hover {
+      .home-menu-text-stroke:hover {
         color: #ffffff;
         -webkit-text-stroke: 0;
       }
+      .home-body-light-text {
+        opacity: 0.7;
+      }
+
+      /* 유튜브 테두리 */
+      .home-body-youtube-border {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
     </style>
   </head>
-  <body class="h-screen bg-black bg-zinc-950 text-white">
-    <div class="flex h-[174px] items-center justify-between bg-black px-5">
-      <div class="ml-[100px] whitespace-nowrap font-['ABeeZee'] text-[40px]">
+  <body class="bg-zinc-950 text-white">
+    <div class="flex h-[174px] w-full items-center justify-between px-5">
+      <div class="ml-[100px] whitespace-nowrap font-['ABeeZee'] text-[40px] text-white">
         Main
-        <a href="#team" class="HomeMenuText-stroke ml-[80px] text-[40px]">Team</a>
-        <a href="#albums" class="HomeMenuText-stroke ml-[80px] text-[40px]">Albums</a>
+        <a href="#team" class="home-menu-text-stroke ml-[80px] text-[40px]">Team</a>
+        <a href="#albums" class="home-menu-text-stroke ml-[80px] text-[40px]">Albums</a>
       </div>
       <div class="mr-[100px] flex items-center space-x-4">
         <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
-          <img
-            src="/assets/images/header/homeMenuicon1.svg"
-            alt="homeMenuIcon1"
-            class="h-[24px] w-[24px] flex-shrink-0" />
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-[24px] w-[24px]" />
         </a>
         <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
-          <img
-            src="/assets/images/header/homeMenuicon2.svg"
-            alt="homeMenuIcon2"
-            class="h-[24px] w-[24px] flex-shrink-0" />
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-[24px] w-[24px]" />
         </a>
         <a href="https://www.instagram.com/newjeans_official/">
-          <img
-            src="/assets/images/header/homeMenuicon3.svg"
-            alt="homeMenuIcon3"
-            class="h-[24px] w-[24px] flex-shrink-0" />
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-[24px] w-[24px]" />
         </a>
         <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY">
-          <img
-            src="/assets/images/header/homeMenuicon4.svg"
-            alt="homeMenuIcon4"
-            class="h-[24px] w-[24px] flex-shrink-0" />
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-[24px] w-[24px]" />
         </a>
         <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw">
-          <img
-            src="/assets/images/header/homeMenuicon5.svg"
-            alt="homeMenuIcon5"
-            class="h-[24px] w-[24px] flex-shrink-0" />
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-[24px] w-[24px]" />
         </a>
       </div>
     </div>
+
+    <!-- ! 유튜브 -->
+    <div class="mt-5 flex flex-grow items-center justify-center">
+      <div class="home-body-youtube-border overflow-hidden rounded-[10px]">
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          width="1240"
+          height="696"
+          frameborder="0"
+          allowfullscreen
+          class="h-[696px] w-[1240px]"></iframe>
+      </div>
+    </div>
+
+    <div class="mt-5 flex flex-col items-center">
+      <div class="flex h-[100px] w-[1240px] items-center justify-center overflow-hidden rounded-[10px]">
+        <div class="flex h-[28px] w-[507px] items-center justify-between">
+          <div class="flex items-center" style="width: 235px">
+            <span class="home-body-light-text ml-[10px] font-['ABeeZee'] text-[24px]">album</span>
+            <span class="ml-[10px] font-['ABeeZee'] text-[24px]">Supernatural</span>
+          </div>
+          <div class="flex items-center" style="width: 194px; margin-left: 60px">
+            <span class="home-body-light-text ml-[10px] font-['ABeeZee'] text-[24px]">track</span>
+            <span class="ml-[10px] whitespace-nowrap font-['ABeeZee'] text-[24px]">How Sweet</span>
+          </div>
+        </div>
+        <div class="ml-auto flex items-center whitespace-nowrap">
+          <button class="mr-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&lt;</button>
+          <span class="mx-2 text-[24px] text-white">
+            3
+            <span class="home-body-light-text">/</span>
+            4
+          </span>
+          <button class="ml-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&gt;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-24"></div>
   </body>
 </html>

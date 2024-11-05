@@ -560,20 +560,58 @@ body {
   font-family: 'Nanum Square Round', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
 .ml-\[100px\] {
   margin-left: 100px;
+}
+
+.ml-\[10px\] {
+  margin-left: 10px;
 }
 
 .ml-\[80px\] {
   margin-left: 80px;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mr-\[100px\] {
   margin-right: 100px;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .flex {
   display: flex;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[174px\] {
@@ -584,34 +622,52 @@ body {
   height: 24px;
 }
 
-.h-screen {
-  height: 100vh;
+.h-\[28px\] {
+  height: 28px;
+}
+
+.h-\[696px\] {
+  height: 696px;
+}
+
+.w-\[1240px\] {
+  width: 1240px;
 }
 
 .w-\[24px\] {
   width: 24px;
 }
 
+.w-\[507px\] {
+  width: 507px;
+}
+
 .w-full {
   width: 100%;
 }
 
-.flex-shrink-0 {
-  flex-shrink: 0;
+.flex-grow {
+  flex-grow: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
   align-items: center;
 }
 
-.justify-between {
-  justify-content: space-between;
+.justify-center {
+  justify-content: center;
 }
 
-.space-x-\[15px\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(15px * var(--tw-space-x-reverse));
-  margin-left: calc(15px * calc(1 - var(--tw-space-x-reverse)));
+.justify-between {
+  justify-content: space-between;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -620,13 +676,28 @@ body {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-none {
+  border-style: none;
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-zinc-950 {
@@ -641,6 +712,10 @@ body {
 
 .font-\[\'ABeeZee\'\] {
   font-family: 'ABeeZee';
+}
+
+.text-\[24px\] {
+  font-size: 24px;
 }
 
 .text-\[40px\] {
