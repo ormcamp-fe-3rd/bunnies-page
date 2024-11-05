@@ -628,6 +628,14 @@ body {
   top: 20%;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -704,6 +712,10 @@ body {
   height: 100lvh;
 }
 
+.h-\[80\%\] {
+  height: 80%;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -734,6 +746,10 @@ body {
 
 .w-\[4\%\] {
   width: 4%;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .max-w-\[490px\] {
@@ -836,6 +852,38 @@ body {
 
 .bg-\[url\(\'\.\/assets\/images\/pc-outside-background\.jpg\'\)\] {
   background-image: url('./assets/images/pc-outside-background.jpg');
+}
+
+.bg-\[url\(\'\/assets\/images\/pc-outside-background\.jpg_large\'\)\] {
+  background-image: url('/assets/images/pc-outside-background.jpg_large');
+}
+
+.bg-\[url\(\'\/assets\/images\/bg-images\.webp\'\)\] {
+  background-image: url('/assets/images/bg-images.webp');
+}
+
+.bg-\[url\(\'\.\/assets\/images\/album\/pc-outside-background\.jpg_large\'\)\] {
+  background-image: url('./assets/images/album/pc-outside-background.jpg_large');
+}
+
+.bg-\[url\(\)\] {
+  background-image: url();
+}
+
+.bg-\[url\(\/assets\/images\/album\/mac\.png\)\] {
+  background-image: url(/assets/images/album/mac.png);
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/mac\.png\'\)\] {
+  background-image: url('/assets/images/album/mac.png');
+}
+
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/pc-outside-background\.jpg_large\'\)\] {
+  background-image: url('/assets/images/album/pc-outside-background.jpg_large');
 }
 
 .object-contain {
