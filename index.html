@@ -19,15 +19,13 @@
         </div>
         <div class="absolute z-30 p-[6%]">
           <!-- 컴퓨터 화면 내 컨텐츠 -->
-          <!-- TODO: span으로 감싼 창이 닫혔다 열렸다 해야합니다! hidden 상태에서 block전환이 되어야합니다.. -->
-          <span id="first-album-window" class="absolute bottom-[-141%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <!-- 전체창 -->
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-white shadow-lg">
+          <!-- 첫 번째 앨범 모달 창 -->
+          <span id="first-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
+            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-slate-300 shadow-lg">
               <!-- 상단 컨트롤바 css-->
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <!-- TODO:colose-btn을 누르면 상단의 first-album-window가 none으로 전환되어야합니다. -->
                   <span id="close-btn">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
@@ -44,42 +42,97 @@
                   </span>
                 </div>
                 <!-- 모달창 타이틀 -->
-                <span>Window Title</span>
+                <span>New Jeans</span>
               </div>
               <!-- 모달 내 컨텐츠 -->
+              <div class="flex h-full w-full">
+                <div class="h-full w-2/4 p-10">
+                  <img
+                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    src="./assets/images/album/album_img/1stEP.jpg"
+                    alt="" />
+                </div>
+                <div class="h-full w-2/4 p-10">
+                  <table class="font-cafe-fill leading-tight text-blue-950">
+                    <tr>
+                      <td colspan="2" class="bvw-[60%] text-7xl">New Jeans</td>
+                    </tr>
+                    <tr>
+                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td colspan="2" class="text-3xl">2022. 8. 1.</td>
+                    </tr>
+                  </table>
+
+                  <table class="font-cafe-fill text-blue-950">
+                    <tr>
+                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Attention</td>
+                      <td class="font-cafe text-3xl">02:59</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Hype Boy</td>
+                      <td class="font-cafe text-3xl">02:58</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Cookie</td>
+                      <td class="font-cafe text-3xl">03:55</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Hurt</td>
+                      <td class="font-cafe text-3xl">02:57 </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
           </span>
           <!-- 앨범 아이콘 -->
-          <button id="firstEP" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
-            <img class="h-auto w-full" src="./assets/images/album/album_img/1stEP.jpg" alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">New Jeans</p>
+          <button id="first-album" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img
+              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              src="./assets/images/album/album_img/1stEP.jpg"
+              alt="" />
+            <p class="w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">New Jeans</p>
           </button>
-          <button id="secondEP" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
-            <img class="h-auto w-full" src="./assets/images/album/album_img/OMG.jpg" alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">OMG</p>
+          <button id="second-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img
+              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              src="./assets/images/album/album_img/OMG.jpg"
+              alt="" />
+            <p class="w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">OMG</p>
           </button>
-          <button id="thirdEP" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
-            <img class="h-auto w-full" src="./assets/images/album/album_img/GetUp.webp" alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">Get Up</p>
+          <button id="third-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img
+              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              src="./assets/images/album/album_img/GetUp.webp"
+              alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">Get Up</p>
           </button>
-          <button id="forthEP" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
-            <img class="h-auto w-full" src="./assets/images/album/album_img/HowSweet.webp" alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">How Sweet</p>
+          <button id="forth-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img
+              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              src="./assets/images/album/album_img/HowSweet.webp"
+              alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">How Sweet</p>
           </button>
-          <button id="fifthEP" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
-            <img class="h-auto w-full" src="./assets/images/album/album_img/Supernatural.webp" alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">Supernatural</p>
+          <button id="fifth-album" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
+            <img
+              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              src="./assets/images/album/album_img/Supernatural.webp"
+              alt="" />
+            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">Supernatural</p>
           </button>
-          <!-- 모달 팝업 -->
         </div>
       </div>
     </div>
     <script>
-      // TODO: 버튼을 클릭하면, 모달 팝업의 display 생태가 display로 변하면서 보이게 전환됩니다.
-      // TODO: X버튼을 클릭하면 모달 팝업의 display none으로 바뀌면서 모달이 닫히게 됩니다.
-      // TODO: 모달 팝업의 외부 영역을 클릭해도 모달 창이 닫히면 편의성 면에서 좋을 것 같습니다.
-      // 아래는 테스트용으로 러프하게 짰으니 참고해주세요!! 지워도 상관 없습니다!
-      document.querySelector('#firstEP').addEventListener('click', function () {
+      // TODO: close-btn 버튼을 클릭하면, 각 모달 팝업의 hiddem, block을 제거 후 추가하는 식으로 보이는 구조입니다.
+      // TODO: 모달 팝업의 외부 영역을 클릭해도 모달 창이 닫히면 편의성 면에서 좋을 것 같습니다. 이거는 테스트로 구현까진 못했어요.
+      // TODO: 아래는 테스트용으로 러프하게 짰는데 팝업창이 열리고 닫히는 것은 js 파일 분리 및 코드 최적화를 진행하면 좋을 것 같습니다.
+      // 여유가 있다면 열리고 닫힐때 점점 커지면서 열리거나 반대로 닫힐땐 점점 작아지는(scale?) 액션도 추가하면 좋을 것 같습니다.
+      document.querySelector('#first-album').addEventListener('click', function () {
         document.querySelector('#first-album-window').classList.remove('hidden')
         document.querySelector('#first-album-window').classList.add('block')
       })
@@ -88,16 +141,16 @@
         document.querySelector('#first-album-window').classList.add('hidden')
       })
 
-      document.querySelector('#secondEP').addEventListener('click', function () {
+      document.querySelector('#second-album').addEventListener('click', function () {
         alert('2번째 버튼입니다.')
       })
-      document.querySelector('#thirdEP').addEventListener('click', function () {
+      document.querySelector('#third-album').addEventListener('click', function () {
         alert('3번째 버튼입니다.')
       })
-      document.querySelector('#forthEP').addEventListener('click', function () {
+      document.querySelector('#forth-album').addEventListener('click', function () {
         alert('4번째 버튼입니다.')
       })
-      document.querySelector('#fifthEP').addEventListener('click', function () {
+      document.querySelector('#fifth-album').addEventListener('click', function () {
         alert('5번째 버튼입니다.')
       })
     </script>
