@@ -19,6 +19,12 @@
   margin-top: 100px;
 }
 
+.playList img {
+  margin: 16px auto;
+  width: 240px;
+  height: auto;
+}
+
 .album_newjeans_playlist_qr_image img {
   margin: 0 auto;
   width: 112px;
@@ -31,4 +37,35 @@
 
 .album_player_play_btn {
   margin: 0 20px;
+}
+
+/*앨범 영수증 플레이리스트 버튼 호버시 효과*/
+.album_selct_btn_01:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.album_selct_btn_02:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.album_selct_btn_03:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.album_selct_btn_04:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.album_selct_btn_05:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.album_selct_btn_06:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/*qr 호버시 효과*/
+.album_newjeans_playlist_qr_image:hover {
+  background-color: black;
 }
