@@ -11,7 +11,7 @@
   /*영수증 플레이리스트*/
   transform: rotate(10deg); /*영수증 기울기*/
 
-  background-image: url('assets/images/albums/white-crumpled-paper-texture-background.jpg');
+  background-image: url('../images/albums/white-crumpled-paper-texture-background.jpg');
   color: black;
   width: 424px;
   height: auto;
