@@ -1,3 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.album_playlist {
+  width: 1000px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.playList {
+  /*영수증 플레이리스트*/
+  transform: rotate(10deg); /*영수증 기울기*/
+
+  background-image: url('assets/images/albums/white-crumpled-paper-texture-background.jpg');
+  color: black;
+  width: 424px;
+  height: auto;
+
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.album_newjeans_playlist_qr_image img {
+  margin: 0 auto;
+  width: 112px;
+  height: 112px;
+}
+
+.album_player_btn {
+  margin: 36px;
+}
+
+.album_player_play_btn {
+  margin: 0 20px;
+}
