@@ -1,11 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bunnies Page</title>
-    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css">
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤더고정</title>
+    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
+    <link rel="stylesheet" href="album.css" />
+    <style>
+      .HomeMenuText-stroke {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+        stroke: 2px white;
+        transition: none;
+      }
+      .HomeMenuText-stroke:hover {
+        color: #ffffff;
+        -webkit-text-stroke: 0;
+      }
+    </style>
+  </head>
+  <body class="h-screen bg-black bg-zinc-950 text-white">
+    <div class="flex h-[174px] w-full items-center justify-between bg-black px-5">
+      <div class="ml-[100px] whitespace-nowrap font-['ABeeZee'] text-[40px] text-white">
+        Main
+        <a href="#team" class="HomeMenuText-stroke ml-[80px] text-[40px]">Team</a>
+        <a href="#albums" class="HomeMenuText-stroke ml-[80px] text-[40px]">Albums</a>
+      </div>
+      <div class="mr-[100px] flex items-center space-x-[15px]">
+        <img src="homeMenuicon1.svg" alt="homeMenuIcon1" class="h-[24px] w-[24px]" />
+        <img src="homeMenuicon2.svg" alt="homeMenuIcon2" class="h-[24px] w-[24px]" />
+        <img src="homeMenuicon3.svg" alt="homeMenuIcon3" class="h-[24px] w-[24px]" />
+        <img src="homeMenuicon4.svg" alt="homeMenuIcon4" class="h-[24px] w-[24px]" />
+        <img src="homeMenuIcon5.svg" alt="homeMenuIcon5" class="h-[24px] w-[24px]" />
+      </div>
+    </div>
+  </body>
 </html>
