@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
   </head>
   <body class="bg-zinc-950 text-white">
-    <section class="message-wrap flex h-screen max-h-[600px] w-full flex-col py-10 text-center">
+    <section class="message-wrap w-full py-10 text-center">
       <ul
-        class="container relative mx-auto h-full w-full bg-[url('/assets/images/member/msg-bg-emoji.png')] bg-bottom bg-no-repeat text-xl">
+        class="container relative mx-auto h-screen max-h-96 w-full text-xl">
         <!-- TODO: 이후 JS 작업해주실 때
           1. 리스트 반복 생성(내용은 더미데이터 + 로컬스토리지 고려해주셔야 합니다)
           2. 리스트별 랜덤 설정 내용: 배경 색상, 투명도, 위치
@@ -37,6 +37,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </li>
       </ul>
+      <img src="./assets/images/member/msg-bg-emoji.png" alt="happy emoji" class="max-w-80 mx-auto mt-14">
       <h2 class="my-5 text-4xl">괜찮아, 다 잘 될 거야</h2>
       <p class="text-xs opacity-40">
         부담 없이 사소한 응원의 메세지들을 보내보세요!
