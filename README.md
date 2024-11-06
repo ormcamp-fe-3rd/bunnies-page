@@ -14,19 +14,19 @@
 <table width="100%">
     <thead>
         <tr bgColor="#d3d3d3">
-            <th>구성원</th>
+            <th width="100px">구성원</th>
             <th>담당 UI</th>
             <th>담당 기능</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th bgColor="#f1f1f1">박한솔</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/incolore9" target="_blank">박한솔</a></th>
             <td>메인 페이지 - 앨범 리스트</td>
             <td>메인 페이지 - 멤버 프로필 카드 리스트 호버 액션 및 랜덤 각도</td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">김혜빈</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/hyebinkimsdf" target="_blank">김혜빈</a></th>
             <td>
                 멤버 페이지 - 포토카드<br>
                 앨범 페이지 - 플레이리스트
@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">나슬기</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/naseulgee" target="_blank">나슬기</a></th>
             <td>멤버 페이지 - 응원 메세지</td>
             <td>
                 메인 페이지 - 영상 반응형<br>
@@ -45,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">반재영</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/baaanjy" target="_blank">반재영</a></th>
             <td>메인 페이지 - 멤버 리스트</td>
             <td>
                 멤버 페이지 - 응원 메세지 작성 및 불러오기<br>
@@ -53,7 +53,7 @@
             </td>
         </tr>
         <tr>
-            <th bgColor="#f1f1f1">이현호</th>
+            <th bgColor="#f1f1f1"><a href="https://github.com/hyeoholee" target="_blank">이현호</a></th>
             <td>메인 페이지 - 영상</td>
             <td>
                 메인 페이지 - 앨범 아이콘 클릭 시 팝업<br>
@@ -79,8 +79,8 @@
         <th width="33.33%">앨범 페이지</th>
     </tr>
     <tr>
-        <td><img alt="메인 이미지" src=""/></td>
-        <td><img alt="멤버 이미지" src=""/></td>
-        <td><img alt="앨범 이미지" src=""/></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 메인페이지" width="100%"></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 멤버페이지" width="100%"></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 앨범페이지" width="100%"></td>
     </tr>
 </table>
