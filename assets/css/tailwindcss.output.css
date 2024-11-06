@@ -560,64 +560,38 @@ body {
   font-family: 'Nanum Square Round', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-.ml-\[100px\] {
-  margin-left: 100px;
-}
-
-.ml-\[80px\] {
-  margin-left: 80px;
-}
-
-.mr-\[100px\] {
-  margin-right: 100px;
-}
-
-.flex {
-  display: flex;
-}
-
-.h-\[174px\] {
-  height: 174px;
-}
-
-.h-\[24px\] {
-  height: 24px;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.w-\[24px\] {
-  width: 24px;
-}
-
-.w-full {
+.container {
   width: 100%;
 }
 
-.flex-shrink-0 {
-  flex-shrink: 0;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
 }
 
-.items-center {
-  align-items: center;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 
-.justify-between {
-  justify-content: space-between;
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
 }
 
-.space-x-\[15px\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(15px * var(--tw-space-x-reverse));
-  margin-left: calc(15px * calc(1 - var(--tw-space-x-reverse)));
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }
 
 .absolute {
@@ -700,6 +674,18 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.ml-\[100px\] {
+  margin-left: 100px;
+}
+
+.ml-\[80px\] {
+  margin-left: 80px;
+}
+
+.mr-\[100px\] {
+  margin-right: 100px;
+}
+
 .mt-14 {
   margin-top: 3.5rem;
 }
@@ -720,6 +706,14 @@ body {
   display: flex;
 }
 
+.h-\[174px\] {
+  height: 174px;
+}
+
+.h-\[24px\] {
+  height: 24px;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -736,12 +730,20 @@ body {
   width: 1.25rem;
 }
 
+.w-\[24px\] {
+  width: 24px;
+}
+
 .w-full {
   width: 100%;
 }
 
 .max-w-80 {
   max-width: 20rem;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .flex-wrap {
@@ -756,6 +758,20 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -767,6 +783,11 @@ body {
 .bg-amber-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-green-500 {
@@ -809,6 +830,11 @@ body {
   background-color: rgb(9 9 11 / var(--tw-bg-opacity));
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -833,9 +859,17 @@ body {
   text-align: center;
 }
 
+.font-\[\'ABeeZee\'\] {
+  font-family: 'ABeeZee';
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-\[40px\] {
+  font-size: 40px;
 }
 
 .text-xl {
@@ -851,12 +885,6 @@ body {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-.font-\[\'ABeeZee\'\] {
-  font-family: 'ABeeZee';
-}
-
-.text-\[40px\] {
-  font-size: 40px;
 }
 
 .text-white {
@@ -895,6 +923,7 @@ body {
 .opacity-95 {
   opacity: 0.95;
 }
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
