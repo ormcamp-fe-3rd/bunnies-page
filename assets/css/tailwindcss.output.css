@@ -560,38 +560,64 @@ body {
   font-family: 'Nanum Square Round', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-.container {
+.ml-\[100px\] {
+  margin-left: 100px;
+}
+
+.ml-\[80px\] {
+  margin-left: 80px;
+}
+
+.mr-\[100px\] {
+  margin-right: 100px;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[174px\] {
+  height: 174px;
+}
+
+.h-\[24px\] {
+  height: 24px;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-\[24px\] {
+  width: 24px;
+}
+
+.w-full {
   width: 100%;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+.items-center {
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+.justify-between {
+  justify-content: space-between;
 }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+.space-x-\[15px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(15px * var(--tw-space-x-reverse));
+  margin-left: calc(15px * calc(1 - var(--tw-space-x-reverse)));
 }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .absolute {
@@ -783,11 +809,6 @@ body {
   background-color: rgb(9 9 11 / var(--tw-bg-opacity));
 }
 
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -830,6 +851,12 @@ body {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+.font-\[\'ABeeZee\'\] {
+  font-family: 'ABeeZee';
+}
+
+.text-\[40px\] {
+  font-size: 40px;
 }
 
 .text-white {
@@ -867,6 +894,13 @@ body {
 
 .opacity-95 {
   opacity: 0.95;
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @font-face {

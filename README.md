@@ -14,7 +14,7 @@
 <table width="100%">
     <thead>
         <tr bgColor="#d3d3d3">
-            <th>구성원</th>
+            <th width="100px">구성원</th>
             <th>담당 UI</th>
             <th>담당 기능</th>
         </tr>
@@ -74,13 +74,13 @@
 ## 📺 미리보기
 <table width="100%">
     <tr bgColor="#d3d3d3">
-        <th width="20%">메인 페이지</th>
-        <th width="40%">멤버 페이지</th>
-        <th width="40%">앨범 페이지</th>
+        <th width="33.33%">메인 페이지</th>
+        <th width="33.33%">멤버 페이지</th>
+        <th width="33.33%">앨범 페이지</th>
     </tr>
     <tr>
-        <td><img alt="메인 이미지" src=""/></td>
-        <td><img alt="멤버 이미지" src=""/></td>
-        <td><img alt="앨범 이미지" src=""/></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 메인페이지" width="100%"></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 멤버페이지" width="100%"></td>
+        <td><img src="https://github.com/user-attachments/assets/aabc1f41-282d-4094-8e9f-33bb6f6330a9" alt="버니즈 앨범페이지" width="100%"></td>
     </tr>
 </table>
