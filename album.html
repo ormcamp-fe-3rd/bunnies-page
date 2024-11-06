@@ -30,15 +30,15 @@
         <!--TODO: 이전 앨범/ 재생 / 다음 앨범 버튼 클릭시 노래 재생 기능 추가-->
         <ul class="album_player_btn mx-16 mt-14 flex items-center justify-center">
           <li>
-            <button><img class="h-12 w-12" src="assets/images/albums/previous.png" /></button>
+            <button id="preAlbum"><img class="h-12 w-12" src="assets/images/albums/previous.png" /></button>
           </li>
           <li>
-            <button id="playBtn" class="album_player_play_btn" onclick="playMusic()">
+            <button id="playAlbum" class="album_player_play_btn" onclick="playAlbum()">
               <img class="mx-10 h-20 w-20" src="assets/images/albums/play-circle.png" />
             </button>
           </li>
           <li>
-            <button><img class="h-12 w-12" src="assets/images/albums/previous-1.png" /></button>
+            <button id="nextAlbum"><img class="h-12 w-12" src="assets/images/albums/previous-1.png" /></button>
           </li>
         </ul>
       </div>
