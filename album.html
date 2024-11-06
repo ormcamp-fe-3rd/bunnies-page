@@ -14,20 +14,21 @@
       <!--CD 플레이 영역-->
       <!--TODO: 앨범에 따라 이미지 변경, 노래 재생시 회전-->
       <div class="album_player flex h-96 w-96 flex-wrap justify-center">
-        <img class="CD_img h-96" src="assets/images/albums/cd_newjeans.png" />
+        <img id="cd_1" class="CD_img h-96 running" src="assets/images/albums/cd_newjeans.png" />
         <!--앨범 이동 btn 영역-->
         <!--TODO: 이전 앨범/ 재생 / 다음 앨범 버튼 클릭시 노래 재생 기능 추가-->
         <ul class="album_player_btn mx-16 mt-14 flex items-center justify-center">
-          <li
-            ><button><img class="h-12 w-12" src="assets/images/albums/previous.png" /></button
-          ></li>
-          <li
-            ><button class="album_player_play_btn"
-              ><img class="mx-10 h-20 w-20" src="assets/images/albums/play-circle.png" /></button
-          ></li>
-          <li
-            ><button><img class="h-12 w-12" src="assets/images/albums/previous-1.png" /></button
-          ></li>
+          <li>
+            <button><img class="h-12 w-12" src="assets/images/albums/previous.png" /></button>
+          </li>
+          <li>
+            <button id="playBtn" class="album_player_play_btn" onclick="playMusic()">
+              <img class="mx-10 h-20 w-20" src="assets/images/albums/play-circle.png" />
+            </button>
+          </li>
+          <li>
+            <button><img class="h-12 w-12" src="assets/images/albums/previous-1.png" /></button>
+          </li>
         </ul>
       </div>
       <!--영수증 영역-->
@@ -58,40 +59,40 @@
             </div>
             <p>3:00</p>
           </div>
-          <div class="album_selct_btn_02 flex justify-between"
-            ><!--## 영수증 플레이리스트 선택 영역2-->
+          <div class="album_selct_btn_02 flex justify-between">
+            <!--## 영수증 플레이리스트 선택 영역2-->
             <div class="flex">
               <p class="mr-10">02</p>
               <p>HYPE BOY</p>
             </div>
             <p>2:59</p>
           </div>
-          <div class="album_selct_btn_03 flex justify-between"
-            ><!--## 영수증 플레이리스트 선택 영역3-->
+          <div class="album_selct_btn_03 flex justify-between">
+            <!--## 영수증 플레이리스트 선택 영역3-->
             <div class="flex">
               <p class="mr-10">03</p>
               <p>COOKIE</p>
             </div>
             <p>3:55</p>
           </div>
-          <div class="album_selct_btn_04 flex justify-between"
-            ><!--## 영수증 플레이리스트 선택 영역4-->
+          <div class="album_selct_btn_04 flex justify-between">
+            <!--## 영수증 플레이리스트 선택 영역4-->
             <div class="flex">
               <p class="mr-10">04</p>
               <p>HURT</p>
             </div>
             <p>2:57</p>
           </div>
-          <div class="album_selct_btn_05 flex justify-between"
-            ><!--## 영수증 플레이리스트 선택 영역5-->
+          <div class="album_selct_btn_05 flex justify-between">
+            <!--## 영수증 플레이리스트 선택 영역5-->
             <div class="flex">
               <p class="mr-10">05</p>
               <p>DITTO</p>
             </div>
             <p>3:05</p>
           </div>
-          <div class="album_selct_btn_06 flex justify-between"
-            ><!--## 영수증 플레이리스트 선택 영역6-->
+          <div class="album_selct_btn_06 flex justify-between">
+            <!--## 영수증 플레이리스트 선택 영역6-->
             <div class="flex">
               <p class="mr-10">06</p>
               <p>OMG</p>
@@ -136,4 +137,5 @@
       </div>
     </div>
   </body>
+  <script src="/assets/js/album-playlist.js"></script>
 </html>
