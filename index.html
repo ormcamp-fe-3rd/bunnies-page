@@ -7,9 +7,51 @@
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
   </head>
   <body class="bg-zinc-950 text-white">
+    <!-- 멤버 카드 -->
+    <!-- TODO: 페이지로드시마다 카드의 rotate 값 랜덤변경(-12 ~ +12deg) -->
+    <section class="w-full">
+      <ul class="member-card-box m-5 flex gap-12 p-5">
+        <li class="member-card relative h-auto w-1/6 -rotate-12">
+          <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-minji-frame.png"
+            class="absolute rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+        <li class="relative h-auto w-1/6 -rotate-6">
+          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-danielle-frame.png"
+            class="absolute rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+        <li class="relative h-auto w-1/6 rotate-6">
+          <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-hanni-frame.png"
+            class="absolute rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+        <li class="relative h-auto w-1/6 -rotate-3">
+          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-hyein-frame.png"
+            class="absolute rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+        <li class="relative h-auto w-1/6 rotate-12">
+          <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-haerin-frame.png"
+            class="absolute rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+      </ul>
+    </section>
     <!-- 앨범 섹션 영역 지정 -->
+    <div class="h-[500px] w-full"></div>
     <div
-      class="z-0 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
+      class="z-0 m-3 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
       <div class="relative z-50 flex">
         <!-- 컴퓨터 목업 -->
         <img class="z-30 max-h-[900px] w-full object-contain" src="./assets/images/album/mac.png" alt="컴퓨터 이미지" />
@@ -28,16 +70,14 @@
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
-                    </div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <!-- 중간 버튼 형태 구현 -->
                     <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
-                    </div>
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -81,7 +121,7 @@
                     </tr>
                     <tr>
                       <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Hurt</td>
-                      <td class="font-cafe text-3xl">02:57 </td>
+                      <td class="font-cafe text-3xl">02:57</td>
                     </tr>
                   </table>
                 </div>
@@ -97,16 +137,14 @@
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
-                    </div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <!-- 중간 버튼 형태 구현 -->
                     <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
-                    </div>
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -158,16 +196,14 @@
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
-                    </div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <!-- 중간 버튼 형태 구현 -->
                     <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
-                    </div>
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -211,15 +247,15 @@
                     </tr>
                     <tr>
                       <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Cool With You</td>
-                      <td class="font-cafe text-3xl">02:28 </td>
+                      <td class="font-cafe text-3xl">02:28</td>
                     </tr>
                     <tr>
                       <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Get Up</td>
-                      <td class="font-cafe text-3xl">00:37 </td>
+                      <td class="font-cafe text-3xl">00:37</td>
                     </tr>
                     <tr>
                       <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">ASAP</td>
-                      <td class="font-cafe text-3xl">02:15 </td>
+                      <td class="font-cafe text-3xl">02:15</td>
                     </tr>
                   </table>
                 </div>
@@ -235,16 +271,14 @@
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
-                    </div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <!-- 중간 버튼 형태 구현 -->
                     <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
-                    </div>
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -296,16 +330,14 @@
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]">
-                    </div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <!-- 중간 버튼 형태 구현 -->
                     <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]">
-                    </div>
+                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"> </a>
+                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -342,8 +374,8 @@
                     <tr>
                       <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Right Now</td>
                       <td class="font-cafe text-3xl">02:58</td>
-                    </tr></table
-                  >
+                    </tr>
+                  </table>
                 </div>
               </div>
             </div>
