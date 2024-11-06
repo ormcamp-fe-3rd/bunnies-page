@@ -1,0 +1,49 @@
+.photo-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 포지셔닝의 기준이 될 요소로 설정 */
+  width: 1240px;
+  height: 640px; /* 화면 전체 높이 */
+  margin: 0 auto;
+}
+
+.photo-grid .Team-photo-minji img {
+  position: absolute; /* 절대 위치로 설정 */
+  width: 20%; /* 각 이미지의 너비 */
+  height: auto;
+  object-fit: cover; /* 이미지가 영역에 맞도록 */
+}
+
+.Team-photo-minji:nth-child(1) img {
+  top: 10%; /* 상단에서 10% 위치 */
+  left: 10%; /* 좌측에서 10% 위치 */
+}
+.Team-photo-minji:nth-child(2) img {
+  top: 5%; /* 상단에서 20% 위치 */
+  left: 30%; /* 좌측에서 30% 위치 */
+}
+.Team-photo-minji:nth-child(3) img {
+  top: 5%; /* 상단에서 30% 위치 */
+  left: 70%; /* 좌측에서 50% 위치 */
+}
+.Team-photo-minji:nth-child(4) img {
+  top: 40%; /* 상단에서 40% 위치 */
+  left: 60%; /* 좌측에서 70% 위치 */
+}
+.Team-photo-minji:nth-child(5) img {
+  top: 40%; /* 상단에서 50% 위치 */
+  left: 5%; /* 좌측에서 10% 위치 */
+}
+.Team-photo-minji:nth-child(6) img {
+  top: 45%; /* 상단에서 60% 위치 */
+  left: 20%; /* 좌측에서 30% 위치 */
+}
+.Team-photo-minji:nth-child(7) img {
+  top: 20%; /* 상단에서 70% 위치 */
+  left: 40%; /* 좌측에서 50% 위치 */
+}
+
+.Team-photo-minji img:hover {
+  filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
+}
