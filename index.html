@@ -37,47 +37,47 @@
       </div>
     </div>
 
-    <!-- ! 홈-바디-유튜브 -->
-    <!-- TODO: 홈-바디-유튜브 주소 입력 필요 -->
-    <div class="mt-5 flex flex-grow items-center justify-center">
-      <div class="home-body-youtube-border overflow-hidden rounded-[10px]">
+    <!-- s: 유튜브 -->
+    <section class="container mx-auto mb-24 mt-5">
+      <!-- s: 홈-바디-유튜브 -->
+      <!-- TODO: 홈-바디-유튜브 주소 입력 필요 -->
+      <div class="aspect-video w-full overflow-hidden rounded-lg border border-solid border-white border-opacity-50">
         <iframe
-          src="https://www.youtube.com/embed/"
-          width="1240"
-          height="696"
-          frameborder="0"
-          allowfullscreen
-          class="h-[696px] w-[1240px]"></iframe>
+          id="youtube"
+          class="h-full w-full"
+          src="https://www.youtube.com/embed/js1CtxSY38I?list=OLAK5uy_lnEFuNDiwH42yjMhiZYX8VKWzdqgQNzvA"
+          title="NewJeans (뉴진스) &#39;Attention&#39; Official MV"
+          frameborder="0"></iframe>
       </div>
-    </div>
+      <!-- e: 홈-바디-유튜브 -->
 
-    <!-- ! 홈-바디-텍스트 -->
-    <div class="mt-5 flex flex-col items-center">
-      <div class="flex h-[100px] w-[1240px] items-center justify-center overflow-hidden rounded-[10px]">
-        <div class="flex h-[28px] w-[507px] items-center justify-between">
-          <div class="flex items-center" style="width: 235px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">album</span>
-            <span class="font-ABeeZee ml-[10px] text-[24px]">Supernatural</span>
+      <!-- s: 홈-바디-텍스트 -->
+      <div
+        class="font-ABeeZee flex min-h-24 w-full flex-wrap items-center justify-between gap-4 rounded-lg text-center text-2xl max-md:justify-center">
+        <div class="flex w-1/2 flex-wrap items-center justify-between max-md:block max-md:w-full">
+          <div>
+            <span class="mr-2 opacity-70">album</span>
+            <span id="album">Supernatural</span>
           </div>
-          <div class="flex items-center" style="width: 194px; margin-left: 60px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">track</span>
-            <span class="font-ABeeZee ml-[10px] whitespace-nowrap text-[24px]">How Sweet</span>
+          <div>
+            <span class="mr-2 opacity-70">track</span>
+            <span id="track">How Sweet</span>
           </div>
         </div>
-        <div class="ml-auto flex items-center whitespace-nowrap">
-          <button class="mr-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&lt;</button>
+        <div class="flex items-center justify-between gap-4">
+          <button type="button">&lt;</button>
           <!-- TODO: 4개 영상이 화면표시 넘어가는 기능 필요 -->
-          <span class="mx-2 text-[24px] text-white">
-            3
-            <span class="home-body-light-text">/</span>
-            4
+          <span>
+            <span id="paging">3</span>
+            <span class="opacity-70">/</span>
+            <span id="total">4</span>
           </span>
-          <button class="ml-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&gt;</button>
+          <button type="button">&gt;</button>
         </div>
       </div>
-    </div>
-
-    <div class="mb-24"></div>
+      <!-- s: 홈-바디-텍스트 -->
+    </section>
+    <!-- e: 유튜브 -->
 
     <!-- 멤버 카드 -->
     <!-- TODO: 페이지로드시마다 카드의 rotate 값 랜덤변경(-12 ~ +12deg) -->
