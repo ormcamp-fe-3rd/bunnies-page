@@ -6,11 +6,12 @@
   align-items: center;
   margin: 0 auto;
 }
-#cd_1.running{
+
+.cd-wrap>img.running{
   animation: musicQ 5s linear infinite;
   animation-play-state: running;
 }
-#cd_1.paused{
+.cd-wrap>img.paused{
   animation: musicQ 5s linear infinite;
   animation-play-state: paused;
 }

@@ -14,7 +14,18 @@
       <!--CD 플레이 영역-->
       <!--TODO: 앨범에 따라 이미지 변경, 노래 재생시 회전-->
       <div class="album_player flex h-96 w-96 flex-wrap justify-center">
-        <img id="cd_1" class="CD_img h-96 running" src="assets/images/albums/cd_newjeans.png" />
+        <div class="cd-wrap">
+          <img id="cd_1" class="CD_img h-96 rounded-full running" 
+          src="assets/images/album/album_img/1stEP.jpg" />
+          <img id="cd_2" class="CD_img h-96 rounded-full hidden" 
+          src="assets/images/album/album_img/OMG.jpg" />
+          <img id="cd_3" class="CD_img h-96 rounded-full hidden" 
+          src="assets/images/album/album_img/GetUp.webp" />
+          <img id="cd_4" class="CD_img h-96 rounded-full hidden" 
+          src="assets/images/album/album_img/HowSweet.webp" />
+          <img id="cd_5" class="CD_img h-96 rounded-full hidden" 
+          src="assets/images/album/album_img/Supernatural.webp" />
+        </div>
         <!--앨범 이동 btn 영역-->
         <!--TODO: 이전 앨범/ 재생 / 다음 앨범 버튼 클릭시 노래 재생 기능 추가-->
         <ul class="album_player_btn mx-16 mt-14 flex items-center justify-center">
