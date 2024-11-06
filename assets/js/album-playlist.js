@@ -60,6 +60,7 @@ function toNextAlbum() {
     }
     nowAlbum.style.transform = 'rotateY(0)'
     nowAlbumSelect() //바뀐 앨범 선택
+    showPlaylist()
   }, 300)
 }
 function toPreAlbum() {
@@ -88,5 +89,20 @@ function toPreAlbum() {
     }
     nowAlbum.style.transform = 'rotateY(0)'
     nowAlbumSelect() //바뀐 앨범 선택
+    showPlaylist()
   }, 300)
+}
+
+//플레이리스트 변경
+const playlistWrap = document.querySelectorAll('.playlist-album-wrap>div')
+const playlistArr = Array.from(playlistWrap)
+
+function showPlaylist(){
+  for(let i = 0; i < playlistArr.length; i++){
+    if(i == nowAlbumIndex){
+      playlistArr[i].classList.remove("hidden")
+    }else{
+      playlistArr[i].classList.add("hidden")
+    }
+  }
 }
