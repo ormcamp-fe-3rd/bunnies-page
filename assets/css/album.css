@@ -6,7 +6,10 @@
   align-items: center;
   margin: 0 auto;
 }
-
+.cd-wrap>img{
+  transition: 0.3s;
+  /* transform: rotateY(180deg); */
+}
 .cd-wrap>img.running{
   animation: musicQ 5s linear infinite;
   animation-play-state: running;
