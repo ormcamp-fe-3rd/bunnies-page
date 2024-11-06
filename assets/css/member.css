@@ -1,61 +1,76 @@
 .photo-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* 포지셔닝의 기준이 될 요소로 설정 */
+  position: relative;
   width: 1240px;
-  height: 640px; /* 화면 전체 높이 */
+  height: 640px;
   margin: 0 auto;
 }
 
-.photo-grid .Team-photo-minji img {
-  position: absolute; /* 절대 위치로 설정 */
+/* 개별 이미지 컨테이너 */
+.Team-photo-minji {
+  position: absolute;
   width: 20%; /* 각 이미지의 너비 */
   height: auto;
-  object-fit: cover; /* 이미지가 영역에 맞도록 */
 }
 
-.Team-photo-minji:nth-child(1) img {
-  top: 10%; /* 상단에서 10% 위치 */
-  left: 10%; /* 좌측에서 10% 위치 */
-}
-.Team-photo-minji:nth-child(2) img {
-  top: 5%; /* 상단에서 20% 위치 */
-  left: 30%; /* 좌측에서 30% 위치 */
-}
-.Team-photo-minji:nth-child(3) img {
-  top: 5%; /* 상단에서 30% 위치 */
-  left: 70%; /* 좌측에서 50% 위치 */
-}
-.Team-photo-minji:nth-child(4) img {
-  top: 40%; /* 상단에서 40% 위치 */
-  left: 60%; /* 좌측에서 70% 위치 */
-}
-.Team-photo-minji:nth-child(5) img {
-  top: 40%; /* 상단에서 50% 위치 */
-  left: 5%; /* 좌측에서 10% 위치 */
-}
-.Team-photo-minji:nth-child(6) img {
-  top: 45%; /* 상단에서 60% 위치 */
-  left: 20%; /* 좌측에서 30% 위치 */
-}
-.Team-photo-minji:nth-child(7) img {
-  top: 20%; /* 상단에서 70% 위치 */
-  left: 40%; /* 좌측에서 50% 위치 */
+/* 이미지 스타일 */
+.Team-photo-minji img {
+  width: 100%; /* 컨테이너 너비에 맞추기 */
+  height: auto;
+  object-fit: cover;
 }
 
+/* 클릭 시 텍스트 중앙 표시 */
 .imtext {
   position: absolute;
-  top: 10%; /* 상단에서 10% 위치 */
-  left: 10%; /* 좌측에서 10% 위치 */
-  transform: translate(-50%, -10%);
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* 클릭 시에만 표시 */
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  pointer-events: none;
 }
 
+/* 이미지 클릭 시 텍스트 표시 */
+.Team-photo-minji:active .imtext {
+  display: block;
+}
+
+/*이미지 호버 시 색상 변경*/
 .Team-photo-minji img:hover {
   filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
 }
-.Team-photo-minji img:active {
-  /*클릭 시 레이어 제일 위로 배치*/
+.Team-photo-minji:active {
   z-index: 1;
+}
+
+/* 예시 위치 설정 */
+.minji_photo1 {
+  top: 10%;
+  left: 10%;
+}
+.minji_photo2 {
+  top: 5%;
+  left: 30%;
+}
+.minji_photo3 {
+  top: 5%;
+  left: 70%;
+}
+.minji_photo4 {
+  top: 40%;
+  left: 60%;
+}
+.minji_photo5 {
+  top: 40%;
+  left: 5%;
+}
+.minji_photo6 {
+  top: 45%;
+  left: 20%;
+}
+.minji_photo7 {
+  top: 20%;
+  left: 40%;
 }
