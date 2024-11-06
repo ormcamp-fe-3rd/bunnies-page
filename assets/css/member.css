@@ -8,7 +8,12 @@
 /* 개별 이미지 컨테이너 */
 .Team-photo-minji {
   position: absolute;
-  width: 20%; /* 각 이미지의 너비 */
+  width: 20%; /* 각 민지 이미지의 너비 */
+  height: auto;
+}
+.Team-photo-hanni {
+  position: absolute;
+  width: 20%; /* 각 하니 이미지의 너비 */
   height: auto;
 }
 
@@ -17,6 +22,12 @@
   width: 100%; /* 컨테이너 너비에 맞추기 */
   height: auto;
   object-fit: cover;
+}
+.Team-photo-hanni img {
+  width: 100%; /* 컨테이너 너비에 맞추기 */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* 클릭 시 텍스트 중앙 표시 */
@@ -36,41 +47,72 @@
 .Team-photo-minji:active .imtext {
   display: block;
 }
+.Team-photo-hanni:active .imtext {
+  display: block;
+}
 
 /*이미지 호버 시 색상 변경*/
 .Team-photo-minji img:hover {
   filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
 }
+.Team-photo-hanni img:hover {
+  filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
+}
+
+/*클릭 시 맨 앞으로 이미지 이동*/
 .Team-photo-minji:active {
+  z-index: 1;
+}
+.Team-photo-hanni:active {
   z-index: 1;
 }
 
 /* 예시 위치 설정 */
-.minji_photo1 {
+.minji_photo1,
+.hanni_photo1 {
   top: 10%;
   left: 10%;
 }
-.minji_photo2 {
+.minji_photo2,
+.hanni_photo2 {
   top: 5%;
   left: 30%;
 }
-.minji_photo3 {
+.minji_photo3,
+.hanni_photo3 {
   top: 5%;
   left: 70%;
 }
-.minji_photo4 {
+.minji_photo4,
+.hanni_photo4 {
   top: 40%;
   left: 60%;
 }
-.minji_photo5 {
+.minji_photo5,
+.hanni_photo5 {
   top: 40%;
   left: 5%;
 }
-.minji_photo6 {
+.minji_photo6,
+.hanni_photo6 {
   top: 45%;
   left: 20%;
 }
-.minji_photo7 {
+.minji_photo7,
+.hanni_photo7 {
   top: 20%;
   left: 40%;
+}
+
+.Team-photo-hanni-page {
+  display: none;
+}
+.Team-photo-dani-page {
+  display: none;
+}
+.Team-photo-haerin-page {
+  display: none;
+}
+.Team-photo-hyein-page {
+  display: none;
 }
