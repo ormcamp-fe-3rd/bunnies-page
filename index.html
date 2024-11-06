@@ -5,8 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bunnies Page</title>
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/member.css" />
+    <link rel="stylesheet" href="assets/css/album.css" />
   </head>
+
+  <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body class="bg-zinc-950 text-white">
+    <div class="flex h-[174px] w-full items-center justify-between px-5">
+      <div class="font-ABeeZee ml-[100px] whitespace-nowrap text-[40px] text-white">
+        Main
+        <a href="/member.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Team</a>
+        <a href="album.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Albums</a>
+      </div>
+      <div class="mr-[100px] flex items-center space-x-4">
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-[24px] w-[24px]" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-[24px] w-[24px]" />
+        </a>
+        <a href="https://www.instagram.com/newjeans_official/">
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-[24px] w-[24px]" />
+        </a>
+        <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY">
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-[24px] w-[24px]" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw">
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-[24px] w-[24px]" />
+        </a>
+      </div>
+    </div>
+
+    <!-- ! 홈-바디-유튜브 -->
+    <!-- TODO: 홈-바디-유튜브 주소 입력 필요 -->
+    <div class="mt-5 flex flex-grow items-center justify-center">
+      <div class="home-body-youtube-border overflow-hidden rounded-[10px]">
+        <iframe
+          src="https://www.youtube.com/embed/"
+          width="1240"
+          height="696"
+          frameborder="0"
+          allowfullscreen
+          class="h-[696px] w-[1240px]"></iframe>
+      </div>
+    </div>
+
+    <!-- ! 홈-바디-텍스트 -->
+    <div class="mt-5 flex flex-col items-center">
+      <div class="flex h-[100px] w-[1240px] items-center justify-center overflow-hidden rounded-[10px]">
+        <div class="flex h-[28px] w-[507px] items-center justify-between">
+          <div class="flex items-center" style="width: 235px">
+            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">album</span>
+            <span class="font-ABeeZee ml-[10px] text-[24px]">Supernatural</span>
+          </div>
+          <div class="flex items-center" style="width: 194px; margin-left: 60px">
+            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">track</span>
+            <span class="font-ABeeZee ml-[10px] whitespace-nowrap text-[24px]">How Sweet</span>
+          </div>
+        </div>
+        <div class="ml-auto flex items-center whitespace-nowrap">
+          <button class="mr-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&lt;</button>
+          <!-- TODO: 4개 영상이 화면표시 넘어가는 기능 필요 -->
+          <span class="mx-2 text-[24px] text-white">
+            3
+            <span class="home-body-light-text">/</span>
+            4
+          </span>
+          <button class="ml-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&gt;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-24"></div>
+
     <!-- 멤버 카드 -->
     <!-- TODO: 페이지로드시마다 카드의 rotate 값 랜덤변경(-12 ~ +12deg) -->
     <section class="w-full">
@@ -15,35 +87,35 @@
           <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100"
+            class="absolute rounded opacity-0 hover:opacity-100 w-full"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 -rotate-6">
           <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100"
+            class="absolute rounded opacity-0 hover:opacity-100 w-full"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 rotate-6">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100"
+            class="absolute rounded opacity-0 hover:opacity-100 w-full"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 -rotate-3">
           <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hyein-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100"
+            class="absolute rounded opacity-0 hover:opacity-100 w-full"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 rotate-12">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100"
+            class="absolute rounded opacity-0 hover:opacity-100 w-full"
             alt="" />
         </li>
       </ul>
@@ -98,7 +170,7 @@
                       <td colspan="2" class="bvw-[60%] text-7xl">New Jeans</td>
                     </tr>
                     <tr>
-                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
                       <td colspan="2" class="text-3xl">2022. 8. 1.</td>
                     </tr>
                   </table>
@@ -108,19 +180,19 @@
                       <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Attention</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Attention</td>
                       <td class="font-cafe text-3xl">02:59</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Hype Boy</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hype Boy</td>
                       <td class="font-cafe text-3xl">02:58</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Cookie</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Cookie</td>
                       <td class="font-cafe text-3xl">03:55</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Hurt</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hurt</td>
                       <td class="font-cafe text-3xl">02:57</td>
                     </tr>
                   </table>
@@ -165,7 +237,7 @@
                       <td colspan="2" class="bvw-[60%] text-7xl">OMG</td>
                     </tr>
                     <tr>
-                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
                       <td colspan="2" class="text-3xl">2023. 1. 2.</td>
                     </tr>
                   </table>
@@ -175,11 +247,11 @@
                       <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">OMG</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">OMG</td>
                       <td class="font-cafe text-3xl">03:33</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Ditto</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Ditto</td>
                       <td class="font-cafe text-3xl">03:06</td>
                     </tr>
                   </table>
@@ -224,7 +296,7 @@
                       <td colspan="2" class="bvw-[60%] text-7xl">Get Up</td>
                     </tr>
                     <tr>
-                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
                       <td colspan="2" class="text-3xl">2022. 8. 1.</td>
                     </tr>
                   </table>
@@ -234,27 +306,27 @@
                       <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">New Jeans</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">New Jeans</td>
                       <td class="font-cafe text-3xl">01:49</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Super Shy</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Super Shy</td>
                       <td class="font-cafe text-3xl">02:35</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">ETA</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">ETA</td>
                       <td class="font-cafe text-3xl">02:32</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Cool With You</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Cool With You</td>
                       <td class="font-cafe text-3xl">02:28</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Get Up</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Get Up</td>
                       <td class="font-cafe text-3xl">00:37</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">ASAP</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">ASAP</td>
                       <td class="font-cafe text-3xl">02:15</td>
                     </tr>
                   </table>
@@ -299,7 +371,7 @@
                       <td colspan="2" class="bvw-[60%] text-7xl">How Sweet</td>
                     </tr>
                     <tr>
-                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
                       <td colspan="2" class="text-3xl">2022. 8. 1.</td>
                     </tr>
                   </table>
@@ -309,11 +381,11 @@
                       <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">How Sweet</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">How Sweet</td>
                       <td class="font-cafe text-3xl">03:40</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-5xl leading-none">Bubble Gum</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Bubble Gum</td>
                       <td class="font-cafe text-3xl">03:21</td>
                     </tr>
                   </table>
@@ -358,7 +430,7 @@
                       <td colspan="2" class="bvw-[60%] text-6xl">Supernatural</td>
                     </tr>
                     <tr>
-                      <td class="font-cafe w-[60%] text-3xl">Release Date</td>
+                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
                       <td colspan="2" class="text-3xl">2024. 6. 21.</td>
                     </tr>
                   </table>
@@ -368,11 +440,11 @@
                       <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Supernatural</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Supernatural</td>
                       <td class="font-cafe text-3xl">02:59</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="font-cafe w-[80%] text-4xl leading-none">Right Now</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Right Now</td>
                       <td class="font-cafe text-3xl">02:58</td>
                     </tr>
                   </table>

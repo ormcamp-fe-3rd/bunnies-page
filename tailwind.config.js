@@ -14,6 +14,7 @@ module.exports = {
       cafe: ["'Cafe24Nyangi-W-v1.0'"],
       'cafe-fill': ["'Cafe24Nyangi-B-v1.0'"],
       lotte: ["'LOTTERIACHAB'"],
+      ABeeZee: ["'ABeeZee'"],
     },
   },
   plugins: []
