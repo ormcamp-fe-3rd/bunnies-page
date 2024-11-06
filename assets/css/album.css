@@ -6,6 +6,8 @@
   align-items: center;
   margin: 0 auto;
 }
+
+/* cd 애니메이션 효과 */
 .cd-wrap>img{
   transition: 0.3s linear;
   transform: rotateY(0);

@@ -41,14 +41,14 @@ function toNextAlbum() {
     nowAlbum.classList.remove('paused')
   }
   nowAlbum.style.transform = 'rotateY(160deg)'
-  setTimeout(() => {
+  setTimeout(() => {//cd 회전하는 시간동안 딜레이 후 수행
     playBtn.querySelector('img').src = playImg
-    //마지막 앨범이면 첫 앨범 속성 변경
+    //마지막 앨범이면 첫 앨범이 보이게 변경
     if (nowAlbumIndex == cdArr.length - 1) {
       cdArr[cdArr.length - 1].classList.add('hidden')
       cdArr[0].classList.remove('hidden')
     } else {
-      //현재 인덱스+1 앨범 속성 변경
+      //현재 인덱스+1 앨범이 보이게 변경
       for (let i = 0; i < cdArr.length; i++) {
         if (i == nowAlbumIndex) {
           cdArr[i].classList.add('hidden')
@@ -58,9 +58,9 @@ function toNextAlbum() {
         }
       }
     }
-    nowAlbum.style.transform = 'rotateY(0)'
+    nowAlbum.style.transform = 'rotateY(0)'//원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
-    showPlaylist()
+    showPlaylist() //영수증 변경
   }, 300)
 }
 function toPreAlbum() {
@@ -70,14 +70,14 @@ function toPreAlbum() {
     nowAlbum.classList.remove('paused')
   }
   nowAlbum.style.transform = 'rotateY(160deg)'
-  setTimeout(() => {
+  setTimeout(() => {//cd 회전하는 시간동안 딜레이 후 수행
     playBtn.querySelector('img').src = playImg
-    //첫번째 앨범이면 마지막 앨범 속성 변경
+    //첫번째 앨범이면 마지막 앨범이 보이게 변경
     if (nowAlbumIndex == 0) {
       cdArr[0].classList.add('hidden')
       cdArr[cdArr.length - 1].classList.remove('hidden')
     } else {
-      //현재 인덱스-1 앨범 속성 변경
+      //현재 인덱스-1 앨범이 보이게 변경
       for (let i = 0; i < cdArr.length; i++) {
         if (i == nowAlbumIndex) {
           cdArr[i].classList.add('hidden')
@@ -87,16 +87,16 @@ function toPreAlbum() {
         }
       }
     }
-    nowAlbum.style.transform = 'rotateY(0)'
+    nowAlbum.style.transform = 'rotateY(0)'//원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
-    showPlaylist()
+    showPlaylist() //영수증 변경
   }, 300)
 }
 
-//플레이리스트 변경
+//영수증 플레이리스트 변경
 const playlistWrap = document.querySelectorAll('.playlist-album-wrap>div')
 const playlistArr = Array.from(playlistWrap)
-
+//앨범별로 cd이미지의 배열인덱스와 플레이리스트 배열인덱스가 동일한 점을 활용
 function showPlaylist(){
   for(let i = 0; i < playlistArr.length; i++){
     if(i == nowAlbumIndex){
