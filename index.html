@@ -13,7 +13,7 @@
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body class="bg-zinc-950 text-white">
     <div class="flex h-[174px] w-full items-center justify-between px-5">
-      <div class="font-ABeeZee ml-[100px] whitespace-nowrap text-[40px] text-white">
+      <div class="ml-[100px] whitespace-nowrap font-ABeeZee text-[40px] text-white">
         Main
         <a href="/member.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Team</a>
         <a href="album.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Albums</a>
@@ -56,12 +56,12 @@
       <div class="flex h-[100px] w-[1240px] items-center justify-center overflow-hidden rounded-[10px]">
         <div class="flex h-[28px] w-[507px] items-center justify-between">
           <div class="flex items-center" style="width: 235px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">album</span>
-            <span class="font-ABeeZee ml-[10px] text-[24px]">Supernatural</span>
+            <span class="home-body-light-text ml-[10px] font-ABeeZee text-[24px]">album</span>
+            <span class="ml-[10px] font-ABeeZee text-[24px]">Supernatural</span>
           </div>
           <div class="flex items-center" style="width: 194px; margin-left: 60px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">track</span>
-            <span class="font-ABeeZee ml-[10px] whitespace-nowrap text-[24px]">How Sweet</span>
+            <span class="home-body-light-text ml-[10px] font-ABeeZee text-[24px]">track</span>
+            <span class="ml-[10px] whitespace-nowrap font-ABeeZee text-[24px]">How Sweet</span>
           </div>
         </div>
         <div class="ml-auto flex items-center whitespace-nowrap">
@@ -87,35 +87,35 @@
           <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100 w-full"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 -rotate-6">
           <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100 w-full"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 rotate-6">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100 w-full"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 -rotate-3">
           <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hyein-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100 w-full"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li class="relative h-auto w-1/6 rotate-12">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
-            class="absolute rounded opacity-0 hover:opacity-100 w-full"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
       </ul>
@@ -133,73 +133,76 @@
         </div>
         <div class="absolute z-30 p-[6%]">
           <!-- 컴퓨터 화면 내 컨텐츠 -->
+          <!-- 모달 배경 -->
+          <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
+
           <!-- 첫 번째 앨범 모달 창 -->
-          <span id="first-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-slate-300 shadow-lg">
+          <span
+            id="first-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div class="max-h-[80vh] overflow-auto rounded-md border border-[#acacac] bg-slate-300 shadow-lg">
               <!-- 상단 컨트롤바 css-->
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" data-modal="first-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
                 <span>New Jeans</span>
               </div>
               <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-col md:flex-row">
+                <div class="h-full w-full p-5 md:w-1/2">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="h-auto max-h-60 w-full border-2 border-solid border-gray-500 object-cover drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
                     src="./assets/images/album/album_img/1stEP.jpg"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-blue-950">
+                <div class="h-full w-full p-5 md:w-1/2">
+                  <table class="w-full font-cafe-fill leading-tight text-blue-950">
                     <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">New Jeans</td>
+                      <td colspan="2" class="text-3xl md:text-4xl">New Jeans</td>
                     </tr>
                     <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2022. 8. 1.</td>
+                      <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                      <td colspan="2" class="text-xl md:text-2xl">2022. 8. 1.</td>
                     </tr>
                   </table>
 
-                  <table class="font-cafe-fill text-blue-950">
+                  <table class="mt-4 w-full font-cafe-fill text-blue-950">
                     <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
+                      <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Attention</td>
-                      <td class="font-cafe text-3xl">02:59</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Attention</td>
+                      <td class="font-cafe text-lg md:text-xl">02:59</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hype Boy</td>
-                      <td class="font-cafe text-3xl">02:58</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Hype Boy</td>
+                      <td class="font-cafe text-lg md:text-xl">02:58</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Cookie</td>
-                      <td class="font-cafe text-3xl">03:55</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Cookie</td>
+                      <td class="font-cafe text-lg md:text-xl">03:55</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hurt</td>
-                      <td class="font-cafe text-3xl">02:57</td>
+                      <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Hurt</td>
+                      <td class="font-cafe text-lg md:text-xl">02:57</td>
                     </tr>
                   </table>
                 </div>
               </div>
             </div>
           </span>
+
           <!-- 두 번째 앨범 모달 창 -->
           <span id="second-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
             <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-neutral-400 shadow-lg">
@@ -494,29 +497,64 @@
     </div>
     <script>
       // TODO: close-btn 버튼을 클릭하면, 각 모달 팝업의 hiddem, block을 제거 후 추가하는 식으로 보이는 구조입니다.
-      // TODO: 모달 팝업의 외부 영역을 클릭해도 모달 창이 닫히면 편의성 면에서 좋을 것 같습니다. 이거는 테스트로 구현까진 못했어요.
-      // TODO: 아래는 테스트용으로 러프하게 짰는데 팝업창이 열리고 닫히는 것은 js 파일 분리 및 코드 최적화를 진행하면 좋을 것 같습니다.
       // 여유가 있다면 열리고 닫힐때 점점 커지면서 열리거나 반대로 닫힐땐 점점 작아지는(scale?) 액션도 추가하면 좋을 것 같습니다.
+      // 모달 열기
       document.querySelector('#first-album').addEventListener('click', function () {
         document.querySelector('#first-album-window').classList.remove('hidden')
         document.querySelector('#first-album-window').classList.add('block')
-      })
-      document.querySelector('#close-btn').addEventListener('click', function () {
-        document.querySelector('#first-album-window').classList.remove('block')
-        document.querySelector('#first-album-window').classList.add('hidden')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
       })
 
       document.querySelector('#second-album').addEventListener('click', function () {
-        alert('2번째 버튼입니다.')
+        document.querySelector('#second-album-window').classList.remove('hidden')
+        document.querySelector('#second-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
       })
+
       document.querySelector('#third-album').addEventListener('click', function () {
-        alert('3번째 버튼입니다.')
+        document.querySelector('#third-album-window').classList.remove('hidden')
+        document.querySelector('#third-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
       })
+
       document.querySelector('#forth-album').addEventListener('click', function () {
-        alert('4번째 버튼입니다.')
+        document.querySelector('#forth-album-window').classList.remove('hidden')
+        document.querySelector('#forth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
       })
+
       document.querySelector('#fifth-album').addEventListener('click', function () {
-        alert('5번째 버튼입니다.')
+        document.querySelector('#fifth-album-window').classList.remove('hidden')
+        document.querySelector('#fifth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      // 모달 닫기
+      function closeModal(modalId) {
+        document.querySelector(modalId).classList.remove('block')
+        document.querySelector(modalId).classList.add('hidden')
+        document.querySelector('#modal-background').classList.remove('block')
+        document.querySelector('#modal-background').classList.add('hidden')
+      }
+
+      document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          closeModal(`#${button.dataset.modal}`)
+        })
+      })
+
+      // 배경 클릭 시 모달 닫기
+      document.querySelector('#modal-background').addEventListener('click', function () {
+        closeModal('#first-album-window')
+        closeModal('#second-album-window')
+        closeModal('#third-album-window')
+        closeModal('#forth-album-window')
+        closeModal('#fifth-album-window')
       })
     </script>
   </body>
