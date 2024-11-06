@@ -15,6 +15,11 @@
   object-fit: cover; /* 이미지가 영역에 맞도록 */
 }
 
+.imtext {
+  position: absolute;
+  z-index: 1;
+}
+
 .Team-photo-minji:nth-child(1) img {
   top: 10%; /* 상단에서 10% 위치 */
   left: 10%; /* 좌측에서 10% 위치 */
