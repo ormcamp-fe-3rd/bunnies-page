@@ -654,6 +654,50 @@ body {
   top: 100%;
 }
 
+.top-\[\] {
+  top: ;
+}
+
+.top-\[85\%\] {
+  top: 85%;
+}
+
+.left-\[\] {
+  left: ;
+}
+
+.left-\[100\%\] {
+  left: 100%;
+}
+
+.right-12 {
+  right: 3rem;
+}
+
+.right-1\/2 {
+  right: 50%;
+}
+
+.right-\[100\] {
+  right: 100;
+}
+
+.right-\[\] {
+  right: ;
+}
+
+.-left-\[100\%\] {
+  left: -100%;
+}
+
+.-left-\[55\%\] {
+  left: -55%;
+}
+
+.left-\[55\%\] {
+  left: 55%;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -766,6 +810,10 @@ body {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .whitespace-nowrap {
@@ -922,6 +970,26 @@ body {
 
 .opacity-95 {
   opacity: 0.95;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-75 {
+  opacity: 0.75;
 }
 
 .transition {
