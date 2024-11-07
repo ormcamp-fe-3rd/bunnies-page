@@ -1,5 +1,6 @@
 /*photo 범위 설정*/
 .photo-grid {
+
   position: relative;
   width: 1240px;
   height: 640px;
@@ -12,6 +13,7 @@
   width: 20%;
   height: auto;
 }
+
 
 /* 이미지 스타일 */
 .team-photo img {

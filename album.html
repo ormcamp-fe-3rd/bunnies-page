@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunnies Page</title>
+    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
+    <link rel="stylesheet" href="assets/css/album.css" />
+  </head>
+
+  <body class="bg-zinc-950 text-white">
+    <!--플레이 리스트 전체 영역/ album.css에서 영역,마진 설정-->
+    <div class="album_playlist font-['Nanum Square Round']">
+      <!--CD 플레이 영역-->
+      <!--TODO: 노래 재생 기능 추가-->
+      <div class="album_player mt-48 w-96">
+        <div class="cd-rotate-wrap">
+          <div class="cd-wrap mx-auto">
+            <img id="cd_1" class="CD_img h-96 rounded-full" src="assets/images/album/album_img/1stEP.jpg" />
+            <img id="cd_2" class="CD_img hidden h-96 rounded-full" src="assets/images/album/album_img/OMG.jpg" />
+            <img id="cd_3" class="CD_img hidden h-96 rounded-full" src="assets/images/album/album_img/GetUp.webp" />
+            <img id="cd_4" class="CD_img hidden h-96 rounded-full" src="assets/images/album/album_img/HowSweet.webp" />
+            <img
+              id="cd_5"
+              class="CD_img hidden h-96 rounded-full"
+              src="assets/images/album/album_img/Supernatural.webp" />
+          </div>
+        </div>
+        <!--앨범 이동 btn 영역-->
+        <ul class="album_player_btn mx-auto mt-14 flex w-72 items-center justify-between">
+          <li>
+            <button id="preAlbum" onclick="changeAlbum('prev')">
+              <img class="h-12 w-12" src="assets/images/albums/previous.png" />
+            </button>
+          </li>
+          <li>
+            <button id="playAlbum" class="album_player_play_btn" onclick="playAlbum()">
+              <img class="h-20 w-20" src="assets/images/albums/play-circle.png" />
+            </button>
+          </li>
+          <li>
+            <button id="nextAlbum" onclick="changeAlbum('next')">
+              <img class="h-12 w-12" src="assets/images/albums/previous-1.png" />
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--영수증 영역-->
+      <div class="playList">
+        <img src="assets/images/albums/PlayList_logo.png" />
+        <p>order #3264</p>
+        <div class="playlist-album-wrap">
+          <div class="playlist-album-1">
+            <div class="flex justify-between">
+              <p>Aug 1, 2022</p>
+              <p>05:07 AM</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--## Title 3번째 줄 영수증-->
+            <div class="flex justify-between">
+              <div class="flex w-24 justify-between">
+                <p>##</p>
+                <p>TITLE</p>
+              </div>
+              <p>LENGTH</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_selct">
+              <div class="album_selct_btn_01 flex justify-between">
+                <!--TODO: 선택영역 선택시 해당 음악 플레이-->
+                <!--## 영수증 플레이리스트 선택 영역1-->
+                <div class="flex">
+                  <p class="mr-10">01</p>
+                  <p>ATTENTION</p>
+                </div>
+                <p>3:00</p>
+              </div>
+              <div class="album_selct_btn_02 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역2-->
+                <div class="flex">
+                  <p class="mr-10">02</p>
+                  <p>HYPE BOY</p>
+                </div>
+                <p>2:59</p>
+              </div>
+              <div class="album_selct_btn_03 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역3-->
+                <div class="flex">
+                  <p class="mr-10">03</p>
+                  <p>COOKIE</p>
+                </div>
+                <p>3:55</p>
+              </div>
+              <div class="album_selct_btn_04 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역4-->
+                <div class="flex">
+                  <p class="mr-10">04</p>
+                  <p>HURT</p>
+                </div>
+                <p>2:57</p>
+              </div>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_item_count flex justify-between">
+              <p>ITEM COUNT:</p>
+              <p>4</p>
+            </div>
+            <div class="album_item_length_total flex justify-between">
+              <p>TOTAL:</p>
+              <p>12:51</p>
+            </div>
+          </div>
+          <div class="playlist-album-2 hidden">
+            <div class="flex justify-between">
+              <p>Jan 2, 2023</p>
+              <p>04:11 AM</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--## Title 3번째 줄 영수증-->
+            <div class="flex justify-between">
+              <div class="flex w-24 justify-between">
+                <p>##</p>
+                <p>TITLE</p>
+              </div>
+              <p>LENGTH</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+
+            <div class="album_selct">
+              <div class="album_selct_btn_01 flex justify-between">
+                <!--TODO: 선택영역 선택시 해당 음악 플레이-->
+                <!--## 영수증 플레이리스트 선택 영역1-->
+                <div class="flex">
+                  <p class="mr-10">01</p>
+                  <p>OMG</p>
+                </div>
+                <p>3:37</p>
+              </div>
+              <div class="album_selct_btn_02 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역2-->
+                <div class="flex">
+                  <p class="mr-10">02</p>
+                  <p>Ditto</p>
+                </div>
+                <p>3:06</p>
+              </div>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--TODO: 앨범 속 음악 총 수, 시간에 따라 변경되야하는데 시간이없으시면 다른 내용으로 바꿔주세용-->
+            <div class="album_item_count flex justify-between">
+              <p>ITEM COUNT:</p>
+              <p>2</p>
+            </div>
+            <div class="album_item_length_total flex justify-between">
+              <p>TOTAL:</p>
+              <p>6:43</p>
+            </div>
+          </div>
+          <div class="playlist-album-3 hidden">
+            <div class="flex justify-between">
+              <p>Jun 21, 2023</p>
+              <p>10:06 AM</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--## Title 3번째 줄 영수증-->
+            <div class="flex justify-between">
+              <div class="flex w-24 justify-between">
+                <p>##</p>
+                <p>TITLE</p>
+              </div>
+              <p>LENGTH</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_selct">
+              <div class="album_selct_btn_01 flex justify-between">
+                <!--TODO: 선택영역 선택시 해당 음악 플레이-->
+                <!--## 영수증 플레이리스트 선택 영역1-->
+                <div class="flex">
+                  <p class="mr-10">01</p>
+                  <p>New Jeans</p>
+                </div>
+                <p>1:51</p>
+              </div>
+              <div class="album_selct_btn_02 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역2-->
+                <div class="flex">
+                  <p class="mr-10">02</p>
+                  <p>Super Shy</p>
+                </div>
+                <p>2:35</p>
+              </div>
+              <div class="album_selct_btn_03 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역3-->
+                <div class="flex">
+                  <p class="mr-10">03</p>
+                  <p>ETA</p>
+                </div>
+                <p>2:31</p>
+              </div>
+              <div class="album_selct_btn_04 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역4-->
+                <div class="flex">
+                  <p class="mr-10">04</p>
+                  <p>Cool With You</p>
+                </div>
+                <p>2:28</p>
+              </div>
+              <div class="album_selct_btn_05 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역5-->
+                <div class="flex">
+                  <p class="mr-10">05</p>
+                  <p>Get Up</p>
+                </div>
+                <p>0:36</p>
+              </div>
+              <div class="album_selct_btn_06 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역6-->
+                <div class="flex">
+                  <p class="mr-10">06</p>
+                  <p>ASAP</p>
+                </div>
+                <p>2:15</p>
+              </div>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--TODO: 앨범 속 음악 총 수, 시간에 따라 변경되야하는데 시간이없으시면 다른 내용으로 바꿔주세용-->
+            <div class="album_item_count flex justify-between">
+              <p>ITEM COUNT:</p>
+              <p>6</p>
+            </div>
+            <div class="album_item_length_total flex justify-between">
+              <p>TOTAL:</p>
+              <p>12:16</p>
+            </div>
+          </div>
+          <div class="playlist-album-4 hidden">
+            <div class="flex justify-between">
+              <p>May 24, 2024</p>
+              <p>05:15 AM</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--## Title 3번째 줄 영수증-->
+            <div class="flex justify-between">
+              <div class="flex w-24 justify-between">
+                <p>##</p>
+                <p>TITLE</p>
+              </div>
+              <p>LENGTH</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_selct">
+              <div class="album_selct_btn_01 flex justify-between">
+                <!--TODO: 선택영역 선택시 해당 음악 플레이-->
+                <!--## 영수증 플레이리스트 선택 영역1-->
+                <div class="flex">
+                  <p class="mr-10">01</p>
+                  <p>How Sweet</p>
+                </div>
+                <p>3:39</p>
+              </div>
+              <div class="album_selct_btn_02 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역2-->
+                <div class="flex">
+                  <p class="mr-10">02</p>
+                  <p>Bubble Gum</p>
+                </div>
+                <p>3:20</p>
+              </div>
+              <div class="album_selct_btn_03 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역3-->
+                <div class="flex">
+                  <p class="mr-10">03</p>
+                  <p>How Sweet(Instrumental)</p>
+                </div>
+                <p>3:39</p>
+              </div>
+              <div class="album_selct_btn_04 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역4-->
+                <div class="flex">
+                  <p class="mr-10">04</p>
+                  <p>Bubble Gum(Instrumental)</p>
+                </div>
+                <p>3:20</p>
+              </div>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--TODO: 앨범 속 음악 총 수, 시간에 따라 변경되야하는데 시간이없으시면 다른 내용으로 바꿔주세용-->
+            <div class="album_item_count flex justify-between">
+              <p>ITEM COUNT:</p>
+              <p>4</p>
+            </div>
+            <div class="album_item_length_total flex justify-between">
+              <p>TOTAL:</p>
+              <p>13:58</p>
+            </div>
+          </div>
+          <div class="playlist-album-5 hidden">
+            <div class="flex justify-between">
+              <p>Jul 21, 2026</p>
+              <p>04:21 AM</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <!--## Title 3번째 줄 영수증-->
+            <div class="flex justify-between">
+              <div class="flex w-24 justify-between">
+                <p>##</p>
+                <p>TITLE</p>
+              </div>
+              <p>LENGTH</p>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_selct">
+              <div class="album_selct_btn_01 flex justify-between">
+                <!--TODO: 선택영역 선택시 해당 음악 플레이-->
+                <!--## 영수증 플레이리스트 선택 영역1-->
+                <div class="flex">
+                  <p class="mr-10">01</p>
+                  <p>Supernatural</p>
+                </div>
+                <p>3:11</p>
+              </div>
+              <div class="album_selct_btn_02 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역2-->
+                <div class="flex">
+                  <p class="mr-10">02</p>
+                  <p>Right Now</p>
+                </div>
+                <p>2:41</p>
+              </div>
+              <div class="album_selct_btn_03 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역3-->
+                <div class="flex">
+                  <p class="mr-10">03</p>
+                  <p>Supernatural(Instrumental)</p>
+                </div>
+                <p>3:11</p>
+              </div>
+              <div class="album_selct_btn_04 flex justify-between">
+                <!--## 영수증 플레이리스트 선택 영역4-->
+                <div class="flex">
+                  <p class="mr-10">04</p>
+                  <p>Right Now(Instrumental)</p>
+                </div>
+                <p>2:41</p>
+              </div>
+            </div>
+            <hr class="my-4 border-dashed border-black" />
+            <div class="album_item_count flex justify-between">
+              <p>ITEM COUNT:</p>
+              <p>4</p>
+            </div>
+            <div class="album_item_length_total flex justify-between">
+              <p>TOTAL:</p>
+              <p>11:44</p>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 border-dashed border-black" />
+        <div class="album_card flex justify-between">
+          <p>CARD:</p>
+          <p>XXXX XXXX XXXX 3264</p>
+        </div>
+        <div class="album_auth flex justify-between">
+          <p>AUTH:</p>
+          <p>3071006411315421</p>
+        </div>
+        <div class="album_cardholder flex justify-between">
+          <p>CARDHOLDER:</p>
+          <p>3071006411315421</p>
+        </div>
+        <div class="album_label flex justify-between">
+          <p>LABEL:</p>
+          <p>PREVIOUS ADOR</p>
+        </div>
+        <hr class="my-4 border-dashed border-black" />
+        <a
+          class="album_newjeans_playlist_qr_image"
+          href="https://www.youtube.com/watch?v=A4S8zl50AdM&list=PL_Cqw69_m_ywY88NJ5SlpuaO_rmpKXO0D">
+          <!--## album.css에 크기 마진 조정-->
+          <img src="assets/images/albums/NEWJEANS_PLAYLIST_QR_image.png" />
+        </a>
+      </div>
+    </div>
+    <script src="/assets/js/album-playlist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="assets/js/three.js"></script>
+  </body>
+</html>

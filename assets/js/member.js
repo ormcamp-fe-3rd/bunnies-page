@@ -1,3 +1,4 @@
+
 //멤버별 페이지 호출
 const minji_images = document.querySelector('.team-photo-minji-page')
 const hanni_images = document.querySelector('.team-photo-hanni-page')
