@@ -7,6 +7,25 @@
   margin: 0 auto;
 }
 
+/* cd 애니메이션 효과 */
+.cd-wrap>img{
+  transition: 0.3s linear;
+  transform: rotateY(0);
+}
+.cd-wrap>img.running{
+  animation: musicQ 5s linear infinite;
+  animation-play-state: running;
+}
+.cd-wrap>img.paused{
+  animation: musicQ 5s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes musicQ {
+  0%{transform: rotate(0);}
+  100%{transform: rotate(360deg);}
+}
+
+
 .playList {
   /*영수증 플레이리스트*/
   transform: rotate(10deg); /*영수증 기울기*/

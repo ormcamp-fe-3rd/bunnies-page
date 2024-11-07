@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_squareround/nanum_squareround.css');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
 @font-face {
   font-family: 'Cafe24Nyangi-W-v1.0';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/Cafe24Nyangi-W-v1.0.woff2') format('woff2');
