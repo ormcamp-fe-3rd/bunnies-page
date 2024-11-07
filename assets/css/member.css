@@ -6,58 +6,15 @@
 }
 
 /* 개별 이미지 컨테이너 */
-.Team-photo-minji {
+.team-photo {
   position: absolute;
-  width: 20%; /* 각 민지 이미지의 너비 */
-  height: auto;
-}
-.Team-photo-hanni {
-  position: absolute;
-  width: 20%; /* 각 하니 이미지의 너비 */
-  height: auto;
-}
-.Team-photo-dani {
-  position: absolute;
-  width: 20%; /* 각 다니 이미지의 너비 */
-  height: auto;
-}
-.Team-photo-haerin {
-  position: absolute;
-  width: 20%; /* 각 해린 이미지의 너비 */
-  height: auto;
-}
-.Team-photo-hyein {
-  position: absolute;
-  width: 20%; /* 각 혜인 이미지의 너비 */
+  width: 20%;
   height: auto;
 }
 
 /* 이미지 스타일 */
-.Team-photo-minji img {
-  width: 100%; /* 민지 컨테이너 너비에 맞추기 */
-  height: auto;
-  object-fit: cover;
-}
-.Team-photo-hanni img {
-  width: 100%; /* 하니 컨테이너 너비에 맞추기 */
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.Team-photo-dani img {
-  width: 100%; /* 다니 컨테이너 너비에 맞추기 */
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.Team-photo-haerin img {
-  width: 100%; /* 해린 컨테이너 너비에 맞추기 */
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.Team-photo-hyein img {
-  width: 100%; /* 혜인 컨테이너 너비에 맞추기 */
+.team-photo img {
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
@@ -77,123 +34,99 @@
 }
 
 /* 이미지 클릭 시 텍스트 표시 */
-.Team-photo-minji:active .imtext {
-  display: block;
-}
-.Team-photo-hanni:active .imtext {
-  display: block;
-}
-.Team-photo-dani:active .imtext {
-  display: block;
-}
-.Team-photo-haerin:active .imtext {
-  display: block;
-}
-.Team-photo-hyein:active .imtext {
+.team-photo:active .imtext {
   display: block;
 }
 
 /*이미지 호버 시 색상 변경*/
-.Team-photo-minji img:hover {
+.team-photo-minji-page img:hover {
   filter: invert(26%) sepia(100%) saturate(5000%) hue-rotate(175deg) brightness(80%) contrast(90%);
 }
-.Team-photo-hanni img:hover {
+.team-photo-hanni-page img:hover {
   filter: invert(24%) sepia(81%) saturate(2000%) hue-rotate(303deg) brightness(67%) contrast(91%);
 }
-.Team-photo-dani img:hover {
+.team-photo-dani-page img:hover {
   filter: invert(28%) sepia(100%) saturate(497%) hue-rotate(344deg) brightness(103%) contrast(102%);
 }
-.Team-photo-haerin img:hover {
+.team-photo-haerin-page img:hover {
   filter: invert(20%) sepia(100%) saturate(4180%) hue-rotate(59deg) brightness(55%) contrast(96%);
 }
-.Team-photo-hyein img:hover {
+.team-photo-hyein-page img:hover {
   filter: invert(30%) sepia(89%) saturate(3593%) hue-rotate(243deg) brightness(98%) contrast(85%);
 }
 
 /*클릭 시 맨 앞으로 이미지 이동*/
-.Team-photo-minji:active {
-  z-index: 1;
-}
-.Team-photo-hanni:active {
-  z-index: 1;
-}
-.Team-photo-dani:active {
-  z-index: 1;
-}
-.Team-photo-haerin:active {
-  z-index: 1;
-}
-.Team-photo-hyein:active {
+.team-photo :active {
   z-index: 1;
 }
 
 /* 예시 위치 설정 */
-.minji_photo1,
-.hanni_photo1,
-.dani_photo1,
-.haerin_photo1,
-.hyein_photo1 {
+.minji-photo1,
+.hanni-photo1,
+.dani-photo1,
+.haerin-photo1,
+.hyein-photo1 {
   top: 10%;
   left: 10%;
 }
-.minji_photo2,
-.hanni_photo2,
-.dani_photo2,
-.haerin_photo2,
-.hyein_photo2 {
+.minji-photo2,
+.hanni-photo2,
+.dani-photo2,
+.haerin-photo2,
+.hyein-photo2 {
   top: 5%;
   left: 30%;
 }
-.minji_photo3,
-.hanni_photo3,
-.dani_photo3,
-.haerin_photo3,
-.hyein_photo3 {
+.minji-photo3,
+.hanni-photo3,
+.dani-photo3,
+.haerin-photo3,
+.hyein-photo3 {
   top: 5%;
   left: 70%;
 }
-.minji_photo4,
-.hanni_photo4,
-.dani_photo4,
-.haerin_photo4,
-.hyein_photo4 {
+.minji-photo4,
+.hanni-photo4,
+.dani-photo4,
+.haerin-photo4,
+.hyein-photo4 {
   top: 40%;
   left: 60%;
 }
-.minji_photo5,
-.hanni_photo5,
-.dani_photo6,
-.haerin_photo6,
-.hyein_photo6 {
+.minji-photo5,
+.hanni-photo5,
+.dani-photo5,
+.haerin-photo5,
+.hyein-photo5 {
   top: 40%;
   left: 5%;
 }
-.minji_photo6,
-.hanni_photo6,
-.dani_photo6,
-.haerin_photo6,
-.hyein_photo6 {
+.minji-photo6,
+.hanni-photo6,
+.dani-photo6,
+.haerin-photo6,
+.hyein-photo6 {
   top: 45%;
   left: 20%;
 }
-.minji_photo7,
-.hanni_photo7,
-.dani_photo7,
-.haerin_photo7,
-.hyein_photo7 {
+.minji-photo7,
+.hanni-photo7,
+.dani-photo7,
+.haerin-photo7,
+.hyein-photo7 {
   top: 20%;
   left: 40%;
 }
 
-.Team-photo-hanni-page {
+.team-photo-hanni-page {
   display: none;
 }
-.Team-photo-dani-page {
+.team-photo-dani-page {
   display: none;
 }
-.Team-photo-haerin-page {
+.team-photo-haerin-page {
   display: none;
 }
-.Team-photo-hyein-page {
+.team-photo-hyein-page {
   display: none;
 }

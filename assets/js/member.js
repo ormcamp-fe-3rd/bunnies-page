@@ -1,16 +1,16 @@
 //멤버별 페이지 호출
-const minji_images = document.querySelector('.Team-photo-minji-page')
-const hanni_images = document.querySelector('.Team-photo-hanni-page')
-const dani_images = document.querySelector('.Team-photo-dani-page')
-const haerin_images = document.querySelector('.Team-photo-haerin-page')
-const hyein_images = document.querySelector('.Team-photo-hyein-page')
+const minji_images = document.querySelector('.team-photo-minji-page')
+const hanni_images = document.querySelector('.team-photo-hanni-page')
+const dani_images = document.querySelector('.team-photo-dani-page')
+const haerin_images = document.querySelector('.team-photo-haerin-page')
+const hyein_images = document.querySelector('.team-photo-hyein-page')
 
 //페이지네이션 호출
-const pagination_btn_01 = document.querySelector('.member_Pagination01 img')
-const pagination_btn_02 = document.querySelector('.member_Pagination02 img')
-const pagination_btn_03 = document.querySelector('.member_Pagination03 img')
-const pagination_btn_04 = document.querySelector('.member_Pagination04 img')
-const pagination_btn_05 = document.querySelector('.member_Pagination05 img')
+const pagination_btn_01 = document.querySelector('.member-pagination01 img')
+const pagination_btn_02 = document.querySelector('.member-pagination02 img')
+const pagination_btn_03 = document.querySelector('.member-pagination03 img')
+const pagination_btn_04 = document.querySelector('.member-pagination04 img')
+const pagination_btn_05 = document.querySelector('.member-pagination05 img')
 
 //페이지네이션 민지 버튼 클릭 시
 pagination_btn_01.addEventListener('click', function () {
