@@ -94,3 +94,38 @@ pagination_btn_05.addEventListener('click', function () {
   pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-5.png'
 })
+
+//포토카드 드래그앤드롭
+function runDrag(cards) {
+  document.querySelectorAll(cards).forEach(contentDragged => {
+    // 마우스 시작 좌표 선언, 이동거리 값 0으로 셋팅
+    let xStart,
+      yStart,
+      changedValueX = 0,
+      changedValueY = 0
+    //마우스 이동거리 계산 (현재 좌표 - 드래그 시작 좌표)
+    const whenMouseMove = e => {
+      changedValueX = e.pageX - xStart
+      changedValueY = e.pageY - yStart
+      // 제한 범위 설정 (각 카드의 첫 위치로부터 300 이상 못 내려가게)
+      if (changedValueY > 300) changedValueY = 300
+      // 계산한 이동거리를 translateX,Y 각각에 반영
+      contentDragged.style.transform = 'translate(' + changedValueX + 'px, ' + changedValueY + 'px)'
+    }
+    //마우스 클릭을 멈추면, 마우스 위치 파악을 멈춤 (버그 방지 및 성능 개선)
+    const whenMouseUp = () => {
+      document.removeEventListener('mouseup', whenMouseUp)
+      document.removeEventListener('mousemove', whenMouseMove)
+    }
+    //마우스 클릭이 시작되면 마우스 현위 위치 파악 및 이동 거리 저장
+    contentDragged.addEventListener('mousedown', e => {
+      xStart = e.pageX - changedValueX
+      yStart = e.pageY - changedValueY
+      //브라우저의 마우스 기본 동작 제한
+      e.preventDefault()
+      document.addEventListener('mousemove', whenMouseMove)
+      document.addEventListener('mouseup', whenMouseUp)
+    })
+  })
+}
+runDrag('.Team-photo-minji, .Team-photo-hanni, .Team-photo-dani, .Team-photo-haerin, .Team-photo-hyein')
