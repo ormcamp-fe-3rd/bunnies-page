@@ -109,8 +109,8 @@ function runDrag(cards) {
     const whenMouseMove = e => {
       changedValueX = e.pageX - xStart
       changedValueY = e.pageY - yStart
-      // 제한 범위 설정 (각 카드의 첫 위치로부터 300 이상 못 내려가게)
-      if (changedValueY > 300) changedValueY = 300
+      // 제한 범위 설정 (각 카드의 첫 위치로부터 150 이상 못 내려가게)
+      if (changedValueY > 150) changedValueY = 150
       // 계산한 이동거리를 translateX,Y 각각에 반영
       contentDragged.style.transform = 'translate(' + changedValueX + 'px, ' + changedValueY + 'px)'
     }
@@ -119,6 +119,7 @@ function runDrag(cards) {
       document.removeEventListener('mouseup', whenMouseUp)
       document.removeEventListener('mousemove', whenMouseMove)
     }
+
     //마우스 클릭이 시작되면 마우스 현위 위치 파악 및 이동 거리 저장
     contentDragged.addEventListener('mousedown', e => {
       xStart = e.pageX - changedValueX
