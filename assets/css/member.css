@@ -132,3 +132,11 @@
 .team-photo-hyein-page {
   display: none;
 }
+
+#message-wrap-list>li{
+  animation: showup 0.5s ease-in; /*메세지 추가될때 효과*/
+}
+@keyframes showup {
+  0%{opacity: 0;}
+  100%{opacity: 0.8;}
+}
