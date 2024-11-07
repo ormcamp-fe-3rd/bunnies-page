@@ -2,35 +2,32 @@
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 const renderer = new THREE.WebGLRenderer({ antialias: true })
+
+// 조명 추가
+const ambientLight = new THREE.AmbientLight(0x404040, 1) // 주변광
+scene.add(ambientLight)
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1) // 방향광
+directionalLight.position.set(10, 10, 10).normalize() // 위치 설정
+scene.add(directionalLight)
+
+//랜더링
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
-// 배경색을 설정하여 장면이 잘 보이도록
-renderer.setClearColor(0xeeeeee, 1)
-
 // 지오메트리 텍스처 적용
 const textureLoader = new THREE.TextureLoader() // 이게 있어야 이미지 파일을 불러올 수 있는 객체가 생성됨
-textureLoader.load(
-  'asset/images/album/album_3d_texture/newjeans/front.png',
-  texture => {
-    // 텍스처가 정상적으로 로드되었을 때
-    console.log('Texture loaded')
-    const material = new THREE.MeshBasicMaterial({ map: texture })
-    cube.material = material // 큐브에 텍스처 적용
-  },
-  undefined,
-  error => {
-    console.error('Error loading texture:', error)
-  }
-)
 
-const newjeans_texture_front = textureLoader.load('assets/images/album/3dTexture/newjeans/front.png')
-const newjeans_texture_back = textureLoader.load('assets/images/album/3dTexture/newjeans/back.png')
-const newjeans_texture_top = textureLoader.load('assets/images/album/3dTexture/newjeans/top.png')
-const newjeans_texture_bottom = textureLoader.load('assets/images/album/3dTexture/newjeans/bottom.png')
-const newjeans_texture_left = textureLoader.load('assets/images/album/3dTexture/newjeans/left.png')
-const newjeans_texture_right = textureLoader.load('assets/images/album/3dTexture/newjeans/right.png')
+const newjeans_texture_front = textureLoader.load('./assets/images/album/3dTexture/newjeans/front.png')
+const newjeans_texture_back = textureLoader.load('./assets/images/album/3dTexture/newjeans/back.png')
+const newjeans_texture_top = textureLoader.load('./assets/images/album/3dTexture/newjeans/top.png')
+const newjeans_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/newjeans/bottom.png')
+const newjeans_texture_left = textureLoader.load('./assets/images/album/3dTexture/newjeans/left.png')
+const newjeans_texture_right = textureLoader.load('./assets/images/album/3dTexture/newjeans/right.png')
 
+// 큐브 지오메트리와 머티리얼 생성
+const geometry = new THREE.BoxGeometry(23.4, 30.9, 2.5) //앨범 사이즈
+//const material = new THREE.MeshStandardMaterial({ map: newjeans_texture_front })
 const materials = [
   new THREE.MeshStandardMaterial({ map: newjeans_texture_front }), // 앞면
   new THREE.MeshStandardMaterial({ map: newjeans_texture_back }), // 뒷면
@@ -39,11 +36,7 @@ const materials = [
   new THREE.MeshStandardMaterial({ map: newjeans_texture_left }), // 왼쪽면
   new THREE.MeshStandardMaterial({ map: newjeans_texture_right }) // 오른쪽면
 ]
-
-// 큐브 지오메트리와 머티리얼 생성
-const geometry = new THREE.BoxGeometry(23.4, 30.9, 2.5) //앨범 사이즈
-const material = new THREE.MeshStandardMaterial({ color: 0xff0000 })
-const cube = new THREE.Mesh(geometry, material)
+const cube = new THREE.Mesh(geometry, materials)
 scene.add(cube)
 
 // 카메라 위치 설정
