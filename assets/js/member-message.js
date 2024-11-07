@@ -15,7 +15,7 @@ function messageInit(e) {
     messageBtn.value = ''
 
     makeMessageDome(newMessage)//새로운 메세지 element 생성
-    limitMaxMessage(20)//메세지의 총 개수 조절
+    limitMaxMessage(10)//메세지의 총 개수 조절
   }
 }
 /**
@@ -49,7 +49,7 @@ function initOpacity(){
   let messageList = messageWrap.querySelectorAll('li')
   let messageListArr = Array.from(messageList)
   for(let i = 0; i < messageListArr.length; i++){
-    messageListArr[i].style.opacity = `${(i * 0.03)+0.3}`
+    messageListArr[i].style.opacity = `${(i * 0.05)+0.3}`
   }
 }
 
