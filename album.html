@@ -5,10 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bunnies Page</title>
     <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
-    <link rel="stylesheet" href="assets/css/album.css" />
+    <link rel="stylesheet" href="/assets/css/album.css" />
   </head>
 
   <body class="bg-zinc-950 text-white">
+    <!-- s: 헤더 -->
+    <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
+      <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
+        <a href="/" class="font-cafe-fill hover:font-cafe-fill">Main</a>
+        <a href="/member.html" class="hover:font-cafe-fill">Team</a>
+        <a href="/album.html" class="hover:font-cafe-fill">Albums</a>
+      </nav>
+      <!-- s: SNS -->
+      <div class="flex items-center justify-between gap-4 max-md:hidden">
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-6 w-6" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-6 w-6" />
+        </a>
+        <a href="https://www.instagram.com/newjeans_official/" target="_blank">
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-6 w-6" />
+        </a>
+        <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY" target="_blank">
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-6 w-6" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw" target="_blank">
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-6 w-6" />
+        </a>
+      </div>
+      <!-- e: SNS -->
+    </header>
+    <!-- e: 헤더 -->
+
     <!--플레이 리스트 전체 영역/ album.css에서 영역,마진 설정-->
     <div class="album_playlist font-['Nanum Square Round']">
       <!--CD 플레이 영역-->
@@ -383,6 +412,15 @@
     </div>
     <script src="/assets/js/album-playlist.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-    <script src="assets/js/three.js"></script>
+    <script src="/assets/js/three.js"></script>
+
+    <!-- s: 풋터 -->
+    <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
+      <a href="https://ador.world/" target="_blank">
+        <img src="/assets/images/header/logo-ador.svg" alt="ador" class="w-28" />
+      </a>
+      <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
+    </footer>
+    <!-- e: 풋터 -->
   </body>
 </html>
