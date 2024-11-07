@@ -24,18 +24,50 @@ function nowAlbumSelect() {
  * cd 재생/정지 애니메이션(Z축 회전)
  */
 function playAlbum() {
-  nowAlbumSelect()
-  if (nowAlbum.classList.contains('running')) {
+  const cdWrap = document.querySelector('.cd-wrap')
+  // nowAlbumSelect()
+  if (cdWrap.classList.contains('running')) {
     //재생중일때, 정지
-    nowAlbum.classList.add('paused')
     playBtn.querySelector('img').src = playImg
-  } else if (!nowAlbum.classList.contains('running')) {
+  } else {
     //재생아닐때, 재생
-    nowAlbum.classList.add('running')
     playBtn.querySelector('img').src = pausedImg
   }
+  cdWrap.classList.toggle('running')
 }
 
+/**
+ * 이전/다음 앨범으로 넘어가는 함수
+ *
+ * @param {string} direction 이전/다음 영상 여부. 값이 없을 경우 첫 번째 영상
+ */
+function changeAlbum(direction) {
+  nowAlbumSelect() //현재 화면에 나오고있는 앨범을 배열에서 선택
+  const cdRotateWrap = document.querySelector('.cd-rotate-wrap')
+  const cdWrap = document.querySelector('.cd-wrap')
+  //재생/정지 초기화
+  if (cdWrap.classList.contains('running')) {
+    cdWrap.classList.remove('running')
+  }
+  //다음 cd로 넘어가는 Y축 회전 애니메이션 시작
+  cdRotateWrap.style.transform = 'rotateY(90deg) scale(1.2)'
+  // TODO: toNextAlbum, toPreAlbum 함수 합치는 작업 중 중단하고 커밋함
+  //애니메이션 동작 시간동안 hidden 적용 딜레이
+  setTimeout(() => {
+    playBtn.querySelector('img').src = playImg
+    nowAlbum.classList.add('hidden')
+    if (direction == 'next') {
+      // 다음 앨범 실행일 경우
+      cdArr[nowAlbumIndex + 1].classList.remove('hidden')
+    } else {
+      // 이전 앨범 실행일 경우
+      cdArr[nowAlbumIndex - 1].classList.remove('hidden')
+    }
+    cdRotateWrap.style.transform = '' //원상복귀
+    nowAlbumSelect() //바뀐 앨범 선택
+    showPlaylist() //영수증 변경
+  }, 300)
+}
 
 /**
  * 다음 버튼 클릭시 다음 앨범으로 넘어가는 함수
@@ -116,12 +148,12 @@ const playlistArr = Array.from(playlistWrap)
  * 현재 cd 이미지에 따라 영수증 플레이리스트 변경
  * (앨범별로 cd이미지의 배열인덱스와 플레이리스트 배열인덱스가 동일)
  */
-function showPlaylist(){
-  for(let i = 0; i < playlistArr.length; i++){
-    if(i == nowAlbumIndex){
-      playlistArr[i].classList.remove("hidden")
-    }else{
-      playlistArr[i].classList.add("hidden")
+function showPlaylist() {
+  for (let i = 0; i < playlistArr.length; i++) {
+    if (i == nowAlbumIndex) {
+      playlistArr[i].classList.remove('hidden')
+    } else {
+      playlistArr[i].classList.add('hidden')
     }
   }
 }
