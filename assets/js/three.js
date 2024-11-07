@@ -10,6 +10,19 @@ renderer.setClearColor(0xeeeeee, 1)
 
 // 지오메트리 텍스처 적용
 const textureLoader = new THREE.TextureLoader() // 이게 있어야 이미지 파일을 불러올 수 있는 객체가 생성됨
+textureLoader.load(
+  'asset/images/album/album_3d_texture/newjeans/front.png',
+  texture => {
+    // 텍스처가 정상적으로 로드되었을 때
+    console.log('Texture loaded')
+    const material = new THREE.MeshBasicMaterial({ map: texture })
+    cube.material = material // 큐브에 텍스처 적용
+  },
+  undefined,
+  error => {
+    console.error('Error loading texture:', error)
+  }
+)
 
 const newjeans_texture_front = textureLoader.load('assets/images/album/3dTexture/newjeans/front.png')
 const newjeans_texture_back = textureLoader.load('assets/images/album/3dTexture/newjeans/back.png')
