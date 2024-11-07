@@ -4,80 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bunnies Page</title>
-    <link rel="stylesheet" href="./assets/css/tailwindcss.output.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/member.css" />
-    <link rel="stylesheet" href="assets/css/album.css" />
+    <link rel="stylesheet" href="/assets/css/tailwindcss.output.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="/assets/css/member.css" />
+    <link rel="stylesheet" href="/assets/css/album.css" />
+    <script src="/assets/js/home.js"></script>
   </head>
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
-  <body class="bg-zinc-950 text-white">
-    <div class="flex h-[174px] w-full items-center justify-between px-5">
-      <div class="font-ABeeZee ml-[100px] whitespace-nowrap text-[40px] text-white">
-        Main
-        <a href="/member.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Team</a>
-        <a href="album.html" class="home-menu-text-stroke ml-[80px] text-[40px]">Albums</a>
+  <body class="bg-zinc-950 text-white" onload="init()">
+    <!-- s: 헤더 -->
+    <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
+      <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
+        <a href="/" class="font-cafe-fill hover:font-cafe-fill">Main</a>
+        <a href="/member.html" class="hover:font-cafe-fill">Team</a>
+        <a href="/album.html" class="hover:font-cafe-fill">Albums</a>
+      </nav>
+      <!-- s: SNS -->
+      <div class="flex items-center justify-between gap-4 max-md:hidden">
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-6 w-6" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-6 w-6" />
+        </a>
+        <a href="https://www.instagram.com/newjeans_official/" target="_blank">
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-6 w-6" />
+        </a>
+        <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY" target="_blank">
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-6 w-6" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw" target="_blank">
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-6 w-6" />
+        </a>
       </div>
-      <div class="mr-[100px] flex items-center space-x-4">
-        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
-          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-[24px] w-[24px]" />
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1">
-          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-[24px] w-[24px]" />
-        </a>
-        <a href="https://www.instagram.com/newjeans_official/">
-          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-[24px] w-[24px]" />
-        </a>
-        <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY">
-          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-[24px] w-[24px]" />
-        </a>
-        <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw">
-          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-[24px] w-[24px]" />
-        </a>
-      </div>
-    </div>
+      <!-- e: SNS -->
+    </header>
+    <!-- e: 헤더 -->
 
-    <!-- ! 홈-바디-유튜브 -->
-    <!-- TODO: 홈-바디-유튜브 주소 입력 필요 -->
-    <div class="mt-5 flex flex-grow items-center justify-center">
-      <div class="home-body-youtube-border overflow-hidden rounded-[10px]">
+    <!-- s: 유튜브 -->
+    <section class="container mx-auto mb-24 mt-5 max-md:px-5">
+      <!-- s: 홈-바디-유튜브 -->
+      <div class="aspect-video w-full rounded-lg border border-solid border-white border-opacity-50">
         <iframe
-          src="https://www.youtube.com/embed/"
-          width="1240"
-          height="696"
-          frameborder="0"
-          allowfullscreen
-          class="h-[696px] w-[1240px]"></iframe>
+          id="youtube"
+          class="h-full w-full"
+          frameborder="0" allow="autoplay" allowfullscreen></iframe>
       </div>
-    </div>
+      <!-- e: 홈-바디-유튜브 -->
 
-    <!-- ! 홈-바디-텍스트 -->
-    <div class="mt-5 flex flex-col items-center">
-      <div class="flex h-[100px] w-[1240px] items-center justify-center overflow-hidden rounded-[10px]">
-        <div class="flex h-[28px] w-[507px] items-center justify-between">
-          <div class="flex items-center" style="width: 235px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">album</span>
-            <span class="font-ABeeZee ml-[10px] text-[24px]">Supernatural</span>
+      <!-- s: 홈-바디-텍스트 -->
+      <div
+        class="font-ABeeZee flex min-h-24 w-full flex-wrap items-center justify-between gap-4 rounded-lg text-center text-2xl max-md:justify-center max-md:pt-3">
+        <div class="flex w-5/6 flex-wrap items-center gap-x-20 max-md:block max-md:w-full">
+          <div>
+            <span class="mr-2 opacity-70">album</span>
+            <span id="album">Get Up</span>
           </div>
-          <div class="flex items-center" style="width: 194px; margin-left: 60px">
-            <span class="home-body-light-text font-ABeeZee ml-[10px] text-[24px]">track</span>
-            <span class="font-ABeeZee ml-[10px] whitespace-nowrap text-[24px]">How Sweet</span>
+          <div>
+            <span class="mr-2 opacity-70">track</span>
+            <span id="track">Super Shy</span>
           </div>
         </div>
-        <div class="ml-auto flex items-center whitespace-nowrap">
-          <button class="mr-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&lt;</button>
-          <!-- TODO: 4개 영상이 화면표시 넘어가는 기능 필요 -->
-          <span class="mx-2 text-[24px] text-white">
-            3
-            <span class="home-body-light-text">/</span>
-            4
+        <div class="flex items-center justify-between gap-4">
+          <button type="button" id="prev" onclick="setVideo('prev')">&lt;</button>
+          <span>
+            <span id="paging">1</span>
+            <span class="opacity-70">/</span>
+            <span id="total">1</span>
           </span>
-          <button class="ml-4 cursor-pointer border-none bg-transparent text-[24px] text-white">&gt;</button>
+          <button type="button" id="next" onclick="setVideo('next')">&gt;</button>
         </div>
       </div>
-    </div>
-
-    <div class="mb-24"></div>
+      <!-- s: 홈-바디-텍스트 -->
+    </section>
+    <!-- e: 유튜브 -->
 
     <!-- 멤버 카드 -->
     <section class="w-full cursor-[url('/assets/images/cursor/clickMe.png'),_pointer]">
@@ -505,6 +506,12 @@
         document.querySelector('#first-album-window').classList.add('hidden')
       })
     </script>
+
+    <!-- s: 풋터 -->
+    <footer class="container mx-auto py-10 font-cafe-fill text-4xl">
+      <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank"></a>Hongdaeipgu</a>
+    </footer>
+    <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
   </body>
 </html>
