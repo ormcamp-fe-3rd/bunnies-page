@@ -8,7 +8,9 @@ const playImg = 'assets/images/albums/play-circle.png'
 let nowAlbum = ''
 let nowAlbumIndex = ''
 
-//hidden 여부에따라 현재 보여지는 앨범을 선택
+/**
+ * hidden 여부에따라 현재 보여지는 앨범을 배열에서 선택
+ */
 function nowAlbumSelect() {
   for (let i = 0; i < cdArr.length; i++) {
     if (!cdArr[i].classList.contains('hidden')) {
@@ -18,10 +20,11 @@ function nowAlbumSelect() {
   }
 }
 
-//cd 재생 애니메이션(회전)
+/**
+ * cd 재생/정지 애니메이션(Z축 회전)
+ */
 function playAlbum() {
   nowAlbumSelect()
-
   if (nowAlbum.classList.contains('running')) {
     //재생중일때, 정지
     nowAlbum.classList.add('paused')
@@ -33,15 +36,21 @@ function playAlbum() {
   }
 }
 
-//nextBtn, preBtn 클릭 -> hidden 클래스 변경, nowAlbum 선택
+
+/**
+ * 다음 버튼 클릭시 다음 앨범으로 넘어가는 함수
+ */
 function toNextAlbum() {
-  nowAlbumSelect() //현재 앨범 확인, 재생중이라면 정지
+  nowAlbumSelect() //현재 화면에 나오고있는 앨범을 배열에서 선택
+  //재생/정지 초기화
   if (nowAlbum.classList.contains('running') || nowAlbum.classList.contains('paused')) {
     nowAlbum.classList.remove('running')
     nowAlbum.classList.remove('paused')
   }
+  //다음 cd로 넘어가는 Y축 회전 애니메이션 시작
   nowAlbum.style.transform = 'rotateY(160deg)'
-  setTimeout(() => {//cd 회전하는 시간동안 딜레이 후 수행
+  //애니메이션 동작 시간동안 hidden 적용 딜레이
+  setTimeout(() => {
     playBtn.querySelector('img').src = playImg
     //마지막 앨범이면 첫 앨범이 보이게 변경
     if (nowAlbumIndex == cdArr.length - 1) {
@@ -58,19 +67,26 @@ function toNextAlbum() {
         }
       }
     }
-    nowAlbum.style.transform = 'rotateY(0)'//원상복귀
+    nowAlbum.style.transform = 'rotateY(0)' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     showPlaylist() //영수증 변경
   }, 300)
 }
+
+/**
+ * 이전 버튼 클릭시 이전 앨범으로 넘어가는 함수
+ */
 function toPreAlbum() {
-  nowAlbumSelect() //현재 앨범 확인, 재생중이라면 정지
+  nowAlbumSelect() //현재 화면에 나오고있는 앨범을 배열에서 선택
+  //재생/정지 초기화
   if (nowAlbum.classList.contains('running') || nowAlbum.classList.contains('paused')) {
     nowAlbum.classList.remove('running')
     nowAlbum.classList.remove('paused')
   }
+  //다음 cd로 넘어가는 Y축 회전 애니메이션 시작
   nowAlbum.style.transform = 'rotateY(160deg)'
-  setTimeout(() => {//cd 회전하는 시간동안 딜레이 후 수행
+  //애니메이션 동작 시간동안 hidden 적용 딜레이
+  setTimeout(() => {
     playBtn.querySelector('img').src = playImg
     //첫번째 앨범이면 마지막 앨범이 보이게 변경
     if (nowAlbumIndex == 0) {
@@ -87,16 +103,19 @@ function toPreAlbum() {
         }
       }
     }
-    nowAlbum.style.transform = 'rotateY(0)'//원상복귀
+    nowAlbum.style.transform = 'rotateY(0)' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     showPlaylist() //영수증 변경
   }, 300)
 }
 
-//영수증 플레이리스트 변경
 const playlistWrap = document.querySelectorAll('.playlist-album-wrap>div')
 const playlistArr = Array.from(playlistWrap)
-//앨범별로 cd이미지의 배열인덱스와 플레이리스트 배열인덱스가 동일한 점을 활용
+
+/**
+ * 현재 cd 이미지에 따라 영수증 플레이리스트 변경
+ * (앨범별로 cd이미지의 배열인덱스와 플레이리스트 배열인덱스가 동일)
+ */
 function showPlaylist(){
   for(let i = 0; i < playlistArr.length; i++){
     if(i == nowAlbumIndex){
