@@ -133,13 +133,12 @@
           <img src="./assets/images/album/pc-outside-background.jpg_large" alt="컴퓨터 배경화면" />
         </div>
         <div class="absolute z-30 p-[6%]">
-          <!-- 모달 배경 -->
-          <div id="modal-background" class="fixed inset-0 z-40 hidden"></div>
+          <!-- 첫 번째 앨범 모달 창 -->
           <span
             id="first-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div
-              class="mmax-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-neutral-400 pb-10 shadow-lg">
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
@@ -163,8 +162,8 @@
                     src="./assets/images/album/album_img/1stEP.jpg"
                     alt="" />
                 </div>
-                <div class="ml-[50px]">
-                  <div class="flex flex-col rounded-md bg-gray-400 p-5">
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
                     <table class="text-left font-cafe-fill leading-tight text-blue-950">
                       <tr>
                         <td colspan="2" class="text-3xl md:text-4xl">New Jeans</td>
@@ -195,23 +194,23 @@
                   href="https://www.melon.com/album/detail.htm?albumId=11127145"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.music-flo.com/detail/album/410940180/albumtrack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
                 </a>
               </div>
@@ -223,13 +222,14 @@
           <span
             id="second-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md bg-neutral-400 pb-10 shadow-lg">
+            <div
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-red-100 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="second-album-window">
                     <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c08e38]"></div>
+                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
@@ -238,7 +238,7 @@
                     </div>
                   </span>
                 </div>
-                <span class="text-2xl" style="color: black">OMG</span>
+                <span style="color: black">OMG</span>
               </div>
               <div class="flex flex-row items-center justify-center py-10">
                 <div class="flex-shrink-0">
@@ -247,38 +247,28 @@
                     src="./assets/images/album/album_img/OMG.jpg"
                     alt="" />
                 </div>
-                <div class="ml-[50px]">
-                  <div class="flex flex-col rounded-md bg-gray-800 p-5">
-                    <table class="text-left font-cafe-fill leading-tight">
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-blue-950">
                       <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl" style="color: black">OMG</td>
+                        <td colspan="2" class="text-3xl md:text-4xl">OMG</td>
                       </tr>
                       <tr>
-                        <td class="text-left font-cafe text-xl md:text-2xl" style="color: black">Release Date</td>
-                        <td colspan="2" class="text-left text-xl md:text-2xl" style="color: black">2023. 1. 2.</td>
+                        <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                        <td colspan="2" class="text-xl md:text-2xl">2023. 1. 2.</td>
                       </tr>
                     </table>
-                    <table class="mt-4 w-full overflow-auto font-cafe-fill">
+                    <table class="mt-4 w-full font-cafe-fill text-blue-950">
                       <tr>
-                        <td colspan="3" class="text-left text-3xl md:text-4xl" style="color: black">Playlist</td>
+                        <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
                       </tr>
                       <tr>
-                        <td
-                          colspan="2"
-                          class="w-[80%] text-left font-cafe text-xl leading-none md:text-2xl"
-                          style="color: black">
-                          OMG
-                        </td>
-                        <td class="text-left font-cafe text-lg md:text-xl" style="color: black">03:33</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">OMG</td>
+                        <td class="font-cafe text-lg md:text-xl">03:33</td>
                       </tr>
                       <tr>
-                        <td
-                          colspan="2"
-                          class="w-[80%] text-left font-cafe text-xl leading-none md:text-2xl"
-                          style="color: black">
-                          Ditto
-                        </td>
-                        <td class="text-left font-cafe text-lg md:text-xl" style="color: black">03:06</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Ditto</td>
+                        <td class="font-cafe text-lg md:text-xl">03:06</td>
                       </tr>
                     </table>
                   </div>
@@ -289,23 +279,23 @@
                   href="https://www.melon.com/album/detail.htm?albumId=11127145"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.music-flo.com/detail/album/410940180/albumtrack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
                 </a>
               </div>
@@ -332,7 +322,7 @@
                     </div>
                   </span>
                 </div>
-                <span class="text-blue-600">Get Up</span>
+                <span>Get Up</span>
               </div>
               <div class="flex flex-row items-center justify-center py-10">
                 <div class="flex-shrink-0">
@@ -341,27 +331,27 @@
                     src="./assets/images/album/album_img/GetUp.webp"
                     alt="" />
                 </div>
-                <div class="ml-[50px]">
-                  <div class="flex flex-col rounded-md bg-gray-800 p-5">
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
                     <table class="text-left font-cafe-fill leading-tight text-gray-900">
                       <tr>
-                        <td colspan="2" class="text-5xl text-blue-600 md:text-4xl">Get Up</td>
+                        <td colspan="2" class="text-3xl">Get Up</td>
                       </tr>
                       <tr>
-                        <td class="font-cafe text-2xl text-blue-600 md:text-xl">Release Date</td>
-                        <td colspan="2" class="text-2xl text-blue-600 md:text-xl">2022. 8. 1.</td>
+                        <td class="font-cafe text-xl">Release Date</td>
+                        <td colspan="2" class="text-xl">2022. 8. 1.</td>
                       </tr>
                     </table>
                     <table class="mt-4 text-left font-cafe-fill text-teal-600">
                       <tr>
-                        <td colspan="3" class="text-5xl text-teal-600 md:text-4xl">Playlist</td>
+                        <td colspan="3" class="text-3xl">Playlist</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none text-teal-600">New Jeans</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none">New Jeans</td>
                         <td class="font-cafe text-lg">01:49</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none text-teal-600">Super Shy</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none">Super Shy</td>
                         <td class="font-cafe text-lg">02:35</td>
                       </tr>
                     </table>
@@ -373,23 +363,23 @@
                   href="https://www.melon.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.music-flo.com/detail/album/425287164/albumtrack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
                 </a>
               </div>
@@ -426,28 +416,28 @@
                     src="./assets/images/album/album_img/HowSweet.webp"
                     alt="" />
                 </div>
-                <div class="ml-[50px]">
-                  <div class="flex flex-col rounded-md bg-gray-800 p-5">
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
                     <table class="text-left font-cafe-fill leading-tight text-orange-300">
                       <tr>
-                        <td colspan="2" class="text-5xl md:text-4xl">How Sweet</td>
+                        <td colspan="2" class="text-3xl md:text-4xl">How Sweet</td>
                       </tr>
                       <tr>
-                        <td class="font-cafe text-2xl md:text-xl">Release Date</td>
-                        <td colspan="2" class="text-2xl md:text-xl">2022. 8. 1.</td>
+                        <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                        <td colspan="2" class="text-xl md:text-2xl">2022. 8. 1.</td>
                       </tr>
                     </table>
                     <table class="mt-4 text-left font-cafe-fill text-orange-300">
                       <tr>
-                        <td colspan="3" class="text-5xl md:text-4xl">Playlist</td>
+                        <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none md:text-4xl">How Sweet</td>
-                        <td class="font-cafe text-3xl md:text-2xl">03:40</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">How Sweet</td>
+                        <td class="font-cafe text-lg md:text-xl">03:40</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none md:text-4xl">Bubble Gum</td>
-                        <td class="font-cafe text-3xl md:text-2xl">03:21</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Bubble Gum</td>
+                        <td class="font-cafe text-lg md:text-xl">03:21</td>
                       </tr>
                     </table>
                   </div>
@@ -458,23 +448,23 @@
                   href="https://www.melon.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.music-flo.com/detail/album/425287164/albumtrack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
                 <a
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
                 </a>
               </div>
@@ -487,7 +477,7 @@
             id="fifth-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div
-              class="h-[108%] max-h-[90vh] w-[114%] overflow-auto rounded-md border border-[#acacac] bg-neutral-400 shadow-lg">
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-stone-900 pb-10 shadow-lg">
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
@@ -511,28 +501,27 @@
                     src="./assets/images/album/album_img/Supernatural.webp"
                     alt="" />
                 </div>
-                <div class="ml-[50px]">
-                  <div class="flex flex-col rounded-md bg-gray-400 p-5">
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
                     <table class="text-left font-cafe-fill leading-tight text-green-400">
                       <tr>
-                        <td colspan="2" class="text-4xl">Supernatural</td>
+                        <td colspan="2" class="text-3xl">Supernatural</td>
                       </tr>
                       <tr>
-                        <td class="w-[60%] font-cafe text-2xl">Release Date</td>
-                        <td colspan="2" class="text-2xl">2024. 6. 21.</td>
+                        <td class="style=color: #ffbd4c w-[60%] font-cafe text-xl">Release Date 2024. 6. 21.</td>
                       </tr>
                     </table>
                     <table class="mt-4 text-left font-cafe-fill text-yellow-300">
                       <tr>
-                        <td colspan="3" class="text-4xl">Playlist</td>
+                        <td colspan="3" class="text-3xl">Playlist</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-3xl leading-none">Supernatural</td>
-                        <td class="font-cafe text-2xl">02:59</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Supernatural</td>
+                        <td class="font-cafe text-xl">02:59</td>
                       </tr>
                       <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-3xl leading-none">Right Now</td>
-                        <td class="font-cafe text-2xl">02:58</td>
+                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Right Now</td>
+                        <td class="font-cafe text-xl">02:58</td>
                       </tr>
                     </table>
                   </div>
@@ -543,7 +532,7 @@
                   href="https://www.melon.com/album/detail.htm?albumId=11514014"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
                 <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
@@ -551,7 +540,7 @@
                   href="https://www.music-flo.com/detail/album/426178480/albumtrack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
                 <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
@@ -559,7 +548,7 @@
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=85323248"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex h-8 w-8 items-center justify-center">
+                  class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
                 </a>
               </div>
@@ -615,6 +604,58 @@
         document.querySelector('#first-album-window').classList.add('block')
         document.querySelector('#modal-background').classList.remove('hidden')
         document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#second-album').addEventListener('click', function () {
+        document.querySelector('#second-album-window').classList.remove('hidden')
+        document.querySelector('#second-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#third-album').addEventListener('click', function () {
+        document.querySelector('#third-album-window').classList.remove('hidden')
+        document.querySelector('#third-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#forth-album').addEventListener('click', function () {
+        document.querySelector('#forth-album-window').classList.remove('hidden')
+        document.querySelector('#forth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#fifth-album').addEventListener('click', function () {
+        document.querySelector('#fifth-album-window').classList.remove('hidden')
+        document.querySelector('#fifth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      // 모달 닫기
+      function closeModal(modalId) {
+        document.querySelector(modalId).classList.remove('block')
+        document.querySelector(modalId).classList.add('hidden')
+        document.querySelector('#modal-background').classList.remove('block')
+        document.querySelector('#modal-background').classList.add('hidden')
+      }
+
+      // 닫기 버튼에 이벤트 리스너 추가
+      document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          closeModal(`#${button.dataset.modal}`)
+        })
+      })
+
+      // 배경 클릭 시 모달 닫기
+      document.querySelector('#modal-background').addEventListener('click', function () {
+        closeModal('#first-album-window')
+        closeModal('#second-album-window')
+        closeModal('#third-album-window')
+        closeModal('#forth-album-window')
+        closeModal('#fifth-album-window')
       })
     </script>
 
