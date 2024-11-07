@@ -12,15 +12,19 @@ const pagination_btn_03 = document.querySelector('.member-pagination03 img')
 const pagination_btn_04 = document.querySelector('.member-pagination04 img')
 const pagination_btn_05 = document.querySelector('.member-pagination05 img')
 
+//페이지 네이션 기능
 //페이지네이션 민지 버튼 클릭 시
 pagination_btn_01.addEventListener('click', function () {
+  //클릭 버튼만 활성화 이미지로 변경
+  //그외 버튼들은 비활성화 이미지로 변경
   pagination_btn_01.src = 'assets/images/member/photo-page-1.png'
   pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_03.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
-
+  //민지 페이지 표시
   minji_images.style.display = 'block'
+  //그외 페이지들은 화면에서 none처리
   hanni_images.style.display = 'none'
   dani_images.style.display = 'none'
   haerin_images.style.display = 'none'
@@ -29,12 +33,14 @@ pagination_btn_01.addEventListener('click', function () {
 
 //페이지네이션 하니 버튼 클릭 시
 pagination_btn_02.addEventListener('click', function () {
+  //클릭 버튼만 활성화 이미지로 변경
+  //그외 버튼들은 비활성화 이미지로 변경
   pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_02.src = 'assets/images/member/photo-page-2.png'
   pagination_btn_03.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
-
+  //하니 페이지 표시 그 외 페이지는 none 처리
   minji_images.style.display = 'none'
   hanni_images.style.display = 'block'
   dani_images.style.display = 'none'
@@ -43,11 +49,14 @@ pagination_btn_02.addEventListener('click', function () {
 })
 
 pagination_btn_03.addEventListener('click', function () {
+  //클릭 버튼만 활성화 이미지로 변경
+  //그외 버튼들은 비활성화 이미지로 변경
   pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_03.src = 'assets/images/member/photo-page-3.png'
   pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
+  //다니 페이지 표시 그 외 페이지는 none 처리
   minji_images.style.display = 'none'
   hanni_images.style.display = 'none'
   dani_images.style.display = 'block'
@@ -56,43 +65,36 @@ pagination_btn_03.addEventListener('click', function () {
 })
 //페이지네이션 해린 버튼 클릭 시
 pagination_btn_04.addEventListener('click', function () {
+  //클릭 버튼만 활성화 이미지로 변경
+  //그외 버튼들은 비활성화 이미지로 변경
   pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_03.src = 'assets/images/member/photo-page-3.png'
-  pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
+  pagination_btn_03.src = 'assets/images/member/photo-page-none.png'
+  pagination_btn_04.src = 'assets/images/member/photo-page-4.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
+  //해린 페이지 표시 그 외 페이지는 none 처리
   minji_images.style.display = 'none'
   hanni_images.style.display = 'none'
   dani_images.style.display = 'none'
   haerin_images.style.display = 'block'
   hyein_images.style.display = 'none'
 })
+
 //페이지네이션 혜인 버튼 클릭 시
 pagination_btn_05.addEventListener('click', function () {
-  pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_03.src = 'assets/images/member/photo-page-3.png'
-  pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
-  minji_images.style.display = 'none'
-  hanni_images.style.display = 'none'
-  dani_images.style.display = 'none'
-  haerin_images.style.display = 'none'
-  hyein_images.style.display = 'block'
-})
-pagination_btn_04.addEventListener('click', function () {
-  pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_03.src = 'assets/images/member/photo-page-none.png'
-  pagination_btn_04.src = 'assets/images/member/photo-page-4.png'
-  pagination_btn_05.src = 'assets/images/member/photo-page-none.png'
-})
-pagination_btn_05.addEventListener('click', function () {
+  //클릭 버튼만 활성화 이미지로 변경
+  //그외 버튼들은 비활성화 이미지로 변경
   pagination_btn_01.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_02.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_03.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_04.src = 'assets/images/member/photo-page-none.png'
   pagination_btn_05.src = 'assets/images/member/photo-page-5.png'
+  //혜인 페이지 표시 그 외 페이지는 none 처리
+  minji_images.style.display = 'none'
+  hanni_images.style.display = 'none'
+  dani_images.style.display = 'none'
+  haerin_images.style.display = 'none'
+  hyein_images.style.display = 'block'
 })
 
 //포토카드 드래그앤드롭
@@ -128,4 +130,4 @@ function runDrag(cards) {
     })
   })
 }
-runDrag('.Team-photo-minji, .Team-photo-hanni, .Team-photo-dani, .Team-photo-haerin, .Team-photo-hyein')
+runDrag('.team-photo')

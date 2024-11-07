@@ -1,3 +1,4 @@
+/*photo 범위 설정*/
 .photo-grid {
   position: relative;
   width: 1240px;
@@ -118,6 +119,7 @@
   left: 40%;
 }
 
+/* 첫화면 시 민지 페이지를 제외한 페이지 none설정 */
 .team-photo-hanni-page {
   display: none;
 }
