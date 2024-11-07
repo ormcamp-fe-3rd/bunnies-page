@@ -1,29 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_squareround/nanum_squareround.css');
 @font-face {
-    font-family: 'Cafe24Nyangi-W-v1.0';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/Cafe24Nyangi-W-v1.0.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'NanumSquareRound';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@font-face {
+  font-family: 'Cafe24Nyangi-W-v1.0';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/Cafe24Nyangi-W-v1.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Cafe24Nyangi-B-v1.0';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/Cafe24Nyangi-B-v1.0.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Cafe24Nyangi-B-v1.0';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/Cafe24Nyangi-B-v1.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'LOTTERIACHAB';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'LOTTERIACHAB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer base {
-    /* 텍스트 */
-    body {
-        font-family: 'Nanum Square Round', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    }
+  /* 텍스트 */
+  body {
+    font-family:
+      'NanumSquareRound',
+      Roboto,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      sans-serif;
+  }
 }
