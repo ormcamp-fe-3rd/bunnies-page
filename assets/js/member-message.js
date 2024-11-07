@@ -32,6 +32,32 @@ function makeMessageDome(str) {
 }
 
 /**
+ * 메세지 꾸밈값 랜덤 적용
+ * @param {element} 대상 요소
+ */
+function messageDeco(element) {
+  let topValue = getTop()
+  let leftValue = getLeft()
+  let opacityValue = getRandomInt(30, 80)/100
+  let colorValue = getColor()
+  // element.setAttribute("class", `top-[${topValue}]`)
+  // element.setAttribute("class", `opacity-[${opacityValue}]`)
+  // element.setAttribute("class", `bg-[${colorValue}]`)
+  if (leftValue > 50) {
+    let rightValue = getRandomInt(0, 50)
+    element.setAttribute(
+      'class',
+      `absolute inline-block rounded-full px-5 py-3 right-[${rightValue}%] top-[${topValue}%] opacity-[${opacityValue}] bg-[${colorValue}]`
+    )
+  } else {
+    element.setAttribute(
+      'class',
+      `absolute inline-block rounded-full px-5 py-3 left-[${leftValue}%] top-[${topValue}%] opacity-[${opacityValue}] bg-[${colorValue}]`
+    )
+  }
+}
+
+/**
  * 클래스명에 적용할 tailwindcss 랜덤값 설정
  * @returns 정수형 랜덤값(최소, 최대)
  */
