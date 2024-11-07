@@ -47,18 +47,19 @@ function makeMessageDome(str) {
 function messageDeco(element) {
   let topValue = getTop()
   let leftValue = getLeft()
-  let opacityValue = getRandomInt(30, 50)/100
+  // let opacityValue = getRandomInt(30, 50)/100
   let colorValue = getColor()
   if (leftValue > 50) {
     let rightValue = getRandomInt(0, 50)
     element.setAttribute(
       'class',
-      `absolute inline-block rounded-full px-5 py-3 right-[${rightValue}%] top-[${topValue}%] opacity-[${opacityValue}] bg-[${colorValue}]`
+      `absolute inline-block rounded-full px-5 py-3 right-[${rightValue}%] top-[${topValue}%] bg-[${colorValue}]`
     )
+    // opacity-[${opacityValue}]
   } else {
     element.setAttribute(
       'class',
-      `absolute inline-block rounded-full px-5 py-3 left-[${leftValue}%] top-[${topValue}%] opacity-[${opacityValue}] bg-[${colorValue}]`
+      `absolute inline-block rounded-full px-5 py-3 left-[${leftValue}%] top-[${topValue}%] bg-[${colorValue}]`
     )
   }
 }
