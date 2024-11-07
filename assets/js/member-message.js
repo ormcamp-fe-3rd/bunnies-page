@@ -9,6 +9,7 @@ function messageInit(e) {
   if (e.code == 'Enter') {
     if (messageBtn.value == '') {
       alert('메세지를 입력해주세요')
+      return
     }
     const newMessage = messageBtn.value
     messageBtn.value = ''
@@ -38,6 +39,18 @@ function makeMessageDome(str) {
 
   messageDeco(newLi)
   messageWrap.appendChild(newLi)
+  initOpacity()
+}
+
+/**
+ * 자식 순서에 따른 opacity값 추가(동적)
+ */
+function initOpacity(){
+  let messageList = messageWrap.querySelectorAll('li')
+  let messageListArr = Array.from(messageList)
+  for(let i = 0; i < messageListArr.length; i++){
+    messageListArr[i].style.opacity = `${(i * 0.03)+0.3}`
+  }
 }
 
 /**
@@ -47,7 +60,6 @@ function makeMessageDome(str) {
 function messageDeco(element) {
   let topValue = getTop()
   let leftValue = getLeft()
-  // let opacityValue = getRandomInt(30, 50)/100
   let colorValue = getColor()
   if (leftValue > 50) {
     let rightValue = getRandomInt(0, 50)
@@ -55,7 +67,6 @@ function messageDeco(element) {
       'class',
       `absolute inline-block rounded-full px-5 py-3 right-[${rightValue}%] top-[${topValue}%] bg-[${colorValue}]`
     )
-    // opacity-[${opacityValue}]
   } else {
     element.setAttribute(
       'class',
