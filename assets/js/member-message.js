@@ -34,7 +34,7 @@ const messageObjArr = [] //메세지 element를 생성할 때 필요한 변수�
  * @param {str} 메세지창에서 입력받은 텍스트 
 */
 function makeMessageDome(str) {
-  let messageObj = {
+  let messageObj = {//메세지를 담아둘 객체 생성
     message: str,
     topValue: getTop(),
     leftValue: getLeft(),
@@ -47,9 +47,12 @@ function makeMessageDome(str) {
   initOpacity() //opacity값은 node순서에 따라 지정
 }
 
+/**
+ * 페이지 로드될때마다 로컬스토리지에 담긴 메세지들을 html에 추가
+ */
 window.addEventListener("load", (event) => {
   let storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
-  console.log(storedArr)
+  // console.log(storedArr)
   if(storedArr.length > 0){
     for(let i = 0; i < storedArr.length; i++){
       messageWrap.appendChild(messageDeco(storedArr[i]))
@@ -57,6 +60,7 @@ window.addEventListener("load", (event) => {
     initOpacity()
   }
 })
+
 /**
  * 자식 순서에 따른 opacity값 추가(동적)
  */
