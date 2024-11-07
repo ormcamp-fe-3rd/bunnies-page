@@ -8,6 +8,25 @@ document.body.appendChild(renderer.domElement)
 // 배경색을 설정하여 장면이 잘 보이도록
 renderer.setClearColor(0xeeeeee, 1)
 
+// 지오메트리 텍스처 적용
+const textureLoader = new THREE.TextureLoader() // 이게 있어야 이미지 파일을 불러올 수 있는 객체가 생성됨
+
+const newjeans_texture_front = textureLoader.load('asset/images/album/album_3d_texture/newjeans/front.png')
+const newjeans_texture_back = textureLoader.load('asset/images/album/album_3d_texture/newjeans/back.png')
+const newjeans_texture_top = textureLoader.load('asset/images/album/album_3d_texture/newjeans/top.png')
+const newjeans_texture_bottom = textureLoader.load('asset/images/album/album_3d_texture/newjeans/bottom.png')
+const newjeans_texture_left = textureLoader.load('asset/images/album/album_3d_texture/newjeans/left.png')
+const newjeans_texture_right = textureLoader.load('asset/images/album/album_3d_texture/newjeans/right.png')
+
+const materials = [
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_front }), // 앞면
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_back }), // 뒷면
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_top }), // 윗면
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_bottom }), // 아랫면
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_left }), // 왼쪽면
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_right }) // 오른쪽면
+]
+
 // 큐브 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 2.5) //앨범 사이즈
 const material = new THREE.MeshStandardMaterial({ color: 0xff0000 })
