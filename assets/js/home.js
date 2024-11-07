@@ -65,7 +65,7 @@ function setVideoPaging(num = 1) {
   // 버튼 비활성화 처리
   if (num == 1) {
     prev.disabled
-    prev.style.opacity = 0.5
+    prev.style.opacity = 0.2
     prev.style.cursor = 'default'
   } else {
     prev.disabled = false
@@ -73,7 +73,7 @@ function setVideoPaging(num = 1) {
   }
   if (num == playList.length) {
     next.disabled
-    next.style.opacity = 0.5
+    next.style.opacity = 0.2
     next.style.cursor = 'default'
   } else {
     next.disabled = false
