@@ -1,6 +1,5 @@
 const messageBtn = document.querySelector('#message')
 const messageWrap = document.getElementById('message-wrap-list')
-const messageList = new Array(12)
 
 /**
  * 메세지 입력 받아서 텍스트 저장
@@ -14,7 +13,17 @@ function messageInit(e) {
     const newMessage = messageBtn.value
     messageBtn.value = ''
 
-    makeMessageDome(newMessage)
+    makeMessageDome(newMessage)//새로운 메세지 element 생성
+    limitMaxMessage(20)//메세지의 총 개수 조절
+  }
+}
+/**
+ * 메세지가 일정개수를 초과하면 첫번째 메세지를 삭제
+*/
+function limitMaxMessage(n){
+  let messageListLength = messageWrap.querySelectorAll('li').length
+  if(messageListLength > n){
+    messageWrap.removeChild(messageWrap.firstElementChild)
   }
 }
 
@@ -38,11 +47,8 @@ function makeMessageDome(str) {
 function messageDeco(element) {
   let topValue = getTop()
   let leftValue = getLeft()
-  let opacityValue = getRandomInt(30, 80)/100
+  let opacityValue = getRandomInt(30, 50)/100
   let colorValue = getColor()
-  // element.setAttribute("class", `top-[${topValue}]`)
-  // element.setAttribute("class", `opacity-[${opacityValue}]`)
-  // element.setAttribute("class", `bg-[${colorValue}]`)
   if (leftValue > 50) {
     let rightValue = getRandomInt(0, 50)
     element.setAttribute(
@@ -70,9 +76,6 @@ function getLeft() {
 function getRight() {
   return getRandomInt(0, 50)
 }
-// function getOpacity(index){
-//   return 30 + (5 * index)
-// }
 
 /**
  * 클래스명에 적용할 tailwindcss 배경색 설정

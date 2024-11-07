@@ -18,9 +18,9 @@ module.exports = {
   },
   plugins: [],
   safelist: [
-    ...[...Array(85).keys()].flatMap(i => [`top-[${i}%]`]),
+    ...[...Array(100).keys()].flatMap(i => [`top-[${i}%]`]),
     ...[...Array(100).keys()].flatMap(i => [`left-[${i}%]`]),
-    ...[...Array(50).keys()].flatMap(i => [`right-[${i}%]`]),
+    ...[...Array(100).keys()].flatMap(i => [`right-[${i}%]`]),
     ...[...Array(50).keys()].flatMap(i => [`opacity-[${(i+30)/100}%]`]),
     'bg-[#173f5f]', 'bg-[#20639b]', 'bg-[#3caea3]', 'bg-[#f6d55c]', 'bg-[#ed553b]',
     'bg-[#ef6c00]', 'bg-[#ffa726]', 'bg-[#cfd8dc]', 'bg-[#26a69a]', 'bg-[#2e7d32]',
