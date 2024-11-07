@@ -1,45 +1,144 @@
+/*photo 범위 설정*/
 .photo-grid {
-  position: relative; /* 포지셔닝의 기준이 될 요소로 설정 */
+
+  position: relative;
   width: 1240px;
-  height: 640px; /* 화면 전체 높이 */
+  height: 640px;
+  margin: 0 auto;
 }
 
-.photo-grid img {
-  position: absolute; /* 절대 위치로 설정 */
-  width: 20%; /* 각 이미지의 너비 */
+/* 개별 이미지 컨테이너 */
+.team-photo {
+  position: absolute;
+  width: 20%;
   height: auto;
-  object-fit: cover; /* 이미지가 영역에 맞도록 */
 }
 
-.photo-grid img:nth-child(1) {
-  top: 10%; /* 상단에서 10% 위치 */
-  left: 10%; /* 좌측에서 10% 위치 */
-}
-.photo-grid img:nth-child(2) {
-  top: 5%; /* 상단에서 20% 위치 */
-  left: 30%; /* 좌측에서 30% 위치 */
-}
-.photo-grid img:nth-child(3) {
-  top: 5%; /* 상단에서 30% 위치 */
-  left: 70%; /* 좌측에서 50% 위치 */
-}
-.photo-grid img:nth-child(4) {
-  top: 40%; /* 상단에서 40% 위치 */
-  left: 60%; /* 좌측에서 70% 위치 */
-}
-.photo-grid img:nth-child(5) {
-  top: 40%; /* 상단에서 50% 위치 */
-  left: 5%; /* 좌측에서 10% 위치 */
-}
-.photo-grid img:nth-child(6) {
-  top: 45%; /* 상단에서 60% 위치 */
-  left: 20%; /* 좌측에서 30% 위치 */
-}
-.photo-grid img:nth-child(7) {
-  top: 20%; /* 상단에서 70% 위치 */
-  left: 40%; /* 좌측에서 50% 위치 */
+
+/* 이미지 스타일 */
+.team-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.Team-photo-minji-01:hover .Team-photo-minji1 {
-  filter: invert(36%) sepia(62%) saturate(706%) hue-rotate(175deg) brightness(89%) contrast(90%);
+/* 클릭 시 텍스트 중앙 표시 */
+.imtext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* 클릭 시에만 표시 */
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* 이미지 클릭 시 텍스트 표시 */
+.team-photo:active .imtext {
+  display: block;
+}
+
+/*이미지 호버 시 색상 변경*/
+.team-photo-minji-page img:hover {
+  filter: invert(26%) sepia(100%) saturate(5000%) hue-rotate(175deg) brightness(80%) contrast(90%);
+}
+.team-photo-hanni-page img:hover {
+  filter: invert(24%) sepia(81%) saturate(2000%) hue-rotate(303deg) brightness(67%) contrast(91%);
+}
+.team-photo-dani-page img:hover {
+  filter: invert(28%) sepia(100%) saturate(497%) hue-rotate(344deg) brightness(103%) contrast(102%);
+}
+.team-photo-haerin-page img:hover {
+  filter: invert(20%) sepia(100%) saturate(4180%) hue-rotate(59deg) brightness(55%) contrast(96%);
+}
+.team-photo-hyein-page img:hover {
+  filter: invert(30%) sepia(89%) saturate(3593%) hue-rotate(243deg) brightness(98%) contrast(85%);
+}
+
+/*클릭 시 맨 앞으로 이미지 이동*/
+.team-photo :active {
+  z-index: 1;
+}
+
+/* 예시 위치 설정 */
+.minji-photo1,
+.hanni-photo1,
+.dani-photo1,
+.haerin-photo1,
+.hyein-photo1 {
+  top: 10%;
+  left: 10%;
+}
+.minji-photo2,
+.hanni-photo2,
+.dani-photo2,
+.haerin-photo2,
+.hyein-photo2 {
+  top: 5%;
+  left: 30%;
+}
+.minji-photo3,
+.hanni-photo3,
+.dani-photo3,
+.haerin-photo3,
+.hyein-photo3 {
+  top: 5%;
+  left: 70%;
+}
+.minji-photo4,
+.hanni-photo4,
+.dani-photo4,
+.haerin-photo4,
+.hyein-photo4 {
+  top: 40%;
+  left: 60%;
+}
+.minji-photo5,
+.hanni-photo5,
+.dani-photo5,
+.haerin-photo5,
+.hyein-photo5 {
+  top: 40%;
+  left: 5%;
+}
+.minji-photo6,
+.hanni-photo6,
+.dani-photo6,
+.haerin-photo6,
+.hyein-photo6 {
+  top: 45%;
+  left: 20%;
+}
+.minji-photo7,
+.hanni-photo7,
+.dani-photo7,
+.haerin-photo7,
+.hyein-photo7 {
+  top: 20%;
+  left: 40%;
+}
+
+/* 첫화면 시 민지 페이지를 제외한 페이지 none설정 */
+.team-photo-hanni-page {
+  display: none;
+}
+.team-photo-dani-page {
+  display: none;
+}
+.team-photo-haerin-page {
+  display: none;
+}
+.team-photo-hyein-page {
+  display: none;
+}
+
+#message-wrap-list>li{
+  animation: showup 0.5s ease-in; /*메세지 추가될때 효과*/
+}
+@keyframes showup {
+  0%{opacity: 0;}
+  100%{opacity: 0.8;}
 }

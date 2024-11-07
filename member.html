@@ -6,46 +6,230 @@
     <title>Bunnies Page</title>
     <link rel="stylesheet" href="/assets/css/tailwindcss.output.css" />
     <link rel="stylesheet" href="/assets/css/member.css" />
-    <script src="/assets/js/member.js"></script>
   </head>
   <body class="bg-zinc-950 text-white">
+    <!-- s: 헤더 -->
+    <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
+      <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
+        <a href="/" class="hover:font-cafe-fill">Main</a>
+        <a href="/member.html" class="font-cafe-fill hover:font-cafe-fill">Team</a>
+        <a href="/album.html" class="hover:font-cafe-fill">Albums</a>
+      </nav>
+      <!-- s: SNS -->
+      <div class="flex items-center justify-between gap-4 max-md:hidden">
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-6 w-6" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-6 w-6" />
+        </a>
+        <a href="https://www.instagram.com/newjeans_official/" target="_blank">
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-6 w-6" />
+        </a>
+        <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY" target="_blank">
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-6 w-6" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw" target="_blank">
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-6 w-6" />
+        </a>
+      </div>
+      <!-- e: SNS -->
+    </header>
+    <!-- e: 헤더 -->
+
     <!-- s: 포토카드 -->
     <div class="flex-wrap">
       <!--멤버들 페이지별 리스트 묶음-->
-      <div class="photo-grid relative">
-        <!--TODO: 다른 멤버들 리스트 표시해야함-->
-        <div class="Team-photo-minji-page flex items-center justify-center">
-          <div class="Team-photo-minji minji_photo1">
-            <img class="Team-photo-minji_1" src="assets/images/member/Team-photo-minji_01.png" />
+      <div class="photo-grid">
+        <!--민지 이미지 페이지-->
+        <div class="team-photo-minji-page">
+          <div class="team-photo minji-photo1">
+            <img class="Team-photo-minji-1" src="assets/images/member/Team-photo-minji_01.png" />
+            <span class="imtext">화창하고 시원한 바람이 부는 신선한 날씨를 좋아해요</span>
           </div>
-          <div class="Team-photo-minji minji_photo2">
-            <img class="Team-photo-minji_2" src="assets/images/member/Team-photo-minji_02.png" />
+          <div class="team-photo minji-photo2">
+            <img class="team-photo-minji-2" src="assets/images/member/Team-photo-minji_02.png" />
+            <span class="imtext"
+              >산책하는 것을 좋아해요. 종종 산책을 하면서 노래를 듣거나 아무 생각 없이 조깅을 해요!</span
+            >
           </div>
-          <div class="Team-photo-minji minji_photo3">
-            <img class="Team-photo-minji_3" src="assets/images/member/Team-photo-minji_03.png" />
+          <div class="team-photo minji-photo3">
+            <img class="team-photo-minji-3" src="assets/images/member/Team-photo-minji_03.png" />
+            <span class="imtext">버니즈들은 저를 자주 곰돌이라고 불러요</span>
           </div>
-          <div class="Team-photo-minji minji_photo4">
-            <img class="Team-photo-minji_4" src="assets/images/member/Team-photo-minji_04.png" />
+          <div class="team-photo minji-photo4">
+            <img class="team-photo-minji-4" src="assets/images/member/Team-photo-minji_04.png" /><span class="imtext"
+              >차분하고 배려심이 많아 팀 내에서 조화로운 리더 역할을 함</span
+            >
           </div>
-          <div class="Team-photo-minji minji_photo5">
-            <img class="Team-photo-minji_5" src="assets/images/member/Team-photo-minji_05.png" />
+          <div class="team-photo minji-photo5">
+            <img class="team-photo-minji-5" src="assets/images/member/Team-photo-minji_05.png" />
+            <span class="imtext">다국어 가능 (특히 영어에 능숙), 춤과 노래를 동시에 잘 소화</span>
           </div>
-          <div class="Team-photo-minji minji_photo6">
-            <img class="Team-photo-minji_6" src="assets/images/member/Team-photo-minji_06.png" />
+          <div class="team-photo minji-photo6">
+            <img class="team-photo-minji-6" src="assets/images/member/Team-photo-minji_06.png" />
+            <span class="imtext">개구리를 좋아해요. 초록색 옷을 즐겨입어서 개구리가 별명이에요.</span>
           </div>
-          <div class="Team-photo-minji minji_photo7">
-            <img class="Team-photo-minji_7" src="assets/images/member/Team-photo-minji_07.png" />
+          <div class="team-photo minji-photo7">
+            <img class="team-photo-minji-7" src="assets/images/member/Team-photo-minji_07.png" />
+            <span class="imtext"
+              >김민지<br />2004년 5월 7일 <br />
+              리더, 서브보컬</span
+            >
+          </div>
+        </div>
+        <!--하니 이미지 페이지-->
+        <div class="team-photo-hanni-page">
+          <div class="team-photo hanni-photo1">
+            <img class="team-photo-hanni-1" src="assets/images/member/hanni/Team-photo-hanni_01.png" />
+            <span class="imtext">하니 내용</span>
+          </div>
+          <div class="team-photo hanni-photo2">
+            <img class="team-photo-hanni-2" src="assets/images/member/hanni/Team-photo-hanni_02.png" />
+            <span class="imtext">하니 내용2</span>
+          </div>
+          <div class="team-photo hanni-photo3">
+            <img class="team-photo-hanni-3" src="assets/images/member/hanni/Team-photo-hanni_03.png" />
+            <span class="imtext">하니 내용3</span>
+          </div>
+          <div class="team-photo hanni-photo4">
+            <img class="team-photo-hanni-4" src="assets/images/member/hanni/Team-photo-hanni_04.png" /><span
+              class="imtext"
+              >하니 내용4</span
+            >
+          </div>
+          <div class="team-photo hanni-photo5">
+            <img class="team-photo-hanni-5" src="assets/images/member/hanni/Team-photo-hanni_05.png" />
+            <span class="imtext">하니 내용5</span>
+          </div>
+          <div class="team-photo hanni-photo6">
+            <img class="team-photo-hanni-6" src="assets/images/member/hanni/Team-photo-hanni_06.png" />
+            <span class="imtext">하니 내용6</span>
+          </div>
+          <div class="team-photo hanni-photo7">
+            <img class="team-photo-hanni-7" src="assets/images/member/hanni/Team-photo-hanni_07.png" />
+            <span class="imtext"
+              >하니<br />2004년 5월 7일 <br />
+              리더, 서브보컬</span
+            >
+          </div>
+        </div>
+        <!--다니엘 이미지 페이지-->
+        <div class="team-photo-dani-page">
+          <div class="team-photo dani-photo1">
+            <img class="team-photo-dani-1" src="assets/images/member/dani/Team-photo-dani_01.png" />
+            <span class="imtext">다니 내용</span>
+          </div>
+          <div class="team-photo dani-photo2">
+            <img class="team-photo-dani-2" src="assets/images/member/dani/Team-photo-dani_02.png" />
+            <span class="imtext">다니 내용2</span>
+          </div>
+          <div class="team-photo dani-photo3">
+            <img class="team-photo-dani-3" src="assets/images/member/dani/Team-photo-dani_03.png" />
+            <span class="imtext">다니 내용3</span>
+          </div>
+          <div class="team-photo dani-photo4">
+            <img class="team-photo-dani-4" src="assets/images/member/dani/Team-photo-dani_04.png" /><span class="imtext"
+              >다니 내용4</span
+            >
+          </div>
+          <div class="team-photo dani-photo5">
+            <img class="team-photo-dani-5" src="assets/images/member/dani/Team-photo-dani_05.png" />
+            <span class="imtext">다니 내용5</span>
+          </div>
+          <div class="team-photo dani-photo6">
+            <img class="team-photo-dani-6" src="assets/images/member/dani/Team-photo-dani_06.png" />
+            <span class="imtext">다니 내용6</span>
+          </div>
+          <div class="team-photo dani-photo7">
+            <img class="team-photo-dani-7" src="assets/images/member/dani/Team-photo-dani_07.png" />
+            <span class="imtext"
+              >다니<br />2004년 5월 7일 <br />
+              리더, 서브보컬</span
+            >
+          </div>
+        </div>
+        <!--해린 이미지 페이지-->
+        <div class="team-photo-haerin-page">
+          <div class="team-photo haerin-photo1">
+            <img class="team-photo-haerin-1" src="assets/images/member/haerin/Team-photo-haerin_01.png" />
+            <span class="imtext">다니 내용</span>
+          </div>
+          <div class="team-photo haerin-photo2">
+            <img class="team-photo-haerin-2" src="assets/images/member/haerin/Team-photo-haerin_02.png" />
+            <span class="imtext">다니 내용2</span>
+          </div>
+          <div class="team-photo haerin-photo3">
+            <img class="team-photo-haerin-3" src="assets/images/member/haerin/Team-photo-haerin_03.png" />
+            <span class="imtext">다니 내용3</span>
+          </div>
+          <div class="team-photo haerin-photo4">
+            <img class="team-photo-haerin-4" src="assets/images/member/haerin/Team-photo-haerin_04.png" /><span
+              class="imtext"
+              >다니 내용4</span
+            >
+          </div>
+          <div class="team-photo haerin-photo5">
+            <img class="team-photo-haerin-5" src="assets/images/member/haerin/Team-photo-haerin_05.png" />
+            <span class="imtext">다니 내용5</span>
+          </div>
+          <div class="team-photo haerin-photo6">
+            <img class="team-photo-haerin-6" src="assets/images/member/haerin/Team-photo-haerin_06.png" />
+            <span class="imtext">다니 내용6</span>
+          </div>
+          <div class="team-photo haerin-photo7">
+            <img class="team-photo-haerin-7" src="assets/images/member/haerin/Team-photo-haerin_07.png" />
+            <span class="imtext"
+              >다니<br />2004년 5월 7일 <br />
+              리더, 서브보컬</span
+            >
+          </div>
+        </div>
+        <!--혜인 이미지 페이지-->
+        <div class="team-photo-hyein-page">
+          <div class="team-photo hyein-photo1">
+            <img class="team-photo-hyein-1" src="assets/images/member/hyein/Team-photo-hyein_01.png" />
+            <span class="imtext">다니 내용</span>
+          </div>
+          <div class="team-photo hyein-photo2">
+            <img class="team-photo-hyein-2" src="assets/images/member/hyein/Team-photo-hyein_02.png" />
+            <span class="imtext">다니 내용2</span>
+          </div>
+          <div class="team-photo hyein-photo3">
+            <img class="team-photo-hyein-3" src="assets/images/member/hyein/Team-photo-hyein_03.png" />
+            <span class="imtext">다니 내용3</span>
+          </div>
+          <div class="team-photo hyein-photo4">
+            <img class="team-photo-hyein-4" src="assets/images/member/hyein/Team-photo-hyein_04.png" /><span
+              class="imtext"
+              >다니 내용4</span
+            >
+          </div>
+          <div class="team-photo hyein-photo5">
+            <img class="team-photo-hyein-5" src="assets/images/member/hyein/Team-photo-hyein_05.png" />
+            <span class="imtext">다니 내용5</span>
+          </div>
+          <div class="team-photo hyein-photo6">
+            <img class="team-photo-hyein-6" src="assets/images/member/hyein/Team-photo-hyein_06.png" />
+            <span class="imtext">다니 내용6</span>
+          </div>
+          <div class="team-photo hyein-photo7">
+            <img class="team-photo-hyein-7" src="assets/images/member/hyein/Team-photo-hyein_07.png" />
+            <span class="imtext"
+              >다니<br />2004년 5월 7일 <br />
+              리더, 서브보컬</span
+            >
           </div>
         </div>
       </div>
-      <div class="member-Pagination">
-        <!--TODO: 클릭 시 색상이 다르고 페이지 멤버별로 리스트해야함-->
+      <!--페이지네이션 -->
+      <div class="member-pagination">
         <ul class="mt-2 flex items-center justify-center">
-          <li class="member-Pagination01 mx-3 w-5"><img src="assets/images/member/photo-page-1.png" /></li>
-          <li class="member-Pagination02 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-Pagination03 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-Pagination04 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-Pagination05 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
+          <li class="member-pagination01 mx-3 w-5"><img src="assets/images/member/photo-page-1.png" /></li>
+          <li class="member-pagination02 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
+          <li class="member-pagination03 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
+          <li class="member-pagination04 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
+          <li class="member-pagination05 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
         </ul>
       </div>
     </div>
@@ -53,13 +237,9 @@
 
     <!-- s: 응원 메세지 -->
     <section class="message-wrap w-full py-10 text-center">
-      <ul class="container relative mx-auto h-screen max-h-96 w-full text-xl">
-        <!-- TODO: 이후 JS 작업해주실 때
-          1. 리스트 반복 생성(내용은 더미데이터 + 로컬스토리지 고려해주셔야 합니다)
-          2. 리스트별 랜덤 설정 내용: 배경 색상, 투명도, 위치
-        -->
-        <li class="absolute left-14 top-4 inline-block rounded-full bg-red-500 px-5 py-3 opacity-95">
-          Lorem ipsum dolor sit amet.
+      <ul id="message-wrap-list" class="container max-w-[1240px] relative mx-auto h-screen max-h-96 w-full text-xl">
+        <li class="absolute left-14 top-4 inline-block rounded-full bg-red-500 px-5 py-3 opacity-80">
+          Lorem isddsum doldor sit amet.
         </li>
         <li class="absolute left-2 top-1/3 inline-block rounded-full bg-lime-500 px-5 py-3 opacity-45">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, mollitia.
@@ -67,13 +247,13 @@
         <li class="absolute left-1/2 top-0 inline-block rounded-full bg-teal-500 px-5 py-3 opacity-65">
           Lorem ipsum dolor, sit amet consectetur adipisicing.
         </li>
-        <li class="absolute left-1/3 top-full inline-block rounded-full bg-amber-500 px-5 py-3 opacity-25">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, eius!
+        <li class="absolute left-2/3 top-[40%] inline-block rounded-full bg-amber-500 px-5 py-3 opacity-25">
+          Lorem ipsum dolor, sit amet consectetur!
         </li>
-        <li class="absolute left-0 top-3/4 inline-block rounded-full bg-rose-500 px-5 py-3 opacity-85">
+        <li class="absolute left-0 top-3/4 inline-block rounded-full bg-rose-500 px-5 py-3 opacity-75">
           Lorem ipsum dolor sit amet.
         </li>
-        <li class="absolute left-1/3 top-0 inline-block rounded-full bg-yellow-500 px-5 py-3 opacity-70">Lorem.</li>
+        <li class="absolute left-[75%] top-[85%] inline-block rounded-full bg-yellow-500 px-5 py-3 opacity-70">Lodrddeddm.</li>
         <li class="absolute left-1/2 top-2/3 inline-block rounded-full bg-purple-500 px-5 py-3 opacity-35">
           Lorem, ipsum dolor.
         </li>
@@ -95,9 +275,19 @@
         class="mx-auto my-14 block w-1/2 rounded-2xl px-3 py-5 text-center text-xl text-black"
         placeholder="멤버들에게 응원의 한마디 메세지를 보내보세요!"
         autocomplete="off"
-        autofocus
-        maxlength="80" />
+        maxlength="80" onkeypress="messageInit(event)"/>
     </section>
+    <script src="/assets/js/member-message.js"></script>
     <!-- e: 응원 메세지 -->
+    <script src="/assets/js/member.js"></script>
+
+        <!-- s: 풋터 -->
+    <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
+      <a href="https://ador.world/" target="_blank">
+        <img src="/assets/images/header/logo-ador.svg" alt="ador" class="w-28" />
+      </a>
+      <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
+    </footer>
+    <!-- e: 풋터 -->
   </body>
 </html>
