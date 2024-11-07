@@ -120,6 +120,10 @@
         </li>
       </ul>
     </section>
+    <!-- 모달 배경 -->
+    <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
+    <!-- 블러 및 어둡게 처리 -->
+
     <!-- 앨범 섹션 영역 지정 -->
     <div class="h-[500px] w-full"></div>
     <div
@@ -132,9 +136,6 @@
           <img src="./assets/images/album/pc-outside-background.jpg_large" alt="컴퓨터 배경화면" />
         </div>
         <div class="absolute z-30 p-[6%]">
-          <!-- 모달 배경 -->
-          <div id="modal-background" class="fixed inset-0 z-40 hidden"></div>
-
           <!-- 첫 번째 앨범 모달 창 -->
           <span
             id="first-album-window"
@@ -158,10 +159,11 @@
                 <span>New Jeans</span>
               </div>
               <!-- 모달 내 컨텐츠 -->
-              <div class="flex flex-col md:flex-row">
+              <div class="flex flex-col border border-[#000] p-5 md:flex-row">
+                <!-- 테두리 추가 -->
                 <div class="h-full w-full p-5 md:w-1/2">
                   <img
-                    class="h-auto max-h-60 w-full border-2 border-solid border-gray-500 object-cover drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-full border-2 border-solid border-gray-500 object-cover"
                     src="./assets/images/album/album_img/1stEP.jpg"
                     alt="" />
                 </div>
@@ -200,10 +202,12 @@
               </div>
             </div>
           </span>
-
           <!-- 두 번째 앨범 모달 창 -->
-          <span id="second-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-neutral-400 shadow-lg">
+          <span
+            id="second-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div class="max-h-[80vh] overflow-auto rounded-md border border-[#acacac] bg-neutral-400 shadow-lg">
+              <!-- 상단 컨트롤바 -->
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
@@ -218,44 +222,48 @@
                     </div>
                   </span>
                 </div>
-                <span>OMG</span>
+                <span class="text-2xl">OMG</span>
               </div>
+
               <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-col border border-[#000] p-5 md:flex-row">
+                <div class="h-full w-full p-5 md:w-1/2">
+                  <!-- 이미지 왼쪽 -->
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-full border-2 border-solid border-gray-500 object-cover"
                     src="./assets/images/album/album_img/OMG.jpg"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-stone-800">
+                <div class="h-full w-full overflow-y-auto p-5 md:w-1/2" style="max-height: 60vh">
+                  <!-- 텍스트 오른쪽 -->
+                  <table class="w-full font-cafe-fill leading-tight text-stone-800">
                     <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">OMG</td>
+                      <td colspan="2" class="text-left text-3xl md:text-4xl">OMG</td>
                     </tr>
                     <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2023. 1. 2.</td>
+                      <td class="text-left font-cafe text-xl md:text-2xl">Release Date</td>
+                      <td colspan="2" class="text-left text-xl md:text-2xl">2023. 1. 2.</td>
                     </tr>
                   </table>
-
-                  <table class="font-cafe-fill text-stone-800">
+                  <table class="mt-4 w-full font-cafe-fill text-stone-800">
                     <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
+                      <td colspan="3" class="text-left text-3xl md:text-4xl">Playlist</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">OMG</td>
-                      <td class="font-cafe text-3xl">03:33</td>
+                      <td colspan="2" class="w-[80%] text-left font-cafe text-xl leading-none md:text-2xl">OMG</td>
+                      <td class="text-left font-cafe text-lg md:text-xl">03:33</td>
                     </tr>
                     <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Ditto</td>
-                      <td class="font-cafe text-3xl">03:06</td>
+                      <td colspan="2" class="w-[80%] text-left font-cafe text-xl leading-none md:text-2xl">Ditto</td>
+                      <td class="text-left font-cafe text-lg md:text-xl">03:06</td>
                     </tr>
+                    <!-- 추가적인 항목들... -->
                   </table>
                 </div>
               </div>
             </div>
           </span>
+
           <!-- 세 번째 앨범 모달 창 -->
           <span id="third-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
             <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-cyan-100 shadow-lg">
