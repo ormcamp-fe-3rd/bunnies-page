@@ -8,23 +8,26 @@
 }
 
 /* cd 애니메이션 효과 */
-.cd-wrap>img{
+.cd-wrap > img {
   transition: 0.3s linear;
   transform: rotateY(0);
 }
-.cd-wrap>img.running{
+.cd-wrap > img.running {
   animation: musicQ 5s linear infinite;
   animation-play-state: running;
 }
-.cd-wrap>img.paused{
+.cd-wrap > img.paused {
   animation: musicQ 5s linear infinite;
   animation-play-state: paused;
 }
 @keyframes musicQ {
-  0%{transform: rotate(0);}
-  100%{transform: rotate(360deg);}
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 .playList {
   /*영수증 플레이리스트*/
