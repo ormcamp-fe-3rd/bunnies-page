@@ -2766,6 +2766,10 @@ a,
   --tw-bg-opacity: 0.8;
 }
 
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+
 .bg-\[url\(\'\/assets\/images\/album\/pc-outside-background\.jpg_large\'\)\] {
   background-image: url('/assets/images/album/pc-outside-background.jpg_large');
 }
