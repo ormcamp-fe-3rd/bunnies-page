@@ -12,7 +12,7 @@
   </head>
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
-  <body class="bg-zinc-950 text-white" onload="init()">
+  <body class="bg-zinc-950 text-white" onload="rotateCards(); setVideo();">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
       <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
@@ -46,16 +46,13 @@
     <section class="container mx-auto mb-24 mt-5 max-md:px-5">
       <!-- s: 홈-바디-유튜브 -->
       <div class="aspect-video w-full rounded-lg border border-solid border-white border-opacity-50">
-        <iframe
-          id="youtube"
-          class="h-full w-full"
-          frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        <iframe id="youtube" class="h-full w-full" frameborder="0" allow="autoplay" allowfullscreen></iframe>
       </div>
       <!-- e: 홈-바디-유튜브 -->
 
       <!-- s: 홈-바디-텍스트 -->
       <div
-        class="font-ABeeZee flex min-h-24 w-full flex-wrap items-center justify-between gap-4 rounded-lg text-center text-2xl max-md:justify-center max-md:pt-3">
+        class="flex min-h-24 w-full flex-wrap items-center justify-between gap-4 rounded-lg text-center font-ABeeZee text-2xl max-md:justify-center max-md:pt-3">
         <div class="flex w-5/6 flex-wrap items-center gap-x-20 max-md:block max-md:w-full">
           <div>
             <span class="mr-2 opacity-70">album</span>
@@ -80,46 +77,51 @@
     </section>
     <!-- e: 유튜브 -->
 
-    <!-- 멤버 카드 -->
+    <!-- s: 멤버 카드 -->
     <section class="w-full cursor-[url('/assets/images/cursor/clickMe.png'),_pointer]">
       <ul class="member-card-box m-5 flex gap-12 p-5">
-        <li class="member-card relative h-auto w-1/6 -rotate-12">
+        <li id="home-minji" class="relative h-auto w-1/6 -rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
+            alt=""/>
         </li>
-        <li class="relative h-auto w-1/6 -rotate-6">
-          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
-          <img
-            src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
-        </li>
-        <li class="relative h-auto w-1/6 rotate-6">
+        <li id="home-hanni" class="relative h-auto w-1/6 rotate-6" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 -rotate-3">
-          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+        <li id="home-danni" class="relative h-auto w-1/6 -rotate-6" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
           <img
-            src="/assets/images/main-member/main-hyein-frame.png"
+            src="/assets/images/main-member/main-danielle-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 rotate-12">
+        <li id="home-haerin" class="relative h-auto w-1/6 rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
+        <li id="home-hyein" class="relative h-auto w-1/6 -rotate-3" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-hyein-frame.png"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
       </ul>
     </section>
+    <!-- e: 멤버 카드 -->
+    
+    <!-- 모달 배경 -->
+    <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
+
     <!-- 앨범 섹션 영역 지정 -->
     <div class="h-[500px] w-full"></div>
     <div
@@ -127,391 +129,547 @@
       <div class="relative z-50 flex">
         <!-- 컴퓨터 목업 -->
         <img class="z-30 max-h-[900px] w-full object-contain" src="./assets/images/album/mac.png" alt="컴퓨터 이미지" />
+
         <!-- 컴퓨터 배경화면 영역 -->
         <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white">
           <img src="./assets/images/album/pc-outside-background.jpg_large" alt="컴퓨터 배경화면" />
         </div>
         <div class="absolute z-30 p-[6%]">
-          <!-- 컴퓨터 화면 내 컨텐츠 -->
           <!-- 첫 번째 앨범 모달 창 -->
-          <span id="first-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-slate-300 shadow-lg">
-              <!-- 상단 컨트롤바 css-->
+          <span
+            id="first-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" class="close-btn" data-modal="first-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
-                <span>New Jeans</span>
+                <span style="color: black">New Jeans</span>
               </div>
-              <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-row items-center justify-center py-10">
+                <div class="flex-shrink-0">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-auto object-contain"
                     src="./assets/images/album/album_img/1stEP.jpg"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-blue-950">
-                    <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">New Jeans</td>
-                    </tr>
-                    <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2022. 8. 1.</td>
-                    </tr>
-                  </table>
-
-                  <table class="font-cafe-fill text-blue-950">
-                    <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Attention</td>
-                      <td class="font-cafe text-3xl">02:59</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hype Boy</td>
-                      <td class="font-cafe text-3xl">02:58</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Cookie</td>
-                      <td class="font-cafe text-3xl">03:55</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Hurt</td>
-                      <td class="font-cafe text-3xl">02:57</td>
-                    </tr>
-                  </table>
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-blue-950">
+                      <tr>
+                        <td colspan="2" class="text-3xl md:text-4xl">New Jeans</td>
+                      </tr>
+                      <tr>
+                        <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                        <td colspan="2" class="text-xl md:text-2xl">2022. 8. 1.</td>
+                      </tr>
+                    </table>
+                    <table class="mt-4 w-full font-cafe-fill text-blue-950">
+                      <tr>
+                        <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Attention</td>
+                        <td class="font-cafe text-lg md:text-xl">02:59</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Hype Boy</td>
+                        <td class="font-cafe text-lg md:text-xl">02:58</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
+              <div class="mt-6 flex items-center justify-center">
+                <a
+                  href="https://www.melon.com/album/detail.htm?albumId=11127145"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.music-flo.com/detail/album/410940180/albumtrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-12 bg-transparent"></div>
             </div>
           </span>
+
           <!-- 두 번째 앨범 모달 창 -->
-          <span id="second-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-neutral-400 shadow-lg">
-              <!-- 상단 컨트롤바 css-->
+          <span
+            id="second-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-red-100 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" class="close-btn" data-modal="second-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
-                <span>OMG</span>
+                <span style="color: black">OMG</span>
               </div>
-              <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-row items-center justify-center py-10">
+                <div class="flex-shrink-0">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-auto object-contain"
                     src="./assets/images/album/album_img/OMG.jpg"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-stone-800">
-                    <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">OMG</td>
-                    </tr>
-                    <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2023. 1. 2.</td>
-                    </tr>
-                  </table>
-
-                  <table class="font-cafe-fill text-stone-800">
-                    <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">OMG</td>
-                      <td class="font-cafe text-3xl">03:33</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Ditto</td>
-                      <td class="font-cafe text-3xl">03:06</td>
-                    </tr>
-                  </table>
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-blue-950">
+                      <tr>
+                        <td colspan="2" class="text-3xl md:text-4xl">OMG</td>
+                      </tr>
+                      <tr>
+                        <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                        <td colspan="2" class="text-xl md:text-2xl">2023. 1. 2.</td>
+                      </tr>
+                    </table>
+                    <table class="mt-4 w-full font-cafe-fill text-blue-950">
+                      <tr>
+                        <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">OMG</td>
+                        <td class="font-cafe text-lg md:text-xl">03:33</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Ditto</td>
+                        <td class="font-cafe text-lg md:text-xl">03:06</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
+              <div class="mt-6 flex items-center justify-center">
+                <a
+                  href="https://www.melon.com/album/detail.htm?albumId=11127145"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.music-flo.com/detail/album/410940180/albumtrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-12 bg-transparent"></div>
             </div>
           </span>
+
           <!-- 세 번째 앨범 모달 창 -->
-          <span id="third-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-cyan-100 shadow-lg">
-              <!-- 상단 컨트롤바 css-->
+          <span
+            id="third-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div class="max-h-[90vh] w-full overflow-auto rounded-md bg-cyan-100 pb-10 shadow-lg">
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" class="close-btn" data-modal="third-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
-                <span>Get up</span>
+                <span>Get Up</span>
               </div>
-              <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-row items-center justify-center py-10">
+                <div class="flex-shrink-0">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-auto object-contain"
                     src="./assets/images/album/album_img/GetUp.webp"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-blue-500">
-                    <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">Get Up</td>
-                    </tr>
-                    <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2022. 8. 1.</td>
-                    </tr>
-                  </table>
-
-                  <table class="font-cafe-fill text-teal-600">
-                    <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">New Jeans</td>
-                      <td class="font-cafe text-3xl">01:49</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Super Shy</td>
-                      <td class="font-cafe text-3xl">02:35</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">ETA</td>
-                      <td class="font-cafe text-3xl">02:32</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Cool With You</td>
-                      <td class="font-cafe text-3xl">02:28</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Get Up</td>
-                      <td class="font-cafe text-3xl">00:37</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">ASAP</td>
-                      <td class="font-cafe text-3xl">02:15</td>
-                    </tr>
-                  </table>
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-gray-900">
+                      <tr>
+                        <td colspan="2" class="text-3xl">Get Up</td>
+                      </tr>
+                      <tr>
+                        <td class="font-cafe text-xl">Release Date</td>
+                        <td colspan="2" class="text-xl">2022. 8. 1.</td>
+                      </tr>
+                    </table>
+                    <table class="mt-4 text-left font-cafe-fill text-teal-600">
+                      <tr>
+                        <td colspan="3" class="text-3xl">Playlist</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none">New Jeans</td>
+                        <td class="font-cafe text-lg">01:49</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none">Super Shy</td>
+                        <td class="font-cafe text-lg">02:35</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
+              <div class="mt-6 flex items-center justify-center">
+                <a
+                  href="https://www.melon.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.music-flo.com/detail/album/425287164/albumtrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-12 bg-transparent"></div>
             </div>
           </span>
+
           <!-- 네 번째 앨범 모달 창 -->
-          <span id="forth-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border border-[#acacac] bg-stone-900 shadow-lg">
-              <!-- 상단 컨트롤바 css-->
+          <span
+            id="forth-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-stone-900 pb-10 shadow-lg">
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" class="close-btn" data-modal="forth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
                 <span>How Sweet</span>
               </div>
-              <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-row items-center justify-center py-10">
+                <div class="flex-shrink-0">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-auto object-contain"
                     src="./assets/images/album/album_img/HowSweet.webp"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-orange-300">
-                    <tr>
-                      <td colspan="2" class="bvw-[60%] text-7xl">How Sweet</td>
-                    </tr>
-                    <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2022. 8. 1.</td>
-                    </tr>
-                  </table>
-
-                  <table class="font-cafe-fill text-orange-300">
-                    <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">How Sweet</td>
-                      <td class="font-cafe text-3xl">03:40</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-5xl leading-none">Bubble Gum</td>
-                      <td class="font-cafe text-3xl">03:21</td>
-                    </tr>
-                  </table>
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-orange-300">
+                      <tr>
+                        <td colspan="2" class="text-3xl md:text-4xl">How Sweet</td>
+                      </tr>
+                      <tr>
+                        <td class="font-cafe text-xl md:text-2xl">Release Date</td>
+                        <td colspan="2" class="text-xl md:text-2xl">2022. 8. 1.</td>
+                      </tr>
+                    </table>
+                    <table class="mt-4 text-left font-cafe-fill text-orange-300">
+                      <tr>
+                        <td colspan="3" class="text-3xl md:text-4xl">Playlist</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">How Sweet</td>
+                        <td class="font-cafe text-lg md:text-xl">03:40</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-xl leading-none md:text-2xl">Bubble Gum</td>
+                        <td class="font-cafe text-lg md:text-xl">03:21</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
+              <div class="mt-6 flex items-center justify-center">
+                <a
+                  href="https://www.melon.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.music-flo.com/detail/album/425287164/albumtrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-12" style="color: rgba(0, 55, 55, 2)">　|　</span>
+                <a
+                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-12 bg-transparent"></div>
             </div>
           </span>
+
           <!-- 다섯 번째 앨범 모달 창 -->
-          <span id="fifth-album-window" class="absolute bottom-[-140%] left-[5%] right-[5%] top-[21%] z-50 hidden">
-            <div class="absolute top-0 h-full w-full rounded-md border bg-rose-400 shadow-lg">
-              <!-- 상단 컨트롤바 css-->
+          <span
+            id="fifth-album-window"
+            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
+            <div
+              class="max-h-[90vh] w-full overflow-auto rounded-md border border-[#acacac] bg-stone-900 pb-10 shadow-lg">
               <div
                 class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn">
+                  <span id="close-btn" class="close-btn" data-modal="fifth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <!-- 중간 버튼 형태 구현 -->
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <!-- 우측 버튼 형태 구현 -->
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
                       <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <!-- 모달창 타이틀 -->
                 <span>Supernatural</span>
               </div>
-              <!-- 모달 내 컨텐츠 -->
-              <div class="flex h-full w-full">
-                <div class="h-full w-2/4 p-10">
+              <div class="flex flex-row items-center justify-center py-10">
+                <div class="flex-shrink-0">
                   <img
-                    class="border-2 border-solid border-gray-500 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+                    class="drop-shadow-[0_3px_3px rgba(0,0,0,0.5)] h-auto max-h-60 w-auto object-contain"
                     src="./assets/images/album/album_img/Supernatural.webp"
                     alt="" />
                 </div>
-                <div class="h-full w-2/4 p-10">
-                  <table class="font-cafe-fill leading-tight text-green-400">
-                    <tr>
-                      <td colspan="2" class="bvw-[60%] text-6xl">Supernatural</td>
-                    </tr>
-                    <tr>
-                      <td class="w-[60%] font-cafe text-3xl">Release Date</td>
-                      <td colspan="2" class="text-3xl">2024. 6. 21.</td>
-                    </tr>
-                  </table>
-
-                  <table class="font-cafe-fill text-yellow-300">
-                    <tr>
-                      <td colspan="3" class="bw-[60%] text-7xl">Playlist</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Supernatural</td>
-                      <td class="font-cafe text-3xl">02:59</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" class="w-[80%] font-cafe text-4xl leading-none">Right Now</td>
-                      <td class="font-cafe text-3xl">02:58</td>
-                    </tr>
-                  </table>
+                <div class="ml-10">
+                  <div class="flex flex-col rounded-md p-5">
+                    <table class="text-left font-cafe-fill leading-tight text-green-400">
+                      <tr>
+                        <td colspan="2" class="text-3xl">Supernatural</td>
+                      </tr>
+                      <tr>
+                        <td class="style=color: #ffbd4c w-[60%] font-cafe text-xl">Release Date 2024. 6. 21.</td>
+                      </tr>
+                    </table>
+                    <table class="mt-4 text-left font-cafe-fill text-yellow-300">
+                      <tr>
+                        <td colspan="3" class="text-3xl">Playlist</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Supernatural</td>
+                        <td class="font-cafe text-xl">02:59</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Right Now</td>
+                        <td class="font-cafe text-xl">02:58</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
+              <div class="mt-6 flex items-center justify-center">
+                <a
+                  href="https://www.melon.com/album/detail.htm?albumId=11514014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
+                <a
+                  href="https://www.music-flo.com/detail/album/426178480/albumtrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
+                </a>
+                <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
+                <a
+                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85323248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-12 w-12 items-center justify-center">
+                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-12 bg-transparent"></div>
             </div>
           </span>
 
           <!-- 앨범 아이콘 -->
-          <button id="first-album" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
+          <button id="first-album" class="left-[6%] top-[10%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img
-              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
               src="./assets/images/album/album_img/1stEP.jpg"
               alt="" />
-            <p class="w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">New Jeans</p>
+            <p class="drop-shadow-[0_1px_1px rgba(0,0,0,0.5)] w-full whitespace-nowrap text-center">New Jeans</p>
           </button>
-          <button id="second-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+          <button id="second-album" class="left-[6%] top-[10%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img
-              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
               src="./assets/images/album/album_img/OMG.jpg"
               alt="" />
-            <p class="w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">OMG</p>
+            <p class="drop-shadow-[0_1px_1px rgba(0,0,0,0.5)] w-full whitespace-nowrap text-center">OMG</p>
           </button>
-          <button id="third-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+          <button id="third-album" class="left-[6%] top-[10%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img
-              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
               src="./assets/images/album/album_img/GetUp.webp"
               alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">Get Up</p>
+            <p class="drop-shadow-[0_1px_1px rgba(0,0,0,0.5)] w-full whitespace-nowrap text-center">Get Up</p>
           </button>
-          <button id="forth-album" class="left-[6%] top-[20%] z-50 mr-[4%] h-[20%] w-[8%]">
+          <button id="forth-album" class="left-[6%] top-[10%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img
-              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
               src="./assets/images/album/album_img/HowSweet.webp"
               alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">How Sweet</p>
+            <p class="drop-shadow-[0_1px_1px rgba(0,0,0,0.5)] w-full whitespace-nowrap text-center">How Sweet</p>
           </button>
-          <button id="fifth-album" class="left-[6%] top-[4%] z-50 mr-[4%] h-[20%] w-[8%]">
+          <button id="fifth-album" class="left-[6%] top-[10%] z-50 mr-[4%] h-[20%] w-[8%]">
             <img
-              class="h-auto w-full drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              class="drop-shadow-[0_1px_2px rgba(0,0,0,0.8)] h-auto w-full"
               src="./assets/images/album/album_img/Supernatural.webp"
               alt="" />
-            <p class="text- w-full text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">Supernatural</p>
+            <p class="drop-shadow-[0_1px_1px rgba(0,0,0,0.5)] w-full whitespace-nowrap text-center">Supernatural</p>
           </button>
         </div>
       </div>
     </div>
     <script>
       // TODO: close-btn 버튼을 클릭하면, 각 모달 팝업의 hiddem, block을 제거 후 추가하는 식으로 보이는 구조입니다.
-      // TODO: 모달 팝업의 외부 영역을 클릭해도 모달 창이 닫히면 편의성 면에서 좋을 것 같습니다. 이거는 테스트로 구현까진 못했어요.
-      // TODO: 아래는 테스트용으로 러프하게 짰는데 팝업창이 열리고 닫히는 것은 js 파일 분리 및 코드 최적화를 진행하면 좋을 것 같습니다.
       // 여유가 있다면 열리고 닫힐때 점점 커지면서 열리거나 반대로 닫힐땐 점점 작아지는(scale?) 액션도 추가하면 좋을 것 같습니다.
+      // 모달 열기
       document.querySelector('#first-album').addEventListener('click', function () {
         document.querySelector('#first-album-window').classList.remove('hidden')
         document.querySelector('#first-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
       })
-      document.querySelector('#close-btn').addEventListener('click', function () {
-        document.querySelector('#first-album-window').classList.remove('block')
-        document.querySelector('#first-album-window').classList.add('hidden')
+
+      document.querySelector('#second-album').addEventListener('click', function () {
+        document.querySelector('#second-album-window').classList.remove('hidden')
+        document.querySelector('#second-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#third-album').addEventListener('click', function () {
+        document.querySelector('#third-album-window').classList.remove('hidden')
+        document.querySelector('#third-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#forth-album').addEventListener('click', function () {
+        document.querySelector('#forth-album-window').classList.remove('hidden')
+        document.querySelector('#forth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      document.querySelector('#fifth-album').addEventListener('click', function () {
+        document.querySelector('#fifth-album-window').classList.remove('hidden')
+        document.querySelector('#fifth-album-window').classList.add('block')
+        document.querySelector('#modal-background').classList.remove('hidden')
+        document.querySelector('#modal-background').classList.add('block')
+      })
+
+      // 모달 닫기
+      function closeModal(modalId) {
+        document.querySelector(modalId).classList.remove('block')
+        document.querySelector(modalId).classList.add('hidden')
+        document.querySelector('#modal-background').classList.remove('block')
+        document.querySelector('#modal-background').classList.add('hidden')
+      }
+
+      // 닫기 버튼에 이벤트 리스너 추가
+      document.querySelectorAll('.close-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          closeModal(`#${button.dataset.modal}`)
+        })
+      })
+
+      // 배경 클릭 시 모달 닫기
+      document.querySelector('#modal-background').addEventListener('click', function () {
+        closeModal('#first-album-window')
+        closeModal('#second-album-window')
+        closeModal('#third-album-window')
+        closeModal('#forth-album-window')
+        closeModal('#fifth-album-window')
       })
     </script>
 
     <!-- s: 풋터 -->
-    <footer class="container mx-auto py-10 font-cafe-fill text-4xl">
-      <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank"></a>Hongdaeipgu</a>
+    <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
+      <a href="https://ador.world/" target="_blank">
+        <img src="/assets/images/header/logo-ador.svg" alt="ador" class="w-28" />
+      </a>
+      <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
     </footer>
     <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
+    <script src="./assets/js/member.js"></script>
   </body>
 </html>

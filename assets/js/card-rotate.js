@@ -1,5 +1,7 @@
 let cards = document.querySelectorAll('.member-card-box li')
+
 function rotateCards() {
+  const cards = document.querySelectorAll('.member-card-box li')
   // 카드들 선택
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i]
@@ -11,8 +13,4 @@ function rotateCards() {
     let degree = randomNumber - 12
     card.style.transform = 'rotate(' + degree + 'deg)'
   }
-}
-// 페이지 로드시 카드 회전 실행
-window.onload = function () {
-  rotateCards()
 }
