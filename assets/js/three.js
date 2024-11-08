@@ -33,6 +33,27 @@ const omgditto_texture_bottom = textureLoader.load('./assets/images/album/3dText
 const omgditto_texture_left = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/left.png')
 const omgditto_texture_right = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/right.png')
 
+const getup_texture_front = textureLoader.load('./assets/images/album/3dTexture/getup/front.png')
+const getup_texture_back = textureLoader.load('./assets/images/album/3dTexture/getup/back.png')
+const getup_texture_top = textureLoader.load('./assets/images/album/3dTexture/getup/top.png')
+const getup_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/getup/bottom.png')
+const getup_texture_left = textureLoader.load('./assets/images/album/3dTexture/getup/left.png')
+const getup_texture_right = textureLoader.load('./assets/images/album/3dTexture/getup/right.png')
+
+const howsweet_texture_front = textureLoader.load('./assets/images/album/3dTexture/howSweet/front.png')
+const howsweet_texture_back = textureLoader.load('./assets/images/album/3dTexture/howSweet/back.png')
+const howsweet_texture_top = textureLoader.load('./assets/images/album/3dTexture/howSweet/top.png')
+const howsweet_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/howSweet/bottom.png')
+const howsweet_texture_left = textureLoader.load('./assets/images/album/3dTexture/howSweet/left.png')
+const howsweet_texture_right = textureLoader.load('./assets/images/album/3dTexture/howSweet/right.png')
+
+const supernatural_texture_front = textureLoader.load('./assets/images/album/3dTexture/supernatural/front.png')
+const supernatural_texture_back = textureLoader.load('./assets/images/album/3dTexture/supernatural/back.png')
+const supernatural_texture_top = textureLoader.load('./assets/images/album/3dTexture/supernatural/top.png')
+const supernatural_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/supernatural/bottom.png')
+const supernatural_texture_left = textureLoader.load('./assets/images/album/3dTexture/supernatural/left.png')
+const supernatural_texture_right = textureLoader.load('./assets/images/album/3dTexture/supernatural/right.png')
+
 // 큐브 지오메트리와 머티리얼 생성
 // 큐브 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
@@ -53,14 +74,37 @@ const omgdittoMaterials = [
   new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
   new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
 ]
-
-function render3DCover(index) {
-  const texture = new THREE.TextureLoader().load(albumList[index].cover)
+const getUpMaterials = [
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+]
+const howSweetMaterials = [
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+]
+const supernaturalMaterials = [
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+]
+function render3DCover(nowAlbumIndex) {
+  const texture = new THREE.TextureLoader().load(albumList[nowAlbumIndex].cover)
   coverMesh.material.map = texture
   coverMesh.material.needsUpdate = true // 텍스처 업데이트
 }
 
-const cube = new THREE.Mesh(geometry, newjeansMaterials)
+const cube = new THREE.Mesh(geometry, render3DCover.texture)
 scene.add(cube)
 
 // 카메라 위치 설정

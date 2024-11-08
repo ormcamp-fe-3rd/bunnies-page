@@ -230,12 +230,9 @@ function changeAlbum(direction) {
     cdWrap.style.transform = '' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     setAlbumInfo(nowAlbumIndex) //영수증 변경
-    function changeAlbum(nextIndex) {
-      setAlbumInfo(nowAlbumIndex) // 앨범 정보 업데이트
-      render3DCover(nowAlbumIndex) // 3D 커버 리렌더링
-    }
 
     // TODO: 3D 커버 리렌더링 함수를 호출해주시면 됩니다
+    render3DCover()
   }, 300)
 }
 
