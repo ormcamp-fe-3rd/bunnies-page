@@ -31,16 +31,35 @@ function limitMaxMessage(n){
 /**
  * 새로운 element에 입력된 텍스트를 담아 html에 추가
  * @param {str} 메세지창에서 입력받은 텍스트 
- */
+*/
 function makeMessageDome(str) {
-  let newLi = document.createElement('li')
-  let newText = document.createTextNode(str)
-  newLi.appendChild(newText)
-
-  messageDeco(newLi)
-  messageWrap.appendChild(newLi)
-  initOpacity()
+  let messageObj = {//메세지를 담아둘 객체 생성
+    message: str,
+    topValue: getTop(),
+    leftValue: getLeft(),
+    rightValue: getRight(),
+    colorValue: getColor()
+  }
+  messageWrap.appendChild(messageDeco(messageObj))//랜덤 값 설정하여 html에 삽입
+  storedArr.push(messageObj) 
+  localStorage.setItem('messageObjArr', JSON.stringify(storedArr))
+  initOpacity() //opacity값은 node순서에 따라 지정
 }
+
+let storedArr = []//localStorage를 저장할 배열 선언
+
+/**
+ * 페이지 로드될때마다 로컬스토리지에 담긴 메세지들을 html에 추가
+ */
+window.addEventListener("load", (event) => {
+  if (localStorage.getItem('messageObjArr')) {
+    storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
+    for (let i = 0; i < storedArr.length; i++) {
+      messageWrap.appendChild(messageDeco(storedArr[i]))
+    }
+    initOpacity()
+  } 
+})
 
 /**
  * 자식 순서에 따른 opacity값 추가(동적)
@@ -58,21 +77,20 @@ function initOpacity(){
  * @param {element} 대상 요소
  */
 function messageDeco(element) {
-  let topValue = getTop()
-  let leftValue = getLeft()
-  let colorValue = getColor()
-  if (leftValue > 50) {
-    let rightValue = getRandomInt(0, 50)
-    element.setAttribute(
+  let newLi = document.createElement('li')
+  newLi.appendChild(document.createTextNode(element.message))
+  if (element.leftValue > 50) {
+    newLi.setAttribute(
       'class',
-      `absolute inline-block rounded-full px-5 py-3 right-[${rightValue}%] top-[${topValue}%] bg-[${colorValue}]`
+      `absolute inline-block rounded-full px-5 py-3 right-[${element.rightValue}%] top-[${element.topValue}%] bg-[${element.colorValue}]`
     )
   } else {
-    element.setAttribute(
+    newLi.setAttribute(
       'class',
-      `absolute inline-block rounded-full px-5 py-3 left-[${leftValue}%] top-[${topValue}%] bg-[${colorValue}]`
+      `absolute inline-block rounded-full px-5 py-3 left-[${element.leftValue}%] top-[${element.topValue}%] bg-[${element.colorValue}]`
     )
   }
+  return newLi
 }
 
 /**
