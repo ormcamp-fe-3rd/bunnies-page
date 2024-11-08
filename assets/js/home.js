@@ -1,10 +1,3 @@
-/**
- * DOM 이 모두 Load 되었을 때 실행되는 함수
- */
-function init() {
-  setVideo()
-}
-
 const playList = [
   {
     id: 'ArmDp-zijuc',
