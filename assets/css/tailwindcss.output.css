@@ -2782,6 +2782,18 @@ a,
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/assets\/images\/album\/super-bg\.png\'\)\] {
+  background-image: url('/assets/images/album/super-bg.png');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/superbg\.jpg\'\)\] {
+  background-image: url('/assets/images/album/superbg.jpg');
+}
+
+.bg-\[url\(\'\/assets\/images\/album\/superbg\.png\'\)\] {
+  background-image: url('/assets/images/album/superbg.png');
+}
+
 .from-\[\#ebebeb\] {
   --tw-gradient-from: #ebebeb var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(235 235 235 / 0) var(--tw-gradient-to-position);
