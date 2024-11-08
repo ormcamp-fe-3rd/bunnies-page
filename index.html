@@ -77,46 +77,48 @@
     </section>
     <!-- e: 유튜브 -->
 
-    <!-- 멤버 카드 -->
+    <!-- s: 멤버 카드 -->
     <section class="w-full cursor-[url('/assets/images/cursor/clickMe.png'),_pointer]">
       <ul class="member-card-box m-5 flex gap-12 p-5">
-        <li class="relative h-auto w-1/6 -rotate-12">
+        <li id="home-minji" class="relative h-auto w-1/6 -rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
+            alt=""/>
         </li>
-        <li class="relative h-auto w-1/6 -rotate-6">
-          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
-          <img
-            src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
-        </li>
-        <li class="relative h-auto w-1/6 rotate-6">
+        <li id="home-hanni" class="relative h-auto w-1/6 rotate-6" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 -rotate-3">
-          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+        <li id="home-danni" class="relative h-auto w-1/6 -rotate-6" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
           <img
-            src="/assets/images/main-member/main-hyein-frame.png"
+            src="/assets/images/main-member/main-danielle-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 rotate-12">
+        <li id="home-haerin" class="relative h-auto w-1/6 rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
+        <li id="home-hyein" class="relative h-auto w-1/6 -rotate-3" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-hyein-frame.png"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
       </ul>
     </section>
+    <!-- e: 멤버 카드 -->
+    
     <!-- 모달 배경 -->
     <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
@@ -668,5 +670,6 @@
     </footer>
     <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
+    <script src="./assets/js/member.js"></script>
   </body>
 </html>
