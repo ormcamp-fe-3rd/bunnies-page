@@ -1942,13 +1942,16 @@ body {
   margin-bottom: 1rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .mb-24 {
   margin-bottom: 6rem;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .ml-1 {
@@ -1981,6 +1984,10 @@ body {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-4 {
