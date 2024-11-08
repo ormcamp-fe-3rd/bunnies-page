@@ -1952,9 +1952,12 @@ a,
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-
 .mb-24 {
   margin-bottom: 6rem;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
 }
 
 .mb-5 {
@@ -1995,6 +1998,10 @@ a,
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-4 {
@@ -2095,6 +2102,10 @@ a,
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[500px\] {
+  height: 500px;
 }
 
 .max-h-60 {
@@ -2249,6 +2260,10 @@ a,
 
 .cursor-\[url\(\'\/assets\/images\/cursor\/bunnie\.png\'\)\2c _default\] {
   cursor: url('/assets/images/cursor/bunnie.png'), default;
+}
+
+.cursor-\[url\(\'\/assets\/images\/cursor\/clickMe\.png\'\)\2c _pointer\] {
+  cursor: url('/assets/images/cursor/clickMe.png'), pointer;
 }
 
 .cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)_15_10\2c _default\] {

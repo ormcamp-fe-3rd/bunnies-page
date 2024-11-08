@@ -107,7 +107,11 @@ pagination_btn_05.addEventListener('click', function () {
   runDrag('.team-photo')
 })
 
-//드래그&드롭 액션
+/**
+드래그 앤 드롭 액션 함수
+@param {string} cards 드래그되는 카드들 샐렉터 설정
+@param {MouseEvent} e - 최종 실행되는 드래그 앤 드롭 함수
+*/
 function runDrag(cards) {
   document.querySelectorAll(cards).forEach(contentDragged => {
     // 마우스 시작 좌표 선언, 이동 거리 값 0으로 설정
@@ -116,11 +120,14 @@ function runDrag(cards) {
       changedValueX = 0,
       changedValueY = 0
 
-    // 카드의 초기 y 좌표를 가져오고, 이동 가능한 최하단 y 좌표로 설정
+    // 카드의 초기 y 좌표를 가져와, 이동 가능한 최하단 y 좌표로 설정
     const initialYPosition = contentDragged.getBoundingClientRect().top + window.scrollY
     const limitYPosition = 420 // 각 카드가 도달할 수 있는 최하단 y 좌표
 
-    // 마우스 이동 거리 계산 (현재 좌표 - 드래그 시작 좌표)
+    /**
+    마우스 이동 거리 계산 함수
+    @param {MouseEvent} e - 마우스 이벤트 객체
+    */
     const whenMouseMove = e => {
       changedValueX = e.pageX - xStart
       changedValueY = e.pageY - yStart
@@ -134,8 +141,9 @@ function runDrag(cards) {
       // 계산한 이동 거리를 translateX, Y 각각에 반영
       contentDragged.style.transform = `translate(${changedValueX}px, ${changedValueY}px)`
     }
-
-    // 마우스 클릭을 멈추면, 이벤트 리스너 제거
+    /**
+    마우스 클릭을 멈추면 이벤트 리스너 제거
+    */
     const whenMouseUp = () => {
       document.removeEventListener('mouseup', whenMouseUp)
       document.removeEventListener('mousemove', whenMouseMove)
@@ -152,3 +160,60 @@ function runDrag(cards) {
   })
 }
 runDrag('.team-photo')
+
+/**
+ * home에서 멤버카드 선택시 member페이지로 이동
+ * @param {name} 선택된 멤버의 이름 
+ */
+function toMemberPage(name){
+  switch(name){
+    case "home-minji":
+      location.href = "/member.html"
+      sessionStorage.setItem('name', 'minji')
+      break
+    case "home-danni": 
+      location.href = '/member.html'
+      sessionStorage.setItem('name', 'danni')
+      break
+    case "home-hanni":
+      location.href = '/member.html'
+      sessionStorage.setItem("name", "hanni")
+      break
+    case "home-hyein":
+      location.href = '/member.html'
+      sessionStorage.setItem('name', 'hyein')
+      break
+    case "home-haerin":
+      location.href = '/member.html'
+      sessionStorage.setItem('name', 'haerin')
+      break
+  }
+}
+
+/**
+ * member페이지 로드시마다
+ * 세션에 저장된 이름이 있으면, 해당하는 이름의 페이지네이션 클릭
+ */
+window.addEventListener("load",()=>{
+  let clickName = sessionStorage.getItem("name")
+  switch(clickName){
+    case "minji":
+      pagination_btn_01.click()
+      break
+    case "hanni":
+      pagination_btn_02.click()
+      break
+    case "danni":
+      pagination_btn_03.click()
+      break
+    case "haerin":
+      pagination_btn_04.click()
+      break
+    case "hyein":
+      pagination_btn_05.click()
+      break
+    default:
+      pagination_btn_01.click()
+  }
+  sessionStorage.clear()
+})

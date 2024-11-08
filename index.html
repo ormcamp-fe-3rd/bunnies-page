@@ -25,19 +25,19 @@
       <!-- s: SNS -->
       <div class="flex items-center justify-between gap-4 max-md:hidden">
         <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
-          <img src="/assets/images/header/homeMenuicon1.svg" alt="homeMenuIcon1" class="h-6 w-6" />
+          <img src="/assets/images/header/homeMenuicon1.svg" alt="phoning" class="h-6 w-6" />
         </a>
-        <a href="https://play.google.com/store/apps/details?id=co.weverse.phoning&hl=ko&pli=1" target="_blank">
-          <img src="/assets/images/header/homeMenuicon2.svg" alt="homeMenuIcon2" class="h-6 w-6" />
+        <a href="https://x.com/NewJeans_ADOR" target="_blank">
+          <img src="/assets/images/header/homeMenuicon2.svg" alt="x" class="h-6 w-6" />
         </a>
         <a href="https://www.instagram.com/newjeans_official/" target="_blank">
-          <img src="/assets/images/header/homeMenuicon3.svg" alt="homeMenuIcon3" class="h-6 w-6" />
+          <img src="/assets/images/header/homeMenuicon3.svg" alt="insta" class="h-6 w-6" />
         </a>
         <a href="https://www.facebook.com/official.newjeans/?locale=gn_PY" target="_blank">
-          <img src="/assets/images/header/homeMenuicon4.svg" alt="homeMenuIcon4" class="h-6 w-6" />
+          <img src="/assets/images/header/homeMenuicon4.svg" alt="facebook" class="h-6 w-6" />
         </a>
         <a href="https://www.youtube.com/channel/UCMki_UkHb4qSc0qyEcOHHJw" target="_blank">
-          <img src="/assets/images/header/homeMenuicon5.svg" alt="homeMenuIcon5" class="h-6 w-6" />
+          <img src="/assets/images/header/homeMenuicon5.svg" alt="youtube" class="h-6 w-6" />
         </a>
       </div>
       <!-- e: SNS -->
@@ -79,46 +79,48 @@
     </section>
     <!-- e: 유튜브 -->
 
-    <!-- 멤버 카드 -->
-    <section class="w-full">
+    <!-- s: 멤버 카드 -->
+<section class="w-full cursor-[url('/assets/images/cursor/clickMe.png'),_pointer]">
       <ul class="member-card-box m-5 flex gap-12 p-5">
-        <li class="relative h-auto w-1/6 -rotate-12">
+        <li id="home-minji" class="relative h-auto w-1/6 -rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 -rotate-6">
-          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
-          <img
-            src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
-        </li>
-        <li class="relative h-auto w-1/6 rotate-6">
+        <li id="home-hanni" class="relative h-auto w-1/6 rotate-6" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 -rotate-3">
-          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+        <li id="home-danni" class="relative h-auto w-1/6 -rotate-6" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
           <img
-            src="/assets/images/main-member/main-hyein-frame.png"
+            src="/assets/images/main-member/main-danielle-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative h-auto w-1/6 rotate-12">
+        <li id="home-haerin" class="relative h-auto w-1/6 rotate-12" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
             class="absolute w-full rounded opacity-0 hover:opacity-100"
             alt="" />
         </li>
+        <li id="home-hyein" class="relative h-auto w-1/6 -rotate-3" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+          <img
+            src="/assets/images/main-member/main-hyein-frame.png"
+            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
       </ul>
     </section>
+    <!-- e: 멤버 카드 -->
+
     <!-- 모달 배경 -->
     <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
@@ -128,7 +130,10 @@
       class="computer z-0 my-3 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
       <div class="relative z-50 flex">
         <!-- 컴퓨터 목업 -->
-        <img class="z-30 max-h-[900px] w-full object-contain" src="./assets/images/album/mac.png" alt="컴퓨터 이미지" />
+        <img
+          class="z-30 h-full max-h-[900px] w-full object-contain"
+          src="./assets/images/album/mac.png"
+          alt="컴퓨터 이미지" />
 
         <!-- 컴퓨터 배경화면 영역 -->
         <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white">
@@ -670,5 +675,6 @@
     </footer>
     <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
+    <script src="./assets/js/member.js"></script>
   </body>
 </html>
