@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/css/album.css" />
   </head>
 
-  <body class="bg-zinc-950 text-white">
+  <body class="cursor-[url('/assets/images/cursor/rounded.png'),_default] bg-zinc-950 text-white">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
       <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
@@ -39,16 +39,19 @@
     <!-- e: 헤더 -->
 
     <!--플레이 리스트 전체 영역/ album.css에서 영역,마진 설정-->
-    <section class="h-[1000px] w-full overflow-hidden py-28">
-      <div class="album_playlist container mx-auto flex w-full items-start justify-between">
+    <section class="w-full overflow-hidden py-28 max-lg:pt-5">
+      <div
+        class="album_playlist container mx-auto flex w-full flex-wrap items-start justify-between gap-y-9 max-lg:justify-center">
         <!--CD 플레이 영역-->
-        <div class="album_player mt-7 w-96">
+        <div class="album_player mt-7 max-w-96">
           <div class="cd-wrap mx-auto">
-            <img class="CD_img h-96 rounded-full" src="/assets/images/album/album_img/1stEP.jpg" />
-            <img class="CD_img hidden h-96 rounded-full" src="/assets/images/album/album_img/OMG.jpg" />
-            <img class="CD_img hidden h-96 rounded-full" src="/assets/images/album/album_img/GetUp.webp" />
-            <img class="CD_img hidden h-96 rounded-full" src="/assets/images/album/album_img/HowSweet.webp" />
-            <img class="CD_img hidden h-96 rounded-full" src="/assets/images/album/album_img/Supernatural.webp" />
+            <img class="CD_img aspect-square rounded-full" src="/assets/images/album/album_img/1stEP.jpg" />
+            <img class="CD_img hidden aspect-square rounded-full" src="/assets/images/album/album_img/OMG.jpg" />
+            <img class="CD_img hidden aspect-square rounded-full" src="/assets/images/album/album_img/GetUp.webp" />
+            <img class="CD_img hidden aspect-square rounded-full" src="/assets/images/album/album_img/HowSweet.webp" />
+            <img
+              class="CD_img hidden aspect-square rounded-full"
+              src="/assets/images/album/album_img/Supernatural.webp" />
           </div>
           <!--앨범 이동 btn 영역-->
           <ul class="album_player_btn mx-auto mt-14 flex w-72 items-center justify-between">
@@ -136,6 +139,7 @@
         </div>
       </div>
     </section>
+    <div id="album-cover" class="mx-auto aspect-square max-h-[1000px] w-full"></div>
     <script src="/assets/js/album-playlist.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
     <script src="/assets/js/three.js"></script>
