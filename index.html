@@ -13,7 +13,7 @@
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body
-    class="cursor-[url('/assets/images/cursor/korean.png'),_default] bg-zinc-950 text-white"
+    class="cursor-[url('/assets/images/cursor/korean.png'),_default] overflow-x-hidden bg-zinc-950 text-white"
     onload="rotateCards(); setVideo();">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
@@ -127,11 +127,11 @@
 
     <!-- 앨범 섹션 영역 지정 -->
     <div
-      class="computer z-0 my-3 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
-      <div class="relative z-50 flex">
+      class="computer z-0 my-3 flex h-[900px] w-full min-w-[1200px] items-center justify-center overflow-hidden bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
+      <div class="relative z-50 flex min-w-[1024px]">
         <!-- 컴퓨터 목업 -->
         <img
-          class="z-30 h-full max-h-[900px] w-full object-contain"
+          class="z-30 h-full max-h-[900px] w-full min-w-[1024px] object-contain"
           src="./assets/images/album/mac.png"
           alt="컴퓨터 이미지" />
 
@@ -691,7 +691,6 @@
               <div class="h-12 bg-transparent"></div>
             </div>
           </span>
-
           <!-- 앨범 아이콘 -->
           <div class="relative z-0">
             <button id="first-album" class="group relative z-10 mr-[4%] h-[20%] w-[8%]">
