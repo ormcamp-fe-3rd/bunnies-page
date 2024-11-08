@@ -1,4 +1,3 @@
-
 //멤버별 페이지 호출
   const minji_images = document.querySelector('.team-photo-minji-page')
   const hanni_images = document.querySelector('.team-photo-hanni-page')
@@ -30,6 +29,8 @@ pagination_btn_01.addEventListener('click', function () {
   dani_images.style.display = 'none'
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'none'
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  runDrag('.team-photo')
 })
 
 //페이지네이션 하니 버튼 클릭 시
@@ -47,6 +48,8 @@ pagination_btn_02.addEventListener('click', function () {
   dani_images.style.display = 'none'
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'none'
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  runDrag('.team-photo')
 })
 
 pagination_btn_03.addEventListener('click', function () {
@@ -63,6 +66,8 @@ pagination_btn_03.addEventListener('click', function () {
   dani_images.style.display = 'block'
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'none'
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  runDrag('.team-photo')
 })
 //페이지네이션 해린 버튼 클릭 시
 pagination_btn_04.addEventListener('click', function () {
@@ -79,6 +84,8 @@ pagination_btn_04.addEventListener('click', function () {
   dani_images.style.display = 'none'
   haerin_images.style.display = 'block'
   hyein_images.style.display = 'none'
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  runDrag('.team-photo')
 })
 
 //페이지네이션 혜인 버튼 클릭 시
@@ -96,36 +103,57 @@ pagination_btn_05.addEventListener('click', function () {
   dani_images.style.display = 'none'
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'block'
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  runDrag('.team-photo')
 })
 
-//포토카드 드래그앤드롭
+/**
+드래그 앤 드롭 액션 함수
+@param {string} cards 드래그되는 카드들 샐렉터 설정
+@param {MouseEvent} e - 최종 실행되는 드래그 앤 드롭 함수
+*/
 function runDrag(cards) {
   document.querySelectorAll(cards).forEach(contentDragged => {
-    // 마우스 시작 좌표 선언, 이동거리 값 0으로 셋팅
+    // 마우스 시작 좌표 선언, 이동 거리 값 0으로 설정
     let xStart,
       yStart,
       changedValueX = 0,
       changedValueY = 0
-    //마우스 이동거리 계산 (현재 좌표 - 드래그 시작 좌표)
+
+    // 카드의 초기 y 좌표를 가져와, 이동 가능한 최하단 y 좌표로 설정
+    const initialYPosition = contentDragged.getBoundingClientRect().top + window.scrollY
+    const limitYPosition = 420 // 각 카드가 도달할 수 있는 최하단 y 좌표
+
+    /**
+    마우스 이동 거리 계산 함수
+    @param {MouseEvent} e - 마우스 이벤트 객체
+    */
     const whenMouseMove = e => {
       changedValueX = e.pageX - xStart
       changedValueY = e.pageY - yStart
-      // 제한 범위 설정 (각 카드의 첫 위치로부터 300 이상 못 내려가게)
-      if (changedValueY > 300) changedValueY = 300
-      // 계산한 이동거리를 translateX,Y 각각에 반영
-      contentDragged.style.transform = 'translate(' + changedValueX + 'px, ' + changedValueY + 'px)'
+
+      // 카드가 y 축에서 더 이상 내려가지 않도록 제한
+      const elementTopPosition = initialYPosition + changedValueY
+      if (elementTopPosition > limitYPosition) {
+        changedValueY = limitYPosition - initialYPosition
+      }
+
+      // 계산한 이동 거리를 translateX, Y 각각에 반영
+      contentDragged.style.transform = `translate(${changedValueX}px, ${changedValueY}px)`
     }
-    //마우스 클릭을 멈추면, 마우스 위치 파악을 멈춤 (버그 방지 및 성능 개선)
+    /**
+    마우스 클릭을 멈추면 이벤트 리스너 제거
+    */
     const whenMouseUp = () => {
       document.removeEventListener('mouseup', whenMouseUp)
       document.removeEventListener('mousemove', whenMouseMove)
     }
-    //마우스 클릭이 시작되면 마우스 현위 위치 파악 및 이동 거리 저장
+
+    // 마우스 클릭이 시작되면 마우스 현 위치 파악 및 이동 거리 저장
     contentDragged.addEventListener('mousedown', e => {
       xStart = e.pageX - changedValueX
       yStart = e.pageY - changedValueY
-      //브라우저의 마우스 기본 동작 제한
-      e.preventDefault()
+      e.preventDefault() // 브라우저의 마우스 기본 동작 제한
       document.addEventListener('mousemove', whenMouseMove)
       document.addEventListener('mouseup', whenMouseUp)
     })
