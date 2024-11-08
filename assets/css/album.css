@@ -1,21 +1,12 @@
-.album_playlist {
-  width: 1000px;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0 auto;
-}
-
 /* cd 애니메이션 효과 */
-.cd-rotate-wrap {
+.cd-wrap {
   transition: 0.3s linear;
 }
-.cd-wrap {
+.CD_img {
   animation: musicQ 5s linear infinite;
   animation-play-state: paused;
 }
-.cd-wrap.running {
+.CD_img.running {
   animation-play-state: running;
 }
 @keyframes musicQ {
@@ -36,48 +27,11 @@
   width: 424px;
   height: auto;
   padding: 20px;
-  margin-top: 100px;
-}
-
-.playList img {
-  margin: 16px auto;
-  width: 240px;
-  height: auto;
-}
-
-.album_newjeans_playlist_qr_image img {
-  margin: 0 auto 20px;
-  width: 112px;
-  height: 112px;
 }
 
 /*앨범 영수증 플레이리스트 버튼 호버시 효과*/
-.album_selct_btn_01:hover {
+.album_selct_btn:hover,
+.album_selct_btn.play {
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-.album_selct_btn_02:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-.album_selct_btn_03:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-.album_selct_btn_04:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-.album_selct_btn_05:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-.album_selct_btn_06:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-/*qr 호버시 효과*/
-.album_newjeans_playlist_qr_image:hover {
-  background-color: black;
+  color: #fff;
 }
