@@ -1953,6 +1953,16 @@ a,
   margin-bottom: 1.25rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
 .mb-24 {
   margin-bottom: 6rem;
 }
@@ -2013,6 +2023,14 @@ a,
   margin-top: 1.75rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mb-36 {
+  margin-bottom: 9rem;
+}
+
 .block {
   display: block;
 }
@@ -2029,12 +2047,32 @@ a,
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
 
 .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.aspect-\[211\/500\] {
+  aspect-ratio: 211/500;
+}
+
+.aspect-\[1\/2\] {
+  aspect-ratio: 1/2;
+}
+
+.aspect-\[1\.5\/2\] {
+  aspect-ratio: 1.5/2;
+}
+
+.aspect-\[2\/3\] {
+  aspect-ratio: 2/3;
 }
 
 .h-12 {
@@ -2111,6 +2149,10 @@ a,
 
 .min-h-24 {
   min-height: 6rem;
+}
+
+.min-h-\[500px\] {
+  min-height: 500px;
 }
 
 .w-1\/2 {
@@ -2251,12 +2293,16 @@ a,
   cursor: default;
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/bunnie\.png\'\)\2c _pointer\] {
-  cursor: url('/assets/images/cursor/bunnie.png'), pointer;
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)_15_10\2c _pointer\] {
-  cursor: url('/assets/images/cursor/korean.png') 15 10, pointer;
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2269,6 +2315,10 @@ a,
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .items-start {
@@ -2298,6 +2348,19 @@ a,
 .gap-x-20 {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
+}
+
+.gap-x-12 {
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
+
+.gap-y-1 {
+  row-gap: 0.25rem;
 }
 
 .overflow-auto {
@@ -2621,6 +2684,11 @@ a,
      object-fit: contain;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-5 {
   padding: 1.25rem;
 }
@@ -2657,6 +2725,16 @@ a,
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .pb-0 {
@@ -2880,6 +2958,10 @@ a,
   font-style: normal;
 }
 
+.hover\:z-10:hover {
+  z-index: 10;
+}
+
 .hover\:border-\[\#128435\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(18 132 53 / var(--tw-border-opacity));
@@ -2927,6 +3009,12 @@ a,
   visibility: visible;
 }
 
+@media not all and (min-width: 1024px) {
+  .max-lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media not all and (min-width: 768px) {
   .max-md\:block {
     display: block;
@@ -2940,6 +3028,18 @@ a,
     width: 100%;
   }
 
+  .max-md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .max-md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .max-md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .max-md\:justify-center {
     justify-content: center;
   }
@@ -2951,6 +3051,12 @@ a,
 
   .max-md\:pt-3 {
     padding-top: 0.75rem;
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
