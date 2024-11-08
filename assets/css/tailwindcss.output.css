@@ -566,6 +566,11 @@ body {
       sans-serif;
 }
 
+a,
+  button {
+  cursor: inherit;
+}
+
 .container {
   width: 100%;
 }
@@ -1900,10 +1905,6 @@ body {
   z-index: 50;
 }
 
-.m-3 {
-  margin: 0.75rem;
-}
-
 .m-5 {
   margin: 1.25rem;
 }
@@ -1935,6 +1936,11 @@ body {
 .my-14 {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .my-4 {
@@ -2229,8 +2235,16 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/clickMe\.png\'\)\2c _pointer\] {
-  cursor: url('/assets/images/cursor/clickMe.png'), pointer;
+.cursor-\[url\(\'\/assets\/images\/cursor\/bunnie\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/cursor/bunnie.png'), default;
+}
+
+.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)_15_10\2c _default\] {
+  cursor: url('/assets/images/cursor/korean.png') 15 10, default;
+}
+
+.cursor-\[url\(\'\/assets\/images\/cursor\/rounded\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/cursor/rounded.png'), default;
 }
 
 .cursor-default {
