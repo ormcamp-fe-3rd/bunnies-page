@@ -28,7 +28,6 @@ function limitMaxMessage(n){
   }
 }
 
-const messageObjArr = [] //메세지 element를 생성할 때 필요한 변수들을 담아둘 객체들의 배열
 /**
  * 새로운 element에 입력된 텍스트를 담아 html에 추가
  * @param {str} 메세지창에서 입력받은 텍스트 
@@ -42,7 +41,8 @@ function makeMessageDome(str) {
     colorValue: getColor()
   }
   messageWrap.appendChild(messageDeco(messageObj))//랜덤 값 설정하여 html에 삽입
-  messageObjArr.push(messageObj) //배열에 담아서 스토리지 저장
+  let messageObjArr = JSON.parse(localStorage.getItem('messageObjArr'))
+  messageObjArr.push(messageObj) 
   localStorage.setItem('messageObjArr', JSON.stringify(messageObjArr))
   initOpacity() //opacity값은 node순서에 따라 지정
 }
