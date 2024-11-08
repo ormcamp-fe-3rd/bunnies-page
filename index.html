@@ -13,7 +13,7 @@
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body
-    class="cursor-[url('/assets/images/cursor/korean.png')_15_10,_default] bg-zinc-950 text-white"
+    class="cursor-[url('/assets/images/cursor/korean.png'),_default] bg-zinc-950 text-white"
     onload="rotateCards(); setVideo();">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
@@ -80,41 +80,42 @@
     <!-- e: 유튜브 -->
 
     <!-- s: 멤버 카드 -->
-    <section class="w-full cursor-[url('/assets/images/cursor/clickMe.png'),_pointer]">
-      <ul class="member-card-box m-5 flex gap-12 p-5">
-        <li id="home-minji" class="relative h-auto w-1/6 -rotate-12" onclick="toMemberPage(id)">
-          <img src="/assets/images/main-member/main-minji.jpeg" class="absolute rounded" alt="" />
+    <section class="mb-36 mt-24 py-14">
+      <ul
+        class="member-card-box container mx-auto grid w-full grid-cols-5 gap-x-12 gap-y-6 px-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+        <li id="home-minji" class="relative w-full -rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-minji.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li id="home-hanni" class="relative h-auto w-1/6 rotate-6" onclick="toMemberPage(id)">
-          <img src="/assets/images/main-member/main-hanni.jpeg" class="absolute rounded" alt="" />
-          <img
-            src="/assets/images/main-member/main-hanni-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
-            alt="" />
-        </li>
-        <li id="home-danni" class="relative h-auto w-1/6 -rotate-6" onclick="toMemberPage(id)">
-          <img src="/assets/images/main-member/main-danielle.jpeg" class="absolute rounded" alt="" />
+        <li id="home-hanni" class="relative w-full -rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-danielle.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li id="home-haerin" class="relative h-auto w-1/6 rotate-12" onclick="toMemberPage(id)">
-          <img src="/assets/images/main-member/main-haerin.jpeg" class="absolute rounded" alt="" />
+        <li id="home-danni" class="relative w-full rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-hanni.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
-            src="/assets/images/main-member/main-haerin-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            src="/assets/images/main-member/main-hanni-frame.png"
+            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li id="home-hyein" class="relative h-auto w-1/6 -rotate-3" onclick="toMemberPage(id)">
-          <img src="/assets/images/main-member/main-hyein.jpeg" class="absolute rounded" alt="" />
+        <li id="home-haerin" class="relative w-full -rotate-3 overflow-hidden rounded" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-hyein.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-hyein-frame.png"
-            class="absolute w-full rounded opacity-0 hover:opacity-100"
+            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            alt="" />
+        </li>
+        <li id="home-hyein" class="relative w-full rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
+          <img src="/assets/images/main-member/main-haerin.jpeg" class="aspect-[2/3] w-full" alt="" />
+          <img
+            src="/assets/images/main-member/main-haerin-frame.png"
+            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
       </ul>
@@ -145,7 +146,7 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="first-album-window">
                     <div
@@ -154,7 +155,7 @@
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -259,7 +260,7 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-red-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="second-album-window">
                     <div
@@ -268,7 +269,7 @@
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -372,7 +373,7 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-cyan-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="third-album-window">
                     <div
@@ -381,7 +382,7 @@
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -482,7 +483,7 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-amber-800 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="forth-album-window">
                     <div
@@ -491,7 +492,7 @@
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -590,7 +591,7 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
                   <span id="close-btn" class="close-btn" data-modal="fifth-album-window">
                     <div
@@ -772,81 +773,7 @@
         </div>
       </div>
     </div>
-    <script>
-      // 버튼 클릭 시 배경 유지
-      document.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', function () {
-          // 모든 버튼의 배경 초기화
-          document.querySelectorAll('button').forEach(btn => {
-            btn.querySelector('div').classList.remove('bg-opacity-80')
-            btn.querySelector('div').classList.remove('group-hover:bg-opacity-30')
-          })
-          // 클릭된 버튼의 배경을 진하게 설정
-          this.querySelector('div').classList.add('bg-opacity-80')
-        })
-      })
-
-      // 모달 열기
-      document.querySelector('#first-album').addEventListener('click', function () {
-        document.querySelector('#first-album-window').classList.remove('hidden')
-        document.querySelector('#first-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#second-album').addEventListener('click', function () {
-        document.querySelector('#second-album-window').classList.remove('hidden')
-        document.querySelector('#second-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#third-album').addEventListener('click', function () {
-        document.querySelector('#third-album-window').classList.remove('hidden')
-        document.querySelector('#third-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#forth-album').addEventListener('click', function () {
-        document.querySelector('#forth-album-window').classList.remove('hidden')
-        document.querySelector('#forth-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#fifth-album').addEventListener('click', function () {
-        document.querySelector('#fifth-album-window').classList.remove('hidden')
-        document.querySelector('#fifth-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      // 모달 닫기
-      function closeModal(modalId) {
-        document.querySelector(modalId).classList.remove('block')
-        document.querySelector(modalId).classList.add('hidden')
-        document.querySelector('#modal-background').classList.remove('block')
-        document.querySelector('#modal-background').classList.add('hidden')
-      }
-
-      // 닫기 버튼에 이벤트 리스너 추가
-      document.querySelectorAll('.close-btn').forEach(button => {
-        button.addEventListener('click', function () {
-          closeModal(`#${button.dataset.modal}`)
-        })
-      })
-
-      // 배경 클릭 시 모달 닫기
-      document.querySelector('#modal-background').addEventListener('click', function () {
-        closeModal('#first-album-window')
-        closeModal('#second-album-window')
-        closeModal('#third-album-window')
-        closeModal('#forth-album-window')
-        closeModal('#fifth-album-window')
-      })
-    </script>
-
+    <script src="./assets/js/modal-popup.js"></script>
     <!-- s: 풋터 -->
     <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
       <a href="https://ador.world/" target="_blank">
@@ -856,6 +783,5 @@
     </footer>
     <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
-    <script src="./assets/js/member.js"></script>
   </body>
 </html>

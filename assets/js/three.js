@@ -1,6 +1,7 @@
 // 기본 설정
+const renderTarget = document.getElementById('album-cover')
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera(75, renderTarget.clientWidth / renderTarget.clientHeight, 0.1, 1000)
 const renderer = new THREE.WebGLRenderer({ antialias: true })
 
 // 조명 추가
@@ -12,59 +13,66 @@ directionalLight.position.set(10, 10, 10).normalize() // 방향광 위치 설정
 scene.add(directionalLight)
 
 // 렌더링 설정
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(renderTarget.clientWidth, renderTarget.clientHeight)
 renderer.setClearColor(0xeeeeee, 0)
-document.body.appendChild(renderer.domElement)
+renderTarget.appendChild(renderer.domElement)
+
+// 카메라 위치 설정
+camera.position.z = 50
 
 // 텍스처 로더를 사용하여 이미지 텍스처 로드
 const textureLoader = new THREE.TextureLoader()
 
-const newjeans_texture_front = textureLoader.load('./assets/images/album/3dTexture/newjeans/front.png')
-const newjeans_texture_back = textureLoader.load('./assets/images/album/3dTexture/newjeans/back.png')
-const newjeans_texture_top = textureLoader.load('./assets/images/album/3dTexture/newjeans/top.png')
-const newjeans_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/newjeans/bottom.png')
-const newjeans_texture_left = textureLoader.load('./assets/images/album/3dTexture/newjeans/left.png')
-const newjeans_texture_right = textureLoader.load('./assets/images/album/3dTexture/newjeans/right.png')
-
-const omgditto_texture_front = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/front.png')
-const omgditto_texture_back = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/back.png')
-const omgditto_texture_top = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/top.png')
-const omgditto_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/bottom.png')
-const omgditto_texture_left = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/left.png')
-const omgditto_texture_right = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/right.png')
-
-// 큐브 지오메트리와 머티리얼 생성
-// 큐브 지오메트리와 머티리얼 생성
+// 큐브(앨범) 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
-let albumCover = ('newjeansMaterials', 'omgdittoMaterials')
-const newjeansMaterials = [
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_right }),
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_left }),
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_top }),
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_bottom }),
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_front }),
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_back })
-]
-const omgdittoMaterials = [
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
-]
-
-function render3DCover(index) {
-  const texture = new THREE.TextureLoader().load(albumList[index].cover)
-  coverMesh.material.map = texture
-  coverMesh.material.needsUpdate = true // 텍스처 업데이트
-}
-
-const cube = new THREE.Mesh(geometry, newjeansMaterials)
+const coverMaterials = []
+setMeterials() // 머티리얼 초기화
+const cube = new THREE.Mesh(geometry, coverMaterials)
 scene.add(cube)
 
-// 카메라 위치 설정
-camera.position.z = 50
+/**
+ * 전달받은 번호로 앨범을 찾아 커버 이미지를 coverMaterials 객체에 세팅하는 함수
+ *
+ * @param {number} index 앨범의 순서
+ */
+function setMeterials(index = 0) {
+  // 앨범에 따른 이미지 저장 경로 세팅
+  const coverFolderNm = albumList[index].coverFolder
+  const coverFolder = '/assets/images/album/3dTexture/' + coverFolderNm
+  // 이미지 불러와서 배열로 생성
+  const textureList = [
+    textureLoader.load(coverFolder + '/right.png'),
+    textureLoader.load(coverFolder + '/left.png'),
+    textureLoader.load(coverFolder + '/top.png'),
+    textureLoader.load(coverFolder + '/bottom.png'),
+    textureLoader.load(coverFolder + '/front.png'),
+    textureLoader.load(coverFolder + '/back.png')
+  ]
+  // coverMaterials 객체에 할당
+  if (coverMaterials.length == 0) {
+    // 처음 세팅일 경우
+    textureList.forEach((texture, i) => {
+      coverMaterials[i] = new THREE.MeshStandardMaterial({ map: texture })
+    })
+  } else {
+    // 앨범 이동으로 인한 세팅일 경우
+    textureList.forEach((texture, i) => {
+      coverMaterials[i].map = texture
+    })
+  }
+}
+
+/**
+ * 전달받은 번호로 앨범 커버를 업데이트 하는 함수
+ *
+ * @param {number} index 앨범의 순서
+ */
+function render3DCover(index) {
+  setMeterials(index)
+
+  cube.material.map.needsUpdate = true
+  cube.material.needsUpdate = true
+}
 
 // 마우스 관련 변수
 const mouse = new THREE.Vector2()
@@ -79,8 +87,8 @@ function onDocumentMouseMove(event) {
   // 드래그 중일 때만 회전
   if (isDragging) {
     // 마우스 위치를 -1 ~ 1 범위로 변환 해서 왼쪽,오른쪽 아래 위를 구분함
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+    mouse.x = (event.clientX / renderTarget.clientWidth) * 2 - 1
+    mouse.y = -(event.clientY / renderTarget.clientHeight) * 2 + 1
 
     // 기본 회전값에 마우스 이동에 따른 회전을 덧붙임 (매끄러운 회전)
     cube.rotation.x = startRotationX + mouse.y * Math.PI * 0.9 // 회전 속도 조절
@@ -121,9 +129,9 @@ window.addEventListener('mouseup', onDocumentMouseUp, false)
 
 // 반응형 처리
 window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight
+  camera.aspect = renderTarget.clientWidth / renderTarget.clientHeight
   camera.updateProjectionMatrix()
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(renderTarget.clientWidth, renderTarget.clientHeight)
 })
 
 // 렌더링 시작

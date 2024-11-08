@@ -192,7 +192,7 @@ function toMemberPage(name){
 
 /**
  * member페이지 로드시마다
- * 세션에 저장된 이름이 있으면, 해당하는 이름의 페이지네이션 클릭
+ * 세션에 저장된 이름이 있으면(메인에서 전달) 해당하는 이름의 페이지네이션으로
  */
 window.addEventListener("load",()=>{
   let clickName = sessionStorage.getItem("name")
