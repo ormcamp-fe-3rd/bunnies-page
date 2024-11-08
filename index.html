@@ -79,39 +79,39 @@
     </section>
     <!-- e: 유튜브 -->
 
-    <!-- 멤버 카드 -->
+    <!-- s: 멤버 카드 -->
     <section class="mb-36 mt-24 py-14">
       <ul
         class="member-card-box container mx-auto grid w-full grid-cols-5 gap-x-12 gap-y-6 px-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-        <li class="relative w-full -rotate-12 overflow-hidden rounded">
+        <li id="home-minji" class="relative w-full -rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-minji.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
             class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative w-full -rotate-6 overflow-hidden rounded">
+        <li id="home-hanni" class="relative w-full -rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-danielle.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-danielle-frame.png"
             class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative w-full rotate-6 overflow-hidden rounded">
+        <li id="home-danni" class="relative w-full rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
             class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative w-full -rotate-3 overflow-hidden rounded">
+        <li id="home-haerin" class="relative w-full -rotate-3 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hyein.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-hyein-frame.png"
             class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
-        <li class="relative w-full rotate-12 overflow-hidden rounded">
+        <li id="home-hyein" class="relative w-full rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
@@ -120,6 +120,8 @@
         </li>
       </ul>
     </section>
+    <!-- e: 멤버 카드 -->
+
     <!-- 모달 배경 -->
     <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
@@ -673,5 +675,6 @@
     </footer>
     <!-- e: 풋터 -->
     <script src="./assets/js/card-rotate.js"></script>
+    <script src="./assets/js/member.js"></script>
   </body>
 </html>
