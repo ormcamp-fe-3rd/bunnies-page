@@ -62,7 +62,7 @@ function changeAlbum(direction) {
       // 다음 앨범 실행일 경우
       nowAlbumIndex++
       if (nowAlbumIndex == cdArr.length) nowAlbumIndex = 0 // 마지막 앨범이면 첫 앨범 번호 세팅
-      cdArr[nowAlbumIndex].classList.remove('hidden')
+      cdArr[direction == 'next'].classList.remove('hidden')
     } else {
       // 이전 앨범 실행일 경우
       if (nowAlbumIndex == 0) nowAlbumIndex = cdArr.length // 첫번째 앨범이면 마지막 앨범
@@ -71,6 +71,7 @@ function changeAlbum(direction) {
     cdWrap.style.transform = '' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     setAlbumInfo(nowAlbumIndex) //영수증 변경
+    selectAlbumTextures(nowAlbumIndex)
     // TODO: 3D 커버 리렌더링 함수를 호출해주시면 됩니다
   }, 300)
 }

@@ -36,24 +36,34 @@ const omgditto_texture_right = textureLoader.load('./assets/images/album/3dTextu
 // 큐브 지오메트리와 머티리얼 생성
 // 큐브 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
-const materials = [
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_right }), // 오른쪽면 텍스처
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_left }), // 왼쪽면 텍스처
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_top }), // 윗면 텍스처
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_bottom }), // 아랫면 텍스처
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_front }), // 앞면 텍스처
-  new THREE.MeshStandardMaterial({ map: newjeans_texture_back }) // 뒷면 텍스처
-]
-const material = [
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }), // 오른쪽면 텍스처
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }), // 왼쪽면 텍스처
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }), // 윗면 텍스처
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }), // 아랫면 텍스처
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }), // 앞면 텍스처
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_back }) // 뒷면 텍스처
-]
+const selectAlbumTextures = nowAlbumIndex => {
+  let selectedTextures
 
-const cube = new THREE.Mesh(geometry, material)
+  if (nowAlbumIndex === 0) {
+    selectedTextures = [
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.right }),
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.left }),
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.top }),
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.bottom }),
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.front }),
+      new THREE.MeshStandardMaterial({ map: textures.newjeans.back })
+    ]
+  } else if (nowAlbumIndex === 1) {
+    selectedTextures = [
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.right }),
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.left }),
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.top }),
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.bottom }),
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.front }),
+      new THREE.MeshStandardMaterial({ map: textures.omgditto.back })
+    ]
+  }
+
+  return selectedTextures
+}
+
+const currentTextures = selectAlbumTextures(nowAlbumIndex)
+const cube = new THREE.Mesh(geometry, currentTextures)
 scene.add(cube)
 
 // 카메라 위치 설정
