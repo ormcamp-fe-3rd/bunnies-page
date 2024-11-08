@@ -38,4 +38,8 @@
       system-ui,
       sans-serif;
   }
+  a,
+  button {
+    cursor: inherit;
+  }
 }

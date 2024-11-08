@@ -1,0 +1,7 @@
+.computer {
+  cursor: default;
+}
+.computer button,
+.computer .close-btn {
+  cursor: pointer;
+}
