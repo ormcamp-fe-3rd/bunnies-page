@@ -1909,6 +1909,10 @@ a,
   margin: auto;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -1942,6 +1946,11 @@ a,
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mb-24 {
@@ -2014,6 +2023,10 @@ a,
 
 .mt-7 {
   margin-top: 1.75rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .block {
@@ -2116,6 +2129,14 @@ a,
   height: 100vh;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[1000px\] {
+  height: 1000px;
+}
+
 .max-h-60 {
   max-height: 15rem;
 }
@@ -2216,6 +2237,14 @@ a,
   width: 100%;
 }
 
+.w-1\/6 {
+  width: 16.666667%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -2297,6 +2326,14 @@ a,
   cursor: default;
 }
 
+.cursor-\[url\(\'\/assets\/images\/cursor\/clickMe\.png\'\)\2c _pointer\] {
+  cursor: url('/assets/images/cursor/clickMe.png'), pointer;
+}
+
+.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)_15_10\2c _default\] {
+  cursor: url('/assets/images/cursor/korean.png') 15 10, default;
+}
+
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
@@ -2331,6 +2368,10 @@ a,
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .gap-x-12 {
@@ -2395,6 +2436,10 @@ a,
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
 }
 
 .border-b {
@@ -2669,6 +2714,16 @@ a,
 .bg-zinc-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(9 9 11 / var(--tw-bg-opacity));
+}
+
+.bg-amber-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(146 64 14 / var(--tw-bg-opacity));
+}
+
+.bg-red-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
