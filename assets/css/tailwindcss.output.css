@@ -1948,6 +1948,10 @@ a,
   margin-bottom: 1rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 .mb-24 {
   margin-bottom: 6rem;
 }
@@ -2040,6 +2044,10 @@ a,
   aspect-ratio: 16 / 9;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -2076,6 +2084,10 @@ a,
   height: 20%;
 }
 
+.h-\[500px\] {
+  height: 500px;
+}
+
 .h-\[900px\] {
   height: 900px;
 }
@@ -2110,6 +2122,10 @@ a,
 
 .max-h-\[90vh\] {
   max-height: 90vh;
+}
+
+.max-h-\[1000px\] {
+  max-height: 1000px;
 }
 
 .min-h-24 {
@@ -2198,6 +2214,10 @@ a,
 
 .max-w-\[1240px\] {
   max-width: 1240px;
+}
+
+.max-w-96 {
+  max-width: 24rem;
 }
 
 .flex-shrink-0 {
@@ -2299,12 +2319,20 @@ a,
        column-gap: 5rem;
 }
 
+.gap-y-9 {
+  row-gap: 2.25rem;
+}
+
 .overflow-auto {
   overflow: auto;
 }
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .whitespace-nowrap {
@@ -2658,6 +2686,11 @@ a,
   padding-bottom: 1.25rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -2668,6 +2701,18 @@ a,
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-28 {
+  padding-top: 7rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .text-left {
@@ -2926,6 +2971,16 @@ a,
   visibility: visible;
 }
 
+@media not all and (min-width: 1024px) {
+  .max-lg\:justify-center {
+    justify-content: center;
+  }
+
+  .max-lg\:pt-5 {
+    padding-top: 1.25rem;
+  }
+}
+
 @media not all and (min-width: 768px) {
   .max-md\:block {
     display: block;
@@ -2950,6 +3005,10 @@ a,
 
   .max-md\:pt-3 {
     padding-top: 0.75rem;
+  }
+
+  .max-md\:pt-10 {
+    padding-top: 2.5rem;
   }
 }
 
