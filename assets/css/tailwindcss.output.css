@@ -2100,10 +2100,6 @@ a,
   height: 20%;
 }
 
-.h-\[500px\] {
-  height: 500px;
-}
-
 .h-\[900px\] {
   height: 900px;
 }
@@ -2289,8 +2285,8 @@ a,
   cursor: url('/assets/images/cursor/bunnie.png'), default;
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)_15_10\2c _default\] {
-  cursor: url('/assets/images/cursor/korean.png') 15 10, default;
+.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/cursor/korean.png'), default;
 }
 
 .cursor-\[url\(\'\/assets\/images\/cursor\/rounded\.png\'\)\2c _default\] {
@@ -2299,10 +2295,6 @@ a,
 
 .cursor-default {
   cursor: default;
-}
-
-.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)\2c _default\] {
-  cursor: url('/assets/images/cursor/korean.png'), default;
 }
 
 .grid-cols-5 {
@@ -2349,6 +2341,11 @@ a,
 .gap-x-20 {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
+}
+
+.gap-x-64 {
+  -moz-column-gap: 16rem;
+       column-gap: 16rem;
 }
 
 .gap-y-6 {
