@@ -41,24 +41,24 @@ function makeMessageDome(str) {
     colorValue: getColor()
   }
   messageWrap.appendChild(messageDeco(messageObj))//랜덤 값 설정하여 html에 삽입
-  let messageObjArr = JSON.parse(localStorage.getItem('messageObjArr'))
-  messageObjArr.push(messageObj) 
-  localStorage.setItem('messageObjArr', JSON.stringify(messageObjArr))
+  storedArr.push(messageObj) 
+  localStorage.setItem('messageObjArr', JSON.stringify(storedArr))
   initOpacity() //opacity값은 node순서에 따라 지정
 }
+
+let storedArr = []//localStorage를 저장할 배열 선언
 
 /**
  * 페이지 로드될때마다 로컬스토리지에 담긴 메세지들을 html에 추가
  */
 window.addEventListener("load", (event) => {
-  let storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
-  // console.log(storedArr)
-  if(storedArr.length > 0){
-    for(let i = 0; i < storedArr.length; i++){
+  if (localStorage.getItem('messageObjArr')) {
+    storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
+    for (let i = 0; i < storedArr.length; i++) {
       messageWrap.appendChild(messageDeco(storedArr[i]))
     }
     initOpacity()
-  }
+  } 
 })
 
 /**
