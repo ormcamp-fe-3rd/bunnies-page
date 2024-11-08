@@ -1944,17 +1944,13 @@ a,
   margin-bottom: 1rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .mb-24 {
   margin-bottom: 6rem;
 }
 
-.mb-36 {
-  margin-bottom: 9rem;
+.mb-40 {
+  margin-bottom: 10rem;
+
 }
 
 .mb-5 {
@@ -1997,8 +1993,13 @@ a,
   margin-top: 0.5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+
 }
 
 .mt-4 {

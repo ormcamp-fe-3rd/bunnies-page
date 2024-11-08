@@ -163,27 +163,27 @@ runDrag('.team-photo')
 
 /**
  * home에서 멤버카드 선택시 member페이지로 이동
- * @param {name} 선택된 멤버의 이름
+ * @param {name} 선택된 멤버의 이름 
  */
-function toMemberPage(name) {
-  switch (name) {
-    case 'home-minji':
-      location.href = '/member.html'
+function toMemberPage(name){
+  switch(name){
+    case "home-minji":
+      location.href = "/member.html"
       sessionStorage.setItem('name', 'minji')
       break
-    case 'home-danni':
+    case "home-danni": 
       location.href = '/member.html'
       sessionStorage.setItem('name', 'danni')
       break
-    case 'home-hanni':
+    case "home-hanni":
       location.href = '/member.html'
-      sessionStorage.setItem('name', 'hanni')
+      sessionStorage.setItem("name", "hanni")
       break
-    case 'home-hyein':
+    case "home-hyein":
       location.href = '/member.html'
       sessionStorage.setItem('name', 'hyein')
       break
-    case 'home-haerin':
+    case "home-haerin":
       location.href = '/member.html'
       sessionStorage.setItem('name', 'haerin')
       break
@@ -194,22 +194,22 @@ function toMemberPage(name) {
  * member페이지 로드시마다
  * 세션에 저장된 이름이 있으면, 해당하는 이름의 페이지네이션 클릭
  */
-window.addEventListener('load', () => {
-  let clickName = sessionStorage.getItem('name')
-  switch (clickName) {
-    case 'minji':
+window.addEventListener("load",()=>{
+  let clickName = sessionStorage.getItem("name")
+  switch(clickName){
+    case "minji":
       pagination_btn_01.click()
       break
-    case 'hanni':
+    case "hanni":
       pagination_btn_02.click()
       break
-    case 'danni':
+    case "danni":
       pagination_btn_03.click()
       break
-    case 'haerin':
+    case "haerin":
       pagination_btn_04.click()
       break
-    case 'hyein':
+    case "hyein":
       pagination_btn_05.click()
       break
     default:
