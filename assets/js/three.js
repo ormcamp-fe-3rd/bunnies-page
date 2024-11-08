@@ -75,28 +75,28 @@ const omgdittoMaterials = [
   new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
 ]
 const getUpMaterials = [
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+  new THREE.MeshStandardMaterial({ map: getup_texture_right }),
+  new THREE.MeshStandardMaterial({ map: getup_texture_left }),
+  new THREE.MeshStandardMaterial({ map: getup_texture_top }),
+  new THREE.MeshStandardMaterial({ map: getup_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: getup_texture_front }),
+  new THREE.MeshStandardMaterial({ map: getup_texture_back })
 ]
 const howSweetMaterials = [
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_right }),
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_left }),
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_top }),
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_front }),
+  new THREE.MeshStandardMaterial({ map: howsweet_texture_back })
 ]
 const supernaturalMaterials = [
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
-  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_right }),
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_left }),
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_top }),
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_front }),
+  new THREE.MeshStandardMaterial({ map: supernatural_texture_back })
 ]
 function render3DCover(nowAlbumIndex) {
   const texture = new THREE.TextureLoader().load(albumList[nowAlbumIndex].cover)
