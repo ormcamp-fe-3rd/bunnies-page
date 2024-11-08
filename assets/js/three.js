@@ -26,6 +26,14 @@ const newjeans_texture_bottom = textureLoader.load('./assets/images/album/3dText
 const newjeans_texture_left = textureLoader.load('./assets/images/album/3dTexture/newjeans/left.png')
 const newjeans_texture_right = textureLoader.load('./assets/images/album/3dTexture/newjeans/right.png')
 
+const omgditto_texture_front = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/front.png')
+const omgditto_texture_back = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/back.png')
+const omgditto_texture_top = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/top.png')
+const omgditto_texture_bottom = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/bottom.png')
+const omgditto_texture_left = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/left.png')
+const omgditto_texture_right = textureLoader.load('./assets/images/album/3dTexture/omg&ditto/right.png')
+
+// 큐브 지오메트리와 머티리얼 생성
 // 큐브 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
 const materials = [
@@ -36,8 +44,16 @@ const materials = [
   new THREE.MeshStandardMaterial({ map: newjeans_texture_front }), // 앞면 텍스처
   new THREE.MeshStandardMaterial({ map: newjeans_texture_back }) // 뒷면 텍스처
 ]
+const material = [
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }), // 오른쪽면 텍스처
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }), // 왼쪽면 텍스처
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }), // 윗면 텍스처
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }), // 아랫면 텍스처
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }), // 앞면 텍스처
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_back }) // 뒷면 텍스처
+]
 
-const cube = new THREE.Mesh(geometry, materials)
+const cube = new THREE.Mesh(geometry, material)
 scene.add(cube)
 
 // 카메라 위치 설정
@@ -55,12 +71,12 @@ function onDocumentMouseMove(event) {
 
   // 드래그 중일 때만 회전
   if (isDragging) {
-    // 마우스 위치를 -1 ~ 1 범위로 변환
+    // 마우스 위치를 -1 ~ 1 범위로 변환 해서 왼쪽,오른쪽 아래 위를 구분함
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
 
     // 기본 회전값에 마우스 이동에 따른 회전을 덧붙임 (매끄러운 회전)
-    cube.rotation.x = startRotationX + mouse.y * Math.PI * 0.9 // 0.2는 회전 속도를 낮춤
+    cube.rotation.x = startRotationX + mouse.y * Math.PI * 0.9 // 회전 속도 조절
     cube.rotation.y = startRotationY + mouse.x * Math.PI * 0.9
   }
 }
