@@ -3,6 +3,165 @@ const cdWrap = document.querySelectorAll('.cd-wrap>img')
 const cdArr = Array.from(cdWrap)
 const pausedImg = 'assets/images/albums/paused-circle.png'
 const playImg = 'assets/images/albums/play-circle.png'
+const audio = new Audio()
+// TODO: cover 에 앨범별 3D 텍스쳐 이미지 경로를 입력해 주시면 됩니다
+const albumList = [
+  {
+    name: 'New Jeans',
+    release: 'Aug 1, 2022',
+    url: 'https://youtu.be/js1CtxSY38I?list=OLAK5uy_lnEFuNDiwH42yjMhiZYX8VKWzdqgQNzvA',
+    cover: {
+      front: './assets/images/album/3dTexture/newjeans/front.png',
+      back: './assets/images/album/3dTexture/newjeans/back.png',
+      top: './assets/images/album/3dTexture/newjeans/top.png',
+      bottom: './assets/images/album/3dTexture/newjeans/bottom.png',
+      left: './assets/images/album/3dTexture/newjeans/left.png',
+      right: './assets/images/album/3dTexture/newjeans/right.png'
+    },
+    playlist: [
+      {
+        name: 'Attention',
+        time: '02:59'
+      },
+      {
+        name: 'Hype Boy',
+        time: '02:58'
+      },
+      {
+        name: 'Cookie',
+        time: '03:55'
+      },
+      {
+        name: 'Hurt',
+        time: '02:57'
+      }
+    ]
+  },
+  {
+    name: 'OMG',
+    release: 'Jan 2, 2023',
+    url: 'https://youtu.be/_ZAgIHmHLdc?list=OLAK5uy_kHlI8J0DPIuNkOvzQ8VR6l4-S3fyW8gig',
+    cover: {
+      front: './assets/images/album/3dTexture/omg&ditto/front.png',
+      back: './assets/images/album/3dTexture/omg&ditto/back.png',
+      top: './assets/images/album/3dTexture/omg&ditto/top.png',
+      bottom: './assets/images/album/3dTexture/omg&ditto/bottom.png',
+      left: './assets/images/album/3dTexture/omg&ditto/left.png',
+      right: './assets/images/album/3dTexture/omg&ditto/right.png'
+    },
+    playlist: [
+      {
+        name: 'OMG',
+        time: '3:37'
+      },
+      {
+        name: 'Ditto',
+        time: '3:06'
+      }
+    ]
+  },
+  {
+    name: 'Get Up',
+    release: 'Jul 21, 2023',
+    url: 'https://youtu.be/Krr2u8BUtLw?list=OLAK5uy_mBRM8NMgE_F9JTRA7zKpmETOh0H1VnPe4',
+    cover: {
+      front: '',
+      back: '',
+      top: '',
+      bottom: '',
+      left: '',
+      right: ''
+    },
+    playlist: [
+      {
+        name: 'New Jeans',
+        time: '1:51'
+      },
+      {
+        name: 'Super Shy',
+        time: '2:35'
+      },
+      {
+        name: 'ETA',
+        time: '2:31'
+      },
+      {
+        name: 'Cool With You',
+        time: '2:28'
+      },
+      {
+        name: 'Get Up',
+        time: '0:36'
+      },
+      {
+        name: 'ASAP',
+        time: '2:15'
+      }
+    ]
+  },
+  {
+    name: 'How Sweet',
+    release: 'May 24, 2024',
+    url: 'https://youtu.be/Q3K0TOvTOno?list=OLAK5uy_nmHc4tHBWW2PJyfn9nudHzJrxGCrNpNNU',
+    cover: {
+      front: '',
+      back: '',
+      top: '',
+      bottom: '',
+      left: '',
+      right: ''
+    },
+    playlist: [
+      {
+        name: 'How Sweet',
+        time: '3:39'
+      },
+      {
+        name: 'Bubble Gum',
+        time: '3:20'
+      },
+      {
+        name: 'How Sweet(Instrumental)',
+        time: '3:39'
+      },
+      {
+        name: 'Bubble Gum(Instrumental)',
+        time: '3:20'
+      }
+    ]
+  },
+  {
+    name: 'Supernatural',
+    release: 'Jun 21, 2024',
+    url: 'https://youtu.be/ZncbtRo7RXs?list=OLAK5uy_nTIiMkdnb8rtgbm6XsgliXButKi-lDFpQ',
+    cover: {
+      front: '',
+      back: '',
+      top: '',
+      bottom: '',
+      left: '',
+      right: ''
+    },
+    playlist: [
+      {
+        name: 'Supernatural',
+        time: '3:11'
+      },
+      {
+        name: 'Right Now',
+        time: '2:41'
+      },
+      {
+        name: 'Supernatural(Instrumental)',
+        time: '3:11'
+      },
+      {
+        name: 'Right Now(Instrumental)',
+        time: '2:41'
+      }
+    ]
+  }
+]
 
 //현재 앨범과 앨범 인덱스 변수 선언
 let nowAlbum = ''
@@ -62,7 +221,7 @@ function changeAlbum(direction) {
       // 다음 앨범 실행일 경우
       nowAlbumIndex++
       if (nowAlbumIndex == cdArr.length) nowAlbumIndex = 0 // 마지막 앨범이면 첫 앨범 번호 세팅
-      cdArr[direction == 'next'].classList.remove('hidden')
+      cdArr[nowAlbumIndex].classList.remove('hidden')
     } else {
       // 이전 앨범 실행일 경우
       if (nowAlbumIndex == 0) nowAlbumIndex = cdArr.length // 첫번째 앨범이면 마지막 앨범
@@ -71,7 +230,11 @@ function changeAlbum(direction) {
     cdWrap.style.transform = '' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     setAlbumInfo(nowAlbumIndex) //영수증 변경
-    selectAlbumTextures(nowAlbumIndex)
+    function changeAlbum(nextIndex) {
+      setAlbumInfo(nowAlbumIndex) // 앨범 정보 업데이트
+      render3DCover(nowAlbumIndex) // 3D 커버 리렌더링
+    }
+
     // TODO: 3D 커버 리렌더링 함수를 호출해주시면 됩니다
   }, 300)
 }

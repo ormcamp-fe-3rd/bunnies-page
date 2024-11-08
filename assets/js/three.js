@@ -36,34 +36,31 @@ const omgditto_texture_right = textureLoader.load('./assets/images/album/3dTextu
 // 큐브 지오메트리와 머티리얼 생성
 // 큐브 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
-const selectAlbumTextures = nowAlbumIndex => {
-  let selectedTextures
+let albumCover = ('newjeansMaterials', 'omgdittoMaterials')
+const newjeansMaterials = [
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_right }),
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_left }),
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_top }),
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_front }),
+  new THREE.MeshStandardMaterial({ map: newjeans_texture_back })
+]
+const omgdittoMaterials = [
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_right }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_left }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_top }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_bottom }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_front }),
+  new THREE.MeshStandardMaterial({ map: omgditto_texture_back })
+]
 
-  if (nowAlbumIndex === 0) {
-    selectedTextures = [
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.right }),
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.left }),
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.top }),
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.bottom }),
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.front }),
-      new THREE.MeshStandardMaterial({ map: textures.newjeans.back })
-    ]
-  } else if (nowAlbumIndex === 1) {
-    selectedTextures = [
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.right }),
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.left }),
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.top }),
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.bottom }),
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.front }),
-      new THREE.MeshStandardMaterial({ map: textures.omgditto.back })
-    ]
-  }
-
-  return selectedTextures
+function render3DCover(index) {
+  const texture = new THREE.TextureLoader().load(albumList[index].cover)
+  coverMesh.material.map = texture
+  coverMesh.material.needsUpdate = true // 텍스처 업데이트
 }
 
-const currentTextures = selectAlbumTextures(nowAlbumIndex)
-const cube = new THREE.Mesh(geometry, currentTextures)
+const cube = new THREE.Mesh(geometry, newjeansMaterials)
 scene.add(cube)
 
 // 카메라 위치 설정
@@ -95,6 +92,7 @@ function onDocumentMouseMove(event) {
 function onDocumentMouseDown(event) {
   event.preventDefault()
   isDragging = true // 드래그 상태 시작
+
   startRotationX = cube.rotation.x // 클릭 시 현재 회전값 저장
   startRotationY = cube.rotation.y
 }
@@ -108,6 +106,11 @@ function onDocumentMouseUp(event) {
 // 애니메이션 루프
 function animate() {
   requestAnimationFrame(animate)
+
+  if (isDragging == false) {
+    //만약 드래그 상태 종료시
+    cube.rotation.y += 0.01 // 자동 회전 실행
+  }
   renderer.render(scene, camera)
 }
 
