@@ -4,20 +4,12 @@ const cdArr = Array.from(cdWrap)
 const pausedImg = 'assets/images/albums/paused-circle.png'
 const playImg = 'assets/images/albums/play-circle.png'
 const audio = new Audio()
-// TODO: cover 에 앨범별 3D 텍스쳐 이미지 경로를 입력해 주시면 됩니다
 const albumList = [
   {
     name: 'New Jeans',
     release: 'Aug 1, 2022',
     url: 'https://youtu.be/js1CtxSY38I?list=OLAK5uy_lnEFuNDiwH42yjMhiZYX8VKWzdqgQNzvA',
-    cover: {
-      front: './assets/images/album/3dTexture/newjeans/front.png',
-      back: './assets/images/album/3dTexture/newjeans/back.png',
-      top: './assets/images/album/3dTexture/newjeans/top.png',
-      bottom: './assets/images/album/3dTexture/newjeans/bottom.png',
-      left: './assets/images/album/3dTexture/newjeans/left.png',
-      right: './assets/images/album/3dTexture/newjeans/right.png'
-    },
+    coverFolder: 'newjeans',
     playlist: [
       {
         name: 'Attention',
@@ -41,14 +33,7 @@ const albumList = [
     name: 'OMG',
     release: 'Jan 2, 2023',
     url: 'https://youtu.be/_ZAgIHmHLdc?list=OLAK5uy_kHlI8J0DPIuNkOvzQ8VR6l4-S3fyW8gig',
-    cover: {
-      front: './assets/images/album/3dTexture/omg&ditto/front.png',
-      back: './assets/images/album/3dTexture/omg&ditto/back.png',
-      top: './assets/images/album/3dTexture/omg&ditto/top.png',
-      bottom: './assets/images/album/3dTexture/omg&ditto/bottom.png',
-      left: './assets/images/album/3dTexture/omg&ditto/left.png',
-      right: './assets/images/album/3dTexture/omg&ditto/right.png'
-    },
+    coverFolder: 'omg&ditto',
     playlist: [
       {
         name: 'OMG',
@@ -64,14 +49,7 @@ const albumList = [
     name: 'Get Up',
     release: 'Jul 21, 2023',
     url: 'https://youtu.be/Krr2u8BUtLw?list=OLAK5uy_mBRM8NMgE_F9JTRA7zKpmETOh0H1VnPe4',
-    cover: {
-      front: '',
-      back: '',
-      top: '',
-      bottom: '',
-      left: '',
-      right: ''
-    },
+    coverFolder: 'getup',
     playlist: [
       {
         name: 'New Jeans',
@@ -103,14 +81,7 @@ const albumList = [
     name: 'How Sweet',
     release: 'May 24, 2024',
     url: 'https://youtu.be/Q3K0TOvTOno?list=OLAK5uy_nmHc4tHBWW2PJyfn9nudHzJrxGCrNpNNU',
-    cover: {
-      front: '',
-      back: '',
-      top: '',
-      bottom: '',
-      left: '',
-      right: ''
-    },
+    coverFolder: 'howSweet',
     playlist: [
       {
         name: 'How Sweet',
@@ -134,14 +105,7 @@ const albumList = [
     name: 'Supernatural',
     release: 'Jun 21, 2024',
     url: 'https://youtu.be/ZncbtRo7RXs?list=OLAK5uy_nTIiMkdnb8rtgbm6XsgliXButKi-lDFpQ',
-    cover: {
-      front: '',
-      back: '',
-      top: '',
-      bottom: '',
-      left: '',
-      right: ''
-    },
+    coverFolder: 'supernatural',
     playlist: [
       {
         name: 'Supernatural',
@@ -230,9 +194,7 @@ function changeAlbum(direction) {
     cdWrap.style.transform = '' //원상복귀
     nowAlbumSelect() //바뀐 앨범 선택
     setAlbumInfo(nowAlbumIndex) //영수증 변경
-
-    // TODO: 3D 커버 리렌더링 함수를 호출해주시면 됩니다
-    render3DCover()
+    render3DCover(nowAlbumIndex) // 3D 커버 리렌더링
   }, 300)
 }
 
