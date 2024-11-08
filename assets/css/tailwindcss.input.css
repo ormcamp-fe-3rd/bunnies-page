@@ -1,12 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'NanumSquareRound';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_squareround/nanum_squareround.css');
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
 @font-face {
   font-family: 'Cafe24Nyangi-W-v1.0';
@@ -31,7 +26,7 @@
   /* 텍스트 */
   body {
     font-family:
-      'NanumSquareRound',
+      'Nanum Square Round',
       Roboto,
       -apple-system,
       BlinkMacSystemFont,

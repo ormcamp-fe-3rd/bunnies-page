@@ -3,28 +3,8 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 auto;
-}
-
-/* cd 애니메이션 효과 */
-.cd-rotate-wrap {
-  transition: 0.3s linear;
-}
-.cd-wrap {
-  animation: musicQ 5s linear infinite;
-  animation-play-state: paused;
-}
-.cd-wrap.running {
-  animation-play-state: running;
-}
-@keyframes musicQ {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .playList {
@@ -49,6 +29,14 @@
   margin: 0 auto 20px;
   width: 112px;
   height: 112px;
+}
+
+.album_player_btn {
+  margin: 36px;
+}
+
+.album_player_play_btn {
+  margin: 0 20px;
 }
 
 /*앨범 영수증 플레이리스트 버튼 호버시 효과*/
