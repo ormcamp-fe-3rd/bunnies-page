@@ -77,13 +77,9 @@ function initOpacity(){
  * @param {element} 대상 요소
  */
 function messageDeco(element) {
-  // let topValue = getTop()
-  // let leftValue = getLeft()
-  // let colorValue = getColor()
   let newLi = document.createElement('li')
   newLi.appendChild(document.createTextNode(element.message))
   if (element.leftValue > 50) {
-    // let rightValue = getRandomInt(0, 50)
     newLi.setAttribute(
       'class',
       `absolute inline-block rounded-full px-5 py-3 right-[${element.rightValue}%] top-[${element.topValue}%] bg-[${element.colorValue}]`
