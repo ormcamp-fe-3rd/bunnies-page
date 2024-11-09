@@ -26,11 +26,23 @@ const textureLoader = new THREE.TextureLoader()
 // 큐브(앨범) 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
 const coverMaterials = []
-setMeterials() // 머티리얼 초기화
 const cube = new THREE.Mesh(geometry, coverMaterials)
 scene.add(cube)
 
 // [커버 이미지 관련]====================================
+/**
+ * 전달받은 번호로 앨범 커버를 업데이트 하는 함수
+ * (album-playlist 파일의 changeAlbum 함수에서 호출되고 있다)
+ *
+ * @param {number} index 앨범의 순서
+ */
+function render3DCover(index) {
+  setMeterials(index)
+
+  cube.material.map.needsUpdate = true
+  cube.material.needsUpdate = true
+}
+
 /**
  * 전달받은 번호로 앨범을 찾아 커버 이미지를 coverMaterials 객체에 세팅하는 함수
  *
@@ -61,19 +73,6 @@ function setMeterials(index = 0) {
       coverMaterials[i].map = texture
     })
   }
-}
-
-/**
- * 전달받은 번호로 앨범 커버를 업데이트 하는 함수
- * (album-playlist 파일의 changeAlbum 함수에서 호출되고 있다)
- *
- * @param {number} index 앨범의 순서
- */
-function render3DCover(index) {
-  setMeterials(index)
-
-  cube.material.map.needsUpdate = true
-  cube.material.needsUpdate = true
 }
 
 // [마우스 이벤트 관련]====================================

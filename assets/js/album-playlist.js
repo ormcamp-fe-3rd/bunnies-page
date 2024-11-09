@@ -131,7 +131,23 @@ const albumList = [
 let nowAlbum = ''
 let nowAlbumIndex = ''
 
-setAlbumInfo() // 초기 앨범 정보 세팅
+/**
+ * member페이지 로드시마다 호출되는 함수
+ */
+window.addEventListener('load', () => {
+  setAlbumByParam()
+})
+
+/**
+ * 파라미터에 앨범 번호가 있다면(메인에서 전달) 해당하는 앨범을 보여주는 함수
+ */
+function setAlbumByParam() {
+  const urlParams = new URL(location.href).searchParams
+  const index = urlParams.get('index') || 0
+  cdArr[index].classList.remove('hidden')
+  setAlbumInfo(index) // 초기 앨범 정보 세팅
+  render3DCover(index) // 3D 커버 리렌더링
+}
 
 /**
  * hidden 여부에따라 현재 보여지는 앨범을 배열에서 선택

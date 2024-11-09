@@ -194,7 +194,7 @@ setAlbumIconList()
  * @param {number} index 앨범 배열의 순서
  */
 function openModal(index) {
-  setModalAlbumInfo(albumList[index])
+  setModalAlbumInfo(index)
   setIconActive(index)
   modal.classList.remove('hidden')
   modalBg.classList.remove('hidden')
@@ -212,9 +212,10 @@ function closeModal() {
 /**
  * 모달창의 앨범 정보 세팅 함수
  *
- * @param {object} album 앨범에 대한 정보가 있는 객체
+ * @param {number} index 앨범 배열의 순서
  */
-function setModalAlbumInfo(album) {
+function setModalAlbumInfo(index) {
+  const album = albumList[index]
   let ihtml = ''
   album.playlist.forEach(music => {
     ihtml += `
@@ -225,11 +226,13 @@ function setModalAlbumInfo(album) {
   document.getElementById('album-name').innerText = album.name
   document.getElementById('album-name-bar').innerText = album.name
   document.getElementById('album-img').src = cdImgFolder + album.cdImg
+  document.getElementById('album-img').closest('a').href = '/album.html?index=' + index
   document.getElementById('release').innerText = album.release
   document.getElementById('playlist-wrap').innerHTML = ihtml
   document.getElementById('melon').href = album.musicServices.melon
   document.getElementById('flo').href = album.musicServices.flo
   document.getElementById('genie').href = album.musicServices.genie
+  document.getElementById('album-page').href = '/album.html?index=' + index
   document.getElementById('cd-hover').style.backgroundColor = album.color.bgColor
   document.getElementById('cd-hole').style.backgroundColor = album.color.bgColor
   modal.style.backgroundColor = album.color.bgColor
