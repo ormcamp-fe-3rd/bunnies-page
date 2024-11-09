@@ -78,6 +78,7 @@ function setPagingByParam() {
  */
 function runDrag() {
   const photoWrap = document.getElementById('photo-wrap')
+  let increaseZIndex = 1 // 카드를 쌓아 올리는 듯한 효과를 위한 z-index 변수
 
   document.querySelectorAll('.team-photo').forEach(contentDragged => {
     // 마우스 시작 좌표 선언, 이동 거리 값 0으로 설정
@@ -133,6 +134,7 @@ function runDrag() {
       xStart = e.pageX - changedValueX
       yStart = e.pageY - changedValueY
       e.preventDefault() // 브라우저의 마우스 기본 동작 제한
+      contentDragged.style.zIndex = increaseZIndex++ // 추가된 두 번째 줄
       document.addEventListener('mousemove', whenMouseMove)
       document.addEventListener('mouseup', whenMouseUp)
     })
