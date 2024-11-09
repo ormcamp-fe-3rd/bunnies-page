@@ -173,7 +173,7 @@ function setAlbumIconList() {
     ihtml += `
     <button
       type='button'
-      class='w-32 rounded-md p-2 transition duration-200 hover:bg-white hover:bg-opacity-30'
+      class="w-32 break-all rounded-md bg-opacity-30 p-2 transition duration-200 hover:bg-white hover:bg-opacity-30"
       onclick='openModal(${index})'>
       <img class='mx-auto my-2 aspect-square w-4/5 shadow-md shadow-zinc-700'
         src='${cdImgFolder + album.cdImg}'
@@ -195,6 +195,7 @@ setAlbumIconList()
  */
 function openModal(index) {
   setModalAlbumInfo(albumList[index])
+  setIconActive(index)
   modal.classList.remove('hidden')
   modalBg.classList.remove('hidden')
 }
@@ -205,6 +206,7 @@ function openModal(index) {
 function closeModal() {
   modal.classList.add('hidden')
   modalBg.classList.add('hidden')
+  setIconActive()
 }
 
 /**
@@ -228,6 +230,20 @@ function setModalAlbumInfo(album) {
   document.getElementById('melon').href = album.musicServices.melon
   document.getElementById('flo').href = album.musicServices.flo
   document.getElementById('genie').href = album.musicServices.genie
+  document.getElementById('cd-hover').style.backgroundColor = album.color.bgColor
+  document.getElementById('cd-hole').style.backgroundColor = album.color.bgColor
   modal.style.backgroundColor = album.color.bgColor
   modal.style.color = album.color.fontColor
+}
+
+/**
+ * 클릭한 앨범 아이콘의 배경 색상을 바꾸는 함수
+ * (매개변수가 없을 시 모든 아이콘의 배경을 초기화 한다)
+ *
+ * @param {number} index 앨범 배열의 순서
+ */
+function setIconActive(index) {
+  const iconList = document.querySelectorAll('#album-icon-warp button')
+  iconList.forEach(icon => (icon.style.backgroundColor = ''))
+  if (index != null) iconList[index].style.backgroundColor = 'rgb(255 255 255 / var(--tw-bg-opacity))'
 }

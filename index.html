@@ -123,17 +123,18 @@
 
     <!-- 앨범 섹션 영역 지정 -->
     <section
-      class="computer my-3 w-full overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover py-6 max-md:px-6">
+      class="computer my-3 w-full overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover bg-center bg-no-repeat py-6 max-md:bg-[url('/assets/images/album/pc-outside-background.jpg')] max-md:px-6">
       <!-- s: 컴퓨터 목업 -->
       <div class="mock-wrap container relative z-20 mx-auto">
         <!-- s: 컴퓨터 배경화면 영역 -->
         <div class="computer-bg-wrap relative">
           <div
             id="album-icon-warp"
-            class="flex aspect-video w-full flex-wrap items-start justify-start gap-11 overflow-y-auto rounded-t-3xl border-[30px] border-solid border-black bg-[url('/assets/images/album/newjeans-computerbg.png')] bg-cover bg-center bg-no-repeat p-10 text-center max-md:h-[500px] max-md:rounded-3xl">
+            class="flex aspect-video w-full flex-wrap items-start justify-start gap-11 overflow-y-auto rounded-t-3xl border-[30px] border-solid border-black bg-[url('/assets/images/album/newjeans-computerbg.png')] bg-cover bg-center bg-no-repeat p-10 text-center max-md:h-[500px] max-md:rounded-3xl max-md:bg-[url('/assets/images/album/pc-outside-background.jpg')]">
             <button
               type="button"
-              class="w-32 rounded-md p-2 transition duration-200 hover:bg-white hover:bg-opacity-30">
+              class="w-32 break-all rounded-md bg-opacity-30 p-2 transition duration-200 hover:bg-white hover:bg-opacity-30"
+              onclick="openModal(0)">
               <img
                 class="mx-auto my-2 aspect-square w-4/5 shadow-md shadow-zinc-700"
                 src="./assets/images/album/album_img/1stEP.jpg"
@@ -147,13 +148,15 @@
           <!-- s: 모달창 -->
           <div
             id="modal"
-            class="absolute left-1/2 top-1/2 hidden h-4/5 w-4/5 max-w-3xl -translate-x-1/2 -translate-y-1/2 rounded-md border border-solid border-zinc-400 shadow-lg">
+            class="absolute left-1/2 top-1/2 hidden h-4/5 w-4/5 max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-md border border-solid border-zinc-400 shadow-lg">
             <div
               class="bar-wrap absolute left-0 top-0 z-10 w-full border-b border-b-zinc-400 bg-gradient-to-b from-zinc-200 to-zinc-300 py-1 text-center text-sm text-gray-100">
               <button type="button" onclick="closeModal()" class="absolute left-3 top-1/2 -translate-y-1/2">
                 <span class="inline-block h-3 w-3 rounded-full bg-red-500 hover:bg-red-700"></span>
-                <span class="ml-1 inline-block h-3 w-3 rounded-full bg-yellow-500 hover:bg-yellow-700"></span>
-                <span class="ml-1 inline-block h-3 w-3 rounded-full bg-green-500 hover:bg-green-700"></span>
+                <span
+                  class="ml-1 inline-block h-3 w-3 rounded-full bg-yellow-500 hover:bg-yellow-700 max-sm:hidden"></span>
+                <span
+                  class="ml-1 inline-block h-3 w-3 rounded-full bg-green-500 hover:bg-green-700 max-sm:hidden"></span>
               </button>
               <span id="album-name-bar" class="text-black">New Jeans</span>
             </div>
@@ -170,13 +173,15 @@
                     src="./assets/images/album/album_img/1stEP.jpg"
                     alt="앨범 이미지" />
                   <div
-                    class="absolute left-1/2 top-1/2 aspect-square w-[13.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-solid border-gray-400 bg-black bg-opacity-70"></div>
+                    id="cd-hole"
+                    class="absolute left-1/2 top-1/2 z-10 aspect-square w-[13.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-solid border-gray-400"></div>
                   <div
                     class="absolute left-1/2 top-1/2 flex aspect-square w-1/4 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-solid border-gray-300 bg-white bg-opacity-40">
                     <div
                       class="absolute aspect-square w-[200%] animate-ping rounded-full border-4 border-solid border-white opacity-20"></div>
                   </div>
                   <div
+                    id="cd-hover"
                     class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
                   <div
                     class="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-gray-500 opacity-20"></div>
