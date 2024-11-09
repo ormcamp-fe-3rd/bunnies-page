@@ -1,16 +1,8 @@
-/*photo 범위 설정*/
-.photo-grid {
-  position: relative;
-  width: 1240px;
-  height: 640px;
-  margin: 0 auto;
-  word-break: keep-all;
-}
-
 /* 개별 이미지 컨테이너 */
 .team-photo {
   position: absolute;
-  width: 20%;
+  width: 255px;
+  max-width: 80vw;
   height: auto;
 }
 
@@ -58,7 +50,7 @@
 }
 
 /*클릭 시 맨 앞으로 이미지 이동*/
-.team-photo :active {
+.team-photo:active {
   z-index: 1;
 }
 
@@ -121,16 +113,7 @@
 }
 
 /* 첫화면 시 민지 페이지를 제외한 페이지 none설정 */
-.team-photo-hanni-page {
-  display: none;
-}
-.team-photo-dani-page {
-  display: none;
-}
-.team-photo-haerin-page {
-  display: none;
-}
-.team-photo-hyein-page {
+.team-photo-page {
   display: none;
 }
 

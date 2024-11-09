@@ -40,9 +40,9 @@
     <!-- s: 포토카드 -->
     <div class="flex-wrap">
       <!--멤버들 페이지별 리스트 묶음-->
-      <div class="photo-grid">
+      <div id="photo-wrap" class="photo-grid container relative mx-auto h-[640px] break-keep">
         <!--민지 이미지 페이지-->
-        <div class="team-photo-minji-page">
+        <div class="team-photo-page team-photo-minji-page">
           <div class="team-photo minji-photo1">
             <img class="Team-photo-minji-1" src="assets/images/member/Team-photo-minji_01.png" />
             <span class="imtext">화창하고 시원한 바람이 부는 신선한 날씨를 좋아한다.</span>
@@ -83,7 +83,7 @@
           </div>
         </div>
         <!--하니 이미지 페이지-->
-        <div class="team-photo-hanni-page">
+        <div class="team-photo-page team-photo-hanni-page">
           <div class="team-photo hanni-photo1">
             <img class="team-photo-hanni-1" src="assets/images/member/hanni/Team-photo-hanni_01.png" />
             <span class="imtext">그룹 내 유일한 외국인 멤버로, 호주와 베트남의 복수국적이다.</span>
@@ -120,7 +120,7 @@
           </div>
         </div>
         <!--다니엘 이미지 페이지-->
-        <div class="team-photo-dani-page">
+        <div class="team-photo-page team-photo-dani-page">
           <div class="team-photo dani-photo1">
             <img class="team-photo-dani-1" src="assets/images/member/dani/Team-photo-dani_01.png" />
             <span class="imtext">'다니'라는 애칭으로 불리는 것을 가장 좋아한다고 한다.</span>
@@ -157,7 +157,7 @@
           </div>
         </div>
         <!--해린 이미지 페이지-->
-        <div class="team-photo-haerin-page">
+        <div class="team-photo-page team-photo-haerin-page">
           <div class="team-photo haerin-photo1">
             <img class="team-photo-haerin-1" src="assets/images/member/haerin/Team-photo-haerin_01.png" />
             <span class="imtext">가장 좋아하는 과일은 복숭아와 아보카도이다.</span>
@@ -194,7 +194,7 @@
           </div>
         </div>
         <!--혜인 이미지 페이지-->
-        <div class="team-photo-hyein-page">
+        <div class="team-photo-page team-photo-hyein-page">
           <div class="team-photo hyein-photo1">
             <img class="team-photo-hyein-1" src="assets/images/member/hyein/Team-photo-hyein_01.png" />
             <span class="imtext">NewJeans 데뷔조에는 가장 마지막으로 합류했다.</span>
@@ -242,18 +242,20 @@
       <!--페이지네이션 -->
       <div class="member-pagination">
         <ul class="mt-2 flex items-center justify-center">
-          <li class="member-pagination01 mx-3 w-5"><img src="assets/images/member/photo-page-1.png" /></li>
-          <li class="member-pagination02 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-pagination03 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-pagination04 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
-          <li class="member-pagination05 mx-3 w-5"><img src="assets/images/member/photo-page-none.png" /></li>
+          <li class="p-3"><img src="assets/images/member/photo-page-1.png" alt="민지 페이지 버튼" class="w-5" /></li>
+          <li class="p-3"><img src="assets/images/member/photo-page-none.png" alt="하니 페이지 버튼" class="w-5" /></li>
+          <li class="p-3">
+            <img src="assets/images/member/photo-page-none.png" alt="다니엘 페이지 버튼" class="w-5" />
+          </li>
+          <li class="p-3"><img src="assets/images/member/photo-page-none.png" alt="해린 페이지 버튼" class="w-5" /></li>
+          <li class="p-3"><img src="assets/images/member/photo-page-none.png" alt="혜인 페이지 버튼" class="w-5" /></li>
         </ul>
       </div>
     </div>
     <!-- e: 포토카드 -->
 
     <!-- s: 응원 메세지 -->
-    <section class="message-wrap w-full py-10 text-center mt-20">
+    <section class="message-wrap mt-20 w-full py-10 text-center">
       <ul id="message-wrap-list" class="container relative mx-auto h-screen max-h-96 w-full max-w-[1240px] text-xl">
         <li class="absolute left-14 top-4 inline-block rounded-full bg-red-500 px-5 py-3 opacity-80">
           버니즈가 항상 옆에 있어줄게
@@ -291,15 +293,13 @@
         id="message"
         name="message"
         type="text"
-        class="mx-auto my-14 block w-1/2 rounded-2xl px-3 py-5 text-center text-xl text-black mb-40"
+        class="mx-auto my-14 mb-40 block w-1/2 rounded-2xl px-3 py-5 text-center text-xl text-black"
         placeholder="멤버들에게 응원의 한마디 메세지를 보내보세요!"
         autocomplete="off"
         maxlength="80"
         onkeypress="messageInit(event)" />
     </section>
-    <script src="/assets/js/member-message.js"></script>
     <!-- e: 응원 메세지 -->
-    <script src="/assets/js/member.js"></script>
 
     <!-- s: 풋터 -->
     <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
@@ -309,5 +309,7 @@
       <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
     </footer>
     <!-- e: 풋터 -->
+    <script src="/assets/js/member.js"></script>
+    <script src="/assets/js/member-message.js"></script>
   </body>
 </html>
