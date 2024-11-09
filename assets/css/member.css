@@ -7,11 +7,18 @@
   word-break: keep-all;
 }
 
+@media (max-width: 760px) {
+  .photo-grid {
+    height: 550px;
+    width: 380px;
+  }
+}
+
 /* 개별 이미지 컨테이너 */
 .team-photo {
   position: absolute;
-  width: 20%;
-  height: auto;
+  width: 248px;
+  height: 330px;
 }
 
 /* 이미지 스타일 */
