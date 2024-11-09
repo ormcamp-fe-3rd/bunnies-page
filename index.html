@@ -13,7 +13,7 @@
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body
-    class="cursor-[url('/assets/images/cursor/korean.png'),_default] bg-zinc-950 text-white"
+    class="cursor-[url('/assets/images/cursor/korean.png'),_default] overflow-x-hidden bg-zinc-950 text-white"
     onload="rotateCards(); setVideo();">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
@@ -57,15 +57,15 @@
         class="flex min-h-24 w-full flex-wrap items-center justify-between gap-4 rounded-lg text-center font-ABeeZee text-2xl max-md:justify-center max-md:pt-3">
         <div class="flex w-5/6 flex-wrap items-center gap-x-20 max-md:block max-md:w-full">
           <div>
-            <span class="mr-2 opacity-70">album</span>
-            <span id="album">Get Up</span>
+            <span class="mr-2 font-cafe opacity-70">album</span>
+            <span id="album" class="font-cafe-fill">Get Up</span>
           </div>
           <div>
-            <span class="mr-2 opacity-70">track</span>
-            <span id="track">Super Shy</span>
+            <span class="mr-2 font-cafe opacity-70">track</span>
+            <span id="track" class="font-cafe-fill">Super Shy</span>
           </div>
         </div>
-        <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center justify-between gap-4 font-cafe-fill">
           <button type="button" id="prev" onclick="setVideo('prev')">&lt;</button>
           <span>
             <span id="paging">1</span>
@@ -127,17 +127,17 @@
 
     <!-- 앨범 섹션 영역 지정 -->
     <div
-      class="computer z-0 my-3 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
-      <div class="relative z-50 flex">
+      class="computer z-0 my-3 flex h-[900px] w-full min-w-[1200px] items-center justify-center overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover pb-0 pt-6">
+      <div class="relative z-50 flex min-w-[1024px]">
         <!-- 컴퓨터 목업 -->
         <img
-          class="z-30 h-full max-h-[900px] w-full object-contain"
+          class="z-30 h-full max-h-[900px] w-full min-w-[1024px] object-contain"
           src="./assets/images/album/mac.png"
           alt="컴퓨터 이미지" />
 
         <!-- 컴퓨터 배경화면 영역 -->
         <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white">
-          <img src="./assets/images/album/pc-outside-background.jpg_large" alt="컴퓨터 배경화면" />
+          <img src="./assets/images/album/newjeans-computerbg.png" alt="컴퓨터 배경화면" />
         </div>
         <div class="absolute z-30 p-[6%]">
           <!-- 첫 번째 앨범 모달 창 -->
@@ -146,16 +146,16 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="first-album-window">
+                  <span class="close-btn" data-modal="first-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -180,7 +180,7 @@
                       <div
                         class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
                         style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
+                      <div class="absolute h-32 w-32 animate-ping rounded-full border-4 border-white opacity-20"></div>
                       <div
                         class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
                       <div
@@ -258,18 +258,18 @@
           <span
             id="second-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-red-100 pb-10 shadow-lg">
+            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-red-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="second-album-window">
+                  <span class="close-btn" data-modal="second-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -371,34 +371,52 @@
           <span
             id="third-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md bg-cyan-100 pb-10 shadow-lg">
+            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-cyan-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="third-album-window">
+                  <span class="close-btn" data-modal="third-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <span>Get Up</span>
+                <span style="color: black">Get Up</span>
               </div>
               <div class="flex flex-row items-center justify-center py-10">
                 <div class="flex-shrink-0">
-                  <a href="/album.html" class="relative">
-                    <img
-                      class="h-auto max-h-60 w-auto object-contain drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] transition duration-200 hover:scale-110 hover:shadow-lg"
-                      src="./assets/images/album/album_img/GetUp.webp" />
+                  <a href="/album.html" class="group relative">
+                    <div
+                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
+                      <img
+                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
+                        src="./assets/images/album/album_img/GetUp.webp" />
+                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
+                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
+                      <div
+                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
+                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
+                      <div
+                        class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
+                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
+                    </div>
                   </a>
                 </div>
 
-                <div class="ml-100">
-                  <div class="flex flex-col rounded-md p-5">
+                <div class="ml-10">
+                  <div class="p-15 flex flex-col rounded-md">
                     <table class="text-left font-cafe-fill leading-tight text-gray-900">
                       <tr>
                         <td colspan="2" class="text-3xl md:text-4xl">Get Up</td>
@@ -463,32 +481,49 @@
           <span
             id="forth-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10 shadow-lg">
+            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-amber-800 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="forth-album-window">
+                  <span class="close-btn" data-modal="forth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
-                <span>How Sweet</span>
+                <span style="color: black">How Sweet</span>
               </div>
               <div class="flex flex-row items-center justify-center py-10">
                 <div class="flex-shrink-0">
-                  <a href="/album.html" class="relative">
-                    <img
-                      class="h-auto max-h-60 w-auto object-contain drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] transition duration-200 hover:scale-110 hover:shadow-lg"
-                      src="./assets/images/album/album_img/HowSweet.webp" />
+                  <a href="/album.html" class="group relative">
+                    <div
+                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
+                      <img
+                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
+                        src="./assets/images/album/album_img/HowSweet.webp" />
+                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
+                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
+                      <div
+                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
+                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
+                      <div
+                        class="absolute inset-0 rounded-full bg-red-900 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
+                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
+                    </div>
                   </a>
                 </div>
-
                 <div class="ml-100">
                   <div class="flex flex-col rounded-md p-5">
                     <table class="text-left font-cafe-fill leading-tight text-orange-300">
@@ -550,16 +585,15 @@
               <div class="h-12 bg-transparent"></div>
             </div>
           </span>
-
           <!-- 다섯 번째 앨범 모달 창 -->
           <span
             id="fifth-album-window"
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10 shadow-lg">
+            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="fifth-album-window">
+                  <span class="close-btn" data-modal="fifth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
@@ -568,20 +602,37 @@
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]"></div>
                   </span>
                 </div>
-                <span>Super natural</span>
+                <span style="color: black">Super natural</span>
               </div>
               <div class="flex flex-row items-center justify-center py-10">
                 <div class="flex-shrink-0">
-                  <a href="/album.html" class="relative">
-                    <img
-                      class="h-auto max-h-60 w-auto object-contain drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] transition duration-200 hover:scale-110 hover:shadow-lg"
-                      src="./assets/images/album/album_img/Supernatural.webp" />
+                  <a href="/album.html" class="group relative">
+                    <div
+                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
+                      <img
+                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
+                        src="./assets/images/album/album_img/Supernatural.webp" />
+                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
+                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
+                      <div
+                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
+                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div
+                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
+                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
+                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
+                      <div
+                        class="absolute inset-0 rounded-full bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
+                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
+                    </div>
                   </a>
                 </div>
-
                 <div class="ml-100">
                   <div class="flex flex-col rounded-md p-5">
-                    <table class="text-left font-cafe-fill leading-tight text-green-400">
+                    <table class="text-left font-cafe-fill leading-tight text-orange-300">
                       <tr>
                         <td colspan="2" class="text-3xl md:text-4xl">Supernatural</td>
                       </tr>
@@ -590,7 +641,7 @@
                         <td colspan="2" class="text-xl">2024. 6. 21.</td>
                       </tr>
                     </table>
-                    <table class="mt-4 text-left font-cafe-fill text-yellow-300">
+                    <table class="mt-4 w-full font-cafe-fill text-orange-300">
                       <tr>
                         <td colspan="3" class="text-3xl">Playlist</td>
                       </tr>
@@ -614,7 +665,7 @@
                   class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
+                <span class="mx-6" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
                 <a
                   href="https://www.music-flo.com/detail/album/426178480/albumtrack"
                   target="_blank"
@@ -622,7 +673,7 @@
                   class="flex h-12 w-12 items-center justify-center">
                   <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
                 </a>
-                <span class="mx-8" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
+                <span class="mx-6" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
                 <a
                   href="https://www.genie.co.kr/detail/albumInfo?axnm=85323248"
                   target="_blank"
@@ -640,7 +691,6 @@
               <div class="h-12 bg-transparent"></div>
             </div>
           </span>
-
           <!-- 앨범 아이콘 -->
           <div class="relative z-0">
             <button id="first-album" class="group relative z-10 mr-[4%] h-[20%] w-[8%]">
@@ -722,81 +772,7 @@
         </div>
       </div>
     </div>
-    <script>
-      // 버튼 클릭 시 배경 유지
-      document.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', function () {
-          // 모든 버튼의 배경 초기화
-          document.querySelectorAll('button').forEach(btn => {
-            btn.querySelector('div').classList.remove('bg-opacity-80')
-            btn.querySelector('div').classList.remove('group-hover:bg-opacity-30')
-          })
-          // 클릭된 버튼의 배경을 진하게 설정
-          this.querySelector('div').classList.add('bg-opacity-80')
-        })
-      })
-
-      // 모달 열기
-      document.querySelector('#first-album').addEventListener('click', function () {
-        document.querySelector('#first-album-window').classList.remove('hidden')
-        document.querySelector('#first-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#second-album').addEventListener('click', function () {
-        document.querySelector('#second-album-window').classList.remove('hidden')
-        document.querySelector('#second-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#third-album').addEventListener('click', function () {
-        document.querySelector('#third-album-window').classList.remove('hidden')
-        document.querySelector('#third-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#forth-album').addEventListener('click', function () {
-        document.querySelector('#forth-album-window').classList.remove('hidden')
-        document.querySelector('#forth-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      document.querySelector('#fifth-album').addEventListener('click', function () {
-        document.querySelector('#fifth-album-window').classList.remove('hidden')
-        document.querySelector('#fifth-album-window').classList.add('block')
-        document.querySelector('#modal-background').classList.remove('hidden')
-        document.querySelector('#modal-background').classList.add('block')
-      })
-
-      // 모달 닫기
-      function closeModal(modalId) {
-        document.querySelector(modalId).classList.remove('block')
-        document.querySelector(modalId).classList.add('hidden')
-        document.querySelector('#modal-background').classList.remove('block')
-        document.querySelector('#modal-background').classList.add('hidden')
-      }
-
-      // 닫기 버튼에 이벤트 리스너 추가
-      document.querySelectorAll('.close-btn').forEach(button => {
-        button.addEventListener('click', function () {
-          closeModal(`#${button.dataset.modal}`)
-        })
-      })
-
-      // 배경 클릭 시 모달 닫기
-      document.querySelector('#modal-background').addEventListener('click', function () {
-        closeModal('#first-album-window')
-        closeModal('#second-album-window')
-        closeModal('#third-album-window')
-        closeModal('#forth-album-window')
-        closeModal('#fifth-album-window')
-      })
-    </script>
-
+    <script src="./assets/js/modal-popup.js"></script>
     <!-- s: 풋터 -->
     <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
       <a href="https://ador.world/" target="_blank">
