@@ -206,24 +206,101 @@ window.addEventListener('load', () => {
   }
   sessionStorage.clear()
 })
-const pageWidth = document.querySelector('photo-grid')
+const pageWidth = document.querySelector('.photo-grid')
 const imgPrevBtn = document.querySelector('.prev-btn')
 const imgNextBtn = document.querySelector('.next-btn')
-const imglist = document.querySelectorAll('.team-photo')
+const imgList = document.querySelectorAll('.team-photo')
+let currentIndex = 0
 
-function CheckImg(imglist) {
-  imgPrevBtn.addEventListener('click', function () {
-    console.log('왼쪽')
-    for (let i = 0; i < 0; i++) {}
+function updateImages() {
+  const imgList = document.querySelectorAll('.team-photo')
+  let currentIndex = 0
+  imgList.forEach((img, index) => {
+    if (index === currentIndex) {
+      img.classList.add('active')
+    } else {
+      img.classList.remove('active')
+    }
   })
 }
 
-// imgPrevBtn.addEventListener('click', function () {
-//   console.log('왼쪽')
-// })
-imgNextBtn.addEventListener('click', function () {
-  console.log('오른쪽')
-})
+updateImages()
+
+function prevNextBtnControl() {
+  imgPrevBtn.addEventListener('click', function () {
+    console.log('왼쪽')
+    // currentIndex가 0보다 클 때만 이동
+    if (currentIndex > 0) {
+      currentIndex -= 1
+      console.log(currentIndex)
+
+      updateImages()
+      btnHidden() // 버튼 상태 업데이트
+    }
+  })
+
+  imgNextBtn.addEventListener('click', function () {
+    console.log('오른쪽')
+    // currentIndex가 마지막 이미지보다 작은 경우에만 이동
+    if (currentIndex < imgList.length - 1) {
+      currentIndex += 1
+      console.log(currentIndex)
+
+      updateImages()
+      btnHidden() // 버튼 상태 업데이트
+    }
+  })
+
+  function updateImages() {
+    imgList.forEach((img, index) => {
+      if (index === currentIndex) {
+        img.style.zIndex = 1
+      } else {
+        img.style.zIndex = 0
+      }
+    })
+  }
+
+  // 이동 후 이전/다음 버튼 상태 업데이트
+  function btnHidden() {
+    // 첫 번째 이미지일 때 prev 버튼 숨기기
+    if (currentIndex === 0) {
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    // 마지막 이미지일 때 next 버튼 숨기기
+    if (currentIndex === 6) {
+      imgNextBtn.style.visibility = 'hidden'
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+  }
+  btnHidden() // 초기 상태에서 버튼 상태 업데이트
+  updateImages() // 처음에 이미지 상태 업데이트
+}
+prevNextBtnControl()
+
+// resetinset() 함수 정의
+function resetinset() {
+  // hanni_images 요소가 존재하는지 먼저 확인
+
+  if (hanni_images) {
+    const computedStyle = window.getComputedStyle(hanni_images)
+
+    // 요소의 display 스타일이 'block'일 경우에만 updateImages() 함수 호출
+    if (computedStyle.display === 'flex') {
+      updateImages() // updateImages 함수 호출
+      console.log('하니다!')
+    } else {
+      console.log('hanni_images 요소는 block으로 표시되지 않았습니다.')
+    }
+  } else {
+    console.log('hanni_images 요소를 찾을 수 없습니다.')
+  }
+}
+resetinset()
 
 function checkContentWidth(pageWidth) {
   if (pageWidth <= 768) {
