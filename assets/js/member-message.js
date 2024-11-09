@@ -3,7 +3,8 @@ const messageWrap = document.getElementById('message-wrap-list')
 
 /**
  * 메세지 입력 받아서 텍스트 저장
- * @param {e} 메세지창에 입력되는 키보드 값 
+ *
+ * @param {e} 메세지창에 입력되는 키보드 값
  */
 function messageInit(e) {
   if (e.code == 'Enter') {
@@ -14,66 +15,69 @@ function messageInit(e) {
     const newMessage = messageBtn.value
     messageBtn.value = ''
 
-    makeMessageDome(newMessage)//새로운 메세지 element 생성
-    limitMaxMessage(10)//메세지의 총 개수 조절
+    makeMessageDome(newMessage) //새로운 메세지 element 생성
+    limitMaxMessage(10) //메세지의 총 개수 조절
   }
 }
 /**
  * 메세지가 일정개수를 초과하면 첫번째 메세지를 삭제
-*/
-function limitMaxMessage(n){
+ */
+function limitMaxMessage(n) {
   let messageListLength = messageWrap.querySelectorAll('li').length
-  if(messageListLength > n){
+  if (messageListLength > n) {
     messageWrap.removeChild(messageWrap.firstElementChild)
   }
 }
 
 /**
  * 새로운 element에 입력된 텍스트를 담아 html에 추가
- * @param {str} 메세지창에서 입력받은 텍스트 
-*/
+ *
+ * @param {str} 메세지창에서 입력받은 텍스트
+ */
 function makeMessageDome(str) {
-  let messageObj = {//메세지를 담아둘 객체 생성
+  let messageObj = {
+    //메세지를 담아둘 객체 생성
     message: str,
     topValue: getTop(),
     leftValue: getLeft(),
     rightValue: getRight(),
     colorValue: getColor()
   }
-  messageWrap.appendChild(messageDeco(messageObj))//랜덤 값 설정하여 html에 삽입
-  storedArr.push(messageObj) 
+  messageWrap.appendChild(messageDeco(messageObj)) //랜덤 값 설정하여 html에 삽입
+  storedArr.push(messageObj)
   localStorage.setItem('messageObjArr', JSON.stringify(storedArr))
   initOpacity() //opacity값은 node순서에 따라 지정
 }
 
-let storedArr = []//localStorage를 저장할 배열 선언
+let storedArr = [] //localStorage를 저장할 배열 선언
 
 /**
  * 페이지 로드될때마다 로컬스토리지에 담긴 메세지들을 html에 추가
  */
-window.addEventListener("load", (event) => {
+window.addEventListener('load', event => {
   if (localStorage.getItem('messageObjArr')) {
     storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
     for (let i = 0; i < storedArr.length; i++) {
       messageWrap.appendChild(messageDeco(storedArr[i]))
     }
     initOpacity()
-  } 
+  }
 })
 
 /**
  * 자식 순서에 따른 opacity값 추가(동적)
  */
-function initOpacity(){
+function initOpacity() {
   let messageList = messageWrap.querySelectorAll('li')
   let messageListArr = Array.from(messageList)
-  for(let i = 0; i < messageListArr.length; i++){
-    messageListArr[i].style.opacity = `${(i * 0.05)+0.3}`
+  for (let i = 0; i < messageListArr.length; i++) {
+    messageListArr[i].style.opacity = `${i * 0.05 + 0.3}`
   }
 }
 
 /**
  * 메세지 꾸밈값 랜덤 적용
+ *
  * @param {element} 대상 요소
  */
 function messageDeco(element) {
@@ -95,6 +99,7 @@ function messageDeco(element) {
 
 /**
  * 클래스명에 적용할 tailwindcss 랜덤값 설정
+ *
  * @returns 정수형 랜덤값(최소, 최대)
  */
 function getTop() {
@@ -109,6 +114,7 @@ function getRight() {
 
 /**
  * 클래스명에 적용할 tailwindcss 배경색 설정
+ *
  * @returns 컬러 배열에서 랜덤인덱스를 통해 설정된 색상
  */
 function getColor() {
@@ -142,8 +148,9 @@ const colorPalette = [
 
 /**
  * 랜덤 정수형을 반환
- * @param {min} 최소값 
- * @param {max} 최대값 
+ *
+ * @param {min} 최소값
+ * @param {max} 최대값
  * @returns 랜덤 정수값 반환(최댓값, 최솟값 포함)
  */
 function getRandomInt(min, max) {

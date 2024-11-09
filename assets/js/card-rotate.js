@@ -1,5 +1,6 @@
-let cards = document.querySelectorAll('.member-card-box li')
-
+/**
+ * 카드 회전 각도를 랜덤하게 세팅하는 함수
+ */
 function rotateCards() {
   const cards = document.querySelectorAll('.member-card-box li')
   // 카드들 선택
