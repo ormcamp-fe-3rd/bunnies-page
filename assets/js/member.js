@@ -18,6 +18,7 @@ function setPagingEvent() {
     btn.addEventListener('click', function () {
       togglePage(index)
       togglePaging(index)
+      runDrag()
     })
   })
 }
