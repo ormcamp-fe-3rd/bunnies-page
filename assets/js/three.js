@@ -76,28 +76,6 @@ function render3DCover(index) {
   cube.material.needsUpdate = true
 }
 
-// [렌더링 관련]====================================
-// 반응형 처리
-window.addEventListener('resize', () => {
-  camera.aspect = renderTarget.clientWidth / renderTarget.clientHeight
-  camera.updateProjectionMatrix()
-  renderer.setSize(renderTarget.clientWidth, renderTarget.clientHeight)
-})
-
-/**
- * 렌더링 애니메이션 루프 함수
- */
-function animate() {
-  requestAnimationFrame(animate)
-
-  if (isDragging == false) {
-    //만약 드래그 상태 종료시
-    cube.rotation.y += 0.01 // 자동 회전 실행
-  }
-  renderer.render(scene, camera)
-}
-animate() // 렌더링 시작
-
 // [마우스 이벤트 관련]====================================
 // 마우스 관련 변수
 const mouse = new THREE.Vector2()
@@ -152,3 +130,25 @@ function onDocumentMouseMove(event) {
     cube.rotation.y = startRotationY + mouse.x * Math.PI * 0.9
   }
 }
+
+// [렌더링 관련]====================================
+// 반응형 처리
+window.addEventListener('resize', () => {
+  camera.aspect = renderTarget.clientWidth / renderTarget.clientHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(renderTarget.clientWidth, renderTarget.clientHeight)
+})
+
+/**
+ * 렌더링 애니메이션 루프 함수
+ */
+function animate() {
+  requestAnimationFrame(animate)
+
+  if (isDragging == false) {
+    //만약 드래그 상태 종료시
+    cube.rotation.y += 0.01 // 자동 회전 실행
+  }
+  renderer.render(scene, camera)
+}
+animate() // 렌더링 시작
