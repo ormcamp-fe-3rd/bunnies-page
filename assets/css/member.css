@@ -6,11 +6,15 @@
   margin: 0 auto;
   word-break: keep-all;
 }
-
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .photo-grid {
-    height: 550px;
-    width: 380px;
+    width: 80%;
+  }
+  .team-photo {
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* width의 50% */
+    margin-top: -50px; /* height의 50% */
   }
 }
 
