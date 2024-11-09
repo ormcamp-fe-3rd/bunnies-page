@@ -1,4 +1,12 @@
 /*photo 범위 설정*/
+.team-member-photo-section {
+  justify-content: center;
+  align-items: center;
+  margin: 0 12px;
+  min-width: fit-content;
+  height: 500px;
+}
+
 .photo-grid {
   position: relative;
   width: 1240px;
@@ -6,13 +14,39 @@
   margin: 0 auto;
   word-break: keep-all;
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 768px) {
+  .team-member-photo-section {
+    display: flex;
+    margin: 0 auto;
+  }
   .photo-grid {
-    width: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 200px;
+  }
+  .photo-move-btn {
+    background-color: antiquewhite;
+    margin: 50px;
+  }
+
+  .team-photo {
+    top: 50%;
+    left: 50%;
+    margin-left: -110px; /* width의 50% */
+    margin-top: -50px; /* height의 50% */
+  }
+}
+@media (min-width: 769px) {
+  .photo-grid {
+    width: 100%;
+    position: relative;
+    margin: 0 50px 0 90px;
   }
   .team-photo {
     top: 50%;
     left: 50%;
+    position: absolute;
     margin-left: -50px; /* width의 50% */
     margin-top: -50px; /* height의 50% */
   }

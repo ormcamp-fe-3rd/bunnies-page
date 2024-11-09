@@ -206,3 +206,35 @@ window.addEventListener('load', () => {
   }
   sessionStorage.clear()
 })
+const pageWidth = document.querySelector('photo-grid')
+const imgPrevBtn = document.querySelector('.prev-btn')
+const imgNextBtn = document.querySelector('.next-btn')
+const imglist = document.querySelectorAll('.team-photo')
+
+function CheckImg(imglist) {
+  imgPrevBtn.addEventListener('click', function () {
+    console.log('왼쪽')
+    for (let i = 0; i < 0; i++) {}
+  })
+}
+
+// imgPrevBtn.addEventListener('click', function () {
+//   console.log('왼쪽')
+// })
+imgNextBtn.addEventListener('click', function () {
+  console.log('오른쪽')
+})
+
+function checkContentWidth(pageWidth) {
+  if (pageWidth <= 768) {
+    console.log('1200이하임')
+    imgPrevBtn.style.display = 'flex'
+    imgNextBtn.style.display = 'flex'
+  } else {
+    imgPrevBtn.style.display = 'none'
+    imgNextBtn.style.display = 'none'
+  }
+}
+window.addEventListener('resize', function () {
+  checkContentWidth(window.innerWidth)
+})
