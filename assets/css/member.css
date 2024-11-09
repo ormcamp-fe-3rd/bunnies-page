@@ -4,6 +4,10 @@
   width: 255px;
   max-width: 80vw;
   height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* 이미지 스타일 */
