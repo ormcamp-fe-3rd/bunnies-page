@@ -123,14 +123,14 @@
 
     <!-- 앨범 섹션 영역 지정 -->
     <section
-      class="computer my-3 w-full overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover bg-center bg-no-repeat py-6 max-md:bg-[url('/assets/images/album/pc-outside-background.jpg')] max-md:px-6">
+      class="computer my-3 w-full overflow-hidden bg-[url('/assets/images/album/pc-outside-background.jpg')] bg-cover bg-center bg-no-repeat py-6 max-md:px-6">
       <!-- s: 컴퓨터 목업 -->
       <div class="mock-wrap container relative z-20 mx-auto">
         <!-- s: 컴퓨터 배경화면 영역 -->
         <div class="computer-bg-wrap relative">
           <div
             id="album-icon-warp"
-            class="flex aspect-video w-full flex-wrap items-start justify-start gap-11 overflow-y-auto rounded-t-3xl border-[30px] border-solid border-black bg-[url('/assets/images/album/newjeans-computerbg.png')] bg-cover bg-center bg-no-repeat p-10 text-center max-md:h-[500px] max-md:rounded-3xl max-md:bg-[url('/assets/images/album/pc-outside-background.jpg')]">
+            class="flex aspect-video w-full flex-wrap items-start justify-start gap-11 overflow-y-auto rounded-t-3xl border-[30px] border-solid border-black bg-[url('/assets/images/album/pc-outside-background.jpg')] bg-cover bg-center bg-no-repeat p-10 text-center max-md:h-[500px] max-md:rounded-3xl max-md:p-2">
             <button
               type="button"
               class="w-32 break-all rounded-md bg-opacity-30 p-2 transition duration-200 hover:bg-white hover:bg-opacity-30"
@@ -150,7 +150,7 @@
             id="modal"
             class="absolute left-1/2 top-1/2 hidden h-4/5 w-4/5 max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-md border border-solid border-zinc-400 shadow-lg">
             <div
-              class="bar-wrap absolute left-0 top-0 z-10 w-full border-b border-b-zinc-400 bg-gradient-to-b from-zinc-200 to-zinc-300 py-1 text-center text-sm text-gray-100">
+              class="bar-wrap absolute left-0 top-0 z-20 w-full border-b border-b-zinc-400 bg-gradient-to-b from-zinc-200 to-zinc-300 py-1 text-center text-sm text-gray-100">
               <button type="button" onclick="closeModal()" class="absolute left-3 top-1/2 -translate-y-1/2">
                 <span class="inline-block h-3 w-3 rounded-full bg-red-500 hover:bg-red-700"></span>
                 <span
@@ -218,7 +218,7 @@
                 </li>
                 <li class="mx-6">　|　</li>
                 <li>
-                  <a href="/album.html">
+                  <a href="/album.html" id="album-page">
                     <img
                       src="/assets/images/albums/play-circle.png"
                       alt="앨범 페이지"
