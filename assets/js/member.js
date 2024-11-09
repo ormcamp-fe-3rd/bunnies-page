@@ -70,14 +70,14 @@ function setPagingByParam() {
   sessionStorage.clear()
 }
 
-const photoWrap = document.getElementById('photo-wrap')
-
 /**
  * 드래그 앤 드롭 액션 함수
  *
  * @param {MouseEvent} e - 최종 실행되는 드래그 앤 드롭 함수
  */
 function runDrag() {
+  const photoWrap = document.getElementById('photo-wrap')
+
   document.querySelectorAll('.team-photo').forEach(contentDragged => {
     // 마우스 시작 좌표 선언, 이동 거리 값 0으로 설정
     let xStart,
@@ -87,7 +87,9 @@ function runDrag() {
 
     // 카드의 초기 y 좌표를 가져와, 이동 가능한 최하단 y 좌표로 설정
     const initialYPosition = contentDragged.getBoundingClientRect().top + window.scrollY
+    const initialXPosition = contentDragged.getBoundingClientRect().left
     const limitYPosition = photoWrap.offsetTop + photoWrap.clientHeight - contentDragged.clientHeight // 각 카드가 도달할 수 있는 최하단 y 좌표
+    const limitXPosition = document.documentElement.clientWidth - contentDragged.clientWidth // 각 카드가 도달할 수 있는 최우측 x 좌표
 
     /**
      * 마우스 이동 거리 계산 함수
@@ -97,10 +99,21 @@ function runDrag() {
       changedValueX = e.pageX - xStart
       changedValueY = e.pageY - yStart
 
-      // 카드가 y 축에서 더 이상 내려가지 않도록 제한
+      // 카드 y축 범위 제한
       const elementTopPosition = initialYPosition + changedValueY
+      if (elementTopPosition <= 0) {
+        changedValueY = -initialYPosition
+      }
       if (elementTopPosition > limitYPosition) {
         changedValueY = limitYPosition - initialYPosition
+      }
+      // 카드 x축 범위 제한
+      const elementLeftPosition = initialXPosition + changedValueX
+      if (elementLeftPosition <= 0) {
+        changedValueX = -initialXPosition
+      }
+      if (elementLeftPosition > limitXPosition) {
+        changedValueX = limitXPosition - initialXPosition
       }
 
       // 계산한 이동 거리를 translateX, Y 각각에 반영
