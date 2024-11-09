@@ -120,23 +120,24 @@
         </li>
       </ul>
     </section>
+    <!-- e: 멤버 카드 -->
+
     <!-- 모달 배경 -->
     <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
     <!-- 앨범 섹션 영역 지정 -->
-    <div class="h-[500px] w-full"></div>
     <div
-      class="computer z-0 my-3 flex h-[900px] w-full items-center justify-center bg-[url('/assets/images/album/pc-outside-background.jpg_large')] bg-cover pb-0 pt-6">
-      <div class="relative z-50 flex">
+      class="computer z-0 my-3 flex h-[900px] w-full min-w-[1200px] items-center justify-center overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover pb-0 pt-6">
+      <div class="relative z-50 flex min-w-[1024px]">
         <!-- 컴퓨터 목업 -->
         <img
-          class="z-30 h-full max-h-[900px] w-full object-contain"
+          class="z-30 h-full max-h-[900px] w-full min-w-[1024px] object-contain"
           src="./assets/images/album/mac.png"
           alt="컴퓨터 이미지" />
 
         <!-- 컴퓨터 배경화면 영역 -->
         <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white">
-          <img src="./assets/images/album/pc-outside-background.jpg_large" alt="컴퓨터 배경화면" />
+          <img src="./assets/images/album/newjeans-computerbg.png" alt="컴퓨터 배경화면" />
         </div>
         <div class="absolute z-30 p-[6%]">
           <!-- 첫 번째 앨범 모달 창 -->
@@ -145,16 +146,16 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="first-album-window">
+                  <span class="close-btn" data-modal="first-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -259,16 +260,16 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-red-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="second-album-window">
+                  <span class="close-btn" data-modal="second-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -372,16 +373,16 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-cyan-100 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="third-album-window">
+                  <span class="close-btn" data-modal="third-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -482,16 +483,16 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-amber-800 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="forth-album-window">
+                  <span class="close-btn" data-modal="forth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
                       class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
                     <div
                       class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible cursor-default text-[#006519] hover:text-[#003107] group-hover:visible"></a>
+                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
                     </div>
                   </span>
                 </div>
@@ -590,9 +591,9 @@
             class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
             <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10">
               <div
-                class="cursor-default rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
+                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
                 <div class="absolute left-2 top-[4px] leading-none">
-                  <span id="close-btn" class="close-btn" data-modal="fifth-album-window">
+                  <span class="close-btn" data-modal="fifth-album-window">
                     <div
                       class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
                     <div
