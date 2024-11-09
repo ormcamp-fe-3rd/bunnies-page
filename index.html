@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bunnies Page</title>
     <link rel="stylesheet" href="/assets/css/tailwindcss.output.css" />
-    <link rel="stylesheet" href="/assets/css/home.css" />
     <link rel="stylesheet" href="/assets/css/member.css" />
     <link rel="stylesheet" href="/assets/css/album.css" />
     <script src="/assets/js/home.js"></script>
@@ -80,700 +79,167 @@
     <!-- e: 유튜브 -->
 
     <!-- s: 멤버 카드 -->
-    <section class="mb-36 mt-24 py-14">
+    <section class="mb-36 mt-24 w-full overflow-hidden py-14">
       <ul
         class="member-card-box container mx-auto grid w-full grid-cols-5 gap-x-12 gap-y-6 px-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
         <li id="home-minji" class="relative w-full -rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-minji.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-minji-frame.png"
-            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            class="absolute inset-0 object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li id="home-hanni" class="relative w-full -rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-danielle.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-danielle-frame.png"
-            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            class="absolute inset-0 object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li id="home-danni" class="relative w-full rotate-6 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hanni.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-hanni-frame.png"
-            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            class="absolute inset-0 object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li id="home-haerin" class="relative w-full -rotate-3 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-hyein.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-hyein-frame.png"
-            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            class="absolute inset-0 object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
         <li id="home-hyein" class="relative w-full rotate-12 overflow-hidden rounded" onclick="toMemberPage(id)">
           <img src="/assets/images/main-member/main-haerin.jpeg" class="aspect-[2/3] w-full" alt="" />
           <img
             src="/assets/images/main-member/main-haerin-frame.png"
-            class="absolute left-0 top-0 h-full w-full object-cover opacity-0 hover:opacity-100"
+            class="absolute inset-0 object-cover opacity-0 hover:opacity-100"
             alt="" />
         </li>
       </ul>
     </section>
     <!-- e: 멤버 카드 -->
 
-    <!-- 모달 배경 -->
-    <div id="modal-background" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 backdrop-blur-sm"></div>
-
     <!-- 앨범 섹션 영역 지정 -->
-    <div
-      class="computer z-0 my-3 flex h-[900px] w-full min-w-[1200px] items-center justify-center overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover pb-0 pt-6">
-      <div class="relative z-50 flex min-w-[1024px]">
-        <!-- 컴퓨터 목업 -->
-        <img
-          class="z-30 h-full max-h-[900px] w-full min-w-[1024px] object-contain"
-          src="./assets/images/album/mac.png"
-          alt="컴퓨터 이미지" />
-
-        <!-- 컴퓨터 배경화면 영역 -->
-        <div class="absolute bottom-[30%] left-[2%] right-[2%] top-[2%] z-10 m-auto bg-white">
-          <img src="./assets/images/album/newjeans-computerbg.png" alt="컴퓨터 배경화면" />
-        </div>
-        <div class="absolute z-30 p-[6%]">
-          <!-- 첫 번째 앨범 모달 창 -->
-          <span
-            id="first-album-window"
-            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-neutral-200 pb-10 shadow-lg">
-              <div
-                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
-                <div class="absolute left-2 top-[4px] leading-none">
-                  <span class="close-btn" data-modal="first-album-window">
-                    <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <div
-                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
-                    </div>
-                  </span>
-                </div>
-                <span style="color: black">New Jeans</span>
-              </div>
-              <div class="flex flex-row items-center justify-center py-10">
-                <div class="flex-shrink-0">
-                  <a href="/album.html" class="group relative">
-                    <div
-                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
-                      <img
-                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
-                        src="./assets/images/album/album_img/1stEP.jpg" />
-                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
-                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
-                      <div
-                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
-                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-4 border-white opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-gray-500 opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-gradient-to-r from-transparent to-gray-300 opacity-25"></div>
-                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="ml-15">
-                  <div class="flex flex-col rounded-md p-10">
-                    <table class="text-left font-cafe-fill leading-tight text-blue-950">
-                      <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl">New Jeans</td>
-                      </tr>
-                      <tr>
-                        <td class="font-cafe text-xl">Release Date</td>
-                        <td colspan="2" class="text-xl">2022. 8. 1.</td>
-                      </tr>
-                    </table>
-                    <table class="mt-4 w-full font-cafe-fill text-blue-950">
-                      <tr>
-                        <td colspan="3" class="text-3xl">Playlist</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Attention</td>
-                        <td class="font-cafe text-xl">02:59</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Hype Boy</td>
-                        <td class="font-cafe text-xl">02:58</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center justify-center">
-                <a
-                  href="https://www.melon.com/album/detail.htm?albumId=11127145"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.music-flo.com/detail/album/410940180/albumtrack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="/album.html"
-                  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-black transition duration-200 hover:bg-red-500">
-                  <img src="assets/images/albums/play-circle.png" alt="Play" class="h-8 w-8 object-contain" />
-                </a>
-              </div>
-              <div class="h-12 bg-transparent"></div>
-            </div>
-          </span>
-
-          <!-- 두 번째 앨범 모달 창 -->
-          <span
-            id="second-album-window"
-            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-red-100 pb-10">
-              <div
-                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-100">
-                <div class="absolute left-2 top-[4px] leading-none">
-                  <span class="close-btn" data-modal="second-album-window">
-                    <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <div
-                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
-                    </div>
-                  </span>
-                </div>
-                <span style="color: black">OMG</span>
-              </div>
-              <div class="flex flex-row items-center justify-center py-10">
-                <div class="flex-shrink-0">
-                  <a href="/album.html" class="group relative">
-                    <div
-                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
-                      <img
-                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
-                        src="./assets/images/album/album_img/OMG.jpg" />
-                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
-                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
-                      <div
-                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
-                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-red-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-gray-500 opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-gradient-to-r from-transparent to-gray-300 opacity-25"></div>
-                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
-                    </div>
-                  </a>
-                </div>
-                <div class="ml-15">
-                  <div class="flex flex-col rounded-md p-10">
-                    <table class="text-left font-cafe-fill leading-tight text-blue-950">
-                      <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl">OMG</td>
-                      </tr>
-                      <tr>
-                        <td class="font-cafe text-xl">Release Date</td>
-                        <td colspan="2" class="text-xl">2023. 1. 2.</td>
-                      </tr>
-                    </table>
-                    <table class="mt-4 w-full font-cafe-fill text-blue-950">
-                      <tr>
-                        <td colspan="3" class="text-3xl">Playlist</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">OMG</td>
-                        <td class="font-cafe text-xl">03:33</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Ditto</td>
-                        <td class="font-cafe text-xl">03:06</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center justify-center">
-                <a
-                  href="https://www.melon.com/album/detail.htm?albumId=11127145"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.music-flo.com/detail/album/410940180/albumtrack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.genie.co.kr/detail/albumInfo?axnm=83325577"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="/album.html"
-                  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-black transition duration-200 hover:bg-red-500">
-                  <img src="assets/images/albums/play-circle.png" alt="Play" class="h-8 w-8 object-contain" />
-                </a>
-              </div>
-              <div class="h-12 bg-transparent"></div>
-            </div>
-          </span>
-
-          <!-- 세 번째 앨범 모달 창 -->
-          <span
-            id="third-album-window"
-            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-cyan-100 pb-10">
-              <div
-                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
-                <div class="absolute left-2 top-[4px] leading-none">
-                  <span class="close-btn" data-modal="third-album-window">
-                    <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <div
-                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
-                    </div>
-                  </span>
-                </div>
-                <span style="color: black">Get Up</span>
-              </div>
-              <div class="flex flex-row items-center justify-center py-10">
-                <div class="flex-shrink-0">
-                  <a href="/album.html" class="group relative">
-                    <div
-                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
-                      <img
-                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
-                        src="./assets/images/album/album_img/GetUp.webp" />
-                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
-                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
-                      <div
-                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
-                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
-                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="ml-10">
-                  <div class="p-15 flex flex-col rounded-md">
-                    <table class="text-left font-cafe-fill leading-tight text-gray-900">
-                      <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl">Get Up</td>
-                      </tr>
-                      <tr>
-                        <td class="font-cafe text-xl">Release Date</td>
-                        <td colspan="2" class="text-xl">2022. 8. 1.</td>
-                      </tr>
-                    </table>
-                    <table class="mt-4 w-full font-cafe-fill text-teal-600">
-                      <tr>
-                        <td colspan="3" class="text-3xl">Playlist</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">NewJeans</td>
-                        <td class="font-cafe text-xl">01:49</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Super Shy</td>
-                        <td class="font-cafe text-xl">02:35</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center justify-center">
-                <a
-                  href="https://www.melon.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.music-flo.com/detail/album/425287164/albumtrack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="/album.html"
-                  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-black transition duration-200 hover:bg-red-500">
-                  <img src="assets/images/albums/play-circle.png" alt="Play" class="h-8 w-8 object-contain" />
-                </a>
-              </div>
-              <div class="h-12 bg-transparent"></div>
-            </div>
-          </span>
-
-          <!-- 네 번째 앨범 모달 창 -->
-          <span
-            id="forth-album-window"
-            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-amber-800 pb-10">
-              <div
-                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
-                <div class="absolute left-2 top-[4px] leading-none">
-                  <span class="close-btn" data-modal="forth-album-window">
-                    <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <div
-                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]">
-                      <a class="invisible text-[#006519] hover:text-[#003107] group-hover:visible"></a>
-                    </div>
-                  </span>
-                </div>
-                <span style="color: black">How Sweet</span>
-              </div>
-              <div class="flex flex-row items-center justify-center py-10">
-                <div class="flex-shrink-0">
-                  <a href="/album.html" class="group relative">
-                    <div
-                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
-                      <img
-                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
-                        src="./assets/images/album/album_img/HowSweet.webp" />
-                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
-                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
-                      <div
-                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
-                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-red-900 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
-                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
-                    </div>
-                  </a>
-                </div>
-                <div class="ml-100">
-                  <div class="flex flex-col rounded-md p-5">
-                    <table class="text-left font-cafe-fill leading-tight text-orange-300">
-                      <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl">How Sweet</td>
-                      </tr>
-                      <tr>
-                        <td class="font-cafe text-xl">Release Date</td>
-                        <td colspan="2" class="text-xl">2022. 8. 1.</td>
-                      </tr>
-                    </table>
-                    <table class="mt-4 w-full font-cafe-fill text-orange-300">
-                      <tr>
-                        <td colspan="3" class="text-3xl">Playlist</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">How Sweet</td>
-                        <td class="font-cafe text-xl">03:40</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Bubble Gum</td>
-                        <td class="font-cafe text-xl">03:21</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center justify-center">
-                <a
-                  href="https://www.melon.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.music-flo.com/detail/album/425287164/albumtrack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85075275"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="/album.html"
-                  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-black transition duration-200 hover:bg-red-500">
-                  <img src="assets/images/albums/play-circle.png" alt="Play" class="h-8 w-8 object-contain" />
-                </a>
-              </div>
-              <div class="h-12 bg-transparent"></div>
-            </div>
-          </span>
-          <!-- 다섯 번째 앨범 모달 창 -->
-          <span
-            id="fifth-album-window"
-            class="absolute bottom-0 left-1/2 top-1/4 z-50 hidden w-11/12 max-w-3xl -translate-x-1/2 transform">
-            <div class="shadow-3g max-h-[90vh] w-full overflow-auto rounded-md border-[#acacac] bg-stone-900 pb-10">
-              <div
-                class="rounded-t-md border-b border-t border-[#f3f1f3] border-b-[#b1aeb1] bg-gradient-to-b from-[#ebebeb] to-[#d5d5d5] text-center text-sm leading-5 text-gray-900">
-                <div class="absolute left-2 top-[4px] leading-none">
-                  <span class="close-btn" data-modal="fifth-album-window">
-                    <div
-                      class="group inline-block h-[11px] w-[11px] rounded-full border border-[#e33e41] bg-[#ff5c5c] hover:border-[#b03537] hover:bg-[#c14645]"></div>
-                    <div
-                      class="group ml-1 inline-block h-[11px] w-[11px] rounded-full border border-[#e09e3e] bg-[#ffbd4c] hover:border-[#af7c33] hover:bg-[#c08e38]"></div>
-                    <div
-                      class="group ml-1.5 inline-block h-[11px] w-[11px] rounded-full border border-[#14ae46] bg-[#00ca56] hover:border-[#128435] hover:bg-[#029740]"></div>
-                  </span>
-                </div>
-                <span style="color: black">Super natural</span>
-              </div>
-              <div class="flex flex-row items-center justify-center py-10">
-                <div class="flex-shrink-0">
-                  <a href="/album.html" class="group relative">
-                    <div
-                      class="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-full border-2 border-gray-400 transition-shadow duration-300 group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.7)]">
-                      <img
-                        class="object-cover transition duration-200 group-hover:scale-110 group-hover:shadow-lg"
-                        src="./assets/images/album/album_img/Supernatural.webp" />
-                      <div class="absolute inset-0 rounded-full border-2 border-white opacity-30"></div>
-                      <div class="absolute h-8 w-8 rounded-full bg-black opacity-70"></div>
-                      <div
-                        class="border-1 absolute h-8 w-8 rounded-full border-gray-400"
-                        style="top: calc(50% - 16px); left: calc(50% - 16px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full bg-white opacity-40"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div
-                        class="absolute h-16 w-16 rounded-full border-2 border-gray-300"
-                        style="top: calc(50% - 32px); left: calc(50% - 32px)"></div>
-                      <div class="absolute h-32 w-32 animate-ping rounded-full border-2 border-white opacity-20"></div>
-                      <div
-                        class="absolute inset-0 rounded-full bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
-                      <div class="border-1 absolute inset-0 rounded-full border-gray-100 opacity-30"></div>
-                    </div>
-                  </a>
-                </div>
-                <div class="ml-100">
-                  <div class="flex flex-col rounded-md p-5">
-                    <table class="text-left font-cafe-fill leading-tight text-orange-300">
-                      <tr>
-                        <td colspan="2" class="text-3xl md:text-4xl">Supernatural</td>
-                      </tr>
-                      <tr>
-                        <td class="font-cafe text-xl">Release Date</td>
-                        <td colspan="2" class="text-xl">2024. 6. 21.</td>
-                      </tr>
-                    </table>
-                    <table class="mt-4 w-full font-cafe-fill text-orange-300">
-                      <tr>
-                        <td colspan="3" class="text-3xl">Playlist</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Super natural</td>
-                        <td class="font-cafe text-xl">02:59</td>
-                      </tr>
-                      <tr>
-                        <td colspan="2" class="w-[80%] font-cafe text-2xl leading-none">Right Now</td>
-                        <td class="font-cafe text-xl">02:58</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center justify-center">
-                <a
-                  href="https://www.melon.com/album/detail.htm?albumId=11514014"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/melon.svg" alt="Melon" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
-                <a
-                  href="https://www.music-flo.com/detail/album/426178480/albumtrack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/flo.svg" alt="Flow" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 0.5)">　|　</span>
-                <a
-                  href="https://www.genie.co.kr/detail/albumInfo?axnm=85323248"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-12 w-12 items-center justify-center">
-                  <img src="assets/images/album/genie.svg" alt="Genie" class="h-full w-full object-contain" />
-                </a>
-                <span class="mx-6" style="color: rgba(0, 55, 55, 2)">　|　</span>
-                <a
-                  href="/album.html"
-                  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-black transition duration-200 hover:bg-red-500">
-                  <img src="assets/images/albums/play-circle.png" alt="Play" class="h-8 w-8 object-contain" />
-                </a>
-              </div>
-              <div class="h-12 bg-transparent"></div>
-            </div>
-          </span>
-
-          <!-- 앨범 아이콘 -->
-          <div class="relative z-0">
-            <button id="first-album" class="albumicon group relative z-10 mr-[4%] h-[20%] w-[8%]">
-              <div
-                class="flex flex-col items-center rounded-md bg-transparent p-2 transition duration-200 group-hover:bg-white group-hover:bg-opacity-30">
-                <img
-                  class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
-                  src="./assets/images/album/album_img/1stEP.jpg"
-                  alt="" />
-                <p
-                  class="w-full text-center text-lg font-bold text-white"
-                  style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 1)">
-                  New Jeans
-                </p>
-              </div>
-            </button>
-
-            <button id="second-album" class="albumicon group relative z-10 mr-[4%] h-[20%] w-[8%]">
-              <div
-                class="flex flex-col items-center rounded-md bg-transparent p-2 transition duration-200 group-hover:bg-white group-hover:bg-opacity-30">
-                <img
-                  class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
-                  src="./assets/images/album/album_img/OMG.jpg"
-                  alt="" />
-                <p
-                  class="w-full text-center text-lg font-bold text-white"
-                  style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 1)">
-                  OMG
-                </p>
-              </div>
-            </button>
-
-            <button id="third-album" class="albumicon group relative z-10 mr-[4%] h-[20%] w-[8%]">
-              <div
-                class="flex flex-col items-center rounded-md bg-transparent p-2 transition duration-200 group-hover:bg-white group-hover:bg-opacity-30">
-                <img
-                  class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
-                  src="./assets/images/album/album_img/GetUp.webp"
-                  alt="" />
-                <p
-                  class="w-full text-center text-lg font-bold text-white"
-                  style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 1)">
-                  Get Up
-                </p>
-              </div>
-            </button>
-
-            <button id="forth-album" class="albumicon group relative z-10 mr-[4%] h-[20%] w-[8%]">
-              <div
-                class="flex flex-col items-center rounded-md bg-transparent p-2 transition duration-200 group-hover:bg-white group-hover:bg-opacity-30">
-                <img
-                  class="drop-shadow-[0_1px_2px rgba(0,0,0,0.5)] h-auto w-full"
-                  src="./assets/images/album/album_img/HowSweet.webp"
-                  alt="" />
-                <p
-                  class="w-full text-center text-lg font-bold text-white"
-                  style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 1)">
-                  How Sweet
-                </p>
-              </div>
-            </button>
-            <button id="fifth-album" class="albumicon group relative z-10 mr-[4%] h-[20%] w-[8%]">
-              <div
-                class="flex flex-col items-center rounded-md bg-transparent p-2 transition duration-200 group-hover:bg-white group-hover:bg-opacity-30">
-                <img
-                  class="drop-shadow-[0_1px_2px rgba(0,0,0,0.8)] h-auto w-full"
-                  src="./assets/images/album/album_img/Supernatural.webp"
-                  alt="" />
-                <p
-                  class="w-full text-center text-lg font-bold text-white"
-                  style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 1)">
-                  Super
-                  <br />
-                  natural
-                </p>
-              </div>
+    <section
+      class="computer my-3 w-full overflow-hidden bg-[url('/assets/images/album/superbg.png')] bg-cover py-6 max-md:px-6">
+      <!-- s: 컴퓨터 목업 -->
+      <div class="mock-wrap container relative z-20 mx-auto">
+        <!-- s: 컴퓨터 배경화면 영역 -->
+        <div class="computer-bg-wrap relative">
+          <div
+            id="album-icon-warp"
+            class="flex aspect-video w-full flex-wrap items-start justify-start gap-11 overflow-y-auto rounded-t-3xl border-[30px] border-solid border-black bg-[url('/assets/images/album/newjeans-computerbg.png')] bg-cover bg-center bg-no-repeat p-10 text-center max-md:h-[500px] max-md:rounded-3xl">
+            <button
+              type="button"
+              class="w-32 rounded-md p-2 transition duration-200 hover:bg-white hover:bg-opacity-30">
+              <img
+                class="mx-auto my-2 aspect-square w-4/5 shadow-md shadow-zinc-700"
+                src="./assets/images/album/album_img/1stEP.jpg"
+                alt="" />
+              <p
+                class="w-full text-center text-lg font-bold text-white shadow-black [text-shadow:_1px_1px_0_var(--tw-shadow-color)]">
+                New Jeans
+              </p>
             </button>
           </div>
+          <!-- s: 모달창 -->
+          <div
+            id="modal"
+            class="absolute left-1/2 top-1/2 hidden h-4/5 w-4/5 max-w-3xl -translate-x-1/2 -translate-y-1/2 rounded-md border border-solid border-zinc-400 shadow-lg">
+            <div
+              class="bar-wrap absolute left-0 top-0 z-10 w-full border-b border-b-zinc-400 bg-gradient-to-b from-zinc-200 to-zinc-300 py-1 text-center text-sm text-gray-100">
+              <button type="button" onclick="closeModal()" class="absolute left-3 top-1/2 -translate-y-1/2">
+                <span class="inline-block h-3 w-3 rounded-full bg-red-500 hover:bg-red-700"></span>
+                <span class="ml-1 inline-block h-3 w-3 rounded-full bg-yellow-500 hover:bg-yellow-700"></span>
+                <span class="ml-1 inline-block h-3 w-3 rounded-full bg-green-500 hover:bg-green-700"></span>
+              </button>
+              <span id="album-name-bar" class="text-black">New Jeans</span>
+            </div>
+            <div
+              class="flex h-full w-full flex-col items-center justify-between overflow-y-auto overflow-x-hidden p-8 pt-24">
+              <div
+                class="album-info-wrap flex w-full max-w-[600px] items-start justify-center gap-x-10 gap-y-4 max-md:flex-wrap">
+                <a
+                  href="/album.html"
+                  class="album-img group relative block aspect-square w-full max-w-60 flex-shrink-0 overflow-hidden rounded-full border-2 border-solid border-gray-400 transition-shadow duration-300 hover:shadow-[0_5px_15px] hover:shadow-zinc-600">
+                  <img
+                    id="album-img"
+                    class="h-full w-full object-cover transition-transform duration-200 group-hover:scale-110"
+                    src="./assets/images/album/album_img/1stEP.jpg"
+                    alt="앨범 이미지" />
+                  <div
+                    class="absolute left-1/2 top-1/2 aspect-square w-[13.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-solid border-gray-400 bg-black bg-opacity-70"></div>
+                  <div
+                    class="absolute left-1/2 top-1/2 flex aspect-square w-1/4 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-solid border-gray-300 bg-white bg-opacity-40">
+                    <div
+                      class="absolute aspect-square w-[200%] animate-ping rounded-full border-4 border-solid border-white opacity-20"></div>
+                  </div>
+                  <div
+                    class="absolute inset-0 rounded-full bg-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
+                  <div
+                    class="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-gray-500 opacity-20"></div>
+                  <div
+                    class="absolute inset-0 rounded-full bg-gradient-to-r from-transparent to-gray-300 opacity-25"></div>
+                </a>
+                <div class="info mt-4 w-full font-cafe">
+                  <h1 id="album-name" class="font-cafe-fill text-4xl max-md:text-3xl">New Jeans</h1>
+                  <p class="flex flex-wrap items-center justify-between text-xl">
+                    <span>Release Date</span>
+                    <span id="release" class="font-cafe-fill">2022. 8. 1.</span>
+                  </p>
+                  <h2 class="mt-4 font-cafe-fill text-3xl">Playlist</h2>
+                  <div id="playlist-wrap" class="col grid grid-cols-[1fr_minmax(70px,_auto)] text-2xl"></div>
+                </div>
+              </div>
+              <ul class="service-list mt-10 flex w-full flex-wrap items-center justify-center text-teal-950">
+                <li>
+                  <a href="" target="_blank" id="melon">
+                    <img src="assets/images/album/melon.svg" alt="Melon" class="h-12 w-12 object-contain" />
+                  </a>
+                </li>
+                <li class="mx-6">　|　</li>
+                <li>
+                  <a href="" target="_blank" id="flo">
+                    <img src="assets/images/album/flo.svg" alt="Flow" class="h-12 w-12 object-contain" />
+                  </a>
+                </li>
+                <li class="mx-6">　|　</li>
+                <li>
+                  <a href="" target="_blank" id="genie">
+                    <img src="assets/images/album/genie.svg" alt="Genie" class="h-12 w-12 object-contain" />
+                  </a>
+                </li>
+                <li class="mx-6">　|　</li>
+                <li>
+                  <a href="/album.html">
+                    <img
+                      src="/assets/images/albums/play-circle.png"
+                      alt="앨범 페이지"
+                      class="h-10 w-10 rounded-full bg-black object-contain transition duration-200 hover:bg-red-500" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- e: 모달창 -->
+        </div>
+        <!-- e: 컴퓨터 배경화면 영역 -->
+        <div class="max-md:hidden">
+          <div class="h-20 w-full rounded-b-3xl bg-gradient-to-r from-[#94969a] to-[#d2d3d5]"></div>
+          <img class="mx-auto" src="./assets/images/album/mac_bottom.png" alt="컴퓨터 이미지" />
         </div>
       </div>
-    </div>
-    <script src="./assets/js/modal-popup.js"></script>
+      <!-- e: 컴퓨터 목업 -->
+
+      <!-- 모달 배경 -->
+      <div
+        id="modal-background"
+        class="fixed inset-0 z-10 hidden bg-black bg-opacity-50 backdrop-blur-sm"
+        onclick="closeModal()"></div>
+    </section>
+
     <!-- s: 풋터 -->
     <footer class="container mx-auto flex flex-wrap items-center justify-between py-10 font-cafe-fill text-4xl">
       <a href="https://ador.world/" target="_blank">
@@ -782,6 +248,7 @@
       <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
     </footer>
     <!-- e: 풋터 -->
+    <script src="./assets/js/modal-popup.js"></script>
     <script src="./assets/js/card-rotate.js"></script>
   </body>
 </html>
