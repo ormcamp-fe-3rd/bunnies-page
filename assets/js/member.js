@@ -26,8 +26,9 @@ pagination_btn_01.addEventListener('click', function () {
   dani_images.style.display = 'none'
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'none'
-  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
+  //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함a
   runDrag('.team-photo')
+  console.log('민지페이지 선택했다!')
 })
 
 //페이지네이션 하니 버튼 클릭 시
@@ -45,6 +46,8 @@ pagination_btn_02.addEventListener('click', function () {
   hyein_images.style.display = 'none'
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
+
+  console.log('하니민지페이지 선택했다!')
 })
 
 pagination_btn_03.addEventListener('click', function () {
@@ -95,7 +98,10 @@ pagination_btn_05.addEventListener('click', function () {
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
 })
-
+const imgPrevBtn = document.querySelector('.prev-btn')
+const imgNextBtn = document.querySelector('.next-btn')
+imgPrevBtn.style.display = 'none'
+imgNextBtn.style.display = 'none'
 /**
 드래그 앤 드롭 액션 함수
 @param {string} cards 드래그되는 카드들 샐렉터 설정
@@ -206,9 +212,8 @@ window.addEventListener('load', () => {
   }
   sessionStorage.clear()
 })
+
 const pageWidth = document.querySelector('.photo-grid')
-const imgPrevBtn = document.querySelector('.prev-btn')
-const imgNextBtn = document.querySelector('.next-btn')
 const imgList = document.querySelectorAll('.team-photo')
 let currentIndex = 0
 
@@ -282,28 +287,9 @@ function prevNextBtnControl() {
 }
 prevNextBtnControl()
 
-// resetinset() 함수 정의
-function resetinset() {
-  // hanni_images 요소가 존재하는지 먼저 확인
-
-  if (hanni_images) {
-    const computedStyle = window.getComputedStyle(hanni_images)
-
-    // 요소의 display 스타일이 'block'일 경우에만 updateImages() 함수 호출
-    if (computedStyle.display === 'flex') {
-      updateImages() // updateImages 함수 호출
-      console.log('하니다!')
-    } else {
-      console.log('hanni_images 요소는 block으로 표시되지 않았습니다.')
-    }
-  } else {
-    console.log('hanni_images 요소를 찾을 수 없습니다.')
-  }
-}
-resetinset()
-
+//반응형 너비가 1200이하 그외 일경우
 function checkContentWidth(pageWidth) {
-  if (pageWidth <= 768) {
+  if (pageWidth.offsetWidth <= 1200) {
     console.log('1200이하임')
     imgPrevBtn.style.display = 'flex'
     imgNextBtn.style.display = 'flex'
@@ -313,5 +299,5 @@ function checkContentWidth(pageWidth) {
   }
 }
 window.addEventListener('resize', function () {
-  checkContentWidth(window.innerWidth)
+  checkContentWidth(pageWidth)
 })
