@@ -4,7 +4,7 @@ const messageWrap = document.getElementById('message-wrap-list')
 /**
  * 메세지 입력 받아서 텍스트 저장
  *
- * @param {e} 메세지창에 입력되는 키보드 값
+ * @param {string} e 메세지창에 입력되는 키보드 값
  */
 function messageInit(e) {
   if (e.code == 'Enter') {
@@ -32,7 +32,7 @@ function limitMaxMessage(n) {
 /**
  * 새로운 element에 입력된 텍스트를 담아 html에 추가
  *
- * @param {str} 메세지창에서 입력받은 텍스트
+ * @param {string} str 메세지창에서 입력받은 텍스트
  */
 function makeMessageDome(str) {
   let messageObj = {
@@ -78,7 +78,7 @@ function initOpacity() {
 /**
  * 메세지 꾸밈값 랜덤 적용
  *
- * @param {element} 대상 요소
+ * @param {element} element 대상 요소
  */
 function messageDeco(element) {
   let newLi = document.createElement('li')
@@ -149,8 +149,8 @@ const colorPalette = [
 /**
  * 랜덤 정수형을 반환
  *
- * @param {min} 최소값
- * @param {max} 최대값
+ * @param {number} min 최소값
+ * @param {number} max 최대값
  * @returns 랜덤 정수값 반환(최댓값, 최솟값 포함)
  */
 function getRandomInt(min, max) {

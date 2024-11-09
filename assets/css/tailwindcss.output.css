@@ -2309,6 +2309,10 @@ a,
   overflow-x: hidden;
 }
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .break-all {
   word-break: break-all;
 }

@@ -77,7 +77,7 @@ function setVideoPaging(num = 1) {
 /**
  * home에서 멤버카드 선택시 member페이지로 이동
  *
- * @param {name} 선택된 멤버의 이름
+ * @param {string} name 선택된 멤버의 이름
  */
 function toMemberPage(name) {
   switch (name) {
