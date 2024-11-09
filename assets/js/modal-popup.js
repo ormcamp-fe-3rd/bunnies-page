@@ -1,50 +1,39 @@
 // 버튼 클릭 시 배경 유지
-document.querySelectorAll('button').forEach(button => {
+document.querySelectorAll('button.albumicon').forEach(button => {
   button.addEventListener('click', function () {
-    // 모든 버튼의 배경 초기화
-    document.querySelectorAll('button').forEach(btn => {
-      btn.querySelector('div').classList.remove('bg-opacity-80')
-      btn.querySelector('div').classList.remove('group-hover:bg-opacity-30')
-    })
     // 클릭된 버튼의 배경을 진하게 설정
-    this.querySelector('div').classList.add('bg-opacity-80')
+    this.querySelector('div').classList.add('bg-white')
+    this.querySelector('div').classList.add('bg-opacity-50')
   })
 })
 
 // 모달 열기
-document.querySelector('#first-album').addEventListener('click', function () {
-  document.querySelector('#first-album-window').classList.remove('hidden')
-  document.querySelector('#first-album-window').classList.add('block')
+function openModal(modalId) {
+  document.querySelector(modalId).classList.remove('hidden')
+  document.querySelector(modalId).classList.add('block')
   document.querySelector('#modal-background').classList.remove('hidden')
   document.querySelector('#modal-background').classList.add('block')
+}
+
+// 앨범 버튼 클릭 이벤트 리스너 추가
+document.querySelector('#first-album').addEventListener('click', function () {
+  openModal('#first-album-window')
 })
 
 document.querySelector('#second-album').addEventListener('click', function () {
-  document.querySelector('#second-album-window').classList.remove('hidden')
-  document.querySelector('#second-album-window').classList.add('block')
-  document.querySelector('#modal-background').classList.remove('hidden')
-  document.querySelector('#modal-background').classList.add('block')
+  openModal('#second-album-window')
 })
 
 document.querySelector('#third-album').addEventListener('click', function () {
-  document.querySelector('#third-album-window').classList.remove('hidden')
-  document.querySelector('#third-album-window').classList.add('block')
-  document.querySelector('#modal-background').classList.remove('hidden')
-  document.querySelector('#modal-background').classList.add('block')
+  openModal('#third-album-window')
 })
 
 document.querySelector('#forth-album').addEventListener('click', function () {
-  document.querySelector('#forth-album-window').classList.remove('hidden')
-  document.querySelector('#forth-album-window').classList.add('block')
-  document.querySelector('#modal-background').classList.remove('hidden')
-  document.querySelector('#modal-background').classList.add('block')
+  openModal('#forth-album-window')
 })
 
 document.querySelector('#fifth-album').addEventListener('click', function () {
-  document.querySelector('#fifth-album-window').classList.remove('hidden')
-  document.querySelector('#fifth-album-window').classList.add('block')
-  document.querySelector('#modal-background').classList.remove('hidden')
-  document.querySelector('#modal-background').classList.add('block')
+  openModal('#fifth-album-window')
 })
 
 // 모달 닫기
@@ -53,6 +42,12 @@ function closeModal(modalId) {
   document.querySelector(modalId).classList.add('hidden')
   document.querySelector('#modal-background').classList.remove('block')
   document.querySelector('#modal-background').classList.add('hidden')
+
+  // 모든 버튼의 배경 초기화
+  document.querySelectorAll('button.albumicon').forEach(btn => {
+    btn.querySelector('div').classList.remove('bg-opacity-30')
+    btn.querySelector('div').classList.remove('bg-white')
+  })
 }
 
 // 닫기 버튼에 이벤트 리스너 추가
