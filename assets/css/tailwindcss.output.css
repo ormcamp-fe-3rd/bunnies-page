@@ -2309,10 +2309,6 @@ a,
   overflow-x: hidden;
 }
 
-.break-words {
-  overflow-wrap: break-word;
-}
-
 .break-all {
   word-break: break-all;
 }
@@ -2568,9 +2564,8 @@ a,
   background-color: rgb(9 9 11 / var(--tw-bg-opacity));
 }
 
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
 }
 
 .bg-opacity-40 {
@@ -2579,14 +2574,6 @@ a,
 
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
-}
-
-.bg-opacity-70 {
-  --tw-bg-opacity: 0.7;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
 }
 
 .bg-\[url\(\'\/assets\/images\/album\/newjeans-computerbg\.png\'\)\] {
