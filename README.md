@@ -16,7 +16,7 @@
         <tr>
             <th bgColor="#f1f1f1"><a href="https://github.com/hyebinkimsdf" target="_blank">김혜빈</a></th>
             <td>
-                멤버 페이지 - 멤버별 포토카드<br>
+                멤버 페이지 - 멤버별 갤러리<br>
                 앨범 페이지 - 플레이리스트
             </td>
             <td>
@@ -27,7 +27,7 @@
         <tr>
             <th bgColor="#f1f1f1"><a href="https://github.com/naseulgee" target="_blank">나슬기</a></th>
             <td>
-                공통 페이지 - 페이지별 마우스 커서 및 반응형
+                공통 페이지 - 페이지별 마우스 커서 및 반응형<br>
                 멤버 페이지 - 응원 메세지
             </td>
             <td>
@@ -39,13 +39,13 @@
             <th bgColor="#f1f1f1"><a href="https://github.com/incolore9" target="_blank">박한솔 🎖</a></th>
             <td>메인 페이지 - 앨범 리스트</td>
             <td>
-                메인 페이지 - 멤버 프로필 카드 및 랜덤 각도<br>
-                멤버 페이지 - 멤버 포토카드 드래그앤 드롭
+                메인 페이지 - 멤버 포토 카드 랜덤 각도<br>
+                멤버 페이지 - 멤버 갤러리 드래그앤 드롭
             </td>
         </tr>
         <tr>
             <th bgColor="#f1f1f1"><a href="https://github.com/baaanjy" target="_blank">반재영</a></th>
-            <td>메인 페이지 - 멤버 리스트 및 호버 액션</td>
+            <td>메인 페이지 - 멤버 포토 카드 및 호버 액션</td>
             <td>
                 메인 페이지 - 포토 카드 클릭과 갤러리 페이지 연결<br>
                 멤버 페이지 - 응원 메세지 작성 및 불러오기<br>
