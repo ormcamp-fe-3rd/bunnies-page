@@ -135,7 +135,7 @@
         <tr>
             <th rowspan="2"  bgColor="#f1f1f1">멤버</th>
             <td><img src="https://github.com/user-attachments/assets/7289a6f6-1b3f-48b8-9a01-043bd59b4457" alt="PC 이미지" width="100%"></td>
-            <td><img src="https://github.com/user-attachments/assets/cd411e42-0c08-4a9d-a8db-b24fcdee583d" alt="MO 이미지" width="100%"></td>
+            <td><img src="https://github.com/user-attachments/assets/d803e8d4-f965-414d-87a3-e9e4a5da606c" alt="MO 이미지" width="100%"></td>
         </tr>
         <tr>
             <td colspan="2">
