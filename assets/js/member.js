@@ -35,9 +35,9 @@ function prevNextBtnControl() {
 
   imgNextBtn.addEventListener('click', function () {
     updateButtons()
-    console.log('오른쪽')
-    // currentIndex가 마지막 이미지보다 작은 경우에만 이동
-    if (currentIndex < imgList.length - 1) {
+    console.log(currentIndex)
+    // currentIndex index 46만큼만 이동
+    if (currentIndex < 46) {
       currentIndex += 1
       console.log(currentIndex)
 
