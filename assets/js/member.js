@@ -98,30 +98,12 @@ function togglePaging(index) {
 }
 
 /**
- * 세션에 저장된 이름이 있으면(메인에서 전달) 해당하는 이름의 페이지네이션으로 이동하는 함수
+ * 파라미터에 멤버 번호가 있다면(메인에서 전달) 해당 멤버 갤러리를 보여주는 함수
  */
-function setPagingByParam() {
-  let clickName = sessionStorage.getItem('name')
-  switch (clickName) {
-    case 'minji':
-      pagingBtns[0].click()
-      break
-    case 'hanni':
-      pagingBtns[1].click()
-      break
-    case 'danni':
-      pagingBtns[2].click()
-      break
-    case 'haerin':
-      pagingBtns[3].click()
-      break
-    case 'hyein':
-      pagingBtns[4].click()
-      break
-    default:
-      pagingBtns[0].click()
-  }
-  sessionStorage.clear()
+function setPagingByParam(){
+  const urlParams = new URL(location.href).searchParams
+  const index = urlParams.get('index') || 0
+  pagingBtns[index].click()
 }
 
 /**
