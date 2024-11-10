@@ -12,6 +12,124 @@ const pagination_btn_03 = document.querySelector('.member-pagination03 img')
 const pagination_btn_04 = document.querySelector('.member-pagination04 img')
 const pagination_btn_05 = document.querySelector('.member-pagination05 img')
 
+const imgPrevBtn = document.querySelector('.prev-btn')
+const imgNextBtn = document.querySelector('.next-btn')
+imgPrevBtn.style.display = 'none'
+imgNextBtn.style.display = 'none'
+
+const pageWidth = document.querySelector('.photo-grid')
+const imgList = document.querySelectorAll('.team-photo')
+let currentIndex = 0
+
+function prevNextBtnControl() {
+  imgPrevBtn.addEventListener('click', function () {
+    updateButtons()
+    console.log('왼쪽')
+    // currentIndex가 0보다 클 때만 이동
+    if (currentIndex > 0) {
+      currentIndex -= 1
+      console.log(currentIndex)
+      updateImages()
+    }
+  })
+
+  imgNextBtn.addEventListener('click', function () {
+    updateButtons()
+    console.log('오른쪽')
+    // currentIndex가 마지막 이미지보다 작은 경우에만 이동
+    if (currentIndex < imgList.length - 1) {
+      currentIndex += 1
+      console.log(currentIndex)
+
+      updateImages()
+    }
+  })
+
+  function updateImages() {
+    imgList.forEach(img => {
+      const imgIndex = parseInt(img.getAttribute('data-index'), 10)
+      if (imgIndex === currentIndex) {
+        img.classList.add('active')
+        img.style.zIndex = 1
+      } else {
+        img.classList.remove('active')
+        img.style.zIndex = 0
+      }
+    })
+  }
+
+  function updateButtons() {
+    if (currentIndex === 0) {
+      currentIndex = 0
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 10) {
+      currentIndex = 10
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 20) {
+      currentIndex = 20
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 30) {
+      currentIndex = 30
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 40) {
+      currentIndex = 40
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgPrevBtn.style.visibility = 'visible'
+    }
+
+    // 마지막 이미지일 때 next 버튼 숨기기
+    if (currentIndex === 6) {
+      imgNextBtn.style.visibility = 'hidden'
+      console.log('숨깁니다')
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 16) {
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+
+    if (currentIndex === 26) {
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+    if (currentIndex === 36) {
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+    if (currentIndex === 46) {
+      imgPrevBtn.style.visibility = 'hidden'
+    } else {
+      imgNextBtn.style.visibility = 'visible'
+    }
+  }
+
+  updateButtons() // 초기 상태에서 버튼 상태 업데이트
+  updateImages() // 처음에 이미지 상태 업데이트
+}
+prevNextBtnControl()
+
 //페이지 네이션 기능
 //페이지네이션 민지 버튼 클릭 시
 pagination_btn_01.addEventListener('click', function () {
@@ -27,8 +145,10 @@ pagination_btn_01.addEventListener('click', function () {
   haerin_images.style.display = 'none'
   hyein_images.style.display = 'none'
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함a
+  console.log(currentIndex)
   runDrag('.team-photo')
   console.log('민지페이지 선택했다!')
+  currentIndex = 0
 })
 
 //페이지네이션 하니 버튼 클릭 시
@@ -47,6 +167,8 @@ pagination_btn_02.addEventListener('click', function () {
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
 
+  currentIndex = 10
+  console.log(currentIndex)
   console.log('하니민지페이지 선택했다!')
 })
 
@@ -64,6 +186,7 @@ pagination_btn_03.addEventListener('click', function () {
   hyein_images.style.display = 'none'
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
+  currentIndex = 20
 })
 //페이지네이션 해린 버튼 클릭 시
 pagination_btn_04.addEventListener('click', function () {
@@ -80,6 +203,7 @@ pagination_btn_04.addEventListener('click', function () {
   hyein_images.style.display = 'none'
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
+  currentIndex = 30
 })
 
 //페이지네이션 혜인 버튼 클릭 시
@@ -97,11 +221,10 @@ pagination_btn_05.addEventListener('click', function () {
   hyein_images.style.display = 'block'
   //드래그앤드롭 함수를 재실행시켜 y좌표 이동 제한을 설정함
   runDrag('.team-photo')
+  currentIndex = 40
+  console.log(currentIndex)
 })
-const imgPrevBtn = document.querySelector('.prev-btn')
-const imgNextBtn = document.querySelector('.next-btn')
-imgPrevBtn.style.display = 'none'
-imgNextBtn.style.display = 'none'
+
 /**
 드래그 앤 드롭 액션 함수
 @param {string} cards 드래그되는 카드들 샐렉터 설정
@@ -212,80 +335,6 @@ window.addEventListener('load', () => {
   }
   sessionStorage.clear()
 })
-
-const pageWidth = document.querySelector('.photo-grid')
-const imgList = document.querySelectorAll('.team-photo')
-let currentIndex = 0
-
-function updateImages() {
-  const imgList = document.querySelectorAll('.team-photo')
-  let currentIndex = 0
-  imgList.forEach((img, index) => {
-    if (index === currentIndex) {
-      img.classList.add('active')
-    } else {
-      img.classList.remove('active')
-    }
-  })
-}
-
-updateImages()
-
-function prevNextBtnControl() {
-  imgPrevBtn.addEventListener('click', function () {
-    console.log('왼쪽')
-    // currentIndex가 0보다 클 때만 이동
-    if (currentIndex > 0) {
-      currentIndex -= 1
-      console.log(currentIndex)
-
-      updateImages()
-      btnHidden() // 버튼 상태 업데이트
-    }
-  })
-
-  imgNextBtn.addEventListener('click', function () {
-    console.log('오른쪽')
-    // currentIndex가 마지막 이미지보다 작은 경우에만 이동
-    if (currentIndex < imgList.length - 1) {
-      currentIndex += 1
-      console.log(currentIndex)
-
-      updateImages()
-      btnHidden() // 버튼 상태 업데이트
-    }
-  })
-
-  function updateImages() {
-    imgList.forEach((img, index) => {
-      if (index === currentIndex) {
-        img.style.zIndex = 1
-      } else {
-        img.style.zIndex = 0
-      }
-    })
-  }
-
-  // 이동 후 이전/다음 버튼 상태 업데이트
-  function btnHidden() {
-    // 첫 번째 이미지일 때 prev 버튼 숨기기
-    if (currentIndex === 0) {
-      imgPrevBtn.style.visibility = 'hidden'
-    } else {
-      imgPrevBtn.style.visibility = 'visible'
-    }
-
-    // 마지막 이미지일 때 next 버튼 숨기기
-    if (currentIndex === 6) {
-      imgNextBtn.style.visibility = 'hidden'
-    } else {
-      imgNextBtn.style.visibility = 'visible'
-    }
-  }
-  btnHidden() // 초기 상태에서 버튼 상태 업데이트
-  updateImages() // 처음에 이미지 상태 업데이트
-}
-prevNextBtnControl()
 
 //반응형 너비가 1200이하 그외 일경우
 function checkContentWidth(pageWidth) {
