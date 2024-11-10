@@ -1,3 +1,26 @@
+.team-photo-page::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.team-photo-page.team-photo-minji-page::after {
+  content: '오늘도 밥 잘 챙겨먹어요!';
+}
+.team-photo-page.team-photo-hanni-page::after {
+  content: '버니즈 만나러 준비 갈 완료!';
+}
+.team-photo-page.team-photo-dani-page::after {
+  content: '너 없이는 매일매일이 재미없어 어쩌지?';
+}
+.team-photo-page.team-photo-haerin-page::after {
+  content: "안녕하세요, 강해린입니다. 해가 'ㅏㅣ' 에요";
+}
+.team-photo-page.team-photo-hyein-page::after {
+  content: '널 보는 내마음은 어느새 여름지나 가을';
+}
+
 /* 개별 이미지 컨테이너 */
 .team-photo {
   position: absolute;
@@ -8,6 +31,9 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+.team-photo.on {
+  z-index: 50;
 }
 
 /* 이미지 스타일 */
@@ -51,11 +77,6 @@
 }
 .team-photo-hyein-page img:hover {
   filter: invert(30%) sepia(89%) saturate(3593%) hue-rotate(243deg) brightness(98%) contrast(85%);
-}
-
-/*클릭 시 맨 앞으로 이미지 이동*/
-.team-photo:active {
-  z-index: 1;
 }
 
 /* 예시 위치 설정 */
@@ -114,11 +135,6 @@
 .hyein-photo7 {
   top: 20%;
   left: 40%;
-}
-
-/* 첫화면 시 민지 페이지를 제외한 페이지 none설정 */
-.team-photo-page {
-  display: none;
 }
 
 #message-wrap-list > li {

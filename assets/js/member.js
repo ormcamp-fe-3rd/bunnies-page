@@ -7,8 +7,61 @@ const pagingBtns = document.querySelectorAll('.member-pagination ul li')
 window.addEventListener('load', () => {
   setPagingEvent()
   setPagingByParam()
-  runDrag()
+  setCardBtns()
+  checkContentWidth()
 })
+
+/**
+ * member페이지 가로 사이즈 변경시마다 호출되는 함수
+ */
+window.addEventListener('resize', e => {
+  checkContentWidth(e)
+})
+
+/**
+ * 너비 변경을 감지하여 1024 를 기준으로 이벤트를 실행 시키는 함수
+ *
+ * @param {object} event 페이지 리사이즈 이벤트 정보 객체
+ */
+function checkContentWidth(event) {
+  const targetW = event?.target.innerWidth || document.documentElement.clientWidth
+  const imgList = document.querySelectorAll('.team-photo')
+  if (targetW < 1024) {
+    setPosition(imgList)
+  } else {
+    resetPosition(imgList)
+    runDrag()
+  }
+}
+
+/**
+ * 전달받은 대상의 위치를 부모요소의 가운데에 위치하게 하는 함수
+ *
+ * @param {Array} targetList 위치를 변경시킬 대상 목록
+ */
+function setPosition(targetList) {
+  targetList.forEach(target => {
+    const targetSizeW = target.clientWidth
+    const targetSizeH = target.clientHeight
+    target.style.top = `calc(50% - ${targetSizeH / 2}px)`
+    target.style.left = `calc(50% - ${targetSizeW / 2}px)`
+    target.style.transform = `rotate(${Math.floor(Math.random() * 10 + 1)}deg)`
+    target.style.zIndex = ''
+  })
+}
+
+/**
+ * 전달받은 대상의 변경된 위치를 초기화 하는 함수
+ *
+ * @param {Array} targetList 위치를 변경시킬 대상 목록
+ */
+function resetPosition(targetList) {
+  targetList.forEach(target => {
+    target.style.top = ''
+    target.style.left = ''
+    target.style.transform = ''
+  })
+}
 
 /**
  * 페이징 버튼에 클릭 이벤트를 추가하는 함수
@@ -18,7 +71,7 @@ function setPagingEvent() {
     btn.addEventListener('click', function () {
       togglePage(index)
       togglePaging(index)
-      runDrag()
+      checkContentWidth()
     })
   })
 }
@@ -29,8 +82,8 @@ function setPagingEvent() {
  * @param {number} index 페이지 순서
  */
 function togglePage(index) {
-  pages.forEach(page => (page.style.display = 'none'))
-  pages[index].style.display = 'block'
+  pages.forEach(page => page.classList.add('hidden'))
+  pages[index].classList.remove('hidden')
 }
 
 /**
@@ -69,6 +122,35 @@ function setPagingByParam() {
       pagingBtns[0].click()
   }
   sessionStorage.clear()
+}
+
+/**
+ * 카드의 레이어 순서를 변경시키는 버튼을 세팅하는 함수
+ */
+function setCardBtns() {
+  document.getElementById('next-btn').addEventListener('click', () => setZindex('next'))
+  document.getElementById('prev-btn').addEventListener('click', () => setZindex('prev'))
+}
+
+/**
+ * 이전/다음 카드를 가장 위에 보이게 처리하는 함수
+ *
+ * @param {string} direction 이전/다음 여부
+ */
+function setZindex(direction) {
+  const activePage = document.querySelector('.team-photo-page:not(.hidden)')
+  const siblingPhotos = activePage.children
+  const currSelectPhoto = activePage.querySelector('.team-photo.on') || siblingPhotos[siblingPhotos.length - 1]
+  let afterSelectPhoto = null
+  if (direction == 'next') {
+    afterSelectPhoto = currSelectPhoto.nextElementSibling
+    if (!afterSelectPhoto) afterSelectPhoto = siblingPhotos[0]
+  } else {
+    afterSelectPhoto = currSelectPhoto.previousElementSibling
+    if (!afterSelectPhoto) afterSelectPhoto = siblingPhotos[siblingPhotos.length - 1]
+  }
+  afterSelectPhoto.classList.add('on')
+  currSelectPhoto.classList.remove('on')
 }
 
 /**

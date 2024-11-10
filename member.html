@@ -41,6 +41,20 @@
     <div class="w-full flex-wrap">
       <!--멤버들 페이지별 리스트 묶음-->
       <div id="photo-wrap" class="photo-grid container relative mx-auto h-[640px] break-keep">
+        <div class="photo-move font-lotte text-6xl">
+          <bunton
+            type="button"
+            id="prev-btn"
+            class="photo-move-btn absolute left-3 top-1/2 z-50 hidden -translate-y-1/2 max-lg:block">
+            &lt;
+          </bunton>
+          <bunton
+            type="button"
+            id="next-btn"
+            class="photo-move-btn absolute right-3 top-1/2 z-50 hidden -translate-y-1/2 max-lg:block">
+            &gt;
+          </bunton>
+        </div>
         <!--민지 이미지 페이지-->
         <div class="team-photo-page team-photo-minji-page">
           <div class="team-photo minji-photo1">
@@ -81,10 +95,9 @@
               ESTJ
             </span>
           </div>
-          <p class="relative -z-10 h-[640px] translate-y-1/2 text-center text-white">오늘도 밥 잘 챙겨먹어요!</p>
         </div>
         <!--하니 이미지 페이지-->
-        <div class="team-photo-page team-photo-hanni-page">
+        <div class="team-photo-page team-photo-hanni-page hidden">
           <div class="team-photo hanni-photo1">
             <img class="team-photo-hanni-1" src="assets/images/member/hanni/Team-photo-hanni_01.png" />
             <span class="imtext">그룹 내 유일한 외국인 멤버로, 호주와 베트남의 복수국적이다.</span>
@@ -119,10 +132,9 @@
               INFP
             </span>
           </div>
-          <p class="relative -z-10 h-[640px] translate-y-1/2 text-center text-white">버니즈 만나러 준비 갈 완료!</p>
         </div>
         <!--다니엘 이미지 페이지-->
-        <div class="team-photo-page team-photo-dani-page">
+        <div class="team-photo-page team-photo-dani-page hidden">
           <div class="team-photo dani-photo1">
             <img class="team-photo-dani-1" src="assets/images/member/dani/Team-photo-dani_01.png" />
             <span class="imtext">'다니'라는 애칭으로 불리는 것을 가장 좋아한다고 한다.</span>
@@ -157,12 +169,9 @@
               ENFP
             </span>
           </div>
-          <p class="relative -z-10 h-[640px] translate-y-1/2 text-center text-white">
-            너 없이는 매일매일이 재미없어 어쩌지?
-          </p>
         </div>
         <!--해린 이미지 페이지-->
-        <div class="team-photo-page team-photo-haerin-page">
+        <div class="team-photo-page team-photo-haerin-page hidden">
           <div class="team-photo haerin-photo1">
             <img class="team-photo-haerin-1" src="assets/images/member/haerin/Team-photo-haerin_01.png" />
             <span class="imtext">가장 좋아하는 과일은 복숭아와 아보카도이다.</span>
@@ -197,12 +206,9 @@
               INTP
             </span>
           </div>
-          <p class="relative -z-10 h-[640px] translate-y-1/2 text-center text-white">
-            안녕하세요, 강해린입니다. 해가 'ㅏㅣ' 에요
-          </p>
         </div>
         <!--혜인 이미지 페이지-->
-        <div class="team-photo-page team-photo-hyein-page">
+        <div class="team-photo-page team-photo-hyein-page hidden">
           <div class="team-photo hyein-photo1">
             <img class="team-photo-hyein-1" src="assets/images/member/hyein/Team-photo-hyein_01.png" />
             <span class="imtext">NewJeans 데뷔조에는 가장 마지막으로 합류했다.</span>
@@ -245,9 +251,6 @@
               ISFP
             </span>
           </div>
-          <p class="relative -z-10 h-[640px] translate-y-1/2 text-center text-white">
-            널 보는 내마음은 어느새 여름지나 가을
-          </p>
         </div>
       </div>
       <!--페이지네이션 -->
@@ -284,10 +287,10 @@
           민지💙하니🩷다니엘💛해린💚혜인💜
         </li>
         <li
-          class="absolute left-[75%] top-[85%] inline-block text-ellipsis rounded-full bg-yellow-500 px-5 py-3 opacity-70">
+          class="absolute left-1/2 top-[85%] inline-block text-ellipsis rounded-full bg-yellow-500 px-5 py-3 opacity-70">
           Have an amazing day!! Stay Healthy! Stay Safe!💜🫶🏽
         </li>
-        <li class="absolute left-1/2 top-2/3 inline-block rounded-full bg-purple-500 px-5 py-3 opacity-35">
+        <li class="absolute left-[65%] top-2/3 inline-block rounded-full bg-purple-500 px-5 py-3 opacity-35">
           오늘 하루도 뉴이팅하세요🫶💝😍💙
         </li>
         <li class="absolute left-1/4 top-1/4 inline-block rounded-full bg-green-500 px-5 py-3 opacity-65">
