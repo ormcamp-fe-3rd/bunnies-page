@@ -2217,16 +2217,16 @@ a,
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/bunnie\.png\'\)\2c _default\] {
-  cursor: url('/assets/images/cursor/bunnie.png'), default;
+.cursor-\[url\(\'\/assets\/images\/common\/cursor\/bunnie\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/common/cursor/bunnie.png'), default;
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/korean\.png\'\)\2c _default\] {
-  cursor: url('/assets/images/cursor/korean.png'), default;
+.cursor-\[url\(\'\/assets\/images\/common\/cursor\/korean\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/common/cursor/korean.png'), default;
 }
 
-.cursor-\[url\(\'\/assets\/images\/cursor\/rounded\.png\'\)\2c _default\] {
-  cursor: url('/assets/images/cursor/rounded.png'), default;
+.cursor-\[url\(\'\/assets\/images\/common\/cursor\/rounded\.png\'\)\2c _default\] {
+  cursor: url('/assets/images/common/cursor/rounded.png'), default;
 }
 
 .grid-cols-5 {
