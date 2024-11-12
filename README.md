@@ -66,9 +66,9 @@
     </tbody>
 </table>
 
-- [📢 작업 규칙 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/%F0%9F%93%8C-%EA%B7%9C%EC%B9%99)
-- [📆 일정 및 회의록 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/%F0%9F%97%82%EF%B8%8F-%EC%9D%BC%EC%A0%95-%EB%B0%8F-%ED%9A%8C%EC%9D%98%EB%A1%9D)
-- [📝 프로젝트 회고 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/%E2%9C%92-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0)
+- [📝 프로젝트 회고 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/3-✒-프로젝트-회고)
+- [📢 작업 규칙 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/4-📌-팀-컨벤션)
+- [📆 일정 및 회의록 바로가기](https://github.com/ormcamp-fe-3rd/bunnies-page/wiki/5-🗂️-일정-및-회의록)
 
 ***
 
