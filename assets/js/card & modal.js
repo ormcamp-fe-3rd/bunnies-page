@@ -1,21 +1,25 @@
 /**
  * 카드 회전 각도를 랜덤하게 세팅하는 함수
  */
+function selectMemberCards() {
+  return document.querySelectorAll('.member-card-box li')
+}
+
+function getRandomAngle() {
+  const randomNumber = Math.floor(Math.random() * 25)
+  return randomNumber - 12 // -12 ~ +12 범위의 각도 반환
+}
+
 function rotateCards() {
-  const cards = document.querySelectorAll('.member-card-box li')
-  // 카드들 선택
+  const cards = selectMemberCards()
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i]
-    // -12 ~ +12 사이 무작위 숫자 선출
-    let randomNumber = Math.random()
-    randomNumber = randomNumber * 25
-    randomNumber = Math.floor(randomNumber)
-    // 각도에 무작위 숫자 적용
-    let degree = randomNumber - 12
+    let degree = getRandomAngle()
     card.style.transform = 'rotate(' + degree + 'deg)'
   }
 }
 
+//모달
 const albumList = [
   {
     name: 'New Jeans',
