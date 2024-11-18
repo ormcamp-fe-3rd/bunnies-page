@@ -2592,10 +2592,6 @@ a,
   background-image: url('/assets/images/album/pc-outside-background.jpg');
 }
 
-.bg-\[url\(assets\/images\/member\/photo-page-1\.png\)\] {
-  background-image: url(assets/images/member/photo-page-1.png);
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
