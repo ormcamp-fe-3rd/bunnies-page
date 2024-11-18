@@ -5,7 +5,7 @@ const pagingBtns = document.querySelectorAll('.member-pagination ul li')
  * member페이지 로드시마다 호출되는 함수
  */
 window.addEventListener('load', () => {
-  setPagingEvent()
+  addPagingClickEvent()
   setPagingByParam()
   setCardBtns()
   checkContentWidth()
@@ -66,7 +66,7 @@ function resetPosition(targetList) {
 /**
  * 페이징 버튼에 클릭 이벤트를 추가하는 함수
  */
-function setPagingEvent() {
+function addPagingClickEvent() {
   pagingBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
       togglePage(index)
