@@ -27,7 +27,7 @@ function checkContentWidth(event) {
   const targetW = event?.target.innerWidth || document.documentElement.clientWidth
   const imgList = document.querySelectorAll('.team-photo')
   if (targetW < 1024) {
-    setPosition(imgList)
+    setPositionCenter(imgList)
   } else {
     resetPosition(imgList)
     runDrag()
@@ -39,7 +39,7 @@ function checkContentWidth(event) {
  *
  * @param {Array} targetList 위치를 변경시킬 대상 목록
  */
-function setPosition(targetList) {
+function setPositionCenter(targetList) {
   targetList.forEach(target => {
     const targetSizeW = target.clientWidth
     const targetSizeH = target.clientHeight
