@@ -1,5 +1,5 @@
 const pages = document.querySelectorAll('.team-photo-page')
-const pagingBtns = document.querySelectorAll('.member-pagination ul li')
+const pagingBtns = document.querySelectorAll('.member-pagination div button')
 
 /**
  * member페이지 로드시마다 호출되는 함수
@@ -84,6 +84,10 @@ function addPagingClickEvent() {
 function togglePage(index) {
   pages.forEach(page => page.classList.add('hidden'))
   pages[index].classList.remove('hidden')
+  if (urlParams.get('member')) {
+    let memberName = pages[index].className.split('-', 5)
+    history.replaceState(null, '', `/member.html?member=${memberName[4]}`)
+  }
 }
 
 /**
@@ -100,9 +104,27 @@ function togglePaging(index) {
 /**
  * 파라미터에 멤버 번호가 있다면(메인에서 전달) 해당 멤버 갤러리를 보여주는 함수
  */
+const urlParams = new URL(location.href).searchParams
 function setPagingByParam() {
-  const urlParams = new URL(location.href).searchParams
-  const index = urlParams.get('index') || 0
+  const paramName = urlParams.get('member') || 0
+  let index = 0
+  switch (paramName) {
+    case 'minji':
+      index = 0
+      break
+    case 'hanni':
+      index = 1
+      break
+    case 'danni':
+      index = 2
+      break
+    case 'haerin':
+      index = 3
+      break
+    case 'hyein':
+      index = 4
+      break
+  }
   pagingBtns[index].click()
 }
 
