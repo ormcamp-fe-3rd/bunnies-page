@@ -43,7 +43,7 @@ function makeMessageDom(str) {
     rightValue: getRight(),
     colorValue: getColor()
   }
-  messageWrap.appendChild(messageDeco(messageObj)) //랜덤 값 설정하여 html에 삽입
+  messageWrap.appendChild(addStyleMessage(messageObj)) //랜덤 값 설정하여 html에 삽입
   storedArr.push(messageObj)
   localStorage.setItem('messageObjArr', JSON.stringify(storedArr))
   initOpacity() //opacity값은 node순서에 따라 지정
@@ -58,7 +58,7 @@ window.addEventListener('load', event => {
   if (localStorage.getItem('messageObjArr')) {
     storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
     for (let i = 0; i < storedArr.length; i++) {
-      messageWrap.appendChild(messageDeco(storedArr[i]))
+      messageWrap.appendChild(addStyleMessage(storedArr[i]))
     }
     initOpacity()
   }
@@ -80,7 +80,7 @@ function initOpacity() {
  *
  * @param {element} element 대상 요소
  */
-function messageDeco(element) {
+function addStyleMessage(element) {
   let newLi = document.createElement('li')
   newLi.appendChild(document.createTextNode(element.message))
   if (element.leftValue > 50) {
