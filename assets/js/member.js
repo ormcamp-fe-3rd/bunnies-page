@@ -100,7 +100,7 @@ function togglePaging(index) {
 /**
  * 파라미터에 멤버 번호가 있다면(메인에서 전달) 해당 멤버 갤러리를 보여주는 함수
  */
-function setPagingByParam(){
+function setPagingByParam() {
   const urlParams = new URL(location.href).searchParams
   const index = urlParams.get('index') || 0
   pagingBtns[index].click()
