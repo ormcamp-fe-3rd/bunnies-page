@@ -1,5 +1,5 @@
 const pages = document.querySelectorAll('.team-photo-page')
-const pagingBtns = document.querySelectorAll('.member-pagination ul li')
+const pagingBtns = document.querySelectorAll('.member-pagination div button')
 
 /**
  * member페이지 로드시마다 호출되는 함수
