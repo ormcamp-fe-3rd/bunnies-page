@@ -23,6 +23,12 @@ camera.position.z = 50
 // 텍스처 로더를 사용하여 이미지 텍스처 로드
 const textureLoader = new THREE.TextureLoader()
 
+// OrbitControls 설정
+const controls = new THREE.OrbitControls(camera, renderer.domElement)
+controls.enableZoom = false // 스크롤 줌 비활성화
+controls.autoRotate = true // 자동 회전 활성화
+controls.autoRotateSpeed = 5.0 // 자동 회전 속도
+
 // 큐브(앨범) 지오메트리와 머티리얼 생성
 const geometry = new THREE.BoxGeometry(23.4, 30.9, 4) // 큐브 크기 설정
 const coverMaterials = []
@@ -75,61 +81,6 @@ function setMeterials(index = 0) {
   }
 }
 
-// [마우스 이벤트 관련]====================================
-// 마우스 관련 변수
-const mouse = new THREE.Vector2()
-let isDragging = false // 드래그 상태 여부
-let startRotationX = cube.rotation.x // 시작할 때의 x축 회전값
-let startRotationY = cube.rotation.y // 시작할 때의 y축 회전값
-
-// 이벤트 리스너 추가
-window.addEventListener('mousedown', onDocumentMouseDown, false)
-window.addEventListener('mouseup', onDocumentMouseUp, false)
-window.addEventListener('mousemove', onDocumentMouseMove, false)
-
-/**
- * 마우스 클릭(드래그 시작) 시 드래그 상태를 변경하고 위치값을 저장하는 함수
- *
- * @param {object} event 발생한 이벤트의 정보를 갖고 있는 객체
- */
-function onDocumentMouseDown(event) {
-  event.preventDefault()
-  isDragging = true // 드래그 상태 시작
-
-  startRotationX = cube.rotation.x // 클릭 시 현재 회전값 저장
-  startRotationY = cube.rotation.y
-}
-
-/**
- * 마우스 버튼 떼기(드래그 종료) 시 드래그 상태를 변경하는 함수
- *
- * @param {object} event 발생한 이벤트의 정보를 갖고 있는 객체
- */
-function onDocumentMouseUp(event) {
-  event.preventDefault()
-  isDragging = false // 드래그 상태 종료
-}
-
-/**
- * 마우스 드래그 위치에 따라 3D 객체를 회전시키는 함수
- *
- * @param {object} event 발생한 이벤트의 정보를 갖고 있는 객체
- */
-function onDocumentMouseMove(event) {
-  event.preventDefault()
-
-  // 드래그 중일 때만 회전
-  if (isDragging) {
-    // 마우스 위치를 -1 ~ 1 범위로 변환 해서 왼쪽,오른쪽 아래 위를 구분함
-    mouse.x = (event.clientX / renderTarget.clientWidth) * 2 - 1
-    mouse.y = -(event.clientY / renderTarget.clientHeight) * 2 + 1
-
-    // 기본 회전값에 마우스 이동에 따른 회전을 덧붙임 (매끄러운 회전)
-    cube.rotation.x = startRotationX + mouse.y * Math.PI * 0.9 // 회전 속도 조절
-    cube.rotation.y = startRotationY + mouse.x * Math.PI * 0.9
-  }
-}
-
 // [렌더링 관련]====================================
 // 반응형 처리
 window.addEventListener('resize', () => {
@@ -143,11 +94,7 @@ window.addEventListener('resize', () => {
  */
 function animate() {
   requestAnimationFrame(animate)
-
-  if (isDragging == false) {
-    //만약 드래그 상태 종료시
-    cube.rotation.y += 0.01 // 자동 회전 실행
-  }
+  controls.update()
   renderer.render(scene, camera)
 }
 animate() // 렌더링 시작
