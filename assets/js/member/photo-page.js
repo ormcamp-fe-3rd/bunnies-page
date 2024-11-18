@@ -102,7 +102,7 @@ function togglePaging(index) {
 }
 
 /**
- * 파라미터에 멤버 번호가 있다면(메인에서 전달) 해당 멤버 갤러리를 보여주는 함수
+ * 파라미터에 멤버 번호가 있다면(메인에서 전달) 해당 멤버 페이지를 보여주는 함수
  */
 const urlParams = new URL(location.href).searchParams
 function setPagingByParam() {
