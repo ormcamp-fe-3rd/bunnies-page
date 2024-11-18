@@ -15,7 +15,7 @@ function messageInit(e) {
     const newMessage = messageBtn.value
     messageBtn.value = ''
 
-    makeMessageDome(newMessage) //새로운 메세지 element 생성
+    makeMessageDom(newMessage) //새로운 메세지 element 생성
     limitMaxMessage(10) //메세지의 총 개수 조절
   }
 }
@@ -34,7 +34,7 @@ function limitMaxMessage(n) {
  *
  * @param {string} str 메세지창에서 입력받은 텍스트
  */
-function makeMessageDome(str) {
+function makeMessageDom(str) {
   let messageObj = {
     //메세지를 담아둘 객체 생성
     message: str,
