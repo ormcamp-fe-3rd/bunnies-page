@@ -217,7 +217,7 @@ setAlbumIconList()
  */
 function openModal(index) {
   setModalAlbumInfo(index)
-  setIconActive(index)
+  changeModalBgColor(index)
   modal.classList.remove('hidden')
   modalBg.classList.remove('hidden')
 }
@@ -228,7 +228,7 @@ function openModal(index) {
 function closeModal() {
   modal.classList.add('hidden')
   modalBg.classList.add('hidden')
-  setIconActive()
+  changeModalBgColor()
 }
 
 /**
@@ -267,7 +267,7 @@ function setModalAlbumInfo(index) {
  *
  * @param {number} index 앨범 배열의 순서
  */
-function setIconActive(index) {
+function changeModalBgColor(index) {
   const iconList = document.querySelectorAll('#album-icon-warp button')
   iconList.forEach(icon => (icon.style.backgroundColor = ''))
   if (index != null) iconList[index].style.backgroundColor = 'rgb(255 255 255 / var(--tw-bg-opacity))'
