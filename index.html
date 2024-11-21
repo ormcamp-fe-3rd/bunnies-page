@@ -6,15 +6,11 @@
     <title>Bunnies Page</title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/common/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/tailwindcss.output.css" />
-    <link rel="stylesheet" href="/assets/css/member.css" />
-    <link rel="stylesheet" href="/assets/css/album.css" />
-    <script src="/assets/js/home.js"></script>
   </head>
 
   <!-- ! 홈-메뉴-텍스트 및 아이콘 -->
   <body
-    class="cursor-[url('/assets/images/common/cursor/korean.png'),_default] overflow-x-hidden bg-zinc-950 text-white"
-    onload="rotateCards(); setVideo();">
+    class="cursor-[url('/assets/images/common/cursor/korean.png'),_default] overflow-x-hidden bg-zinc-950 text-white">
     <!-- s: 헤더 -->
     <header class="container mx-auto flex h-40 w-full flex-wrap items-center justify-between max-md:px-5">
       <nav class="flex flex-wrap justify-between font-cafe text-4xl max-md:w-full md:gap-20">
@@ -84,7 +80,7 @@
       <ul
         class="member-card-box container mx-auto grid w-full grid-cols-5 gap-x-12 gap-y-6 px-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
         <li id="home-minji" class="relative w-full -rotate-12 overflow-hidden rounded">
-          <a href="/member.html?index=0">
+          <a href="/member.html?member=minji">
             <img src="/assets/images/main-member/main-minji.jpeg" class="aspect-[2/3] w-full" alt="" />
             <img
               src="/assets/images/main-member/main-minji-frame.png"
@@ -93,7 +89,7 @@
           </a>
         </li>
         <li id="home-hanni" class="relative w-full rotate-6 overflow-hidden rounded">
-          <a href="/member.html?index=1">
+          <a href="/member.html?member=hanni">
             <img src="/assets/images/main-member/main-hanni.jpeg" class="aspect-[2/3] w-full" alt="" />
             <img
               src="/assets/images/main-member/main-hanni-frame.png"
@@ -102,7 +98,7 @@
           </a>
         </li>
         <li id="home-danni" class="relative w-full -rotate-6 overflow-hidden rounded">
-          <a href="/member.html?index=2">
+          <a href="/member.html?member=danni">
             <img src="/assets/images/main-member/main-danielle.jpeg" class="aspect-[2/3] w-full" alt="" />
             <img
               src="/assets/images/main-member/main-danielle-frame.png"
@@ -111,7 +107,7 @@
           </a>
         </li>
         <li id="home-haerin" class="relative w-full rotate-12 overflow-hidden rounded">
-          <a href="/member.html?index=3">
+          <a href="/member.html?member=haerin">
             <img src="/assets/images/main-member/main-haerin.jpeg" class="aspect-[2/3] w-full" alt="" />
             <img
               src="/assets/images/main-member/main-haerin-frame.png"
@@ -120,7 +116,7 @@
           </a>
         </li>
         <li id="home-hyein" class="relative w-full -rotate-3 overflow-hidden rounded">
-          <a href="/member.html?index=4">
+          <a href="/member.html?member=hyein">
             <img src="/assets/images/main-member/main-hyein.jpeg" class="aspect-[2/3] w-full" alt="" />
             <img
               src="/assets/images/main-member/main-hyein-frame.png"
@@ -264,7 +260,7 @@
       <a href="https://github.com/ormcamp-fe-3rd/bunnies-page" target="_blank">Hongdaeipgu</a>
     </footer>
     <!-- e: 풋터 -->
-    <script src="./assets/js/modal-popup.js"></script>
-    <script src="./assets/js/card-rotate.js"></script>
+    <script src="/assets/js/index/home.js"></script>
+    <script src="./assets/js/index/card & modal.js"></script>
   </body>
 </html>

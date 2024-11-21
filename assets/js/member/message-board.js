@@ -15,7 +15,7 @@ function messageInit(e) {
     const newMessage = messageBtn.value
     messageBtn.value = ''
 
-    makeMessageDome(newMessage) //새로운 메세지 element 생성
+    makeMessageDom(newMessage) //새로운 메세지 element 생성
     limitMaxMessage(10) //메세지의 총 개수 조절
   }
 }
@@ -34,7 +34,7 @@ function limitMaxMessage(n) {
  *
  * @param {string} str 메세지창에서 입력받은 텍스트
  */
-function makeMessageDome(str) {
+function makeMessageDom(str) {
   let messageObj = {
     //메세지를 담아둘 객체 생성
     message: str,
@@ -43,7 +43,7 @@ function makeMessageDome(str) {
     rightValue: getRight(),
     colorValue: getColor()
   }
-  messageWrap.appendChild(messageDeco(messageObj)) //랜덤 값 설정하여 html에 삽입
+  messageWrap.appendChild(addStyleMessage(messageObj)) //랜덤 값 설정하여 html에 삽입
   storedArr.push(messageObj)
   localStorage.setItem('messageObjArr', JSON.stringify(storedArr))
   initOpacity() //opacity값은 node순서에 따라 지정
@@ -58,7 +58,7 @@ window.addEventListener('load', event => {
   if (localStorage.getItem('messageObjArr')) {
     storedArr = JSON.parse(localStorage.getItem('messageObjArr'))
     for (let i = 0; i < storedArr.length; i++) {
-      messageWrap.appendChild(messageDeco(storedArr[i]))
+      messageWrap.appendChild(addStyleMessage(storedArr[i]))
     }
     initOpacity()
   }
@@ -80,7 +80,7 @@ function initOpacity() {
  *
  * @param {element} element 대상 요소
  */
-function messageDeco(element) {
+function addStyleMessage(element) {
   let newLi = document.createElement('li')
   newLi.appendChild(document.createTextNode(element.message))
   if (element.leftValue > 50) {

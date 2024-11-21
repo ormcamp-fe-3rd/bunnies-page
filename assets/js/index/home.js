@@ -73,3 +73,8 @@ function setVideoPaging(num = 1) {
     next.style = null
   }
 }
+
+window.addEventListener('load', () => {
+  rotateCards()
+  setVideo()
+})

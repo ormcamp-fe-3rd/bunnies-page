@@ -1,3 +1,25 @@
+/**
+ * 카드 회전 각도를 랜덤하게 세팅하는 함수
+ */
+function selectMemberCards() {
+  return document.querySelectorAll('.member-card-box li')
+}
+
+function getRandomAngle() {
+  const randomNumber = Math.floor(Math.random() * 25)
+  return randomNumber - 12 // -12 ~ +12 범위의 각도 반환
+}
+
+function rotateCards() {
+  const cards = selectMemberCards()
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i]
+    let degree = getRandomAngle()
+    card.style.transform = 'rotate(' + degree + 'deg)'
+  }
+}
+
+//모달
 const albumList = [
   {
     name: 'New Jeans',
@@ -195,7 +217,7 @@ setAlbumIconList()
  */
 function openModal(index) {
   setModalAlbumInfo(index)
-  setIconActive(index)
+  changeModalBgColor(index)
   modal.classList.remove('hidden')
   modalBg.classList.remove('hidden')
 }
@@ -206,7 +228,7 @@ function openModal(index) {
 function closeModal() {
   modal.classList.add('hidden')
   modalBg.classList.add('hidden')
-  setIconActive()
+  changeModalBgColor()
 }
 
 /**
@@ -245,7 +267,7 @@ function setModalAlbumInfo(index) {
  *
  * @param {number} index 앨범 배열의 순서
  */
-function setIconActive(index) {
+function changeModalBgColor(index) {
   const iconList = document.querySelectorAll('#album-icon-warp button')
   iconList.forEach(icon => (icon.style.backgroundColor = ''))
   if (index != null) iconList[index].style.backgroundColor = 'rgb(255 255 255 / var(--tw-bg-opacity))'

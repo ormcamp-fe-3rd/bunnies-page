@@ -225,9 +225,9 @@ function setAlbumInfo(alNum = 0) {
   const degLimit = 20
   const randomDeg = Math.floor(Math.random() * degLimit * 2) - degLimit
   document.getElementById('album-info').style.transform = 'rotate(' + randomDeg + 'deg)'
-  document.getElementById('now').innerText = getTime()
-  document.getElementById('album-name').innerText = album.name
-  document.getElementById('release').innerText = album.release
+  document.getElementById('now').textContent = getTime()
+  document.getElementById('album-name').textContent = album.name
+  document.getElementById('release').textContent = album.release
   document.getElementById('youtube').href = album.url
   document.getElementById('qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=' + album.url
   setPlaylist(album.playlist)
@@ -241,24 +241,37 @@ function setAlbumInfo(alNum = 0) {
  * @param {Array} playlist 곡 리스트
  */
 function setPlaylist(playlist) {
-  let ihtml = ''
   let totalTime = 0
+  const albumSelect = document.getElementById('album_select')
+  if(albumSelect.hasChildNodes()){
+    albumSelect.replaceChildren()
+  }
   for (let i = 0; i < playlist.length; i++) {
     let time = playlist[i].time.split(':')
     totalTime += parseInt(time[0]) * 60 + parseInt(time[1])
-    ihtml += `
-    <li>
-      <button type='button' class='album_selct_btn flex w-full ${i == 0 && 'play'}' onclick="playMusic(this)">
-        <p class='mr-10'>${addZero(i + 1)}</p>
-        <p class='name'>${playlist[i].name}</p>
-        <p class='ml-auto'>${playlist[i].time}</p>
-      </button>
-    </li>
-    `
+    let li = document.createElement('li')
+    let button = document.createElement('button')
+    let pNum = document.createElement('p')
+    let pName = document.createElement('p')
+    let pTime = document.createElement('p')
+    button.setAttribute('type', 'button')
+    button.setAttribute('class', `album_select_btn flex w-full ${i == 0 && 'play'}`)
+    button.setAttribute('onclick', 'playMusic(this)')
+    pNum.setAttribute('class', 'mr-10')
+    pNum.textContent = `${addZero(i + 1)}`
+    pName.setAttribute('class', 'name')
+    pName.textContent = `${playlist[i].name}`
+    pTime.setAttribute('class', 'ml-auto')
+    pTime.textContent = `${playlist[i].time}`
+    
+    button.appendChild(pNum)
+    button.appendChild(pName)
+    button.append(pTime)
+    li.appendChild(button)
+    albumSelect.appendChild(li)
   }
-  document.getElementById('album_selct').innerHTML = ihtml
-  document.getElementById('totalCnt').innerText = playlist.length
-  document.getElementById('totalTime').innerText = formatTime(totalTime)
+  document.getElementById('totalCnt').textContent = playlist.length
+  document.getElementById('totalTime').textContent = formatTime(totalTime)
 }
 
 /**
@@ -279,9 +292,9 @@ function playMusic(target) {
   // 클릭한 대상이 있을 경우
   if (target) {
     // 오디오 재 세팅
-    setAudio(target.querySelector('.name')?.innerText)
+    setAudio(target.querySelector('.name')?.textContent)
     // 리스트 하이라이트 처리
-    document.querySelector('.album_selct_btn.play').classList.remove('play')
+    document.querySelector('.album_select_btn.play').classList.remove('play')
     target.classList.add('play')
     // CD 이미지 재생 효과
     nowAlbumSelect()
